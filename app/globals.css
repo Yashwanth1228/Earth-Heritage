@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ==========================================================================
+       EARTH HERITAGE OFFICIAL BRAND TOKENS (Derived from Official Logo)
+       Logo Green: #55c40d (RGB 85, 196, 13) | Wordmark Dark: #111613
+       ========================================================================== */
+    --color-brand-primary: #55c40d;
+    --color-brand-primary-hover: #4bb00b;
+    --color-brand-light: rgba(85, 196, 13, 0.10);
+    --color-brand-deep: #1e460b;
+    --color-brand-secondary: #111613;
+    --color-accent: #55c40d;
+
+    /* Corporate Backgrounds & Surfaces (Warm Biscuit & Earthy Palette) */
+    --color-background: #f0e0c6;
+    --color-background-secondary: #f5e9d3;
+    --color-background-biscuit: #f0e0c6;
+    --color-background-biscuit-light: #f5e9d3;
+    --color-background-biscuit-deep: #ead5b5;
+    --color-background-ivory: #faf6f0;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #ffffff;
+    --color-surface-warm: #faf6f0;
+    --color-surface-subtle: #f5e9d3;
+    --color-surface-dark: #0d110e;
+    --color-surface-dark-elevated: #151b17;
+    --color-surface-overlay: rgba(13, 17, 14, 0.72);
+
+    /* Typography & Content Colors (WCAG AAA Compliant on Warm Biscuit) */
+    --color-text-primary: #111613;
+    --color-text-secondary: #38423a;
+    --color-text-muted: #5e6960;
+    --color-text-inverse: #fbfbf9;
+    --color-text-inverse-secondary: #a3aca6;
+
+    /* Architectural Borders (Warm Biscuit Harmonized) */
+    --color-border: #dccdb7;
+    --color-border-subtle: #e6d8c3;
+    --color-border-strong: #c2b197;
+    --color-border-dark: #222a24;
+
+    /* Functional / Feedback */
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-error: #dc2626;
+
+    /* Spacing & Layout Tokens */
+    --container-narrow: 56rem;   /* 896px */
+    --container-default: 80rem;  /* 1280px */
+    --container-wide: 88rem;     /* 1408px */
+
+    /* Typography Scales & Families */
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-display: var(--font-sans);
+  }
+
+  /* HTML & Body Base */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* Keyboard Navigation Focus States */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+
+  /* Accessible Text Selection */
+  ::selection {
+    background-color: rgba(85, 196, 13, 0.25);
+    color: var(--color-text-primary);
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Lenis Smooth Scroll Essential Rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   CONVERSION CONTROLS: VIBRANT POP-UP, DUAL EXPANDING RINGS & SHIMMER
+   High-visibility GPU accelerated attention animations (~2s cycle)
+   ========================================================================== */
+
+/* Enquire Now: Energetic magnetic pop-up (2s cycle) */
+@keyframes enquire-pop {
+  0% {
+    transform: scale(1);
+  }
+  8% {
+    transform: scale(1.075);
+  }
+  16% {
+    transform: scale(0.98);
+  }
+  24% {
+    transform: scale(1.02);
+  }
+  32% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Primary Visible Glowing Expanding Ring Wave 1 */
+@keyframes enquire-ring-wave-1 {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.85;
+  }
+  35% {
+    transform: scale(1.50);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.50);
+    opacity: 0;
+  }
+}
+
+/* Secondary Visible Glowing Expanding Ring Wave 2 (staggered ~160ms) */
+@keyframes enquire-ring-wave-2 {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.65;
+  }
+  44% {
+    transform: scale(1.72);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.72);
+    opacity: 0;
+  }
+}
+
+/* Diagonal Luxury Shimmer Beam sweeping across the pill */
+@keyframes button-shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+    opacity: 0;
+  }
+  4% {
+    opacity: 0.85;
+  }
+  24% {
+    transform: translateX(250%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+/* Ambient Breathing Aura Glow */
+@keyframes enquire-aura {
+  0% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  12% {
+    opacity: 0.90;
+    transform: scale(1.15);
+  }
+  32% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+}
+
+/* WhatsApp: Secondary Pop (~2s cycle with 400ms stagger) */
+@keyframes whatsapp-pop {
+  0% {
+    transform: scale(1);
+  }
+  8% {
+    transform: scale(1.04);
+  }
+  16% {
+    transform: scale(0.99);
+  }
+  24% {
+    transform: scale(1.015);
+  }
+  32% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes whatsapp-ring-wave {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.70;
+  }
+  32% {
+    transform: scale(1.38);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.38);
+    opacity: 0;
+  }
+}
+
+.animate-enquire-pop {
+  animation: enquire-pop 2s cubic-bezier(0.34, 1.35, 0.64, 1) infinite;
+}
+
+.animate-enquire-ring-1 {
+  animation: enquire-ring-wave-1 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-enquire-ring-2 {
+  animation: enquire-ring-wave-2 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-button-shimmer {
+  animation: button-shimmer 2s ease-in-out infinite;
+}
+
+.animate-enquire-aura {
+  animation: enquire-aura 2s ease-in-out infinite;
+}
+
+.animate-whatsapp-pop {
+  animation: whatsapp-pop 2s cubic-bezier(0.34, 1.25, 0.64, 1) infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-whatsapp-ring-wave {
+  animation: whatsapp-ring-wave 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: 0.4s;
+}
+
+/* Pause attention pulse automatically on hover */
+.pause-pulse-on-hover:hover,
+.pause-pulse-on-hover:hover .pulse-child {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-enquire-pop,
+  .animate-enquire-ring-1,
+  .animate-enquire-ring-2,
+  .animate-button-shimmer,
+  .animate-enquire-aura,
+  .animate-whatsapp-pop,
+  .animate-whatsapp-ring-wave {
+    animation: none !important;
+  }
+}
