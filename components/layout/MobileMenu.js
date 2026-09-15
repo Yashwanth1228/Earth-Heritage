@@ -1,22 +1,23 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X } from 'lucide-react';
+import { X, ChevronDown, ArrowRight } from 'lucide-react';
 import { headerNavRoutes } from '@/data/routes';
+import { projects } from '@/data/projects';
 import { cn } from '@/lib/utils';
-import Button from '@/components/ui/Button';
 import Logo from '@/components/ui/Logo';
 import { useEnquiry } from '@/context/EnquiryContext';
 
 /**
- * Accessible mobile drawer navigation menu
+ * Accessible mobile drawer navigation menu with expandable Projects section
  */
 export default function MobileMenu({ isOpen, onClose }) {
   const pathname = usePathname();
   const drawerRef = useRef(null);
   const { openEnquiryModal } = useEnquiry();
+  const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
 
   // Close on Escape key
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function MobileMenu({ isOpen, onClose }) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
+      setIsProjectsExpanded(false);
     }
     return () => {
       document.body.style.overflow = '';
@@ -60,7 +62,7 @@ export default function MobileMenu({ isOpen, onClose }) {
       {/* Drawer panel */}
       <div
         ref={drawerRef}
-        className="fixed inset-y-0 right-0 w-full max-w-sm bg-surface border-l border-border p-6 shadow-elevation flex flex-col justify-between"
+        className="fixed inset-y-0 right-0 w-full max-w-sm bg-surface border-l border-border p-6 shadow-elevation flex flex-col justify-between overflow-y-auto"
       >
         <div>
           <div className="flex items-center justify-between pb-6 border-b border-border-subtle">
@@ -77,7 +79,83 @@ export default function MobileMenu({ isOpen, onClose }) {
 
           <nav className="mt-6 flex flex-col space-y-2" aria-label="Mobile Navigation Links">
             {headerNavRoutes.map((route) => {
+              const isProjects = route.path === '/projects';
               const isActive = pathname === route.path || (route.path !== '/' && pathname.startsWith(route.path));
+
+              if (isProjects) {
+                return (
+                  <div key={route.path} className="flex flex-col">
+                    <div
+                      className={cn(
+                        'flex items-center justify-between rounded-sm transition-colors',
+                        isActive
+                          ? 'bg-surface-subtle border-l-2 border-brand-primary'
+                          : 'hover:bg-surface-subtle'
+                      )}
+                    >
+                      <Link
+                        href={route.path}
+                        onClick={onClose}
+                        className={cn(
+                          'flex-1 text-base font-sans font-medium py-2.5 px-3 transition-colors',
+                          isActive
+                            ? 'text-text-primary font-semibold'
+                            : 'text-text-secondary hover:text-text-primary'
+                        )}
+                        aria-current={isActive ? 'page' : undefined}
+                      >
+                        {route.title}
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setIsProjectsExpanded((prev) => !prev)}
+                        className="p-2.5 mr-1 text-text-secondary hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm"
+                        aria-label="Toggle projects submenu"
+                        aria-expanded={isProjectsExpanded}
+                      >
+                        <ChevronDown
+                          className={cn(
+                            'w-4 h-4 transition-transform duration-200',
+                            isProjectsExpanded && 'rotate-180 text-brand-primary'
+                          )}
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+
+                    {/* Expandable Submenu */}
+                    {isProjectsExpanded && (
+                      <div className="ml-4 pl-3 border-l border-border-subtle mt-1.5 mb-2 flex flex-col space-y-1 animate-in fade-in duration-200">
+                        {projects.length > 0 ? (
+                          projects.map((project) => (
+                            <Link
+                              key={project.slug}
+                              href={`/projects/${project.slug}`}
+                              onClick={onClose}
+                              className="text-sm font-sans py-2 px-2 text-text-secondary hover:text-brand-primary rounded-sm transition-colors"
+                            >
+                              {project.name}
+                            </Link>
+                          ))
+                        ) : (
+                          <span className="text-xs font-sans py-2 px-2 text-text-muted italic select-none">
+                            No projects available yet
+                          </span>
+                        )}
+                        <Link
+                          href="/projects"
+                          onClick={onClose}
+                          className="text-xs font-sans font-semibold py-2 px-2 text-brand-primary hover:text-brand-dark transition-colors inline-flex items-center gap-1.5"
+                        >
+                          <span>View All Projects</span>
+                          <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={route.path}

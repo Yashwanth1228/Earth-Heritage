@@ -33,6 +33,11 @@ export const siteRoutes = {
       description: 'The ownership and professional management process'
     },
     {
+      title: 'Gallery',
+      path: '/gallery',
+      description: 'Visual exhibition of land, nature, cultivation, and experiences'
+    },
+    {
       title: 'Projects',
       path: '/projects',
       description: 'Earth Heritage properties and managed land initiatives'
@@ -72,10 +77,9 @@ export const siteRoutes = {
 export const headerNavRoutes = [
   { title: 'About', path: '/about' },
   { title: 'Managed Farmland', path: '/managed-farmland' },
-  { title: 'Farm Management', path: '/farm-management' },
   { title: 'How It Works', path: '/how-it-works' },
+  { title: 'Gallery', path: '/gallery' },
   { title: 'Projects', path: '/projects' },
-  { title: 'Sustainability', path: '/sustainability' },
   { title: 'Insights', path: '/insights' }
 ];
 
