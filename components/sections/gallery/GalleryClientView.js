@@ -45,7 +45,7 @@ export default function GalleryClientView() {
   }, [currentList.length]);
 
   return (
-    <div className="w-full bg-[#F0E0C6] selection:bg-[#1E460B] selection:text-white">
+    <div className="w-full bg-[#FAF6F0] selection:bg-[#1E460B] selection:text-white">
       {/* 1. Page Editorial Introduction */}
       <GalleryIntro />
 

@@ -21,7 +21,7 @@ export default function FarmManagementIntro() {
   return (
     <section
       id="hero"
-      className="relative bg-[#F0E0C6] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 overflow-hidden border-b border-[#DCCDB7]"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 overflow-hidden border-b border-[#DCCDB7]"
       aria-label="Farm Management Introduction"
     >
       {/* Signature Earth Heritage Visible Organic Background Contours */}

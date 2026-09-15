@@ -37,7 +37,7 @@ export const metadata = {
  */
 export default function ManagedFarmlandPage() {
   return (
-    <div className="w-full bg-[#F0E0C6]">
+    <div className="w-full bg-[#FAF6F0]">
       <ManagedFarmlandIntro />
       <CoreProposition />
       <ManagementAreas />

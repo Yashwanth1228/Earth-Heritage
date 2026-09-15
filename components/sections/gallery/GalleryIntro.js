@@ -18,7 +18,7 @@ export default function GalleryIntro() {
   return (
     <section
       id="hero"
-      className="relative bg-[#F0E0C6] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 overflow-hidden"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 overflow-hidden"
       aria-label="Earth Heritage Gallery Introduction"
     >
       {/* Signature Earth Heritage Organic Contours */}

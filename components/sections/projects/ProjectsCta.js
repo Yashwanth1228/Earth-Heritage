@@ -17,7 +17,7 @@ export default function ProjectsCta() {
   return (
     <section
       id="cta"
-      className="relative py-20 sm:py-28 bg-[#F0E0C6] overflow-hidden"
+      className="relative py-20 sm:py-28 bg-[#FAF6F0] overflow-hidden"
       aria-label="Connect With Earth Heritage"
     >
       <LandContourPattern variant="biscuit-contours" className="opacity-70" />

@@ -25,7 +25,7 @@ export default function CoreProposition() {
   return (
     <section
       id="core-proposition"
-      className="relative bg-[#FAF6F0] text-[#111613] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 border-b border-[#DCCDB7] overflow-hidden"
+      className="relative bg-[#F0E0C6] text-[#111613] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 border-b border-[#DCCDB7] overflow-hidden"
       aria-label="Core Proposition"
     >
       {/* Visible Organic Background Topographic Curves */}

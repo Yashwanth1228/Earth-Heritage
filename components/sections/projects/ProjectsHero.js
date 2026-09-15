@@ -15,7 +15,7 @@ export default function ProjectsHero() {
   return (
     <section
       id="hero"
-      className="relative bg-[#F0E0C6] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 border-b border-[#DCCDB7] overflow-hidden"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 border-b border-[#DCCDB7] overflow-hidden"
       aria-label="Earth Heritage Projects Introduction"
     >
       {/* Signature Earth Heritage Organic Contours */}

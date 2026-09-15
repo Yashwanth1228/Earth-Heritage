@@ -33,7 +33,7 @@ export const metadata = {
  */
 export default function FarmManagementPage() {
   return (
-    <div className="w-full bg-[#F0E0C6]">
+    <div className="w-full bg-[#FAF6F0]">
       <FarmManagementIntro />
       <ManagementActivities />
       <ManagementCycle />
