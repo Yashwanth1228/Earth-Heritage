@@ -55,7 +55,7 @@ export default function Navigation({ className, isInverse = false }) {
   return (
     <nav
       className={cn(
-        'hidden lg:flex items-center space-x-4 lg:space-x-4.5 xl:space-x-6 2xl:space-x-7.5',
+        'hidden lg:flex items-center space-x-3 lg:space-x-3.5 xl:space-x-5 2xl:space-x-6.5',
         className
       )}
       aria-label="Main Navigation"
@@ -65,11 +65,11 @@ export default function Navigation({ className, isInverse = false }) {
         const isActive = pathname === route.path || (route.path !== '/' && pathname.startsWith(route.path));
 
         const linkClasses = cn(
-          'text-[13.5px] xl:text-[14.5px] 2xl:text-[15px] font-sans tracking-normal whitespace-nowrap transition-colors duration-150 relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm',
+          'text-[13px] xl:text-[14px] 2xl:text-[14.5px] font-sans tracking-normal whitespace-nowrap transition-colors duration-300 ease-out relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm',
           isInverse
             ? isActive
-              ? 'text-text-inverse font-semibold'
-              : 'text-text-inverse-secondary hover:text-text-inverse font-[520]'
+              ? 'text-[#FAF7F2] font-semibold'
+              : 'text-[#FAF7F2]/80 hover:text-white font-[520]'
             : isActive
             ? 'text-text-primary font-semibold'
             : 'text-text-primary/85 hover:text-text-primary font-[520]'
@@ -121,7 +121,14 @@ export default function Navigation({ className, isInverse = false }) {
                 role="menu"
                 aria-labelledby="nav-projects-trigger"
               >
-                <div className="w-56 sm:w-60 bg-[#FAF6F0] border border-[#D5C09D]/80 shadow-[0_16px_36px_rgba(26,22,17,0.14)] rounded-2xl p-2.5 overflow-hidden">
+                <div
+                  className={cn(
+                    'w-56 sm:w-60 rounded-2xl p-2.5 overflow-hidden transition-colors duration-300',
+                    isInverse
+                      ? 'bg-[#0E2413] border border-[#245832] shadow-[0_16px_36px_rgba(0,0,0,0.5)]'
+                      : 'bg-[#FAF6F0] border border-[#D5C09D]/80 shadow-[0_16px_36px_rgba(26,22,17,0.14)]'
+                  )}
+                >
                   {/* List of projects if populated */}
                   {projects.length > 0 ? (
                     <div className="space-y-0.5" role="none">
@@ -130,7 +137,12 @@ export default function Navigation({ className, isInverse = false }) {
                           key={project.slug}
                           href={`/projects/${project.slug}`}
                           onClick={() => setIsProjectsOpen(false)}
-                          className="flex items-center justify-between px-3 py-2 text-[13px] font-sans text-text-primary/90 hover:text-brand-primary hover:bg-surface-subtle rounded-xl transition-all duration-150 group/item focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary"
+                          className={cn(
+                            'flex items-center justify-between px-3 py-2 text-[13px] font-sans rounded-xl transition-all duration-150 group/item focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
+                            isInverse
+                              ? 'text-[#FAF7F2]/90 hover:text-brand-primary hover:bg-[#163A20]'
+                              : 'text-text-primary/90 hover:text-brand-primary hover:bg-surface-subtle'
+                          )}
                           role="menuitem"
                         >
                           <span className="truncate">{project.name}</span>
@@ -142,19 +154,35 @@ export default function Navigation({ className, isInverse = false }) {
                       ))}
                     </div>
                   ) : (
-                    <div className="px-3 py-2.5 text-xs font-sans text-text-muted italic select-none">
+                    <div
+                      className={cn(
+                        'px-3 py-2.5 text-xs font-sans italic select-none',
+                        isInverse ? 'text-[#8A9C90]' : 'text-text-muted'
+                      )}
+                    >
                       No projects available yet
                     </div>
                   )}
 
                   {/* Divider */}
-                  <div className="my-1.5 border-t border-border-subtle" role="separator" />
+                  <div
+                    className={cn(
+                      'my-1.5 border-t',
+                      isInverse ? 'border-[#1E4D2A]' : 'border-border-subtle'
+                    )}
+                    role="separator"
+                  />
 
                   {/* View All Projects link */}
                   <Link
                     href="/projects"
                     onClick={() => setIsProjectsOpen(false)}
-                    className="flex items-center justify-between px-3 py-2 text-xs font-sans font-semibold text-brand-primary hover:text-brand-dark hover:bg-surface-subtle rounded-xl transition-all duration-150 group/all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary"
+                    className={cn(
+                      'flex items-center justify-between px-3 py-2 text-xs font-sans font-semibold rounded-xl transition-all duration-150 group/all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
+                      isInverse
+                        ? 'text-brand-primary hover:text-[#76e52c] hover:bg-[#163A20]'
+                        : 'text-brand-primary hover:text-brand-dark hover:bg-surface-subtle'
+                    )}
                     role="menuitem"
                   >
                     <span>View All Projects</span>

@@ -27,6 +27,7 @@ export default function Footer() {
 
   return (
     <footer
+      data-navbar-theme="dark"
       className="relative w-full bg-[#102B17] text-[#FAF7F2] overflow-hidden select-none mt-auto"
       aria-label="Earth Heritage Corporate Footer"
     >

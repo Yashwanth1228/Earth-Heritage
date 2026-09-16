@@ -63,15 +63,29 @@ export default function Logo({
           />
         </div>
 
-        {/* Wordmark below emblem: prominently scaled and clearly visible */}
+        {/* Wordmark below emblem: prominently scaled with seamless 300ms opacity cross-fade */}
         <div className="relative h-[13px] w-[66px] sm:h-[15px] sm:w-[76px] mt-0.5 flex-shrink-0">
           <Image
-            src={wordmarkSrc}
+            src="/images/earth-heritage-wordmark-dark.png"
             alt="Earth Heritage"
             fill
             sizes="160px"
             priority={priority}
-            className="object-contain object-center"
+            className={cn(
+              'object-contain object-center transition-opacity duration-300 ease-out',
+              variant === 'light' ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            )}
+          />
+          <Image
+            src="/images/earth-heritage-wordmark-light.png"
+            alt="Earth Heritage"
+            fill
+            sizes="160px"
+            priority={priority}
+            className={cn(
+              'object-contain object-center transition-opacity duration-300 ease-out',
+              variant === 'light' ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            )}
           />
         </div>
       </div>

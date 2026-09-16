@@ -33,13 +33,13 @@ export default function ProjectsCta() {
 
           <MotionReveal delay={0.15}>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#111613] font-normal tracking-tight leading-[1.2]">
-              Have questions about upcoming Earth Heritage farmland initiatives?
+              Have land you want to care for with purpose?
             </h2>
           </MotionReveal>
 
           <MotionReveal delay={0.25}>
             <p className="font-sans text-base sm:text-lg text-[#38423A] leading-relaxed">
-              Connect directly with our team to understand location criteria, agricultural planning, and how our managed farmland model works.
+              Explore how Earth Heritage approaches managed farmland and ongoing farm care.
             </p>
           </MotionReveal>
 

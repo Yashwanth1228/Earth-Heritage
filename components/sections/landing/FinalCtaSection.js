@@ -26,6 +26,7 @@ export default function FinalCtaSection() {
   return (
     <section
       id="contact-cta"
+      data-navbar-theme="dark"
       className="relative w-full min-h-[70vh] sm:min-h-[78vh] lg:min-h-[82vh] flex items-center justify-center overflow-hidden py-24 sm:py-32 lg:py-36"
       aria-label="Begin a Conversation with Earth Heritage"
     >

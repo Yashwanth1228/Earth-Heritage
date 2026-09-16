@@ -48,9 +48,14 @@ export const siteRoutes = {
       description: 'Responsible land practices and ecological maintenance'
     },
     {
-      title: 'Insights',
-      path: '/insights',
-      description: 'Perspectives and educational resources on land stewardship'
+      title: 'Blogs',
+      path: '/blogs',
+      description: 'Perspectives, journal entries, and agricultural knowledge'
+    },
+    {
+      title: 'Events',
+      path: '/events',
+      description: 'Farm visits, gatherings, and community stewardship events'
     },
     {
       title: 'Contact',
@@ -80,7 +85,8 @@ export const headerNavRoutes = [
   { title: 'How It Works', path: '/how-it-works' },
   { title: 'Gallery', path: '/gallery' },
   { title: 'Projects', path: '/projects' },
-  { title: 'Insights', path: '/insights' }
+  { title: 'Blogs', path: '/blogs' },
+  { title: 'Events', path: '/events' }
 ];
 
 export const footerNavGroups = [
