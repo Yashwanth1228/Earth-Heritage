@@ -198,3 +198,142 @@ export const landingImages = {
     }
   }
 };
+
+/**
+ * 4-Chapter Cinematic Opening Sequence for Homepage Hero
+ * Each slide features distinct photography, chapter narrative, and aligned branding copy.
+ */
+export const heroSlides = [
+  {
+    id: 'slide-01',
+    number: '01',
+    chapter: 'THE VISION',
+    image: {
+      src: '/images/landing/hero-landscape.jpg',
+      alt: 'Expansive managed farmland with lush green tree canopies at golden sunrise',
+      width: 2400,
+      height: 1600
+    },
+    theme: 'dark',
+    titleLine1Class: 'text-[#FFFFFF]',
+    titleLine2Class: 'italic text-[#E5C378]',
+    descriptionClass: 'text-[#EDE7DE]/90',
+    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
+    badgeTextClass: 'text-[#B88E3E]',
+    badgeIconClass: 'text-[#B88E3E]',
+    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
+    primaryBtnIconClass: 'text-[#152B1B]',
+    secondaryBtnClass: 'bg-[#183622]/85 hover:bg-[#1E432A] border border-[#346642]/65 text-[#EDE7DD]',
+    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
+    eyebrow: 'Managed Farmland • Land Ownership & Stewardship',
+    titleLine1: 'Own a Piece of Earth.',
+    titleLine2: 'Build a Legacy.',
+    description:
+      'Managed farmland for people who want to own land, stay connected to nature, and build something meaningful for the long term.',
+    isMainH1: true,
+    primaryAction: {
+      label: 'Discover Earth Heritage',
+      href: '#statement'
+    }
+  },
+  {
+    id: 'slide-02',
+    number: '02',
+    chapter: 'THE LAND',
+    image: {
+      src: '/images/landing/statement-landscape.jpg',
+      alt: 'Sunlight filtering through a rich, verdant tree canopy on agricultural land',
+      width: 1600,
+      height: 1067
+    },
+    theme: 'dark',
+    headingShadowClass: 'drop-shadow-[0_2px_14px_rgba(0,0,0,0.92)] drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]',
+    imageOverlay: 'bg-black/15',
+    titleLine1Class: 'text-[#FFFFFF]',
+    titleLine2Class: 'italic text-[#F2CF84]',
+    descriptionClass: 'text-[#EDE7DE] drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]',
+    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
+    badgeTextClass: 'text-[#B88E3E]',
+    badgeIconClass: 'text-[#B88E3E]',
+    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
+    primaryBtnIconClass: 'text-[#152B1B]',
+    secondaryBtnClass: 'bg-[#183622]/85 hover:bg-[#1E432A] border border-[#346642]/65 text-[#EDE7DD]',
+    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
+    eyebrow: 'Living Legacy • A Tangible Foundation',
+    titleLine1: 'Land is More Than an Asset.',
+    titleLine2: 'It is a Lasting Anchor.',
+    description:
+      'A foundation that endures through generations—grounded in ownership, nurtured by time, and protected by care.',
+    isMainH1: false,
+    primaryAction: {
+      label: 'Explore Our Approach',
+      href: '#problem'
+    }
+  },
+  {
+    id: 'slide-03',
+    number: '03',
+    chapter: 'THE CARE',
+    image: {
+      src: '/images/landing/solution-management.jpg',
+      alt: 'Neatly cultivated agricultural rows under expansive open skies',
+      width: 1600,
+      height: 1067
+    },
+    theme: 'light',
+    titleLine1Class: 'text-[#0C1F13] font-medium',
+    titleLine2Class: 'italic text-[#5C3E14] font-medium',
+    descriptionClass: 'text-[#182B1C] font-normal',
+    badgeClass: 'bg-white/95 border-[#0C1F13]/25 shadow-sm',
+    badgeTextClass: 'text-[#0C1F13]',
+    badgeIconClass: 'text-[#5C3E14]',
+    primaryBtnClass: 'bg-[#0C1F13] text-[#F7F4EC] hover:bg-[#163822] shadow-[0_6px_20px_rgba(12,31,19,0.3)]',
+    primaryBtnIconClass: 'text-[#F7F4EC]',
+    secondaryBtnClass: 'bg-[#0C1F13]/10 hover:bg-[#0C1F13]/20 border border-[#0C1F13]/60 text-[#0C1F13]',
+    scrollIndicatorClass: 'text-[#0C1F13]/75 group-hover:text-[#0C1F13]',
+    eyebrow: 'The Partnership • Management & Stewardship',
+    titleLine1: 'You Own the Land.',
+    titleLine2: 'We Manage the Farm.',
+    description:
+      'Retain complete titled ownership while our on-ground team coordinates farm operations, cultivation, and ongoing agricultural care.',
+    isMainH1: false,
+    primaryAction: {
+      label: 'How It Works',
+      href: '/how-it-works'
+    }
+  },
+  {
+    id: 'slide-04',
+    number: '04',
+    chapter: 'THE PURPOSE',
+    image: {
+      src: '/images/landing/philosophy-panorama.jpg',
+      alt: 'Breathtaking full-width panorama of lush misty forest and agricultural valley',
+      width: 2400,
+      height: 1200
+    },
+    theme: 'dark',
+    headingShadowClass: 'drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]',
+    titleLine1Class: 'text-[#FFFFFF]',
+    titleLine2Class: 'italic text-[#F0CE80]',
+    descriptionClass: 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]',
+    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
+    badgeTextClass: 'text-[#B88E3E]',
+    badgeIconClass: 'text-[#B88E3E]',
+    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
+    primaryBtnIconClass: 'text-[#152B1B]',
+    secondaryBtnClass: 'bg-[#183622]/85 hover:bg-[#1E432A] border border-[#346642]/65 text-[#EDE7DD]',
+    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
+    eyebrow: 'Our Philosophy • Rooted in Responsibility',
+    titleLine1: 'Back to Roots.',
+    titleLine2: 'Forward with Purpose.',
+    description:
+      'Cultivating land with ecological sensitivity, mindful community, and enduring pride of ownership.',
+    isMainH1: false,
+    primaryAction: {
+      label: 'Our Philosophy',
+      href: '/about'
+    }
+  }
+];
+

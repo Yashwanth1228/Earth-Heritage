@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import { useEnquiry } from '@/context/EnquiryContext';
@@ -11,10 +11,10 @@ import { useEnquiry } from '@/context/EnquiryContext';
  * 
  * Strict Standards:
  * - Marked with data-navbar-theme="dark" for scroll-context navbar adaptation
- * - Deep Earth Green aesthetic (#102B17) matching the corporate conversion palette
- * - Uses the EXISTING global enquiry modal without creating duplicate forms
- * - Pre-populates the enquiry context with the verified project name
- * - Preserves existing WhatsApp and phone settings; zero invented contact claims
+ * - Deep Earth Green aesthetic (#102B17) matching corporate conversion palette
+ * - Communicates "Own the land. Let us help care for the farm."
+ * - Integrates with the EXISTING global enquiry modal without creating duplicate forms
+ * - Pre-populates enquiry context with the verified project name
  */
 export default function ProjectDetailCta({ project }) {
   const { openEnquiryModal } = useEnquiry();
@@ -28,7 +28,7 @@ export default function ProjectDetailCta({ project }) {
     <section
       id="project-cta"
       data-navbar-theme="dark"
-      className="relative py-24 sm:py-32 bg-[#102B17] text-[#FAF7F2] overflow-hidden select-none"
+      className="relative py-20 sm:py-28 lg:py-32 bg-[#102B17] text-[#FAF7F2] overflow-hidden select-none"
       aria-label={`Inquire about ${projectName}`}
     >
       {/* Soft Ambient Depth Gradient */}
@@ -68,32 +68,35 @@ export default function ProjectDetailCta({ project }) {
           <MotionReveal delay={0.05}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14361D] border border-[#235832] text-xs font-mono text-[#C4D1C7]">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" aria-hidden="true" />
-              <span>BEGIN A CONVERSATION</span>
+              <span>START A CONVERSATION</span>
             </div>
           </MotionReveal>
 
           {/* Luxury Serif Title */}
-          <MotionReveal delay={0.15}>
+          <MotionReveal delay={0.1}>
             <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight leading-[1.14] text-[#FAF7F2]">
-              Interested in learning more about <span className="text-[#C5A25D] italic block sm:inline">{projectName}</span>?
+              Own the land.{' '}
+              <span className="text-[#C5A25D] italic block sm:inline">
+                Let us help care for the farm.
+              </span>
             </h2>
           </MotionReveal>
 
           {/* Supportive Guidance */}
-          <MotionReveal delay={0.25}>
+          <MotionReveal delay={0.15}>
             <p className="font-sans text-base sm:text-lg md:text-xl text-[#C4D1C7] font-light leading-relaxed max-w-2xl mx-auto">
-              Connect directly with Earth Heritage to discuss land stewardship, visit opportunities, and our managed farmland model.
+              Connect with Earth Heritage to discuss land stewardship, visit opportunities, and our managed farmland approach for {projectName}.
             </p>
           </MotionReveal>
 
           {/* Action Buttons */}
-          <MotionReveal delay={0.35}>
+          <MotionReveal delay={0.2}>
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* Primary Action Button (pre-fills project context) */}
               <button
                 type="button"
                 onClick={(e) => openEnquiryModal(enquirySubject, e.currentTarget)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-brand-primary text-brand-secondary hover:bg-brand-primary-hover text-xs sm:text-[13px] font-semibold tracking-[0.16em] uppercase shadow-[0_6px_20px_rgba(85,196,13,0.25)] hover:shadow-[0_8px_25px_rgba(85,196,13,0.35)] hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-brand-primary text-brand-secondary hover:bg-brand-primary-hover text-xs sm:text-[13px] font-semibold tracking-[0.16em] uppercase shadow-[0_6px_20px_rgba(85,196,13,0.25)] hover:shadow-[0_8px_25px_rgba(85,196,13,0.35)] hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary cursor-pointer"
               >
                 <span>Talk to Us</span>
                 <ArrowRight className="w-4 h-4 text-brand-secondary" aria-hidden="true" />
@@ -102,12 +105,18 @@ export default function ProjectDetailCta({ project }) {
               {/* Secondary Navigation Button */}
               <Link
                 href="/projects"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:py-4 rounded-full bg-[#13351C] border border-[#1E4D2B] text-[#FAF7F2] hover:bg-[#1C4626] text-xs sm:text-[13px] font-semibold tracking-[0.14em] uppercase transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-full bg-transparent text-[#FAF7F2] border border-[#235832] hover:bg-[#14361D] hover:border-[#337D48] text-xs sm:text-[13px] font-medium tracking-wider transition-all duration-200"
               >
-                <ArrowLeft className="w-4 h-4 text-[#859D8C]" aria-hidden="true" />
-                <span>All Projects</span>
+                <span>Back to All Projects</span>
               </Link>
             </div>
+          </MotionReveal>
+
+          {/* Conversational Footnote */}
+          <MotionReveal delay={0.25}>
+            <p className="text-xs font-sans text-[#7A9A80] pt-2">
+              Earth Heritage coordinates farm management and agricultural planning alongside titled landowners.
+            </p>
           </MotionReveal>
 
         </div>

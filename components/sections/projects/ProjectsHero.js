@@ -5,38 +5,40 @@ import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 
 /**
- * Editorial Introduction for /projects
+ * Compact Editorial Introduction for /projects
  * 
- * Eyebrow: EARTH HERITAGE PROJECTS
- * Heading: Places with purpose. Land with a story.
- * Supporting: Explore the projects and developments shaped by the Earth Heritage approach to land, managed farmland, and thoughtful development.
+ * Optimized for bringing the project showcase above the fold:
+ * - Removed extra information boxes
+ * - Compact top and bottom padding
+ * - Preserved Cormorant luxury serif title & brand eyebrow
+ * - Seamless transition to Project 01
  */
 export default function ProjectsHero() {
   return (
     <section
       id="hero"
-      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 border-b border-[#DCCDB7] overflow-hidden"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8 lg:pb-8 border-b border-[#DCCDB7]/50 overflow-hidden"
       aria-label="Earth Heritage Projects Introduction"
     >
-      {/* Signature Earth Heritage Organic Contours */}
-      <LandContourPattern variant="biscuit-contours" className="opacity-95" />
+      {/* Subtle Earth Heritage Organic Contours */}
+      <LandContourPattern variant="biscuit-contours" className="opacity-50" />
 
       <Container size="default" className="relative z-10">
         <div className="max-w-4xl mx-auto text-center relative">
           
           {/* Subtle Organic Arc Accent */}
-          <div className="absolute left-1/2 -top-6 -translate-x-1/2 w-[340px] sm:w-[560px] lg:w-[720px] h-[180px] sm:h-[240px] pointer-events-none -z-10 select-none overflow-hidden opacity-15">
+          <div className="absolute left-1/2 -top-4 -translate-x-1/2 w-[320px] sm:w-[500px] lg:w-[640px] h-[140px] sm:h-[180px] pointer-events-none -z-10 select-none overflow-hidden opacity-10">
             <svg viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
               <path
                 d="M40,210 C180,60 540,60 680,210"
                 stroke="#1E460B"
-                strokeWidth="2.5"
+                strokeWidth="2"
                 strokeLinecap="round"
               />
               <path
                 d="M100,230 C220,110 500,110 620,230"
                 stroke="#1E460B"
-                strokeWidth="1.8"
+                strokeWidth="1.5"
                 strokeDasharray="10 8"
               />
               <ellipse
@@ -45,23 +47,23 @@ export default function ProjectsHero() {
                 rx="260"
                 ry="70"
                 stroke="#5E7748"
-                strokeWidth="1.2"
+                strokeWidth="1"
                 strokeDasharray="4 6"
               />
             </svg>
           </div>
 
-          {/* 1. Page Eyebrow Badge */}
+          {/* 1. Compact Page Eyebrow Badge */}
           <MotionReveal delay={0.05}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/80 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase mb-6 sm:mb-8 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAD5B5]/80 border border-[#D5C09D] text-[11px] font-mono font-semibold tracking-widest text-[#1E460B] uppercase mb-3 sm:mb-4 shadow-2xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" aria-hidden="true" />
               <span>EARTH HERITAGE PROJECTS</span>
             </div>
           </MotionReveal>
 
           {/* 2. Editorial Two-Tone Display Title */}
-          <MotionReveal delay={0.15}>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[70px] font-normal tracking-tight leading-[1.12] text-center">
+          <MotionReveal delay={0.1}>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[56px] font-normal tracking-tight leading-[1.14] text-center">
               <span className="text-[#111613]">Places with purpose. </span>
               <span className="text-[#1E460B] italic font-normal block sm:inline">
                 Land with a story.
@@ -70,9 +72,9 @@ export default function ProjectsHero() {
           </MotionReveal>
 
           {/* 3. Centered Supporting Description */}
-          <MotionReveal delay={0.25}>
-            <p className="mt-6 sm:mt-8 font-sans text-base sm:text-lg md:text-xl text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
-              Explore the projects and developments shaped by the Earth Heritage approach to land, managed farmland, and thoughtful development.
+          <MotionReveal delay={0.15}>
+            <p className="mt-3 sm:mt-4 font-sans text-sm sm:text-base md:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
+              Explore the ideas, places, and managed farmland experiences taking shape through the Earth Heritage approach.
             </p>
           </MotionReveal>
 

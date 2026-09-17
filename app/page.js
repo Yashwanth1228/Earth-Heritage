@@ -7,6 +7,7 @@ import HowItWorksSection from '@/components/sections/landing/HowItWorksSection';
 import PhilosophySection from '@/components/sections/landing/PhilosophySection';
 import PrinciplesSection from '@/components/sections/landing/PrinciplesSection';
 import FoundersSection from '@/components/sections/landing/FoundersSection';
+import LocationMapSection from '@/components/sections/landing/LocationMapSection';
 import FinalCtaSection from '@/components/sections/landing/FinalCtaSection';
 
 export const metadata = {
@@ -31,7 +32,8 @@ export const metadata = {
  * 7. PhilosophySection — Visual Pause ("BACK TO ROOTS. FORWARD WITH PURPOSE.")
  * 8. PrinciplesSection — Why Earth Heritage (5 Guiding Principles)
  * 9. FoundersSection — Leadership & Vision (Sathish Agastya & Khushi Jain)
- * 10. FinalCtaSection — Meaningful Next Step
+ * 10. LocationMapSection — Google Maps Location ("Come closer to where it begins.")
+ * 11. FinalCtaSection — Meaningful Next Step ("Have farmland that deserves to be cared for?")
  */
 export default function LandingPage() {
   return (
@@ -45,6 +47,7 @@ export default function LandingPage() {
       <PhilosophySection />
       <PrinciplesSection />
       <FoundersSection />
+      <LocationMapSection />
       <FinalCtaSection />
     </div>
   );

@@ -4,7 +4,9 @@ import { constructMetadata } from '@/lib/seo';
 import { getProjectDetailSchema } from '@/lib/schema';
 import ProjectDetailHero from '@/components/projects/ProjectDetailHero';
 import ProjectDetailOverview from '@/components/projects/ProjectDetailOverview';
+import ProjectDetailOwnership from '@/components/projects/ProjectDetailOwnership';
 import ProjectDetailStewardship from '@/components/projects/ProjectDetailStewardship';
+import ProjectDetailFeatures from '@/components/projects/ProjectDetailFeatures';
 import ProjectDetailGallery from '@/components/projects/ProjectDetailGallery';
 import ProjectDetailNavigation from '@/components/projects/ProjectDetailNavigation';
 import ProjectDetailCta from '@/components/projects/ProjectDetailCta';
@@ -24,6 +26,7 @@ export async function generateMetadata({ params }) {
   }
 
   const projectDescription =
+    project.shortDescription ||
     project.tagline ||
     project.overview ||
     project.description ||
@@ -32,6 +35,7 @@ export async function generateMetadata({ params }) {
   // If the project has a verified hero image, use it for OG/Twitter; otherwise omit image
   const heroImg =
     project.heroImage ||
+    project.coverImage ||
     (Array.isArray(project.images) && project.images.length > 0 ? project.images[0] : null);
   const ogImage =
     heroImg && typeof heroImg.src === 'string' && heroImg.src.trim().length > 0
@@ -43,6 +47,7 @@ export async function generateMetadata({ params }) {
       title: project.name,
       description: projectDescription,
       canonicalUrl: `/projects/${project.slug}`,
+      noIndex: !!project.isDemo,
       ...(ogImage ? { image: ogImage } : {})
     }),
     title: `${project.name} | Earth Heritage`
@@ -51,7 +56,6 @@ export async function generateMetadata({ params }) {
 
 /**
  * Generate static params for all confirmed projects
- * When projects array is empty, Next.js safely produces 0 dynamic paths at build time
  */
 export async function generateStaticParams() {
   const allProjects = getAllProjects();
@@ -63,17 +67,16 @@ export async function generateStaticParams() {
 /**
  * Dynamic Individual Project Detail Page (/projects/[slug])
  * 
- * Modular Architectural Foundation:
- * 1. JSON-LD Place Structured Data (rendered server-side only for confirmed projects)
- * 2. ProjectDetailHero — Light (#FAF6F0) starting foundation, verified metadata, landscape framing
- * 3. ProjectDetailOverview — Warm biscuit (#F0E0C6) alternating narrative and confirmed features
- * 4. ProjectDetailStewardship — Light (#FAF6F0) operational farm management specifics
- * 5. ProjectDetailGallery — Curated field & land photography vignettes
- * 6. ProjectDetailNavigation — Dynamic Previous / Next project traversal
- * 7. ProjectDetailCta — Conversational consultation closer with pre-filled enquiry modal context
- * 
- * Note on Data Integrity:
- * Automatically invokes notFound() when the requested slug is unconfirmed.
+ * Editorial Project Exhibition Architecture:
+ * 1. Schema.org Place (omitted for concept/demo projects)
+ * 2. ProjectDetailHero — Compact cinematic hero (CONCEPT PROJECT, 01, MANAGED FARMLAND, title, narrative, hero visual)
+ * 3. ProjectDetailOverview — Visual Story ("An approach to managed farmland.")
+ * 4. ProjectDetailOwnership — Dedicated Ownership + Management ("YOU OWN THE LAND. WE MANAGE THE FARM.")
+ * 5. ProjectDetailStewardship — Agronomic Farm Care & Operational Oversight
+ * 6. ProjectDetailFeatures — Numbered Editorial Attributes (01, 02, 03, 04...)
+ * 7. ProjectDetailGallery — Curated Visual Gallery with varied proportions & concept captions
+ * 8. ProjectDetailNavigation — Previous / Next Project & All Projects Traversal
+ * 9. ProjectDetailCta — Consultation closer with pre-filled enquiry modal context
  */
 export default async function ProjectDetailPage({ params }) {
   const resolvedParams = await params;
@@ -88,7 +91,7 @@ export default async function ProjectDetailPage({ params }) {
 
   return (
     <>
-      {/* Project Detail Schema (Schema.org Place) */}
+      {/* Project Detail Schema (Schema.org Place, null for demo projects) */}
       {projectSchema && (
         <script
           type="application/ld+json"
@@ -96,25 +99,30 @@ export default async function ProjectDetailPage({ params }) {
         />
       )}
       <div className="w-full bg-[#FAF6F0]">
-        {/* 1. Project Hero (Starts Light #FAF6F0) */}
+        {/* 1. Project Hero */}
         <ProjectDetailHero project={project} />
 
-        {/* 2. Editorial Land Overview & Features (Warm Biscuit #F0E0C6) */}
+        {/* 2. Visual Story / Overview ("An approach to managed farmland.") */}
         <ProjectDetailOverview project={project} />
 
-        {/* 3. Operational Stewardship & Farm Management (Light #FAF6F0) */}
+        {/* 3. Ownership + Management ("YOU OWN THE LAND. WE MANAGE THE FARM.") */}
+        <ProjectDetailOwnership project={project} />
+
+        {/* 4. Stewardship / Farm Care (Disciplined Agricultural Care) */}
         <ProjectDetailStewardship project={project} />
 
-        {/* 4. Visual Documentation Gallery */}
+        {/* 5. Numbered Project Features */}
+        <ProjectDetailFeatures project={project} />
+
+        {/* 6. Visual Documentation Gallery */}
         <ProjectDetailGallery project={project} />
 
-        {/* 5. Adjacent Project Navigation */}
+        {/* 7. Adjacent Project Navigation */}
         <ProjectDetailNavigation currentSlug={project.slug} />
 
-        {/* 6. Consultation CTA (Deep Green #102B17 with data-navbar-theme="dark") */}
+        {/* 8. Consultation CTA ("Own the land. Let us help care for the farm.") */}
         <ProjectDetailCta project={project} />
       </div>
     </>
   );
 }
-

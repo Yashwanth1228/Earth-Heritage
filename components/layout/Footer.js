@@ -5,6 +5,7 @@ import Container from '@/components/ui/Container';
 import Logo from '@/components/ui/Logo';
 import { companyData } from '@/data/company';
 import { useEnquiry } from '@/context/EnquiryContext';
+import FooterLandscapeBackground from '@/components/layout/FooterLandscapeBackground';
 
 /**
  * Premium Corporate Footer for Earth Heritage Pvt. Ltd.
@@ -15,7 +16,7 @@ import { useEnquiry } from '@/context/EnquiryContext';
  * Key Features:
  * 1. Deep Earth Green palette (#102B17 base, #0E2514 / #0A1A0E depth)
  * 2. Organic SVG transitional boundary bridging the preceding section
- * 3. Large-scale original topographic and root background artwork
+ * 3. Bespoke editorial Earth Heritage landscape background artwork (distant hills, birds, tractor, mature trees, roots)
  * 4. Refined top brand banner with prominent Earth Heritage logo & proposition pill
  * 5. Clean, structured navigation hierarchy (Explore, Learn, Connect)
  * 6. Verified legal & copyright compliance (zero invented contact claims)
@@ -53,95 +54,9 @@ export default function Footer() {
       </div>
 
       {/* ============================================================== */}
-      {/* 2. LARGE-SCALE ORIGINAL DECORATIVE BACKGROUND ARTWORK          */}
+      {/* 2. BESPOKE ILLUSTRATED EARTH HERITAGE LANDSCAPE BACKGROUND     */}
       {/* ============================================================== */}
-      <div
-        className="absolute inset-0 pointer-events-none overflow-hidden z-0"
-        aria-hidden="true"
-      >
-        {/* Soft Tonal Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#102B17] via-[#0E2514] to-[#0A1A0E] opacity-95" />
-
-        {/* Large Topographic Elevation Contours & Root Splines */}
-        <svg
-          className="absolute inset-0 w-full h-full object-cover opacity-35"
-          viewBox="0 0 1440 900"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Sweeping Horizon Contours */}
-          <path
-            d="M-80 160 C320 90, 720 280, 1520 120"
-            stroke="#215730"
-            strokeWidth="1.8"
-          />
-          <path
-            d="M-100 280 C280 200, 820 420, 1540 230"
-            stroke="#215730"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M-60 420 C360 330, 780 560, 1500 370"
-            stroke="#215730"
-            strokeWidth="2"
-          />
-          <path
-            d="M-120 580 C240 480, 890 710, 1560 520"
-            stroke="#215730"
-            strokeWidth="1.6"
-          />
-
-          {/* Abstract Deep Root Structures (Bottom-Left to Center) */}
-          <path
-            d="M-40 880 C120 740, 240 680, 420 710 C560 730, 680 620, 740 510"
-            stroke="#276939"
-            strokeWidth="2.2"
-          />
-          <path
-            d="M110 880 C220 790, 310 760, 460 790 C580 810, 670 730, 710 660"
-            stroke="#215730"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M260 880 C360 820, 440 800, 560 830 C640 850, 720 790, 760 740"
-            stroke="#1B4727"
-            strokeWidth="1.4"
-          />
-
-          {/* Large Concentric Survey Contour Loops */}
-          <ellipse
-            cx="720"
-            cy="360"
-            rx="580"
-            ry="260"
-            stroke="#215730"
-            strokeWidth="1.2"
-            strokeDasharray="6 8"
-          />
-          <ellipse
-            cx="720"
-            cy="360"
-            rx="420"
-            ry="180"
-            stroke="#276939"
-            strokeWidth="1.4"
-          />
-
-          {/* Oversized Organic Earth Mass Silhouette (Right Edge) */}
-          <path
-            d="M1180 200 C1320 180, 1500 320, 1500 540 C1500 760, 1280 840, 1140 780 C1040 730, 1080 480, 1180 200 Z"
-            fill="#153E20"
-            opacity="0.30"
-          />
-
-          {/* Top Left Organic Silhouette */}
-          <path
-            d="M-80 60 C80 20, 240 160, 210 320 C180 440, 40 480, -60 440 C-140 410, -180 180, -80 60 Z"
-            fill="#153E20"
-            opacity="0.25"
-          />
-        </svg>
-      </div>
+      <FooterLandscapeBackground />
 
       {/* ============================================================== */}
       {/* 3. MAIN FOOTER CONTENT CONTAINER                              */}

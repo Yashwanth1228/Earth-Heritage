@@ -63,12 +63,15 @@ export default function sitemap() {
     }
   ];
 
-  // Dynamic project routes (only generated for confirmed projects with valid slug)
+  // Dynamic project routes (only generated for confirmed projects with valid slug, excluding demo projects)
   const confirmedProjects = getAllProjects() || [];
   const projectRoutes = confirmedProjects
     .filter(
       (project) =>
-        project && typeof project.slug === 'string' && project.slug.trim().length > 0
+        project &&
+        typeof project.slug === 'string' &&
+        project.slug.trim().length > 0 &&
+        !project.isDemo
     )
     .map((project) => ({
       url: `${siteConfig.url}/projects/${encodeURIComponent(project.slug.trim())}`,

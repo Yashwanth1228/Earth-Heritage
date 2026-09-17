@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Compass, Sprout, ShieldCheck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
@@ -11,25 +11,28 @@ import ProjectCard from '@/components/projects/ProjectCard';
 /**
  * Editorial Projects Portfolio Section
  * 
- * Replaces the rigid 3-column grid with a responsive, asymmetrical editorial exhibition.
- * Dynamically adapts layout according to project count:
- * - 1 project:  Grand Featured Exhibition (full-width showcase)
- * - 2 projects: Asymmetric Duo (7-col feature + 5-col companion)
- * - 3 projects: Featured Lead Showcase + Asymmetric Pair
- * - 4+ projects: Alternating editorial rhythm (Featured -> Asymmetric Pairs -> Reversed Featured)
+ * Implements a premium editorial project hierarchy:
+ * - Project 01: Large Featured Project (Dominant 12-col exhibition layout)
+ * - Project 02 & 03: Smaller Supporting Projects in a clean 2-column layout
  * 
- * When projects = [], preserves the approved production Coming-Soon / Portfolio Taking Shape state.
+ * Logic:
+ * - if projects.length === 0: Preserves approved production Empty-State exhibition
+ * - if projects.length === 1: Grand Featured Exhibition only
+ * - if projects.length >= 2: First project = featured, remaining projects = supporting grid
  */
 export default function ProjectsPortfolio({ projects: propProjects } = {}) {
   const activeProjects = Array.isArray(propProjects) ? propProjects : projects;
   const hasProjects = activeProjects && activeProjects.length > 0;
   const count = activeProjects ? activeProjects.length : 0;
 
+  const featuredProject = hasProjects ? activeProjects[0] : null;
+  const supportingProjects = hasProjects && activeProjects.length > 1 ? activeProjects.slice(1) : [];
+
   return (
     <section
       id="portfolio"
       data-navbar-theme="light"
-      className="relative py-16 sm:py-24 lg:py-28 bg-[#FAF7F2] border-b border-[#DCCDB7] overflow-hidden"
+      className="relative pt-6 sm:pt-8 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 bg-[#FAF7F2] border-b border-[#DCCDB7] overflow-hidden"
       aria-label="Earth Heritage Project Portfolio"
     >
       {/* Background Topographic Ambience */}
@@ -37,55 +40,65 @@ export default function ProjectsPortfolio({ projects: propProjects } = {}) {
 
       <Container size="default" className="relative z-10">
         {hasProjects ? (
-          /* Populated Editorial Showcase */
+          /* Populated Editorial Showcase: Featured + Supporting Hierarchy */
           <div className="space-y-12 sm:space-y-16 lg:space-y-20">
-            {/* Case 1: Exactly 1 Project -> Grand Featured Exhibition */}
-            {count === 1 && (
-              <div className="max-w-5xl mx-auto">
-                <MotionReveal delay={0.1}>
-                  <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/80 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase shadow-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" aria-hidden="true" />
-                    <span>FEATURED INITIATIVE</span>
+            {/* 1. Large Featured Project (Project 01) */}
+            {featuredProject && (
+              <div className="space-y-4">
+                <MotionReveal delay={0.08}>
+                  <ProjectCard
+                    project={featuredProject}
+                    variant="featured"
+                    priority={true}
+                    index="01"
+                  />
+                </MotionReveal>
+              </div>
+            )}
+
+            {/* 2. Supporting Projects Section (Project 02, Project 03, etc.) */}
+            {supportingProjects.length > 0 && (
+              <div className="pt-10 sm:pt-14 lg:pt-16 border-t border-[#DCCDB7]/80 space-y-8 sm:space-y-10">
+                {/* Supporting Section Eyebrow / Header */}
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#DCCDB7]/60">
+                  <div className="space-y-2">
+                    <MotionReveal delay={0.1}>
+                      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/60 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" aria-hidden="true" />
+                        <span>PROJECT PREVIEWS</span>
+                      </div>
+                    </MotionReveal>
+                    <MotionReveal delay={0.15}>
+                      <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#111613] font-normal tracking-tight">
+                        Other Project Previews
+                      </h2>
+                    </MotionReveal>
                   </div>
-                  <ProjectCard project={activeProjects[0]} variant="featured" priority={true} />
-                </MotionReveal>
-              </div>
-            )}
-
-            {/* Case 2: Exactly 2 Projects -> Asymmetric Editorial Duo */}
-            {count === 2 && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-                <MotionReveal delay={0.1} className="lg:col-span-7 flex flex-col">
-                  <ProjectCard project={activeProjects[0]} variant="featured" priority={true} className="w-full h-full" />
-                </MotionReveal>
-                <MotionReveal delay={0.2} className="lg:col-span-5 flex flex-col">
-                  <ProjectCard project={activeProjects[1]} variant="standard" className="w-full h-full" />
-                </MotionReveal>
-              </div>
-            )}
-
-            {/* Case 3: Exactly 3 Projects -> Lead Showcase + Asymmetric Pair */}
-            {count === 3 && (
-              <div className="space-y-10 sm:space-y-12">
-                {/* 1. Lead Project */}
-                <MotionReveal delay={0.1}>
-                  <ProjectCard project={activeProjects[0]} variant="featured" priority={true} />
-                </MotionReveal>
-                {/* 2. Asymmetric Secondary Duo */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-                  <MotionReveal delay={0.15} className="lg:col-span-7 flex flex-col">
-                    <ProjectCard project={activeProjects[1]} variant="standard" className="w-full h-full" />
-                  </MotionReveal>
-                  <MotionReveal delay={0.25} className="lg:col-span-5 flex flex-col">
-                    <ProjectCard project={activeProjects[2]} variant="standard" className="w-full h-full" />
+                  <MotionReveal delay={0.2}>
+                    <p className="font-sans text-xs sm:text-sm text-[#5A685D] max-w-md">
+                      Concept explorations demonstrating how Earth Heritage project stories, land care, and managed farmland are presented.
+                    </p>
                   </MotionReveal>
                 </div>
-              </div>
-            )}
 
-            {/* Case 4: 4+ Projects -> Alternating Editorial Rhythm */}
-            {count >= 4 && (
-              <EditorialRhythmShowcase projects={activeProjects} />
+                {/* Two-Column Supporting Projects Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+                  {supportingProjects.map((project, idx) => (
+                    <MotionReveal
+                      key={project.slug || `supporting-${idx}`}
+                      delay={0.1 * (idx + 1)}
+                      className="h-full"
+                    >
+                      <ProjectCard
+                        project={project}
+                        variant="standard"
+                        index={String(idx + 2).padStart(2, '0')}
+                        className="w-full h-full"
+                      />
+                    </MotionReveal>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
         ) : (
@@ -159,7 +172,7 @@ export default function ProjectsPortfolio({ projects: propProjects } = {}) {
                         className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-brand-dark text-[#FAF6F0] font-sans font-semibold text-xs sm:text-sm tracking-wide hover:bg-brand-primary transition-all duration-200 shadow-xs group/btn"
                       >
                         <span>Explore Managed Farmland</span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-1" aria-hidden="true" />
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover:btn:translate-x-1" aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -203,7 +216,7 @@ export default function ProjectsPortfolio({ projects: propProjects } = {}) {
                         className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface border border-border text-text-primary font-sans font-medium text-xs sm:text-sm tracking-wide hover:bg-surface-subtle hover:border-border-strong transition-all duration-200 shadow-2xs group/btn"
                       >
                         <span>See How It Works</span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-1" aria-hidden="true" />
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover:btn:translate-x-1" aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -274,57 +287,4 @@ export default function ProjectsPortfolio({ projects: propProjects } = {}) {
       </Container>
     </section>
   );
-}
-
-/**
- * Editorial Rhythm Showcase for 4+ Projects
- * Groups items into alternating Featured showcases and Asymmetric pairs
- */
-function EditorialRhythmShowcase({ projects }) {
-  const sections = [];
-  let i = 0;
-  let cycle = 0;
-
-  while (i < projects.length) {
-    const remaining = projects.length - i;
-    
-    // Check if we should render a featured item or a pair
-    if (cycle % 2 === 0 || remaining === 1) {
-      // Single featured item
-      const project = projects[i];
-      const isReversed = Math.floor(cycle / 2) % 2 === 1;
-      sections.push(
-        <MotionReveal key={project.slug || `proj-${i}`} delay={0.1}>
-          <ProjectCard
-            project={project}
-            variant={isReversed ? 'reversed' : 'featured'}
-            priority={i === 0}
-          />
-        </MotionReveal>
-      );
-      i += 1;
-    } else {
-      // Asymmetric pair (2 items)
-      const p1 = projects[i];
-      const p2 = projects[i + 1];
-      const isEvenPair = Math.floor(cycle / 2) % 2 === 0;
-      const col1 = isEvenPair ? 'lg:col-span-7' : 'lg:col-span-5';
-      const col2 = isEvenPair ? 'lg:col-span-5' : 'lg:col-span-7';
-
-      sections.push(
-        <div key={`pair-${i}`} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          <MotionReveal delay={0.1} className={`${col1} flex flex-col`}>
-            <ProjectCard project={p1} variant="standard" className="w-full h-full" />
-          </MotionReveal>
-          <MotionReveal delay={0.2} className={`${col2} flex flex-col`}>
-            <ProjectCard project={p2} variant="standard" className="w-full h-full" />
-          </MotionReveal>
-        </div>
-      );
-      i += 2;
-    }
-    cycle += 1;
-  }
-
-  return <div className="space-y-12 sm:space-y-16 lg:space-y-20">{sections}</div>;
 }
