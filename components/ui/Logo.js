@@ -96,7 +96,7 @@ export default function Logo({
         <Link
           href={href}
           className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm transition-opacity hover:opacity-95"
-          aria-label="Earth Heritage Pvt. Ltd. — Return to Homepage"
+          aria-label="Earth Heritage Private Limited — Return to Homepage"
         >
           {content}
         </Link>
@@ -121,7 +121,7 @@ export default function Logo({
     >
       <Image
         src={src}
-        alt="Earth Heritage Pvt. Ltd."
+        alt="Earth Heritage Private Limited"
         fill
         sizes={size === 'footer' ? '200px' : '96px'}
         priority={priority}
@@ -135,7 +135,7 @@ export default function Logo({
       <Link
         href={href}
         className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm transition-opacity hover:opacity-95"
-        aria-label="Earth Heritage Pvt. Ltd. — Return to Homepage"
+        aria-label="Earth Heritage Private Limited — Return to Homepage"
       >
         {content}
       </Link>

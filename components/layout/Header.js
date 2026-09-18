@@ -26,12 +26,14 @@ export default function Header() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const activeDarkElements = useRef(new Set());
   const pathname = usePathname();
+  const isLanding = pathname === '/lp/managed-farmland';
+  const isIsolatedCampaign = pathname?.startsWith('/lp') && pathname !== '/lp/managed-farmland';
   const { openEnquiryModal } = useEnquiry();
-
-  const isLanding = pathname === '/' || pathname === '/home';
 
   // Coordinate entrance and exit on landing page
   useEffect(() => {
+    if (isIsolatedCampaign) return;
+
     // For non-landing pages, navbar is always visible as a floating pill
     if (!isLanding) {
       setIsVisible(true);
@@ -81,10 +83,12 @@ export default function Header() {
       window.removeEventListener('scroll', checkScroll);
       window.removeEventListener('resize', checkScroll);
     };
-  }, [isLanding, pathname]);
+  }, [isLanding, isIsolatedCampaign, pathname]);
 
   // Contextual background observer: dynamically detects when dark CTA or footer enters navbar region
   useEffect(() => {
+    if (isIsolatedCampaign) return;
+
     const currentDarkElements = activeDarkElements.current;
     currentDarkElements.clear();
     const darkEls = document.querySelectorAll('[data-navbar-theme="dark"]');
@@ -131,9 +135,13 @@ export default function Header() {
       observer.disconnect();
       currentDarkElements.clear();
     };
-  }, [pathname]);
+  }, [isIsolatedCampaign, pathname]);
 
   const reducedMotion = typeof window !== 'undefined' && isReducedMotion();
+
+  if (isIsolatedCampaign) {
+    return null;
+  }
 
   return (
     <header

@@ -20,9 +20,12 @@ export function useFloatingControls() {
   const [isNearFooter, setIsNearFooter] = useState(false);
   const pathname = usePathname();
 
-  const isLanding = pathname === '/' || pathname === '/home';
+  const isLanding = pathname === '/lp/managed-farmland';
+  const isIsolatedCampaign = pathname?.startsWith('/lp') && pathname !== '/lp/managed-farmland';
 
   useEffect(() => {
+    if (isIsolatedCampaign) return;
+
     // Initial check on mount or route transition
     const evaluateInitialState = () => {
       const heroEl = document.getElementById('hero');
@@ -76,7 +79,11 @@ export function useFloatingControls() {
       ctx.revert();
       window.removeEventListener('resize', evaluateInitialState);
     };
-  }, [isLanding, pathname]);
+  }, [isLanding, isIsolatedCampaign, pathname]);
+
+  if (isIsolatedCampaign) {
+    return { isPastHero: false, isNearFooter: false };
+  }
 
   return { isPastHero, isNearFooter };
 }

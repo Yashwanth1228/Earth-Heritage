@@ -6,8 +6,9 @@
  */
 
 export const companyData = {
-  name: 'Earth Heritage Pvt. Ltd.',
+  name: 'Earth Heritage Private Limited',
   shortName: 'Earth Heritage',
+  legalName: 'Earth Heritage Private Limited',
   foundingYear: 2026,
   founded: 'August 2026',
   philosophy: {

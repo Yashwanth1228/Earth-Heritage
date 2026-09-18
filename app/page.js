@@ -1,54 +1,48 @@
-import HeroSection from '@/components/sections/landing/HeroSection';
-import BrandStatement from '@/components/sections/landing/BrandStatement';
-import ProblemSection from '@/components/sections/landing/ProblemSection';
-import SolutionSection from '@/components/sections/landing/SolutionSection';
-import ManagementSection from '@/components/sections/landing/ManagementSection';
-import HowItWorksSection from '@/components/sections/landing/HowItWorksSection';
-import PhilosophySection from '@/components/sections/landing/PhilosophySection';
-import PrinciplesSection from '@/components/sections/landing/PrinciplesSection';
-import FoundersSection from '@/components/sections/landing/FoundersSection';
-import LocationMapSection from '@/components/sections/landing/LocationMapSection';
-import FinalCtaSection from '@/components/sections/landing/FinalCtaSection';
+import HomeHero from '@/components/sections/home/HomeHero';
+import HomeAbout from '@/components/sections/home/HomeAbout';
+import HomeManagedFarmland from '@/components/sections/home/HomeManagedFarmland';
+import HomeHowItWorks from '@/components/sections/home/HomeHowItWorks';
+import HomeStories from '@/components/sections/home/HomeStories';
+import HomeEvents from '@/components/sections/home/HomeEvents';
+import HomeFaq from '@/components/sections/home/HomeFaq';
+import HomeContactLocation from '@/components/sections/home/HomeContactLocation';
 
 export const metadata = {
   title: 'Earth Heritage | Own a Piece of Earth. Build a Legacy.',
-  description: 'Managed farmland and professional farm management. You own the land, Earth Heritage manages the farm for long-term stewardship and generational legacy.',
+  description:
+    'Earth Heritage brings together land ownership and dedicated agricultural management. Own a piece of earth and build a generational legacy with professional farm care.',
   openGraph: {
     title: 'Earth Heritage | Own a Piece of Earth. Build a Legacy.',
-    description: 'You own the land. We manage the farm. Professional farm management and managed farmland solutions.'
+    description:
+      'You own the land. We manage the farm. Professional farm management and managed farmland solutions designed for long-term stewardship.',
+    url: 'https://earthheritage.in'
   }
 };
 
 /**
- * Earth Heritage Corporate Landing Page Experience (/)
+ * Earth Heritage Main Corporate Home Page (/)
  * 
- * Progression:
- * 1. HeroSection — The Signature Moment
- * 2. BrandStatement — Editorial Emotional Bridge
- * 3. ProblemSection — The Ownership Reality
- * 4. SolutionSection — The Core Proposition ("You own the land. We manage the farm.")
- * 5. ManagementSection — "What We Manage" (01 to 06 Operational Sequence)
- * 6. HowItWorksSection — 4-Step Process (Own -> Manage -> Cultivate -> Thrive)
- * 7. PhilosophySection — Visual Pause ("BACK TO ROOTS. FORWARD WITH PURPOSE.")
- * 8. PrinciplesSection — Why Earth Heritage (5 Guiding Principles)
- * 9. FoundersSection — Leadership & Vision (Sathish Agastya & Khushi Jain)
- * 10. LocationMapSection — Google Maps Location ("Come closer to where it begins.")
- * 11. FinalCtaSection — Meaningful Next Step ("Have farmland that deserves to be cared for?")
+ * Distinctive 8-Section Brand Homepage & Corporate Overview:
+ * 01. HomeHero — Asymmetric editorial hero with large typography & framed landscape visual
+ * 02. HomeAbout — Editorial company introduction ("Living Legacy", vision, story CTA)
+ * 03. HomeManagedFarmland — Core offering overview with 6 confirmed operational scopes
+ * 04. HomeHowItWorks — 5-phase visual sequence (OWN -> MANAGE -> CULTIVATE -> CARE -> CONTINUE)
+ * 05. HomeStories — Authentic visual storytelling, field perspectives & documentary preview
+ * 06. HomeEvents — Community moments, harvest walks, and estate visits linking to /events
+ * 07. HomeFaq — 5 essential first-visit questions with smooth accessible accordion
+ * 08. HomeContactLocation — Editorial split: Direct on-page enquiry form + official Google Maps embed
  */
-export default function LandingPage() {
+export default function HomePage() {
   return (
     <div className="w-full">
-      <HeroSection />
-      <BrandStatement />
-      <ProblemSection />
-      <SolutionSection />
-      <ManagementSection />
-      <HowItWorksSection />
-      <PhilosophySection />
-      <PrinciplesSection />
-      <FoundersSection />
-      <LocationMapSection />
-      <FinalCtaSection />
+      <HomeHero />
+      <HomeAbout />
+      <HomeManagedFarmland />
+      <HomeHowItWorks />
+      <HomeStories />
+      <HomeEvents />
+      <HomeFaq />
+      <HomeContactLocation />
     </div>
   );
 }
