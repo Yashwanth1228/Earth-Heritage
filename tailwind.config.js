@@ -20,9 +20,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        serif: ['var(--font-serif)', 'Georgia', 'Cambria', 'serif'],
-        display: ['var(--font-display)', 'var(--font-sans)', 'sans-serif']
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Fraunces', 'Georgia', 'Cambria', 'serif'],
+        display: ['var(--font-display)', 'var(--font-serif)', 'Fraunces', 'Georgia', 'serif']
       },
       colors: {
         // Semantic Earth Heritage Brand Tokens (Derived from Logo)

@@ -41,9 +41,9 @@ export default function SolutionSection() {
               <Subtitle>The Proposition</Subtitle>
             </MotionReveal>
             <MotionReveal delay={0.1}>
-              <h2 className="font-sans text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-text-primary leading-tight">
+              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-text-primary leading-[1.12]">
                 You own the land.<br />
-                <span className="text-brand-deep font-semibold">
+                <span className="text-brand-deep font-normal italic">
                   We manage the farm.
                 </span>
               </h2>

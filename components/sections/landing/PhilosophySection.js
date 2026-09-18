@@ -69,9 +69,9 @@ export default function PhilosophySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="font-sans text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-tight text-white drop-shadow-md">
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.08] text-white drop-shadow-md">
               BACK TO ROOTS.<br />
-              <span className="text-white/80 font-normal">
+              <span className="text-white/85 font-normal italic">
                 FORWARD WITH PURPOSE.
               </span>
             </h2>

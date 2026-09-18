@@ -31,7 +31,7 @@ export default function PrinciplesSection() {
             </MotionReveal>
 
             <MotionReveal delay={0.1}>
-              <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-text-primary leading-heading">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-text-primary leading-[1.14]">
                 Built around what matters.
               </h2>
             </MotionReveal>

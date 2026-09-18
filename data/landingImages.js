@@ -215,9 +215,10 @@ export const heroSlides = [
       height: 1600
     },
     theme: 'dark',
+    headingShadowClass: 'drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)] drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]',
     titleLine1Class: 'text-[#FFFFFF]',
-    titleLine2Class: 'italic text-[#E5C378]',
-    descriptionClass: 'text-[#EDE7DE]/90',
+    titleLine2Class: 'italic text-[#F2CF84]',
+    descriptionClass: 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]',
     badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
     badgeTextClass: 'text-[#B88E3E]',
     badgeIconClass: 'text-[#B88E3E]',

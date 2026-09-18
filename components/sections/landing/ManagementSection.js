@@ -187,7 +187,7 @@ export default function ManagementSection() {
             <div className="space-y-2 sm:space-y-2.5 max-w-lg">
               <Subtitle>Operational Depth</Subtitle>
 
-              <h2 className="font-sans text-2xl sm:text-3xl lg:text-[32px] xl:text-[38px] font-medium tracking-tight text-text-primary leading-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] xl:text-[40px] font-normal tracking-tight text-text-primary leading-[1.15]">
                 What does caring for a farm really involve?
               </h2>
 
@@ -289,11 +289,11 @@ export default function ManagementSection() {
 
                   {/* Card Title & Editorial Statement / Quote */}
                   <div className="relative z-10 space-y-1 my-1.5 sm:my-2 lg:my-1.5 xl:my-2 flex-shrink-0">
-                    <h3 className="font-sans text-xl sm:text-2xl lg:text-xl xl:text-2xl font-medium tracking-tight text-[#111613] leading-snug">
+                    <h3 className="font-serif text-xl sm:text-2xl lg:text-xl xl:text-2xl font-normal tracking-tight text-[#111613] leading-snug">
                       {card.title}
                     </h3>
 
-                    <p className="font-sans text-xs sm:text-sm text-text-secondary leading-relaxed font-normal line-clamp-2">
+                    <p className="font-serif italic text-xs sm:text-sm text-text-secondary leading-relaxed font-normal line-clamp-2">
                       {card.quote}
                     </p>
                   </div>

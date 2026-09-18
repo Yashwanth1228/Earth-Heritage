@@ -175,14 +175,14 @@ export default function HeroSection() {
                 </div>
               </motion.div>
 
-              {/* Primary Signature Headline with Word-by-Word Reveal (Cormorant Garamond Serif) */}
+              {/* Primary Signature Headline with Word-by-Word Reveal (Fraunces Editorial Serif) */}
               <div className={`w-full ${currentSlide.headingShadowClass || ''}`}>
                 {currentSlide.isMainH1 ? (
-                  <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[88px] xl:text-[98px] tracking-tight leading-[1.05] sm:leading-[1.06]">
+                  <h1 className="type-display-hero">
                     <span className={`block font-normal ${currentSlide.titleLine1Class || 'text-[#FFFFFF]'}`}>
                       <AnimatedWords text={currentSlide.titleLine1} baseDelay={0.12} wordClassName={currentSlide.titleLine1Class} />
                     </span>
-                    <span className={`block italic font-normal mt-1 sm:mt-2 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
+                    <span className={`block italic font-normal mt-1.5 sm:mt-2.5 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
                       <AnimatedWords
                         text={currentSlide.titleLine2}
                         baseDelay={0.42}
@@ -191,11 +191,11 @@ export default function HeroSection() {
                     </span>
                   </h1>
                 ) : (
-                  <h2 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[88px] xl:text-[98px] tracking-tight leading-[1.05] sm:leading-[1.06]">
+                  <h2 className="type-display-hero">
                     <span className={`block font-normal ${currentSlide.titleLine1Class || 'text-[#FFFFFF]'}`}>
                       <AnimatedWords text={currentSlide.titleLine1} baseDelay={0.12} wordClassName={currentSlide.titleLine1Class} />
                     </span>
-                    <span className={`block italic font-normal mt-1 sm:mt-2 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
+                    <span className={`block italic font-normal mt-1.5 sm:mt-2.5 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
                       <AnimatedWords
                         text={currentSlide.titleLine2}
                         baseDelay={0.42}

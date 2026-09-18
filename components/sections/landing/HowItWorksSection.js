@@ -28,7 +28,7 @@ export default function HowItWorksSection() {
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-text-primary leading-heading">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-text-primary leading-[1.14]">
               A Clear Path from Land to Legacy
             </h2>
           </MotionReveal>
@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
               <MotionReveal key={step.number} delay={idx * 0.1} className="space-y-5">
                 {/* Step Marker Node */}
                 <div className="flex items-center gap-3">
-                  <span className="w-14 h-14 rounded-full bg-surface border-2 border-brand-primary text-brand-deep font-mono text-base font-bold flex items-center justify-center shadow-sm">
+                  <span className="w-14 h-14 rounded-full bg-surface border-2 border-brand-primary text-brand-deep font-serif text-xl font-normal flex items-center justify-center shadow-sm">
                     {step.number}
                   </span>
                   <span className="lg:hidden font-mono text-xs uppercase tracking-widest text-text-muted">
@@ -62,7 +62,7 @@ export default function HowItWorksSection() {
                 </div>
 
                 <div className="space-y-2 pt-2 border-t border-border lg:border-t-0">
-                  <h3 className="font-sans text-lg sm:text-xl font-medium text-text-primary tracking-tight">
+                  <h3 className="font-serif text-lg sm:text-xl font-normal text-text-primary tracking-tight">
                     {step.title}
                   </h3>
 

@@ -22,7 +22,15 @@ export default function EventsPage() {
     <div className="w-full bg-[#FAF6F0] min-h-[75vh] flex flex-col justify-center py-24 sm:py-32 lg:py-36">
       <Container size="default">
         {/* Editorial Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-6">
+        <div className="max-w-3xl mx-auto text-center space-y-6 relative">
+          {/* Subtle Organic Arc Behind Title */}
+          <div className="absolute left-1/2 -top-6 -translate-x-1/2 w-[320px] sm:w-[480px] lg:w-[600px] h-[140px] sm:h-[180px] pointer-events-none -z-10 select-none overflow-hidden opacity-10">
+            <svg viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+              <path d="M40,210 C180,60 540,60 680,210" stroke="#1E460B" strokeWidth="2" strokeLinecap="round" />
+              <path d="M100,230 C220,110 500,110 620,230" stroke="#1E460B" strokeWidth="1.5" strokeDasharray="10 8" />
+            </svg>
+          </div>
+
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/50 border border-[#D5C09D]/80">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" aria-hidden="true" />
             <span className="font-mono text-xs uppercase tracking-widest text-[#5A4D3A] font-semibold">

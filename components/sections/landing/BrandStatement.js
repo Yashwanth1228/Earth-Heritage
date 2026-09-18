@@ -29,9 +29,9 @@ export default function BrandStatement() {
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <h2 className="font-sans text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-text-primary leading-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-text-primary leading-[1.12]">
               Land is more than an asset.<br />
-              <span className="text-text-secondary font-normal">
+              <span className="text-text-secondary font-normal italic">
                 It is a living legacy.
               </span>
             </h2>

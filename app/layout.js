@@ -11,13 +11,18 @@ import EnquiryModal from '@/components/ui/EnquiryModal';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import FloatingEnquiryButton from '@/components/ui/FloatingEnquiryButton';
 
-import { Cormorant_Garamond } from 'next/font/google';
+import { Fraunces, Inter } from 'next/font/google';
 
-const cormorantGaramond = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-serif',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
   display: 'swap',
 });
 
@@ -28,7 +33,7 @@ export default function RootLayout({ children }) {
   const webSiteSchema = getWebSiteSchema();
 
   return (
-    <html lang="en" className={`h-full ${cormorantGaramond.variable}`}>
+    <html lang="en" className={`h-full ${fraunces.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
