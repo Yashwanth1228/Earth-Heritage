@@ -64,21 +64,21 @@ export default function BlogDetailCta({ blog }) {
           <MotionReveal delay={0.05}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14361D] border border-[#235832] text-xs font-mono text-[#C4D1C7]">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" aria-hidden="true" />
-              <span>CONTINUE THE CONVERSATION</span>
+              <span>EARTH HERITAGE JOURNAL</span>
             </div>
           </MotionReveal>
 
           {/* Display Headline */}
           <MotionReveal delay={0.15}>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight leading-[1.16] text-[#FAF7F2]">
-              Interested in discussing farmland stewardship and land ownership?
+              Stay connected with Earth Heritage.
             </h2>
           </MotionReveal>
 
           {/* Supportive Guidance */}
           <MotionReveal delay={0.25}>
             <p className="font-sans text-base sm:text-lg text-[#C4D1C7] font-light leading-relaxed max-w-2xl mx-auto">
-              Connect directly with our team to explore agricultural management, visit opportunities, and our long-term farmland model.
+              Receive reflections on land, farming and ownership as they are published. Connect with our estate team to explore our managed farmland model and visiting opportunities.
             </p>
           </MotionReveal>
 

@@ -1,2 +1,3 @@
-2026/09/19-13:18:20.996 3f44 Creating DB C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\shared_proto_db since it was missing.
-2026/09/19-13:18:21.079 3f44 Reusing MANIFEST C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\shared_proto_db/MANIFEST-000001
+2026/09/19-13:29:41.780 26cc Reusing MANIFEST C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\shared_proto_db/MANIFEST-000001
+2026/09/19-13:29:41.781 26cc Recovering log #3
+2026/09/19-13:29:41.781 26cc Reusing old log C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\shared_proto_db/000003.log 

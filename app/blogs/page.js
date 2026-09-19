@@ -1,6 +1,6 @@
 import { constructMetadata } from '@/lib/seo';
 import { getBlogCollectionSchema } from '@/lib/schema';
-import { getAllBlogs, getAllCategories } from '@/data/blogs';
+import { getAllBlogs } from '@/data/blogs';
 import BlogHero from '@/components/blogs/BlogHero';
 import BlogPortfolio from '@/components/blogs/BlogPortfolio';
 
@@ -15,16 +15,15 @@ export const metadata = {
 };
 
 /**
- * Editorial Blog Catalog Hub (/blogs)
+ * Direct Editorial Blog Catalog Hub (/blogs)
  * 
  * Sequential Architecture:
  * 1. JSON-LD CollectionPage Structured Data
- * 2. BlogHero — Editorial journal introduction and optional category filters
- * 3. BlogPortfolio — Adaptive editorial exhibition (Marquee Feature -> Asymmetric Pairs / Empty State)
+ * 2. BlogHero — Light editorial journal header (#FAF7F2)
+ * 3. BlogPortfolio — Contrasting warm biscuit section (#F0E0C6) with equal-sized 3-column cards
  */
 export default function BlogsPage() {
   const allBlogs = getAllBlogs();
-  const allCategories = getAllCategories();
   const collectionSchema = getBlogCollectionSchema(allBlogs);
 
   return (
@@ -34,11 +33,10 @@ export default function BlogsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
-      <div className="w-full bg-[#FAF6F0]">
-        <BlogHero categories={allCategories} />
+      <div className="w-full">
+        <BlogHero />
         <BlogPortfolio blogs={allBlogs} />
       </div>
     </>
   );
 }
-

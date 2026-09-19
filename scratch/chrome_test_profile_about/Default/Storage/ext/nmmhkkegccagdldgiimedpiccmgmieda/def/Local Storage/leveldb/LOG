@@ -1,2 +1,3 @@
-2026/09/19-13:29:45.829 3954 Creating DB C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\Storage\ext\nmmhkkegccagdldgiimedpiccmgmieda\def\Local Storage\leveldb since it was missing.
-2026/09/19-13:29:45.861 3954 Reusing MANIFEST C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\Storage\ext\nmmhkkegccagdldgiimedpiccmgmieda\def\Local Storage\leveldb/MANIFEST-000001
+2026/09/19-14:25:57.428 1c3c Reusing MANIFEST C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\Storage\ext\nmmhkkegccagdldgiimedpiccmgmieda\def\Local Storage\leveldb/MANIFEST-000001
+2026/09/19-14:25:57.434 1c3c Recovering log #3
+2026/09/19-14:25:57.442 1c3c Reusing old log C:\Users\Admin\Desktop\Earth Heritage\scratch\chrome_test_profile_about\Default\Storage\ext\nmmhkkegccagdldgiimedpiccmgmieda\def\Local Storage\leveldb/000003.log 

@@ -99,7 +99,7 @@ export default function Header() {
     }
 
     // IntersectionObserver tracks when any dark section covers the top navbar strip
-    // Root margin focuses strictly on the visual band where the floating pill sits (-20px to -85%)
+    // Root margin focuses strictly on the visual band where the floating pill sits (-16px to -90%)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -113,7 +113,7 @@ export default function Header() {
       },
       {
         root: null,
-        rootMargin: '-20px 0px -85% 0px',
+        rootMargin: '-16px 0px -90% 0px',
         threshold: 0
       }
     );
@@ -124,7 +124,7 @@ export default function Header() {
     let isDark = false;
     darkEls.forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= 120 && rect.bottom >= 20) {
+      if (rect.top <= 75 && rect.bottom >= 20) {
         isDark = true;
         currentDarkElements.add(el);
       }

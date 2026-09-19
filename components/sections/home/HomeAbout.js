@@ -10,19 +10,20 @@ import { ArrowRight, ShieldCheck, Sprout, Trees } from 'lucide-react';
 /**
  * 02 — HomeAbout: Editorial Introduction to Earth Heritage
  * 
- * Sizing & Layout Optimization:
+ * Layout:
  * - LEFT (6 cols):
  *   - Eyebrow: "ABOUT EARTH HERITAGE"
  *   - Headline: "Land is more than an asset. It is a living legacy."
  *   - Gold accent divider.
- *   - Full narrative detailing mission and model.
- *   - 3 Signature Pillars: Individual Deed, Scientific Agronomy, Living Sanctuary.
+ *   - Full narrative detailing Earth Heritage's mission, philosophy, and managed farmland model.
+ *   - 3 Signature Stewardship Pillars: Individual Deed, Scientific Agronomy, Living Sanctuary.
  *   - CTA: "Discover Our Story →" linking to /about.
  * - RIGHT (6 cols):
- *   - Proportional Dual-Image Composition covering the full height of the section:
- *     - First Image (Top): /images/about/philosophy-farmland.jpg (aerial contour terrace farmland at sunset, w-full aspect-[16/10]).
- *     - Second Image (Bottom Layered Overlap): /images/about/story-farmland.jpg (vibrant crop rows & drip irrigation, w-[85%] aspect-[16/10] -mt-16 sm:-mt-20 lg:-mt-24 ml-auto z-10).
- *     - Together, the images cleanly span the full vertical height of the section without any wasted space below.
+ *   - Single High-Impact Architectural Farmland Image:
+ *     - Uses /images/managed-farmland/nature-responsibility.jpg
+ *     - Proportional aspect ratio (aspect-[4/5] lg:aspect-[4/5] xl:aspect-[5/6]) matching
+ *       the exact vertical footprint of the left column with zero wasted space.
+ *     - Floating badge and subtle editorial caption overlay.
  */
 export default function HomeAbout() {
   const pillars = [
@@ -54,7 +55,7 @@ export default function HomeAbout() {
       <LandContourPattern variant="biscuit-organic-flow" className="opacity-50 pointer-events-none" />
 
       <Container size="default" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-center">
           
           {/* LEFT COLUMN: Title, Narrative Details, Pillars & CTA (6 cols on lg) */}
           <div className="lg:col-span-6 space-y-6 sm:space-y-7">
@@ -136,76 +137,43 @@ export default function HomeAbout() {
 
           </div>
 
-          {/* RIGHT COLUMN: Full-Height Layered Dual-Image Composition (6 cols on lg) */}
-          <div className="lg:col-span-6 relative pt-2 lg:pt-4">
-            
-            {/* FIRST IMAGE: Aerial Contour Terrace Farmland at Golden Hour (w-full, aspect-[16/10]) */}
-            <MotionReveal delay={0.15}>
-              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(17,22,19,0.08)] border border-[#DDD3BF] bg-[#EDE5D5] group">
+          {/* RIGHT COLUMN: Single Majestic Architectural Farmland Image (6 cols on lg) */}
+          <div className="lg:col-span-6 flex items-center justify-center">
+            <MotionReveal delay={0.2} className="w-full">
+              <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] xl:aspect-[5/6] max-h-[620px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(17,22,19,0.10)] border border-[#DDD3BF] bg-[#EDE5D5] group">
                 <Image
-                  src="/images/about/philosophy-farmland.jpg"
-                  alt="Breathtaking aerial view of rolling contour agricultural terraces and farmland homestead under golden sunset"
+                  src="/images/managed-farmland/nature-responsibility.jpg"
+                  alt="Expansive organic managed farmland with healthy crop rows, rolling contours, and sunset hills"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-103"
                   priority={false}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent pointer-events-none" />
 
-                {/* Top Badge on First Image */}
-                <div className="absolute top-3 left-3 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                {/* Top Floating Badge */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[11px] font-mono tracking-wider uppercase font-semibold">
                     <span>THE ESTATE</span>
-                    <span className="text-[#F2CF84]">&bull;</span>
-                    <span>CONTOUR FARMLAND</span>
-                  </span>
-                </div>
-
-                {/* Bottom Caption on First Image */}
-                <div className="absolute bottom-3 left-4 right-4 z-10 text-white space-y-0.5">
-                  <p className="font-serif text-sm sm:text-base font-normal text-[#FAF7F2] tracking-tight">
-                    Generational Agricultural Land
-                  </p>
-                  <p className="font-sans text-[11px] text-[#D8E4DC]">
-                    Naturally contoured terrain & living agroforestry
-                  </p>
-                </div>
-              </div>
-            </MotionReveal>
-
-            {/* SECOND IMAGE: Close Crop Rows with Active Drip Irrigation (w-[86%], aspect-[16/10], overlapping below) */}
-            <MotionReveal delay={0.3}>
-              <div className="relative w-[88%] sm:w-[85%] aspect-[16/10] -mt-16 sm:-mt-20 lg:-mt-24 ml-auto z-10 rounded-2xl overflow-hidden shadow-[0_24px_50px_rgba(17,22,19,0.18)] border-4 sm:border-[6px] border-[#FAF7F2] bg-[#EDE5D5] group">
-                <Image
-                  src="/images/about/story-farmland.jpg"
-                  alt="Disciplined organic crop rows with modern drip irrigation tended under blue sky"
-                  fill
-                  sizes="(max-width: 1024px) 85vw, 42vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-103"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
-
-                {/* Top Badge on Second Image */}
-                <div className="absolute top-3 left-3 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/65 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[9px] font-mono tracking-wider uppercase font-semibold">
-                    <span>STEWARDSHIP</span>
                     <span className="text-[#55c40d]">&bull;</span>
-                    <span>ACTIVE CARE</span>
+                    <span>LIVING LEGACY</span>
                   </span>
                 </div>
 
-                {/* Bottom Caption on Second Image */}
-                <div className="absolute bottom-3 left-3.5 right-3.5 z-10 text-white space-y-0.5">
-                  <p className="font-serif text-xs sm:text-sm font-normal text-[#FAF7F2] tracking-tight">
-                    Living Soil & Precision Cultivation
+                {/* Bottom Editorial Caption Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10 text-white space-y-1">
+                  <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.2em] text-[#F2CF84] uppercase block">
+                    Ecological Stewardship
+                  </span>
+                  <p className="font-serif text-lg sm:text-xl lg:text-2xl font-normal text-[#FAF7F2] tracking-tight leading-snug">
+                    Naturally Cultivated Farmland Acreage
                   </p>
-                  <p className="font-sans text-[10px] text-[#D8E4DC]">
-                    Supervised daily by resident agronomy specialists
+                  <p className="font-sans text-xs sm:text-[13px] text-[#D8E4DC] leading-relaxed max-w-md pt-0.5">
+                    Enduring agricultural property registered directly in your name with dedicated on-ground management.
                   </p>
                 </div>
               </div>
             </MotionReveal>
-
           </div>
 
         </div>

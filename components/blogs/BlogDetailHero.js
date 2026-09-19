@@ -12,9 +12,10 @@ import LandContourPattern from '@/components/ui/LandContourPattern';
  * 
  * Strict Standards:
  * - Begins with approved light ivory background (#FAF6F0)
- * - Renders ONLY verified fields passed from data/blogs.js
- * - Generous reading typography and subtle contour accents
- * - Graceful omission of unsupplied attributes
+ * - Uses generous max-w-6xl width to distribute horizontal space evenly
+ * - Renders single-line title on desktop screens (lg:whitespace-nowrap)
+ * - Renders verified fields passed from data/blogs.js
+ * - Cover image aligns evenly with the header container width
  */
 export default function BlogDetailHero({ blog }) {
   if (!blog) return null;
@@ -26,12 +27,13 @@ export default function BlogDetailHero({ blog }) {
     publishedAt,
     readingTime,
     coverImage,
-    author
+    author,
+    isDemo
   } = blog;
 
   const formattedDate = publishedAt
     ? new Date(publishedAt).toLocaleDateString('en-US', {
-        month: 'long',
+        month: 'short',
         day: 'numeric',
         year: 'numeric'
       })
@@ -45,11 +47,12 @@ export default function BlogDetailHero({ blog }) {
       aria-label={title}
     >
       {/* Signature Earth Heritage Contour Motifs */}
-      <LandContourPattern variant="biscuit-contours" className="opacity-80" />
+      <LandContourPattern variant="biscuit-contours" className="opacity-95 pointer-events-none" />
+      <LandContourPattern variant="biscuit-organic-flow" className="opacity-70 pointer-events-none" />
 
       <Container size="default" className="relative z-10">
         {/* 1. Subtle Back Navigation */}
-        <div className="mb-8 sm:mb-10 max-w-3xl mx-auto">
+        <div className="mb-6 sm:mb-8 max-w-6xl mx-auto">
           <Link
             href="/blogs"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans font-medium text-text-secondary hover:text-brand-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm"
@@ -60,15 +63,21 @@ export default function BlogDetailHero({ blog }) {
           </Link>
         </div>
 
-        {/* 2. Article Header Content */}
-        <div className="max-w-3xl mx-auto space-y-6">
+        {/* 2. Article Header Content — Wide Balanced Container */}
+        <div className="max-w-6xl mx-auto space-y-6">
           {/* Category & Meta Row */}
           <MotionReveal delay={0.05}>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-[#5A685D]">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs text-[#5A685D]">
               {category && (
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/80 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase shadow-xs">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" aria-hidden="true" />
                   <span>{category}</span>
+                </span>
+              )}
+
+              {isDemo && (
+                <span className="text-[11px] font-mono text-[#8C7A5A] uppercase tracking-wider">
+                  [ Field Note ]
                 </span>
               )}
 
@@ -88,9 +97,9 @@ export default function BlogDetailHero({ blog }) {
             </div>
           </MotionReveal>
 
-          {/* Article Display Headline (Cormorant Garamond) */}
+          {/* Article Display Headline — Single Line on Desktop */}
           <MotionReveal delay={0.15}>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111613] leading-[1.12]">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[38px] 2xl:text-[42px] font-normal tracking-tight text-[#111613] leading-tight break-words lg:whitespace-nowrap">
               {title}
             </h1>
           </MotionReveal>
@@ -98,7 +107,7 @@ export default function BlogDetailHero({ blog }) {
           {/* Lead Statement / Excerpt */}
           {excerpt && (
             <MotionReveal delay={0.25}>
-              <p className="font-sans text-lg sm:text-xl md:text-[22px] text-[#38423A] font-light leading-relaxed">
+              <p className="font-sans text-base sm:text-lg md:text-xl text-[#38423A] font-light leading-relaxed max-w-5xl">
                 {excerpt}
               </p>
             </MotionReveal>
@@ -126,20 +135,20 @@ export default function BlogDetailHero({ blog }) {
           )}
         </div>
 
-        {/* 3. Cover Visual Container (Rendered ONLY if authentic cover photo exists) */}
+        {/* 3. Cover Visual Container — Matches max-w-6xl Width Evenly */}
         {coverImage && coverImage.src && (
-          <MotionReveal delay={0.35} className="mt-10 sm:mt-14 max-w-5xl mx-auto">
+          <MotionReveal delay={0.35} className="mt-10 sm:mt-14 max-w-6xl mx-auto">
             <figure className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden shadow-sm border border-[#D5C09D]/80 bg-[#EAE3D2]/40">
               <Image
                 src={coverImage.src}
                 alt={coverImage.alt || title}
                 fill
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1400px) 92vw, 1200px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1400px) 95vw, 1152px"
                 className="object-cover object-center"
               />
               {coverImage.caption && (
-                <figcaption className="absolute bottom-0 inset-x-0 p-3 sm:p-4 bg-[#111613]/70 backdrop-blur-xs text-[#FAF6F0] text-xs font-mono">
+                <figcaption className="absolute bottom-0 inset-x-0 p-3.5 sm:p-4 bg-[#111613]/75 backdrop-blur-xs text-[#FAF6F0] text-xs font-mono">
                   {coverImage.caption}
                 </figcaption>
               )}

@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation';
-import { getBlogBySlug, getAllBlogs } from '@/data/blogs';
+import { getBlogBySlug, getAllBlogs, getRelatedBlogs } from '@/data/blogs';
 import { constructMetadata } from '@/lib/seo';
 import { getBlogPostSchema } from '@/lib/schema';
 import BlogDetailHero from '@/components/blogs/BlogDetailHero';
 import BlogDetailBody from '@/components/blogs/BlogDetailBody';
+import BlogDetailRelated from '@/components/blogs/BlogDetailRelated';
 import BlogDetailNavigation from '@/components/blogs/BlogDetailNavigation';
-import BlogDetailCta from '@/components/blogs/BlogDetailCta';
 
 /**
  * Generate dynamic SEO metadata for journal article
@@ -74,6 +74,7 @@ export default async function BlogDetailPage({ params }) {
   }
 
   const blogSchema = getBlogPostSchema(blog);
+  const relatedBlogs = getRelatedBlogs(blog.slug, 3);
 
   return (
     <>
@@ -91,11 +92,11 @@ export default async function BlogDetailPage({ params }) {
         {/* 2. Structured Content Blocks Reading Body */}
         <BlogDetailBody content={blog.content} />
 
-        {/* 3. Adjacent Perspective Navigation */}
-        <BlogDetailNavigation currentSlug={blog.slug} />
+        {/* 3. Related Perspectives */}
+        <BlogDetailRelated relatedBlogs={relatedBlogs} />
 
-        {/* 4. Consultation CTA */}
-        <BlogDetailCta blog={blog} />
+        {/* 4. Adjacent Perspective Navigation */}
+        <BlogDetailNavigation currentSlug={blog.slug} />
       </div>
     </>
   );

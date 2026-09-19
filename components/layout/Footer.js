@@ -39,7 +39,7 @@ export default function Footer() {
 
   return (
     <footer
-      data-navbar-theme="dark"
+      data-navbar-theme="light"
       className="relative w-full select-none mt-auto"
       aria-label="Earth Heritage Corporate Footer"
     >
@@ -102,7 +102,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#13351C] border border-[#1E4D2B] text-[#C4D1C7] hover:text-white hover:border-brand-primary hover:bg-[#1A4224] hover:scale-105 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#13351C] border border-[#1E4D2B] text-[#C4D1C7] hover:bg-[#55C40D] hover:border-[#55C40D] hover:text-[#0E2413] hover:scale-110 shadow-xs hover:shadow-[0_4px_14px_rgba(85,196,13,0.35)] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
                   >
                     <social.icon className="w-4 h-4" aria-hidden="true" />
                   </a>

@@ -25,11 +25,11 @@ export default function BlogDetailNavigation({ currentSlug }) {
 
   return (
     <nav
-      className="py-10 bg-[#FAF6F0] border-b border-[#DCCDB7]"
+      className="relative py-12 bg-[#FAF6F0] border-b border-[#DCCDB7] overflow-hidden"
       aria-label="Adjacent Journal Articles"
     >
-      <Container size="default">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+      <Container size="default" className="relative z-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 max-w-6xl mx-auto">
           {/* Previous Article Link */}
           <div className="w-full sm:w-auto text-left">
             {prev ? (
