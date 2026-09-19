@@ -1,4 +1,4 @@
-import HomeHero from '@/components/sections/home/HomeHero';
+import HeroSection from '@/components/sections/landing/HeroSection';
 import HomeAbout from '@/components/sections/home/HomeAbout';
 import HomeManagedFarmland from '@/components/sections/home/HomeManagedFarmland';
 import HomeHowItWorks from '@/components/sections/home/HomeHowItWorks';
@@ -23,7 +23,7 @@ export const metadata = {
  * Earth Heritage Main Corporate Home Page (/)
  * 
  * Distinctive 8-Section Brand Homepage & Corporate Overview:
- * 01. HomeHero — Asymmetric editorial hero with large typography & framed landscape visual
+ * 01. HeroSection — Multi-slide cinematic signature hero (same as landing page)
  * 02. HomeAbout — Editorial company introduction ("Living Legacy", vision, story CTA)
  * 03. HomeManagedFarmland — Core offering overview with 6 confirmed operational scopes
  * 04. HomeHowItWorks — 5-phase visual sequence (OWN -> MANAGE -> CULTIVATE -> CARE -> CONTINUE)
@@ -35,7 +35,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="w-full">
-      <HomeHero />
+      <HeroSection />
       <HomeAbout />
       <HomeManagedFarmland />
       <HomeHowItWorks />

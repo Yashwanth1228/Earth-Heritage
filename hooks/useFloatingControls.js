@@ -29,7 +29,7 @@ export function useFloatingControls() {
     // Initial check on mount or route transition
     const evaluateInitialState = () => {
       const heroEl = document.getElementById('hero');
-      const footerEl = document.querySelector('footer');
+      const endTriggerEl = document.getElementById('contact-location') || document.querySelector('footer');
 
       if (!isLanding || !heroEl) {
         setIsPastHero(window.scrollY > 350);
@@ -38,8 +38,8 @@ export function useFloatingControls() {
         setIsPastHero(rect.bottom < window.innerHeight * 0.25);
       }
 
-      if (footerEl) {
-        const fRect = footerEl.getBoundingClientRect();
+      if (endTriggerEl) {
+        const fRect = endTriggerEl.getBoundingClientRect();
         setIsNearFooter(fRect.top < window.innerHeight - 50);
       } else {
         setIsNearFooter(false);
@@ -50,7 +50,8 @@ export function useFloatingControls() {
 
     const ctx = gsap.context(() => {
       const heroEl = document.getElementById('hero');
-      const footerEl = document.querySelector('footer');
+      // On home page, hide when contact-location is reached; on other pages hide when footer is reached
+      const endTriggerEl = document.getElementById('contact-location') || document.querySelector('footer');
 
       if (heroEl) {
         ScrollTrigger.create({
@@ -62,9 +63,9 @@ export function useFloatingControls() {
         });
       }
 
-      if (footerEl) {
+      if (endTriggerEl) {
         ScrollTrigger.create({
-          trigger: footerEl,
+          trigger: endTriggerEl,
           start: 'top bottom-=50',
           onEnter: () => setIsNearFooter(true),
           onLeaveBack: () => setIsNearFooter(false),

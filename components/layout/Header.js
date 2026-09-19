@@ -26,21 +26,21 @@ export default function Header() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const activeDarkElements = useRef(new Set());
   const pathname = usePathname();
-  const isLanding = pathname === '/lp/managed-farmland';
+  const isHeroScrollPage = pathname === '/' || pathname === '/home' || pathname === '/lp/managed-farmland';
   const isIsolatedCampaign = pathname?.startsWith('/lp') && pathname !== '/lp/managed-farmland';
   const { openEnquiryModal } = useEnquiry();
 
-  // Coordinate entrance and exit on landing page
+  // Coordinate entrance and exit on hero-scroll pages (home / and lp/managed-farmland)
   useEffect(() => {
     if (isIsolatedCampaign) return;
 
-    // For non-landing pages, navbar is always visible as a floating pill
-    if (!isLanding) {
+    // For inner pages without full-screen cinematic hero, navbar is always visible as a floating pill
+    if (!isHeroScrollPage) {
       setIsVisible(true);
       return;
     }
 
-    // On landing page (/), check scroll position against hero
+    // On hero-scroll pages, check scroll position against hero
     const checkScroll = () => {
       const heroEl = document.getElementById('hero');
       if (heroEl) {
@@ -83,7 +83,7 @@ export default function Header() {
       window.removeEventListener('scroll', checkScroll);
       window.removeEventListener('resize', checkScroll);
     };
-  }, [isLanding, isIsolatedCampaign, pathname]);
+  }, [isHeroScrollPage, isIsolatedCampaign, pathname]);
 
   // Contextual background observer: dynamically detects when dark CTA or footer enters navbar region
   useEffect(() => {

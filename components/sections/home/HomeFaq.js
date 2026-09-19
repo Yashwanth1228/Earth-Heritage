@@ -9,14 +9,14 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /**
- * 07 — HomeFaq: Compact Curated First-Visit FAQ
+ * 07 — HomeFaq: Expansive Centered Editorial FAQ
  * 
- * 5 Essential Questions from Confirmed Project Ground Truth (data/aboutData.js):
- * 1. What is managed farmland?
- * 2. Who owns the farmland?
- * 3. What does Earth Heritage manage?
- * 4. How does Earth Heritage approach land and nature?
- * 5. How can I learn more or begin a conversation?
+ * Features:
+ * - Widen layout (max-w-5xl lg:max-w-6xl) to comfortably utilize left & right horizontal space.
+ * - Substantial typography weight: crisp, prominent, bold question headings & clear answer text.
+ * - Single-Column Accordion: Centered directly below heading.
+ * - Warm biscuit background (#F0E0C6) alternating with light sections.
+ * - Thin architectural dividers with smooth expanding animations.
  */
 export default function HomeFaq() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -26,7 +26,7 @@ export default function HomeFaq() {
       id: 'faq-1',
       question: 'What is managed farmland?',
       answer:
-        'Managed farmland allows individuals to own agricultural land while Earth Heritage coordinates professional farm management, maintenance, and day-to-day agricultural stewardship on their behalf.',
+        'Managed farmland allows you to own agricultural land legally registered in your name while Earth Heritage coordinates professional farm management, daily maintenance, and agricultural stewardship on your behalf.',
       linkText: 'Learn about our Managed Farmland offering',
       href: '/managed-farmland'
     },
@@ -34,7 +34,7 @@ export default function HomeFaq() {
       id: 'faq-2',
       question: 'Who owns the farmland?',
       answer:
-        'The landowner retains complete and unambiguous ownership of the farmland. The title and deed remain strictly registered in the landowner’s name while Earth Heritage manages agreed on-ground operations.',
+        'You retain complete, unambiguous ownership. The legal deed and title remain strictly registered in the landowner’s name, while Earth Heritage executes agreed on-ground operations.',
       linkText: 'Read about our ownership clarity',
       href: '/about#model'
     },
@@ -42,7 +42,7 @@ export default function HomeFaq() {
       id: 'faq-3',
       question: 'What does Earth Heritage manage?',
       answer:
-        'Earth Heritage handles agreed day-to-day farm management and coordinates activities including manpower supervision, crop planning, cultivation, maintenance, farm operations, and harvest management.',
+        'Earth Heritage coordinates manpower supervision, crop planning, seasonal cultivation, routine maintenance, water infrastructure management, and harvest logistics according to agreed farm plans.',
       linkText: 'Explore our 6 operational scopes',
       href: '/farm-management'
     },
@@ -50,15 +50,15 @@ export default function HomeFaq() {
       id: 'faq-4',
       question: 'How does Earth Heritage approach land and nature?',
       answer:
-        'Earth Heritage is guided by responsible development, ecological balance, and long-term stewardship. Agricultural activities are planned to respect natural cycles, preserve soil vitality, and protect native flora.',
-      linkText: 'Discover our 5 guiding principles',
+        'We practice responsible, ecologically balanced stewardship. Agricultural activities are structured to nourish living soil, respect seasonal cycles, and protect indigenous flora.',
+      linkText: 'Discover our principles',
       href: '/about#philosophy'
     },
     {
       id: 'faq-5',
-      question: 'How can I learn more or begin a conversation?',
+      question: 'How can I begin a conversation or visit the land?',
       answer:
-        'You can connect directly with our team through the enquiry form below or via WhatsApp to discuss farmland ownership, management plans, or to schedule a private estate visit.',
+        'You can reach out directly via the enquiry form below or through WhatsApp to discuss available farmland parcels, operational scopes, or to schedule a private guided estate walkthrough.',
       linkText: 'See the full ownership journey',
       href: '/how-it-works'
     }
@@ -71,119 +71,111 @@ export default function HomeFaq() {
   return (
     <section
       id="home-faq"
-      data-navbar-theme="dark"
-      className="relative w-full bg-[#0E2413] text-[#FAF7F2] py-20 sm:py-28 lg:py-32 border-b border-[#1A4224] overflow-hidden"
+      data-navbar-theme="light"
+      className="relative w-full bg-[#F0E0C6] text-[#111613] py-24 sm:py-32 lg:py-36 border-b border-[#D5C09D] overflow-hidden"
       aria-label="Frequently Asked Questions"
     >
-      <LandContourPattern variant="dark-elevation-depth" className="opacity-35" />
+      <LandContourPattern variant="biscuit-topography" className="opacity-60 pointer-events-none" />
 
       <Container size="default" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
-          {/* Left Column: Heading & Context (5 cols) */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-6">
-            <MotionReveal delay={0.05}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#183820] border border-[#2B5E38] text-xs font-mono font-semibold tracking-widest text-[#E8DCC8] uppercase shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" aria-hidden="true" />
-                <span>Common Questions</span>
-              </div>
-            </MotionReveal>
+        
+        {/* CENTERED: Eyebrow, Title & Context */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18 space-y-4">
+          <MotionReveal delay={0.05}>
+            <span className="inline-block text-[11px] sm:text-xs font-mono font-semibold tracking-[0.24em] text-[#8C7A5A] uppercase">
+              Frequently Asked
+            </span>
+          </MotionReveal>
 
-            <MotionReveal delay={0.15}>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-normal tracking-tight text-[#FAF7F2] leading-[1.14]">
-                Everything you need to know.
-              </h2>
-            </MotionReveal>
+          <MotionReveal delay={0.15}>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-[1.14]">
+              Questions, answered.
+            </h2>
+          </MotionReveal>
 
-            <MotionReveal delay={0.25}>
-              <p className="font-sans text-sm sm:text-base text-[#B3C7B9] leading-relaxed">
-                Clear, transparent answers regarding farmland ownership, professional farm care, and our approach to long-term stewardship.
-              </p>
-            </MotionReveal>
+          <MotionReveal delay={0.25}>
+            <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-2xl mx-auto">
+              Clear, transparent answers regarding farmland ownership, our professional management model, and long-term land stewardship.
+            </p>
+          </MotionReveal>
+        </div>
 
-            <MotionReveal delay={0.35} className="pt-2">
-              <Link
-                href="/about#faq"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#F2CF84] hover:text-white transition-colors"
-              >
-                <span>Read Full FAQ on About Page &rarr;</span>
-              </Link>
-            </MotionReveal>
-          </div>
-
-          {/* Right Column: Accessible Accordion (7 cols) */}
-          <div className="lg:col-span-7 space-y-3 sm:space-y-4">
-            {faqs.map((faq, idx) => {
-              const isOpen = openIndex === idx;
-              return (
-                <MotionReveal key={faq.id} delay={0.15 + idx * 0.06}>
-                  <div
-                    className={cn(
-                      'rounded-2xl border transition-all duration-300 overflow-hidden',
-                      isOpen
-                        ? 'bg-[#14351D] border-[#2E6B3E] shadow-md'
-                        : 'bg-[#102B17]/90 border-[#1E4D2A] hover:border-[#2E6B3E]/60'
-                    )}
+        {/* EXPANSIVE: Single Column Editorial Accordion (Wider layout utilizing horizontal space) */}
+        <div className="max-w-5xl lg:max-w-6xl mx-auto border-t border-b border-[#D5C09D] divide-y divide-[#DECBB0]">
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <MotionReveal key={faq.id} delay={0.15 + idx * 0.05}>
+                <div className="py-2 sm:py-2.5">
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${idx}`}
+                    id={`faq-btn-${idx}`}
+                    className="w-full text-left py-5 sm:py-6 px-2 sm:px-4 flex items-center justify-between gap-4 sm:gap-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C] group rounded-xl hover:bg-[#EBDDC5]/40 transition-colors"
                   >
-                    <button
-                      type="button"
-                      onClick={() => toggleFaq(idx)}
-                      aria-expanded={isOpen}
-                      aria-controls={`faq-answer-${idx}`}
-                      id={`faq-btn-${idx}`}
-                      className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-4">
-                        <span className="font-mono text-xs font-semibold text-[#8C7A5A]">
-                          0{idx + 1}
-                        </span>
-                        <h3 className="font-serif text-base sm:text-lg font-medium text-[#FAF7F2] tracking-tight">
-                          {faq.question}
-                        </h3>
-                      </div>
+                    <div className="flex items-center gap-4 sm:gap-6 md:gap-8 pr-2">
+                      <span className="font-mono text-sm sm:text-base font-bold text-[#7A6A4E] shrink-0 w-8 sm:w-10">
+                        0{idx + 1}
+                      </span>
+                      <h3 className="font-serif text-lg sm:text-xl md:text-[22px] font-semibold text-[#111613] group-hover:text-[#1E460B] transition-colors leading-snug">
+                        {faq.question}
+                      </h3>
+                    </div>
 
-                      <div
+                    <div className="w-8 h-8 rounded-full border border-[#D5C09D] bg-white/60 group-hover:bg-white flex items-center justify-center shrink-0 transition-colors">
+                      <ChevronDown
                         className={cn(
-                          'w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300',
-                          isOpen
-                            ? 'bg-brand-primary text-brand-secondary rotate-180'
-                            : 'bg-[#183E23] text-[#A8BEB0]'
+                          'w-4 h-4 text-[#8C7A5A] transition-transform duration-300',
+                          isOpen && 'rotate-180 text-[#15341C]'
                         )}
                         aria-hidden="true"
-                      >
-                        <ChevronDown className="w-4 h-4" />
+                      />
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div
+                      id={`faq-answer-${idx}`}
+                      role="region"
+                      aria-labelledby={`faq-btn-${idx}`}
+                      className="pb-6 pt-1 pl-14 sm:pl-18 md:pl-22 pr-4 sm:pr-8 space-y-4"
+                    >
+                      <p className="font-sans text-sm sm:text-base font-medium text-[#2E3B30] leading-relaxed max-w-4xl">
+                        {faq.answer}
+                      </p>
+
+                      <div>
+                        <Link
+                          href={faq.href}
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-[#15341C] hover:text-[#1E460B] hover:underline transition-colors"
+                        >
+                          <span>{faq.linkText}</span>
+                          <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                        </Link>
                       </div>
-                    </button>
-
-                    {isOpen && (
-                      <div
-                        id={`faq-answer-${idx}`}
-                        role="region"
-                        aria-labelledby={`faq-btn-${idx}`}
-                        className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 space-y-3"
-                      >
-                        <p className="font-sans text-xs sm:text-sm text-[#C4D5C8] leading-relaxed pl-7">
-                          {faq.answer}
-                        </p>
-
-                        <div className="pl-7 pt-1">
-                          <Link
-                            href={faq.href}
-                            className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-brand-primary hover:text-white transition-colors"
-                          >
-                            <span>{faq.linkText}</span>
-                            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </MotionReveal>
-              );
-            })}
-          </div>
-
+                    </div>
+                  )}
+                </div>
+              </MotionReveal>
+            );
+          })}
         </div>
+
+        {/* Center Bottom Link */}
+        <MotionReveal delay={0.4} className="text-center mt-12 sm:mt-14">
+          <Link
+            href="/about#faq"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#15341C] hover:text-[#1E460B] group transition-colors"
+          >
+            <span className="border-b border-[#15341C]/40 pb-0.5 group-hover:border-[#1E460B]">
+              Read Full FAQ on About Page
+            </span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+        </MotionReveal>
+
       </Container>
     </section>
   );

@@ -76,7 +76,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* Keyboard Navigation Focus States */
@@ -309,6 +309,91 @@ html.lenis body {
   animation-play-state: paused !important;
 }
 
+/* ==========================================================================
+   SEAMLESS INFINITE MARQUEE ANIMATIONS (Hardware-Accelerated)
+   - LTR: Scrolls Left to Right (-50% to 0%)
+   - RTL: Scrolls Right to Left (0% to -50%)
+   - Pauses cleanly on hover / active touch
+   ========================================================================== */
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ==========================================================================
+   STEPPED MARQUEE ANIMATIONS (2-Second Stay on each card + smooth slide)
+   ========================================================================== */
+@keyframes marquee-stepped-rtl {
+  0%, 12.8% { transform: translate3d(0%, 0, 0); }
+  16.66%, 29.5% { transform: translate3d(-8.333%, 0, 0); }
+  33.33%, 46.1% { transform: translate3d(-16.666%, 0, 0); }
+  50.0%, 62.8% { transform: translate3d(-25.0%, 0, 0); }
+  66.66%, 79.5% { transform: translate3d(-33.333%, 0, 0); }
+  83.33%, 96.1% { transform: translate3d(-41.666%, 0, 0); }
+  100% { transform: translate3d(-50.0%, 0, 0); }
+}
+
+@keyframes marquee-stepped-ltr {
+  0%, 12.8% { transform: translate3d(-50.0%, 0, 0); }
+  16.66%, 29.5% { transform: translate3d(-41.666%, 0, 0); }
+  33.33%, 46.1% { transform: translate3d(-33.333%, 0, 0); }
+  50.0%, 62.8% { transform: translate3d(-25.0%, 0, 0); }
+  66.66%, 79.5% { transform: translate3d(-16.666%, 0, 0); }
+  83.33%, 96.1% { transform: translate3d(-8.333%, 0, 0); }
+  100% { transform: translate3d(0.0%, 0, 0); }
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-stepped-ltr {
+  animation: marquee-stepped-ltr 16s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  will-change: transform;
+}
+
+.animate-marquee-stepped-rtl {
+  animation: marquee-stepped-rtl 16s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  will-change: transform;
+}
+
+/* Responsive speeds */
+@media (max-width: 768px) {
+  .animate-marquee-ltr {
+    animation-duration: 32s;
+  }
+  .animate-marquee-rtl {
+    animation-duration: 32s;
+  }
+}
+
+/* Pause marquee tracks on hover */
+.pause-marquee-hover:hover .animate-marquee-ltr,
+.pause-marquee-hover:hover .animate-marquee-rtl,
+.pause-marquee-hover:hover .animate-marquee-stepped-ltr,
+.pause-marquee-hover:hover .animate-marquee-stepped-rtl {
+  animation-play-state: paused !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-enquire-pop,
   .animate-enquire-ring-1,
@@ -316,8 +401,13 @@ html.lenis body {
   .animate-button-shimmer,
   .animate-enquire-aura,
   .animate-whatsapp-pop,
-  .animate-whatsapp-ring-wave {
+  .animate-whatsapp-ring-wave,
+  .animate-marquee-ltr,
+  .animate-marquee-rtl,
+  .animate-marquee-stepped-ltr,
+  .animate-marquee-stepped-rtl {
     animation: none !important;
+    transform: none !important;
   }
 }
 

@@ -5,152 +5,399 @@ import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
-import { Play, ArrowRight, Film } from 'lucide-react';
+import { Play, ArrowRight, Film, Camera, Sparkles } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 /**
- * 05 — HomeStories: Visual Storytelling & Field Perspectives
+ * 05 — HomeStories: Dual Infinite Circular Marquees
  * 
- * Strict Content Integrity:
- * - Zero fabricated customer reviews, quotes, or fake star ratings.
- * - Built as an authentic "Watch & Discover" editorial showcase highlighting genuine
- *   agricultural photography from Earth Heritage projects and an architectural
- *   cinematic documentary player frame structured to receive authentic films.
+ * Features:
+ * - Row 1 (Top): Documentary Video Cards scrolling LEFT TO RIGHT in an infinite loop.
+ * - Row 2 (Bottom): Field Photography Cards scrolling RIGHT TO LEFT in an infinite loop.
+ * - Both rows use equal-sized cards (aspect-[16/10], w-[280px] sm:w-[340px] lg:w-[380px]).
+ * - Continuous circular repeating with zero empty space or reset jumps.
+ * - Automatically pauses smoothly on hover / active touch for effortless reading.
+ * - Warm biscuit background (#F0E0C6) maintaining the editorial color rhythm.
  */
 export default function HomeStories() {
-  const perspectives = [
+  // 6 Curated Video Chronicles (Documentaries & Field Filming)
+  const videoStories = [
     {
-      title: 'Topographic Contours & Living Soil',
-      tag: 'CULTIVATION',
-      src: '/images/farm-management/responsible-care.jpg',
-      alt: 'Rolling green agricultural acreage with orderly contour furrows and native shade trees'
+      id: 'vid-1',
+      title: 'Morning Light over the Valley',
+      subtitle: 'Capturing seasonal transitions, topography, and living soil',
+      tag: 'Documentary Film',
+      src: '/images/gallery/hero-feature.jpg',
+      alt: 'Misty agricultural valley and rolling green hills at golden sunrise'
     },
     {
+      id: 'vid-2',
       title: 'The Quiet Sanctuary of the Land',
-      tag: 'EXPERIENCES',
+      subtitle: 'A cinematic perspective on managed acreage and open horizons',
+      tag: 'Field Chronicle',
       src: '/images/managed-farmland/core-proposition.jpg',
       alt: 'Peaceful gravel farm pathway meandering through open fields and shade trees'
+    },
+    {
+      id: 'vid-3',
+      title: 'Hands-on Agronomic Stewardship',
+      subtitle: 'Dedicated field specialists supervising daily agricultural care',
+      tag: 'Farm Operations',
+      src: '/images/farm-management/people-and-land.jpg',
+      alt: 'Agricultural field specialists assessing healthy crops and soil structure'
+    },
+    {
+      id: 'vid-4',
+      title: 'Rhythms of the Plantation',
+      subtitle: 'Documenting tree growth, canopy shade, and native biodiversity',
+      tag: 'Agroforestry Film',
+      src: '/images/gallery/nature-canopy.jpg',
+      alt: 'Lush green tree canopy with sunlight filtering through native trees'
+    },
+    {
+      id: 'vid-5',
+      title: 'Water Flow & Natural Contours',
+      subtitle: 'Topographic swales and watershed engineering in practice',
+      tag: 'Land Stewardship',
+      src: '/images/how-it-works/responsible-care-panorama.jpg',
+      alt: 'Panoramic agricultural contours demonstrating sustainable watershed engineering'
+    },
+    {
+      id: 'vid-6',
+      title: 'From Sapling to Thriving Orchard',
+      subtitle: 'Long-term organic cultivation records across managed acreage',
+      tag: 'Orchard Film',
+      src: '/images/landing/manage-03-cultivation.jpg',
+      alt: 'Young fruit trees thriving along contoured agricultural ridges'
+    }
+  ];
+
+  // 6 Curated Field Photography Chronicles (Authentic Estate Visuals)
+  const imageStories = [
+    {
+      id: 'img-1',
+      title: 'Cultivated Acreage & Boundary Trails',
+      subtitle: 'Disciplined crop rows and thriving boundary agroforestry',
+      tag: 'Estate Photography',
+      src: '/images/managed-farmland/intro-farmland.jpg',
+      alt: 'Expansive managed agricultural estate with disciplined crop rows and fruit trees'
+    },
+    {
+      id: 'img-2',
+      title: 'Topographic Contours & Living Soil',
+      subtitle: 'Preserving organic soil vitality across natural slopes',
+      tag: 'Soil Vitality',
+      src: '/images/farm-management/responsible-care.jpg',
+      alt: 'Rolling green agricultural acreage with orderly contour furrows'
+    },
+    {
+      id: 'img-3',
+      title: 'Evening Gatherings Under the Stars',
+      subtitle: 'Connecting landowners and families over farmland moments',
+      tag: 'Community Life',
+      src: '/images/gallery/experiences-gathering.jpg',
+      alt: 'Warm twilight gathering under open timber farm pavilion with lantern light over fields'
+    },
+    {
+      id: 'img-4',
+      title: 'Scheduled Seasonal Planting Cycles',
+      subtitle: 'Structured agricultural cycles aligned with rainfall and climate',
+      tag: 'Seasonal Planting',
+      src: '/images/landing/manage-02-crop.jpg',
+      alt: 'Young vibrant crop seedlings planted in disciplined straight field rows'
+    },
+    {
+      id: 'img-5',
+      title: 'Organic Crop Canopy & Micro-Climate',
+      subtitle: 'Multi-tier shade canopy providing ideal orchard humidity',
+      tag: 'Canopy Structure',
+      src: '/images/gallery/cultivation-detail.jpg',
+      alt: 'Close-up detail of thriving organic plantation foliage and healthy leaves'
+    },
+    {
+      id: 'img-6',
+      title: 'Seasonal Harvest Handover Logistics',
+      subtitle: 'Fresh produce gathered with systematic agricultural care',
+      tag: 'Harvest Care',
+      src: '/images/landing/manage-06-harvest.jpg',
+      alt: 'Bountiful fresh seasonal harvest produce gathered with systematic agricultural care'
     }
   ];
 
   return (
     <section
       id="field-stories"
-      data-navbar-theme="dark"
-      className="relative w-full bg-[#0C1E12] text-[#FAF7F2] py-20 sm:py-28 lg:py-32 border-b border-[#1A3D25] overflow-hidden"
-      aria-label="Field Stories and Visual Perspectives"
+      data-navbar-theme="light"
+      className="relative w-full bg-[#F0E0C6] text-[#111613] py-24 sm:py-32 lg:py-36 border-b border-[#D5C09D] overflow-hidden"
+      aria-label="Stories from the Ground"
     >
-      <LandContourPattern variant="dark-elevation-depth" className="opacity-35" />
+      <LandContourPattern variant="biscuit-topography" className="opacity-60 pointer-events-none" />
 
-      <Container size="default" className="relative z-10">
+      <Container size="default" className="relative z-10 mb-12 sm:mb-16">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-4">
             <MotionReveal delay={0.05}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#163820] border border-[#2B5E38] text-xs font-mono font-semibold tracking-widest text-[#E8DCC8] uppercase shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" aria-hidden="true" />
-                <span>Field Perspectives</span>
-              </div>
+              <span className="inline-block text-[11px] sm:text-xs font-mono font-semibold tracking-[0.24em] text-[#8C7A5A] uppercase">
+                Field Chronicles &amp; Visual Records
+              </span>
             </MotionReveal>
 
             <MotionReveal delay={0.15}>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight text-[#FAF7F2] leading-[1.12]">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-[1.14]">
                 Stories from the Ground
               </h2>
             </MotionReveal>
 
             <MotionReveal delay={0.25}>
-              <p className="font-sans text-sm sm:text-base text-[#B3C7B9] leading-relaxed">
-                Authentic visual moments capturing the reality of agricultural care, seasonal growth, and open landscapes across Earth Heritage managed estates.
+              <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed">
+                Authentic visual moments capturing seasonal rhythms, living soil, and daily farm care across Earth Heritage estates. Continuous documentary video and photography rows.
               </p>
             </MotionReveal>
           </div>
 
-          <MotionReveal delay={0.3}>
+          <div className="flex items-center gap-4 shrink-0">
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#E8DCC8] hover:text-white transition-colors py-2 px-4 rounded-full border border-[#2B5E38] bg-[#14351D]/60 hover:bg-[#1A4224]"
+              className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#15341C] hover:text-[#1E460B] group transition-colors"
             >
-              <span>Explore Visual Gallery</span>
-              <ArrowRight className="w-4 h-4 text-brand-primary" aria-hidden="true" />
+              <span className="border-b border-[#15341C]/40 pb-0.5 group-hover:border-[#1E460B]">
+                Explore Full Gallery
+              </span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
-          </MotionReveal>
+          </div>
         </div>
+      </Container>
 
-        {/* Editorial Story Layout: 1 Featured Cinematic Frame + 2 Field Glimpses */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          
-          {/* Main Cinematic Feature Frame (7 cols) */}
-          <div className="lg:col-span-7">
-            <MotionReveal delay={0.2} className="h-full">
-              <div className="h-full relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#235832] bg-[#0E2413] shadow-[0_16px_40px_rgba(0,0,0,0.4)] flex flex-col justify-between min-h-[380px] sm:min-h-[440px]">
-                <Image
-                  src="/images/gallery/hero-feature.jpg"
-                  alt="Misty agricultural valley and rolling green hills at golden sunrise"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A0E]/95 via-[#0A1A0E]/40 to-black/30 pointer-events-none" aria-hidden="true" />
-
-                {/* Top Badge */}
-                <div className="relative z-10 p-6 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D1E12]/80 border border-[#235832] text-[11px] font-mono tracking-wider uppercase text-[#F2CF84]">
-                    <Film className="w-3.5 h-3.5 text-brand-primary" aria-hidden="true" />
-                    <span>Visual Chronicle</span>
-                  </span>
-                </div>
-
-                {/* Center Cinematic Play Badge (Intentional Preview Frame) */}
-                <div className="relative z-10 p-6 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-brand-primary/20 border border-brand-primary/60 backdrop-blur-md flex items-center justify-center text-brand-primary shadow-lg group hover:scale-105 transition-transform duration-200 cursor-pointer">
-                    <Play className="w-6 h-6 ml-0.5 fill-brand-primary text-brand-primary" aria-hidden="true" />
-                  </div>
-                  <span className="mt-3 text-xs font-mono tracking-widest text-[#D2C5AB] uppercase">
-                    Documenting the Land
-                  </span>
-                </div>
-
-                {/* Bottom Title Bar */}
-                <div className="relative z-10 p-6 sm:p-8 bg-[#0D1E12]/90 border-t border-[#1E4D2A] backdrop-blur-md">
-                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#FAF7F2] tracking-tight">
-                    Morning Light over the Valley
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm text-[#A8BEB0] mt-1 leading-relaxed">
-                    Capturing the transition of seasons, natural topography, and living soil across our managed farmland parcels.
-                  </p>
-                </div>
-              </div>
-            </MotionReveal>
+      {/* DUAL CONTINUOUS INFINITE MARQUEE CONTAINERS (INDEPENDENT HOVER PAUSE) */}
+      <div className="relative w-full space-y-8 sm:space-y-10 select-none">
+        
+        {/* =========================================================================
+            ROW 1: DOCUMENTARY VIDEO CARDS — SCROLLS LEFT TO RIGHT (LTR STEPPED)
+            Hovering here pauses ONLY the video row; image row continues.
+            ========================================================================= */}
+        <div className="relative w-full overflow-hidden pause-marquee-hover group/video">
+          {/* Row Sub-label */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-between">
+            <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-[#7A6A4E] font-medium">
+              <Film className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
+              <span>Video Chronicles &bull; Left to Right</span>
+            </span>
+            <span className="text-[10px] font-mono text-[#8C7A5A]/80 uppercase hidden sm:inline-block">
+              2s Card Stay &bull; Hover Video to Pause
+            </span>
           </div>
 
-          {/* Right Column: 2 Photographic Perspectives (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8 justify-between">
-            {perspectives.map((item, idx) => (
-              <MotionReveal key={item.title} delay={0.25 + idx * 0.1} className="flex-1">
-                <div className="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#235832] bg-[#0E2413] shadow-md min-h-[200px] sm:min-h-[220px] flex flex-col justify-end p-5 sm:p-6 group">
+          {/* Marquee Track: Duplicated sets seamlessly looping -50% to 0% with 2s hold per card */}
+          <div className="flex w-max animate-marquee-stepped-ltr">
+            {/* Set 1 */}
+            <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
+              {videoStories.map((item, idx) => (
+                <div
+                  key={`vid-set1-${item.id}-${idx}`}
+                  className={cn(
+                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'aspect-[16/10] rounded-2xl overflow-hidden relative group',
+                    'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
+                  )}
+                >
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A0E]/95 via-[#0A1A0E]/40 to-transparent pointer-events-none" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  <div className="relative z-10 space-y-1">
-                    <span className="font-mono text-[10px] tracking-widest uppercase font-semibold text-[#F2CF84]">
-                      {item.tag}
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                      <Film className="w-3 h-3 text-[#F2CF84]" aria-hidden="true" />
+                      <span>{item.tag}</span>
                     </span>
-                    <h4 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight">
+                  </div>
+
+                  {/* Center Video Play Badge */}
+                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center my-auto pointer-events-none">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#15341C] shadow-lg group-hover:scale-110 transition-transform duration-200">
+                      <Play className="w-4 h-4 sm:w-5 sm:h-5 ml-0.5 fill-[#15341C] text-[#15341C]" aria-hidden="true" />
+                    </div>
+                  </div>
+
+                  {/* Bottom Caption Bar */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
                       {item.title}
-                    </h4>
+                    </h3>
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                      {item.subtitle}
+                    </p>
                   </div>
                 </div>
-              </MotionReveal>
-            ))}
+              ))}
+            </div>
+
+            {/* Set 2 (Identical duplicate for seamless continuous wrap) */}
+            <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8" aria-hidden="true">
+              {videoStories.map((item, idx) => (
+                <div
+                  key={`vid-set2-${item.id}-${idx}`}
+                  className={cn(
+                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'aspect-[16/10] rounded-2xl overflow-hidden relative group',
+                    'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
+                  )}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
+
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                      <Film className="w-3 h-3 text-[#F2CF84]" aria-hidden="true" />
+                      <span>{item.tag}</span>
+                    </span>
+                  </div>
+
+                  {/* Center Video Play Badge */}
+                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center my-auto pointer-events-none">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#15341C] shadow-lg group-hover:scale-110 transition-transform duration-200">
+                      <Play className="w-4 h-4 sm:w-5 sm:h-5 ml-0.5 fill-[#15341C] text-[#15341C]" aria-hidden="true" />
+                    </div>
+                  </div>
+
+                  {/* Bottom Caption Bar */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                      {item.title}
+                    </h3>
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================================
+            ROW 2: FIELD PHOTOGRAPHY CARDS — SCROLLS RIGHT TO LEFT (RTL STEPPED)
+            Hovering here pauses ONLY the image row; video row continues.
+            ========================================================================= */}
+        <div className="relative w-full overflow-hidden pause-marquee-hover group/image">
+          {/* Row Sub-label */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-between">
+            <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-[#7A6A4E] font-medium">
+              <Camera className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
+              <span>Estate Photography &bull; Right to Left</span>
+            </span>
+            <span className="text-[10px] font-mono text-[#8C7A5A]/80 uppercase hidden sm:inline-block">
+              2s Card Stay &bull; Hover Image to Pause
+            </span>
           </div>
 
+          {/* Marquee Track: Duplicated sets seamlessly looping 0% to -50% with 2s hold per card */}
+          <div className="flex w-max animate-marquee-stepped-rtl">
+            {/* Set 1 */}
+            <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
+              {imageStories.map((item, idx) => (
+                <div
+                  key={`img-set1-${item.id}-${idx}`}
+                  className={cn(
+                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'aspect-[16/10] rounded-2xl overflow-hidden relative group',
+                    'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
+                  )}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
+
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                      <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
+                      <span>{item.tag}</span>
+                    </span>
+                  </div>
+
+                  {/* Bottom Caption Bar */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                      {item.title}
+                    </h3>
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Set 2 (Identical duplicate for seamless continuous wrap) */}
+            <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8" aria-hidden="true">
+              {imageStories.map((item, idx) => (
+                <div
+                  key={`img-set2-${item.id}-${idx}`}
+                  className={cn(
+                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'aspect-[16/10] rounded-2xl overflow-hidden relative group',
+                    'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
+                  )}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
+
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                      <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
+                      <span>{item.tag}</span>
+                    </span>
+                  </div>
+
+                  {/* Bottom Caption Bar */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                      {item.title}
+                    </h3>
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
+      </div>
+
+      {/* Bottom Subtle Note */}
+      <Container size="default" className="relative z-10 mt-10 text-center">
+        <p className="font-mono text-xs text-[#8C7A5A] tracking-wider uppercase">
+          Continuous Live Chronicles &bull; All Visuals Captured on Location across Earth Heritage Estates
+        </p>
       </Container>
     </section>
   );

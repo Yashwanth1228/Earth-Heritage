@@ -7,6 +7,7 @@ import Logo from '@/components/ui/Logo';
 import { companyData } from '@/data/company';
 import { useEnquiry } from '@/context/EnquiryContext';
 import FooterLandscapeBackground from '@/components/layout/FooterLandscapeBackground';
+import FooterGrassBoundary from '@/components/layout/FooterGrassBoundary';
 import { Instagram, Linkedin, Youtube, Twitter, Facebook } from 'lucide-react';
 
 /**
@@ -17,13 +18,13 @@ import { Instagram, Linkedin, Youtube, Twitter, Facebook } from 'lucide-react';
  * 
  * Features:
  * 1. Deep Earth Green palette (#102B17 base)
- * 2. Compact organic transitional top boundary
+ * 2. Organic meadow grass silhouette boundary into footer
  * 3. Illustrated Earth Heritage landscape background
  * 4. Prominent brand logo & full company name (Earth Heritage Private Limited)
  * 5. Clean, structured navigation hierarchy (Quick Links, Learn, Connect)
  * 6. Social media connection symbols
  * 7. White, font-medium legal policy links & copyright
- * 8. Snug top padding with no awkward dividing line below the company name
+ * 8. Snug top padding with natural agrarian grass border
  */
 export default function Footer() {
   const pathname = usePathname();
@@ -39,39 +40,22 @@ export default function Footer() {
   return (
     <footer
       data-navbar-theme="dark"
-      className="relative w-full bg-[#102B17] text-[#FAF7F2] overflow-hidden select-none mt-auto"
+      className="relative w-full select-none mt-auto"
       aria-label="Earth Heritage Corporate Footer"
     >
       {/* ============================================================== */}
-      {/* 1. COMPACT ORGANIC TRANSITION BOUNDARY INTO FOOTER             */}
+      {/* 1. ORGANIC MEADOW GRASS SILHOUETTE TRANSITION INTO FOOTER      */}
       {/* ============================================================== */}
-      <div
-        className="w-full overflow-hidden leading-none select-none pointer-events-none -mt-px"
-        aria-hidden="true"
-      >
-        <svg
-          className="w-full h-5 sm:h-7 lg:h-9 text-[#102B17] block"
-          viewBox="0 0 1440 30"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 C380,25 760,5 1100,20 C1280,28 1380,12 1440,8 L1440,30 L0,30 Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
+      <FooterGrassBoundary />
 
       {/* ============================================================== */}
-      {/* 2. BESPOKE ILLUSTRATED EARTH HERITAGE LANDSCAPE BACKGROUND     */}
+      {/* 2. SOLID FOOTER BODY (#102B17) WITH LANDSCAPE BACKGROUND       */}
       {/* ============================================================== */}
-      <FooterLandscapeBackground />
+      <div className="relative w-full bg-[#102B17] text-[#FAF7F2] overflow-hidden">
+        <FooterLandscapeBackground />
 
-      {/* ============================================================== */}
-      {/* 3. MAIN FOOTER CONTENT CONTAINER (REDUCED TOP PADDING)         */}
-      {/* ============================================================== */}
-      <div className="relative z-10 pt-2 sm:pt-4 pb-10 sm:pb-14">
+        {/* 3. MAIN FOOTER CONTENT CONTAINER */}
+        <div className="relative z-10 pt-2 sm:pt-4 pb-10 sm:pb-14">
         <Container size="wide">
           {/* Top Brand Banner: Logo + Brand Name with Private Limited below */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 sm:pb-6">
@@ -227,6 +211,7 @@ export default function Footer() {
             </div>
           </div>
         </Container>
+      </div>
       </div>
     </footer>
   );

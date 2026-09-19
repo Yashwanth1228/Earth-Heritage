@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useEnquiry } from '@/context/EnquiryContext';
 import { useFloatingControls } from '@/hooks/useFloatingControls';
 import { isReducedMotion } from '@/lib/gsap';
@@ -19,16 +20,54 @@ import { cn } from '@/lib/utils';
  * - Shimmer Beam: Specular light reflection sweeps across the button face in sync with pulse.
  * - Ambient Aura: Soft breathing green aura behind the pill.
  * - Strict Action: Clicking opens the unified EnquiryModal with "General Enquiry" preselected.
- * - Footer Auto-Hide: Gracefully hides when entering footer area so footer form is never covered.
+ * - Footer & Contact Auto-Hide: Gracefully hides when entering contact/footer area so on-page forms are never covered.
+ * - Home Page Smart Scroll: Auto-hides on scroll-down so it never covers headings, lists, images, or FAQ while reading.
  * - Respects prefers-reduced-motion.
  */
 export default function FloatingEnquiryButton({ className }) {
   const buttonRef = useRef(null);
+  const pathname = usePathname();
+  const isHome = pathname === '/' || pathname === '/home';
   const { openEnquiryModal } = useEnquiry();
   const { isPastHero, isNearFooter } = useFloatingControls();
 
-  // Visible once past hero, UNLESS entering the footer contact/enquiry zone
-  const isVisible = isPastHero && !isNearFooter;
+  // Scroll direction awareness for home page to prevent covering editorial content while reading
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    if (!isHome) return;
+
+    let pauseTimer;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+
+      if (Math.abs(delta) > 10) {
+        if (delta > 0 && currentY > 400) {
+          setIsScrollingDown(true);
+        } else if (delta < 0) {
+          setIsScrollingDown(false);
+        }
+        lastScrollY.current = currentY;
+      }
+
+      // When scroll pauses for 600ms, reveal smoothly
+      clearTimeout(pauseTimer);
+      pauseTimer = setTimeout(() => {
+        setIsScrollingDown(false);
+      }, 600);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(pauseTimer);
+    };
+  }, [isHome]);
+
+  // Visible once past hero, UNLESS entering the footer/contact zone, and not actively scrolling down on Home
+  const isVisible = isPastHero && !isNearFooter && !(isHome && isScrollingDown);
   const reducedMotion = typeof window !== 'undefined' && isReducedMotion();
 
   // Attention breathing state: activated after entrance completes (~500ms delay)
@@ -68,7 +107,7 @@ export default function FloatingEnquiryButton({ className }) {
   return (
     <div
       className={cn(
-        // Outer Positioning & Entrance/Exit Container (Horizontally Centered)
+        // Outer Positioning & Entrance/Exit Container (Horizontally Centered at Bottom)
         'fixed bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-40',
         'pointer-events-none select-none',
         reducedMotion

@@ -78,6 +78,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={heroRef}
+      data-navbar-theme="dark"
       className="relative w-full min-h-[92vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-22 pb-14 sm:pb-16 outline-none"
       aria-label="Earth Heritage — Managed Farmland"
       aria-roledescription="carousel"
@@ -261,6 +262,13 @@ export default function HeroSection() {
           >
             <Link
               href="#statement"
+              onClick={(e) => {
+                const target = document.getElementById('about-overview') || document.getElementById('statement');
+                if (target) {
+                  e.preventDefault();
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="flex flex-col items-center justify-center gap-1.5 group cursor-pointer"
               aria-label="Scroll to explore"
             >
