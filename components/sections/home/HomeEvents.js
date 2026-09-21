@@ -103,10 +103,10 @@ export default function HomeEvents() {
     >
       <LandContourPattern variant="biscuit-organic-flow" className="opacity-50 pointer-events-none" />
 
-      <Container size="default" className="relative z-10 mb-12 sm:mb-16">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-2xl space-y-4">
+      <Container size="default" className="relative z-10 mb-10 sm:mb-16">
+        {/* Section Header (Centered on mobile, split on desktop) */}
+        <div className="flex flex-col items-center text-center md:items-end md:text-left md:flex-row justify-between gap-6">
+          <div className="max-w-2xl space-y-3 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
             <MotionReveal delay={0.05}>
               <span className="inline-block text-[11px] sm:text-xs font-mono font-semibold tracking-[0.24em] text-[#8C7A5A] uppercase">
                 Moments &amp; Community Gatherings
@@ -120,7 +120,7 @@ export default function HomeEvents() {
             </MotionReveal>
 
             <MotionReveal delay={0.25}>
-              <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed">
+              <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-xl md:max-w-none mx-auto md:mx-0">
                 Bringing people, land, and community together through authentic agricultural experiences, guided estate walks, and seasonal harvest rituals. Click any card to explore event details.
               </p>
             </MotionReveal>
@@ -129,7 +129,7 @@ export default function HomeEvents() {
           <MotionReveal delay={0.3}>
             <Link
               href="/events"
-              className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#15341C] hover:text-[#1E460B] group transition-colors shrink-0"
+              className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#15341C] hover:text-[#1E460B] group transition-colors shrink-0 mx-auto md:mx-0"
             >
               <span className="border-b border-[#15341C]/40 pb-0.5 group-hover:border-[#1E460B]">
                 View All Events
@@ -140,11 +140,11 @@ export default function HomeEvents() {
         </div>
       </Container>
 
-      {/* CONTINUOUS INFINITE CIRCULAR MARQUEE (SCROLLS LEFT TO RIGHT WITH 2S CARD STAY) */}
+      {/* CONTINUOUS INFINITE CIRCULAR MARQUEE (SCROLLS LEFT TO RIGHT WITH 2S CARD STAY, CENTERED ON MOBILE) */}
       <div className="relative w-full pause-marquee-hover select-none">
         
-        {/* Row Sub-label */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-between">
+        {/* Row Sub-label (Centered on mobile) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-center sm:justify-between">
           <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-[#7A6A4E] font-medium">
             <Calendar className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
             <span>Community Events &bull; Left to Right</span>
@@ -154,9 +154,9 @@ export default function HomeEvents() {
           </span>
         </div>
 
-        {/* Marquee Track: Duplicated sets seamlessly looping -50% to 0% with 2-second hold */}
+        {/* Marquee Track: Duplicated sets seamlessly looping -50% to 0% with 2-second hold (Centered offset on mobile) */}
         <div className="relative w-full overflow-hidden">
-          <div className="flex w-max animate-marquee-stepped-ltr">
+          <div className="flex w-max animate-marquee-stepped-ltr pl-[calc((100vw-300px)/2)] sm:pl-0">
             
             {/* Set 1 */}
             <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
@@ -167,7 +167,7 @@ export default function HomeEvents() {
                   onClick={() => setSelectedEvent(item)}
                   aria-label={`View details for ${item.title}`}
                   className={cn(
-                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0 text-left',
+                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0 text-left',
                     'aspect-[16/10] rounded-2xl overflow-hidden relative group cursor-pointer',
                     'border border-[#E0D5C1] bg-[#EDE5D5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]'
@@ -177,13 +177,13 @@ export default function HomeEvents() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Top Badge: Image Moment tag */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Top Badge: Image Moment tag (Centered on mobile, left on desktop) */}
+                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
                       <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
                       <span>{item.tag}</span>
@@ -197,12 +197,12 @@ export default function HomeEvents() {
                     </span>
                   </div>
 
-                  {/* Bottom Caption Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors">
+                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors w-full">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
                       {item.subtitle}
                     </p>
                   </div>
@@ -218,9 +218,8 @@ export default function HomeEvents() {
                   key={`event-set2-${item.id}-${idx}`}
                   onClick={() => setSelectedEvent(item)}
                   aria-label={`View details for ${item.title}`}
-                  tabIndex={-1}
                   className={cn(
-                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0 text-left',
+                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0 text-left',
                     'aspect-[16/10] rounded-2xl overflow-hidden relative group cursor-pointer',
                     'border border-[#E0D5C1] bg-[#EDE5D5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]'
@@ -230,13 +229,13 @@ export default function HomeEvents() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Top Badge: Image Moment tag */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Top Badge: Image Moment tag (Centered on mobile, left on desktop) */}
+                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
                       <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
                       <span>{item.tag}</span>
@@ -250,12 +249,12 @@ export default function HomeEvents() {
                     </span>
                   </div>
 
-                  {/* Bottom Caption Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors">
+                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors w-full">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
                       {item.subtitle}
                     </p>
                   </div>

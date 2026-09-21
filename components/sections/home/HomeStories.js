@@ -133,10 +133,10 @@ export default function HomeStories() {
     >
       <LandContourPattern variant="biscuit-topography" className="opacity-60 pointer-events-none" />
 
-      <Container size="default" className="relative z-10 mb-12 sm:mb-16">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-2xl space-y-4">
+      <Container size="default" className="relative z-10 mb-10 sm:mb-16">
+        {/* Section Header (Centered on mobile, split on desktop) */}
+        <div className="flex flex-col items-center text-center md:items-end md:text-left md:flex-row justify-between gap-6">
+          <div className="max-w-2xl space-y-3 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
             <MotionReveal delay={0.05}>
               <span className="inline-block text-[11px] sm:text-xs font-mono font-semibold tracking-[0.24em] text-[#8C7A5A] uppercase">
                 Field Chronicles &amp; Visual Records
@@ -150,13 +150,13 @@ export default function HomeStories() {
             </MotionReveal>
 
             <MotionReveal delay={0.25}>
-              <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed">
+              <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-xl md:max-w-none mx-auto md:mx-0">
                 Authentic visual moments capturing seasonal rhythms, living soil, and daily farm care across Earth Heritage estates. Continuous documentary video and photography rows.
               </p>
             </MotionReveal>
           </div>
 
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center justify-center md:justify-start gap-4 shrink-0 mx-auto md:mx-0">
             <Link
               href="/gallery"
               className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#15341C] hover:text-[#1E460B] group transition-colors"
@@ -170,16 +170,17 @@ export default function HomeStories() {
         </div>
       </Container>
 
-      {/* DUAL CONTINUOUS INFINITE MARQUEE CONTAINERS (INDEPENDENT HOVER PAUSE) */}
+      {/* DUAL CONTINUOUS INFINITE MARQUEE CONTAINERS (INDEPENDENT HOVER PAUSE, CENTERED ON MOBILE) */}
       <div className="relative w-full space-y-8 sm:space-y-10 select-none">
         
         {/* =========================================================================
             ROW 1: DOCUMENTARY VIDEO CARDS — SCROLLS LEFT TO RIGHT (LTR STEPPED)
             Hovering here pauses ONLY the video row; image row continues.
+            Centered in mobile viewport via pl-[calc((100vw-300px)/2)]
             ========================================================================= */}
         <div className="relative w-full overflow-hidden pause-marquee-hover group/video">
-          {/* Row Sub-label */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-between">
+          {/* Row Sub-label (Centered on mobile) */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-center sm:justify-between">
             <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-[#7A6A4E] font-medium">
               <Film className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
               <span>Video Chronicles &bull; Left to Right</span>
@@ -189,15 +190,15 @@ export default function HomeStories() {
             </span>
           </div>
 
-          {/* Marquee Track: Duplicated sets seamlessly looping -50% to 0% with 2s hold per card */}
-          <div className="flex w-max animate-marquee-stepped-ltr">
+          {/* Marquee Track: Duplicated sets seamlessly looping -50% to 0% with 2s hold per card (Centered offset on mobile) */}
+          <div className="flex w-max animate-marquee-stepped-ltr pl-[calc((100vw-300px)/2)] sm:pl-0">
             {/* Set 1 */}
             <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
               {videoStories.map((item, idx) => (
                 <div
                   key={`vid-set1-${item.id}-${idx}`}
                   className={cn(
-                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0',
                     'aspect-[16/10] rounded-2xl overflow-hidden relative group',
                     'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
                   )}
@@ -206,13 +207,13 @@ export default function HomeStories() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Top Badge (Centered on mobile, left on desktop) */}
+                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
                       <Film className="w-3 h-3 text-[#F2CF84]" aria-hidden="true" />
                       <span>{item.tag}</span>
@@ -226,12 +227,12 @@ export default function HomeStories() {
                     </div>
                   </div>
 
-                  {/* Bottom Caption Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 w-full">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
                       {item.subtitle}
                     </p>
                   </div>
@@ -245,7 +246,7 @@ export default function HomeStories() {
                 <div
                   key={`vid-set2-${item.id}-${idx}`}
                   className={cn(
-                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0',
                     'aspect-[16/10] rounded-2xl overflow-hidden relative group',
                     'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
                   )}
@@ -254,13 +255,13 @@ export default function HomeStories() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Top Badge (Centered on mobile, left on desktop) */}
+                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
                       <Film className="w-3 h-3 text-[#F2CF84]" aria-hidden="true" />
                       <span>{item.tag}</span>
@@ -274,12 +275,12 @@ export default function HomeStories() {
                     </div>
                   </div>
 
-                  {/* Bottom Caption Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 w-full">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
                       {item.subtitle}
                     </p>
                   </div>
@@ -292,10 +293,11 @@ export default function HomeStories() {
         {/* =========================================================================
             ROW 2: FIELD PHOTOGRAPHY CARDS — SCROLLS RIGHT TO LEFT (RTL STEPPED)
             Hovering here pauses ONLY the image row; video row continues.
+            Centered in mobile viewport via pl-[calc((100vw-300px)/2)]
             ========================================================================= */}
         <div className="relative w-full overflow-hidden pause-marquee-hover group/image">
-          {/* Row Sub-label */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-between">
+          {/* Row Sub-label (Centered on mobile) */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-center sm:justify-between">
             <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-[#7A6A4E] font-medium">
               <Camera className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
               <span>Estate Photography &bull; Right to Left</span>
@@ -305,15 +307,15 @@ export default function HomeStories() {
             </span>
           </div>
 
-          {/* Marquee Track: Duplicated sets seamlessly looping 0% to -50% with 2s hold per card */}
-          <div className="flex w-max animate-marquee-stepped-rtl">
+          {/* Marquee Track: Duplicated sets seamlessly looping 0% to -50% with 2s hold per card (Centered offset on mobile) */}
+          <div className="flex w-max animate-marquee-stepped-rtl pl-[calc((100vw-300px)/2)] sm:pl-0">
             {/* Set 1 */}
             <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
               {imageStories.map((item, idx) => (
                 <div
                   key={`img-set1-${item.id}-${idx}`}
                   className={cn(
-                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0',
                     'aspect-[16/10] rounded-2xl overflow-hidden relative group',
                     'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
                   )}
@@ -322,25 +324,25 @@ export default function HomeStories() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Top Badge (Centered on mobile, left on desktop) */}
+                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
                       <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
                       <span>{item.tag}</span>
                     </span>
                   </div>
 
-                  {/* Bottom Caption Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 w-full">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
                       {item.subtitle}
                     </p>
                   </div>
@@ -354,7 +356,7 @@ export default function HomeStories() {
                 <div
                   key={`img-set2-${item.id}-${idx}`}
                   className={cn(
-                    'w-[280px] sm:w-[340px] lg:w-[380px] shrink-0',
+                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0',
                     'aspect-[16/10] rounded-2xl overflow-hidden relative group',
                     'border border-[#D5C09D] bg-[#E4D1B5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]'
                   )}
@@ -363,25 +365,25 @@ export default function HomeStories() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Top Badge (Centered on mobile, left on desktop) */}
+                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
                       <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
                       <span>{item.tag}</span>
                     </span>
                   </div>
 
-                  {/* Bottom Caption Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-5 sm:p-6 bg-gradient-to-t from-black/95 to-transparent space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1">
+                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
+                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 w-full">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
                       {item.subtitle}
                     </p>
                   </div>

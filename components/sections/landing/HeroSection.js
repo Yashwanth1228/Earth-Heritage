@@ -8,6 +8,7 @@ import Container from '@/components/ui/Container';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { heroSlides } from '@/data/landingImages';
 import { useEnquiry } from '@/context/EnquiryContext';
+import Logo from '@/components/ui/Logo';
 
 const SLIDE_DURATION = 6000; // 6 seconds per slide
 
@@ -79,11 +80,20 @@ export default function HeroSection() {
       id="hero"
       ref={heroRef}
       data-navbar-theme="dark"
-      className="relative w-full min-h-[92vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-22 pb-14 sm:pb-16 outline-none"
+      className="relative w-full min-h-[72vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-12 sm:pt-20 lg:pt-22 pb-6 sm:pb-16 outline-none"
       aria-label="Earth Heritage — Managed Farmland"
       aria-roledescription="carousel"
       aria-live="polite"
     >
+      {/* Top-Left Company Logo (Displays brand identity at initial starting point before scroll) */}
+      <div className="absolute top-4 sm:top-6 left-4 sm:left-8 z-30 flex items-center select-none transition-transform duration-200 hover:scale-102">
+        <Logo
+          variant="light"
+          size="navbar"
+          priority
+        />
+      </div>
+
       {/* 1. Dominant Full-Screen Landscape Photography with Restrained Scroll Zoom */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Image layers container */}
@@ -126,20 +136,19 @@ export default function HeroSection() {
           })}
         </div>
 
-        {/* Calibrated Background Overlay (+10% Darker: 58% Base Overlay) - EXACTLY AS BEFORE */}
-        {/* 58% base shade balancing rich scenery with high-contrast typography */}
+        {/* Calibrated Background Overlay (+10% Darker: 58% Base Overlay) */}
         <div
           className="absolute inset-0 bg-black/58 pointer-events-none z-10"
           aria-hidden="true"
         />
         {/* Top-down gradient for top header contrast */}
         <div
-          className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-black/70 via-black/25 to-transparent pointer-events-none z-10"
+          className="absolute inset-x-0 top-0 h-40 sm:h-56 bg-gradient-to-b from-black/70 via-black/25 to-transparent pointer-events-none z-10"
           aria-hidden="true"
         />
         {/* Bottom grounding gradient */}
         <div
-          className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none z-10"
+          className="absolute inset-x-0 bottom-0 h-40 sm:h-56 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none z-10"
           aria-hidden="true"
         />
         {/* Soft edge vignette preserving luminous center */}
@@ -159,7 +168,7 @@ export default function HeroSection() {
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -16, filter: 'blur(4px)', transition: { duration: 0.45, ease: 'easeIn' } }}
-              className="w-full text-center space-y-5 sm:space-y-7 flex flex-col items-center"
+              className="w-full text-center space-y-3.5 sm:space-y-6 lg:space-y-7 flex flex-col items-center"
             >
               {/* Eyebrow Pill / Category Badge */}
               <motion.div
@@ -168,9 +177,9 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="flex items-center justify-center"
               >
-                <div className={`inline-flex items-center gap-2 px-4.5 sm:px-5 py-1.5 sm:py-2 rounded-full border backdrop-blur-md transition-colors duration-300 ${currentSlide.badgeClass || 'bg-[#1A2218]/90 border-[#9A814F]/50 shadow-sm'}`}>
-                  <span className={`text-xs select-none ${currentSlide.badgeIconClass || 'text-[#B88E3E]'}`} aria-hidden="true">✦</span>
-                  <span className={`font-sans text-[10px] sm:text-xs uppercase tracking-[0.22em] font-medium ${currentSlide.badgeTextClass || 'text-[#B88E3E]'}`}>
+                <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1 sm:py-2 rounded-full border backdrop-blur-md transition-colors duration-300 ${currentSlide.badgeClass || 'bg-[#1A2218]/90 border-[#9A814F]/50 shadow-sm'}`}>
+                  <span className={`text-[11px] sm:text-xs select-none ${currentSlide.badgeIconClass || 'text-[#B88E3E]'}`} aria-hidden="true">✦</span>
+                  <span className={`font-sans text-[9px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.22em] font-medium ${currentSlide.badgeTextClass || 'text-[#B88E3E]'}`}>
                     {currentSlide.eyebrow}
                   </span>
                 </div>
@@ -179,11 +188,11 @@ export default function HeroSection() {
               {/* Primary Signature Headline with Word-by-Word Reveal (Fraunces Editorial Serif) */}
               <div className={`w-full ${currentSlide.headingShadowClass || ''}`}>
                 {currentSlide.isMainH1 ? (
-                  <h1 className="type-display-hero">
+                  <h1 className="font-serif font-normal tracking-tight text-[32px] xs:text-[38px] sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[1.08] sm:leading-[1.06]">
                     <span className={`block font-normal ${currentSlide.titleLine1Class || 'text-[#FFFFFF]'}`}>
                       <AnimatedWords text={currentSlide.titleLine1} baseDelay={0.12} wordClassName={currentSlide.titleLine1Class} />
                     </span>
-                    <span className={`block italic font-normal mt-1.5 sm:mt-2.5 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
+                    <span className={`block italic font-normal mt-1 sm:mt-2.5 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
                       <AnimatedWords
                         text={currentSlide.titleLine2}
                         baseDelay={0.42}
@@ -192,11 +201,11 @@ export default function HeroSection() {
                     </span>
                   </h1>
                 ) : (
-                  <h2 className="type-display-hero">
+                  <h2 className="font-serif font-normal tracking-tight text-[32px] xs:text-[38px] sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[1.08] sm:leading-[1.06]">
                     <span className={`block font-normal ${currentSlide.titleLine1Class || 'text-[#FFFFFF]'}`}>
                       <AnimatedWords text={currentSlide.titleLine1} baseDelay={0.12} wordClassName={currentSlide.titleLine1Class} />
                     </span>
-                    <span className={`block italic font-normal mt-1.5 sm:mt-2.5 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
+                    <span className={`block italic font-normal mt-1 sm:mt-2.5 ${currentSlide.titleLine2Class || 'text-[#B88E3E]'}`}>
                       <AnimatedWords
                         text={currentSlide.titleLine2}
                         baseDelay={0.42}
@@ -218,12 +227,12 @@ export default function HeroSection() {
                 }}
                 className="w-full"
               >
-                <p className={`font-sans text-base sm:text-lg md:text-[20px] font-light leading-relaxed max-w-2xl mx-auto transition-colors duration-300 ${currentSlide.descriptionClass || 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)]'}`}>
+                <p className={`font-sans text-[13px] xs:text-sm sm:text-lg md:text-[20px] font-light leading-relaxed max-w-xl sm:max-w-2xl mx-auto px-2 sm:px-0 transition-colors duration-300 ${currentSlide.descriptionClass || 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)]'}`}>
                   {currentSlide.description}
                 </p>
               </motion.div>
 
-              {/* Centered Action CTA Buttons */}
+              {/* Centered Action CTA Buttons (Stacked one after the other on mobile, side-by-side on desktop) */}
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -232,20 +241,20 @@ export default function HeroSection() {
                   delay: shouldReduceMotion ? 0 : 0.78,
                   ease: [0.16, 1, 0.3, 1]
                 }}
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto"
+                className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2 w-full sm:w-auto"
               >
                 <Link
                   href={currentSlide.primaryAction.href}
-                  className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-[13px] font-semibold tracking-[0.18em] uppercase hover:scale-[1.02] transition-all duration-200 ${currentSlide.primaryBtnClass || 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white shadow-[0_6px_20px_rgba(0,0,0,0.22)]'}`}
+                  className={`w-full max-w-[280px] xs:max-w-[300px] sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-3.5 rounded-full text-[11px] xs:text-xs sm:text-[13px] font-semibold tracking-[0.12em] sm:tracking-[0.18em] uppercase whitespace-nowrap hover:scale-[1.02] transition-all duration-200 shadow-[0_6px_20px_rgba(0,0,0,0.22)] ${currentSlide.primaryBtnClass || 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white'}`}
                 >
                   <span>{currentSlide.primaryAction.label}</span>
-                  <ArrowRight className={`w-4 h-4 transition-colors ${currentSlide.primaryBtnIconClass || 'text-[#152B1B]'}`} aria-hidden="true" />
+                  <ArrowRight className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors ${currentSlide.primaryBtnIconClass || 'text-[#152B1B]'}`} aria-hidden="true" />
                 </Link>
 
                 <button
                   type="button"
                   onClick={(e) => openEnquiryModal('General Enquiry', e.currentTarget)}
-                  className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-[13px] font-semibold tracking-[0.18em] uppercase hover:scale-[1.02] backdrop-blur-md transition-all duration-200 ${currentSlide.secondaryBtnClass || 'bg-[#183622]/85 hover:bg-[#1E432A] border border-[#346642]/65 text-[#EDE7DD] shadow-[0_6px_20px_rgba(0,0,0,0.22)]'}`}
+                  className={`w-full max-w-[280px] xs:max-w-[300px] sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-3.5 rounded-full text-[11px] xs:text-xs sm:text-[13px] font-semibold tracking-[0.12em] sm:tracking-[0.18em] uppercase whitespace-nowrap hover:scale-[1.02] transition-all duration-200 shadow-[0_6px_20px_rgba(0,0,0,0.22)] ${currentSlide.secondaryBtnClass || 'bg-[#163A20] hover:bg-[#1E4829] border border-[#386842] text-[#FAF7F2]'}`}
                 >
                   <span>Talk to Us</span>
                 </button>
@@ -258,7 +267,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.85 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="pt-8 sm:pt-12"
+            className="pt-3 sm:pt-10"
           >
             <Link
               href="#statement"
@@ -269,10 +278,10 @@ export default function HeroSection() {
                   target.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="flex flex-col items-center justify-center gap-1.5 group cursor-pointer"
+              className="flex flex-col items-center justify-center gap-1 group cursor-pointer"
               aria-label="Scroll to explore"
             >
-              <span className={`font-sans text-[10px] sm:text-[11px] tracking-[0.28em] uppercase font-medium transition-colors ${currentSlide.scrollIndicatorClass || 'text-[#DCD4C7]/85 group-hover:text-white'}`}>
+              <span className={`font-sans text-[9px] sm:text-[11px] tracking-[0.24em] sm:tracking-[0.28em] uppercase font-medium transition-colors ${currentSlide.scrollIndicatorClass || 'text-[#DCD4C7]/85 group-hover:text-white'}`}>
                 Scroll to explore
               </span>
               <ChevronDown className={`w-3.5 h-3.5 animate-bounce transition-colors ${currentSlide.scrollIndicatorClass || 'text-[#DCD4C7]/75 group-hover:text-white'}`} aria-hidden="true" />

@@ -57,7 +57,7 @@ export default function Footer() {
         {/* 3. MAIN FOOTER CONTENT CONTAINER */}
         <div className="relative z-10 pt-2 sm:pt-4 pb-10 sm:pb-14">
         <Container size="wide">
-          {/* Top Brand Banner: Logo + Brand Name with Private Limited below */}
+          {/* Top Brand Banner: Logo + Brand Name with "Back to Roots" tagline below */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 sm:pb-6">
             <div className="flex items-center gap-4 sm:gap-5">
               <Logo
@@ -71,7 +71,7 @@ export default function Footer() {
                   Earth Heritage
                 </h2>
                 <span className="font-sans text-xs sm:text-sm text-[#C4D1C7] font-normal tracking-wide mt-0.5">
-                  Private Limited
+                  Back to Roots
                 </span>
               </div>
             </div>

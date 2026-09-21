@@ -1,4 +1,4 @@
-import HeroSection from '@/components/sections/landing/HeroSection';
+import ManagedFarmlandHero from '@/components/sections/landing/ManagedFarmlandHero';
 import BrandStatement from '@/components/sections/landing/BrandStatement';
 import ProblemSection from '@/components/sections/landing/ProblemSection';
 import SolutionSection from '@/components/sections/landing/SolutionSection';
@@ -14,7 +14,7 @@ import FinalCtaSection from '@/components/sections/landing/FinalCtaSection';
  * Original Earth Heritage Landing Page Experience
  * 
  * Preserved source of truth representing the complete cinematic landing page:
- * 1. HeroSection — The Signature Moment (4-chapter multi-slide hero)
+ * 1. ManagedFarmlandHero — Dedicated Art-Directed Hero for /lp/managed-farmland
  * 2. BrandStatement — Editorial Emotional Bridge ("A Living Legacy")
  * 3. ProblemSection — The Ownership Reality
  * 4. SolutionSection — The Core Proposition ("You own the land. We manage the farm.")
@@ -29,7 +29,7 @@ import FinalCtaSection from '@/components/sections/landing/FinalCtaSection';
 export default function OriginalLandingPage() {
   return (
     <div className="w-full">
-      <HeroSection />
+      <ManagedFarmlandHero />
       <BrandStatement />
       <ProblemSection />
       <SolutionSection />
