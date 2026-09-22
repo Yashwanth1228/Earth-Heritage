@@ -13,12 +13,12 @@
 export const landingImages = {
   hero: {
     id: 'hero-landscape',
-    src: '/images/landing/hero-landscape.jpg',
-    alt: 'Expansive managed farmland with lush green tree canopies at golden sunrise',
+    src: '/images/landing/hero-family-farmland.jpg',
+    alt: 'Happy family walking along a sunlit coconut and mango tree plantation pathway on a managed farmland estate',
     usage: 'Hero full-screen landscape background',
-    temporary: true,
+    temporary: false,
     width: 2400,
-    height: 1600
+    height: 1350
   },
   statement: {
     id: 'statement-landscape',
@@ -201,7 +201,8 @@ export const landingImages = {
 
 /**
  * 4-Chapter Cinematic Opening Sequence for Homepage Hero
- * Each slide features distinct photography, chapter narrative, and aligned branding copy.
+ * Enhanced with dual-style typography (Bold White + Warm Honey-Gold Italic Serif)
+ * and luxury managed farmland retreat photography (Hebbevu reference aesthetic).
  */
 export const heroSlides = [
   {
@@ -209,26 +210,17 @@ export const heroSlides = [
     number: '01',
     chapter: 'THE VISION',
     image: {
-      src: '/images/landing/hero-landscape.jpg',
-      alt: 'Expansive managed farmland with lush green tree canopies at golden sunrise',
+      src: '/images/landing/hero-family-farmland.jpg',
+      alt: 'Happy family walking along a sunlit coconut and mango tree plantation pathway on a managed farmland estate',
       width: 2400,
-      height: 1600
+      height: 1350
     },
     theme: 'dark',
-    headingShadowClass: 'drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)] drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]',
-    titleLine1Class: 'text-[#FFFFFF]',
-    titleLine2Class: 'italic text-[#F2CF84]',
-    descriptionClass: 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]',
-    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
-    badgeTextClass: 'text-[#B88E3E]',
-    badgeIconClass: 'text-[#B88E3E]',
-    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
-    primaryBtnIconClass: 'text-[#152B1B]',
-    secondaryBtnClass: 'bg-[#163A20] hover:bg-[#1E4829] border border-[#386842] text-[#FAF7F2]',
-    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
-    eyebrow: 'Managed Farmland • Land Ownership & Stewardship',
-    titleLine1: 'Own a Piece of Earth.',
-    titleLine2: 'Build a Legacy.',
+    eyebrow: 'PREMIUM MANAGED FARMLAND PROJECT',
+    titlePart1: 'Own a Piece of',
+    titleAccent1: 'Earth.',
+    titlePart2: 'Build a Living',
+    titleAccent2: 'Legacy.',
     description:
       'Managed farmland for people who want to own land, stay connected to nature, and build something meaningful for the long term.',
     isMainH1: true,
@@ -242,27 +234,17 @@ export const heroSlides = [
     number: '02',
     chapter: 'THE LAND',
     image: {
-      src: '/images/landing/statement-landscape.jpg',
-      alt: 'Sunlight filtering through a rich, verdant tree canopy on agricultural land',
-      width: 1600,
-      height: 1067
+      src: '/images/landing/hero-villa-retreat.jpg',
+      alt: 'Luxury eco-farmhouse villa on a managed farmland estate surrounded by lush lawns, vegetable gardens, and coconut palms',
+      width: 2400,
+      height: 1350
     },
     theme: 'dark',
-    headingShadowClass: 'drop-shadow-[0_2px_14px_rgba(0,0,0,0.92)] drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]',
-    imageOverlay: 'bg-black/15',
-    titleLine1Class: 'text-[#FFFFFF]',
-    titleLine2Class: 'italic text-[#F2CF84]',
-    descriptionClass: 'text-[#EDE7DE] drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]',
-    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
-    badgeTextClass: 'text-[#B88E3E]',
-    badgeIconClass: 'text-[#B88E3E]',
-    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
-    primaryBtnIconClass: 'text-[#152B1B]',
-    secondaryBtnClass: 'bg-[#163A20] hover:bg-[#1E4829] border border-[#386842] text-[#FAF7F2]',
-    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
-    eyebrow: 'Living Legacy • A Tangible Foundation',
-    titleLine1: 'Land is More Than an Asset.',
-    titleLine2: 'It is a Lasting Anchor.',
+    eyebrow: 'LIVING LEGACY • A TANGIBLE FOUNDATION',
+    titlePart1: 'Land is More Than',
+    titleAccent1: 'an Asset.',
+    titlePart2: 'It is a Lasting',
+    titleAccent2: 'Anchor.',
     description:
       'A foundation that endures through generations—grounded in ownership, nurtured by time, and protected by care.',
     isMainH1: false,
@@ -282,20 +264,11 @@ export const heroSlides = [
       height: 1067
     },
     theme: 'dark',
-    headingShadowClass: 'drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]',
-    titleLine1Class: 'text-[#FFFFFF]',
-    titleLine2Class: 'italic text-[#F2CF84]',
-    descriptionClass: 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]',
-    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
-    badgeTextClass: 'text-[#B88E3E]',
-    badgeIconClass: 'text-[#B88E3E]',
-    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
-    primaryBtnIconClass: 'text-[#152B1B]',
-    secondaryBtnClass: 'bg-[#163A20] hover:bg-[#1E4829] border border-[#386842] text-[#FAF7F2]',
-    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
-    eyebrow: 'The Partnership • Management & Stewardship',
-    titleLine1: 'You Own the Land.',
-    titleLine2: 'We Manage the Farm.',
+    eyebrow: 'THE PARTNERSHIP • MANAGEMENT & STEWARDSHIP',
+    titlePart1: 'You Own the',
+    titleAccent1: 'Land.',
+    titlePart2: 'We Manage the',
+    titleAccent2: 'Farm.',
     description:
       'Retain complete titled ownership while our on-ground team coordinates farm operations, cultivation, and ongoing agricultural care.',
     isMainH1: false,
@@ -315,20 +288,11 @@ export const heroSlides = [
       height: 1200
     },
     theme: 'dark',
-    headingShadowClass: 'drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]',
-    titleLine1Class: 'text-[#FFFFFF]',
-    titleLine2Class: 'italic text-[#F0CE80]',
-    descriptionClass: 'text-[#EDE7DE]/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]',
-    badgeClass: 'bg-[#1A2218]/90 border-[#9A814F]/50',
-    badgeTextClass: 'text-[#B88E3E]',
-    badgeIconClass: 'text-[#B88E3E]',
-    primaryBtnClass: 'bg-[#F7F4EC] text-[#152B1B] hover:bg-white',
-    primaryBtnIconClass: 'text-[#152B1B]',
-    secondaryBtnClass: 'bg-[#163A20] hover:bg-[#1E4829] border border-[#386842] text-[#FAF7F2]',
-    scrollIndicatorClass: 'text-[#DCD4C7]/85 group-hover:text-white',
-    eyebrow: 'Our Philosophy • Rooted in Responsibility',
-    titleLine1: 'Back to Roots.',
-    titleLine2: 'Forward with Purpose.',
+    eyebrow: 'OUR PHILOSOPHY • ROOTED IN RESPONSIBILITY',
+    titlePart1: 'Back to',
+    titleAccent1: 'Roots.',
+    titlePart2: 'Forward with',
+    titleAccent2: 'Purpose.',
     description:
       'Cultivating land with ecological sensitivity, mindful community, and enduring pride of ownership.',
     isMainH1: false,
