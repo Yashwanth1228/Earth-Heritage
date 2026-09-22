@@ -26,12 +26,6 @@ export default function sitemap() {
       priority: 0.9
     },
     {
-      url: `${siteConfig.url}/farm-management`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
       url: `${siteConfig.url}/how-it-works`,
       lastModified: currentDate,
       changeFrequency: 'weekly',

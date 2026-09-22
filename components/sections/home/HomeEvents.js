@@ -1,29 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
-import { ArrowRight, Camera, Calendar, Clock, MapPin, X, Sparkles, Check } from 'lucide-react';
+import { ArrowRight, Camera, Calendar, Clock, MapPin, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEnquiry } from '@/context/EnquiryContext';
 import { cn } from '@/lib/utils';
 
 /**
- * 06 — HomeEvents: Equal-Sized Image Moments Marquee with Event Details Modal
+ * 06 — HomeEvents: Equal-Sized Image Moments Carousel with Event Details Modal
  * 
  * Features:
- * - 100% Image Moments (No videos, no video tags or play symbols).
- * - Equal-size card dimensions (aspect-[16/10], w-[280px] sm:w-[340px] lg:w-[380px]) matching Stories cards.
- * - Continuous infinite circular loop scrolling LEFT TO RIGHT (LTR Stepped).
- * - 2-second stay on each card with smooth transition.
- * - Interactive: Clicking any event card opens an elegant Event Details modal on-page.
+ * - 100% Image Moments across Earth Heritage estates.
+ * - Interactive Previous/Next controls accessible across all screen sizes (mobile header buttons + floating arrows).
+ * - 4-second auto-scroll delay with smooth programmatic scroll.
+ * - Auto-pauses on hover, touch, and when the event details modal is open.
+ * - Native touch swipe enabled with momentum and active index tracking.
+ * - Interactive: Clicking any event card opens an elegant Event Details modal.
  * - Warm ivory / off-white background (#FAF7F2), alternating harmoniously with Warm Biscuit.
  */
 export default function HomeEvents() {
   const { openEnquiryModal } = useEnquiry();
   const [selectedEvent, setSelectedEvent] = useState(null);
+
+  const [eventIndex, setEventIndex] = useState(0);
+  const [isEventPaused, setIsEventPaused] = useState(false);
+  const eventTrackRef = useRef(null);
 
   const eventMoments = [
     {
@@ -94,6 +99,76 @@ export default function HomeEvents() {
     }
   ];
 
+  // Helper to scroll the track container to a specific card index
+  const scrollTrackToIndex = (idx) => {
+    if (!eventTrackRef.current) return;
+    const container = eventTrackRef.current;
+    const cards = container.querySelectorAll('[data-card]');
+    if (cards && cards[idx]) {
+      const card = cards[idx];
+      const paddingLeft = parseFloat(window.getComputedStyle(container).paddingLeft) || 0;
+      const targetLeft = Math.max(0, card.offsetLeft - paddingLeft);
+      container.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    }
+  };
+
+  const handleNextEvent = useCallback(() => {
+    setEventIndex((prev) => {
+      const next = (prev + 1) % eventMoments.length;
+      scrollTrackToIndex(next);
+      return next;
+    });
+  }, [eventMoments.length]);
+
+  const handlePrevEvent = useCallback(() => {
+    setEventIndex((prev) => {
+      const prevIdx = (prev - 1 + eventMoments.length) % eventMoments.length;
+      scrollTrackToIndex(prevIdx);
+      return prevIdx;
+    });
+  }, [eventMoments.length]);
+
+  // 4-Second Auto-Advance Timer (Paused on hover, touch, or modal open)
+  useEffect(() => {
+    if (isEventPaused || selectedEvent) return;
+    const timer = setInterval(() => {
+      handleNextEvent();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isEventPaused, selectedEvent, handleNextEvent]);
+
+  // Sync scroll position with active index during touch swipe
+  useEffect(() => {
+    const el = eventTrackRef.current;
+    if (!el) return () => {};
+    let timeoutId;
+    const onScroll = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const cards = el.querySelectorAll('[data-card]');
+        if (!cards.length) return;
+        const scrollPos = el.scrollLeft;
+        const paddingLeft = parseFloat(window.getComputedStyle(el).paddingLeft) || 0;
+        let closest = 0;
+        let minDiff = Infinity;
+        cards.forEach((card, i) => {
+          if (i >= eventMoments.length) return;
+          const diff = Math.abs(card.offsetLeft - paddingLeft - scrollPos);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closest = i;
+          }
+        });
+        setEventIndex(closest);
+      }, 80);
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      el.removeEventListener('scroll', onScroll);
+      clearTimeout(timeoutId);
+    };
+  }, [eventMoments.length]);
+
   return (
     <section
       id="community-events"
@@ -103,8 +178,8 @@ export default function HomeEvents() {
     >
       <LandContourPattern variant="biscuit-organic-flow" className="opacity-50 pointer-events-none" />
 
-      <Container size="default" className="relative z-10 mb-10 sm:mb-16">
-        {/* Section Header (Centered on mobile, split on desktop) */}
+      <Container size="default" className="relative z-10 mb-10 sm:mb-14">
+        {/* Section Header */}
         <div className="flex flex-col items-center text-center md:items-end md:text-left md:flex-row justify-between gap-6">
           <div className="max-w-2xl space-y-3 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
             <MotionReveal delay={0.05}>
@@ -121,7 +196,7 @@ export default function HomeEvents() {
 
             <MotionReveal delay={0.25}>
               <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-xl md:max-w-none mx-auto md:mx-0">
-                Bringing people, land, and community together through authentic agricultural experiences, guided estate walks, and seasonal harvest rituals. Click any card to explore event details.
+                Bringing people, land, and community together through authentic agricultural experiences, guided estate walks, and seasonal harvest rituals. Use the controls or swipe to browse.
               </p>
             </MotionReveal>
           </div>
@@ -140,135 +215,133 @@ export default function HomeEvents() {
         </div>
       </Container>
 
-      {/* CONTINUOUS INFINITE CIRCULAR MARQUEE (SCROLLS LEFT TO RIGHT WITH 2S CARD STAY, CENTERED ON MOBILE) */}
-      <div className="relative w-full pause-marquee-hover select-none">
+      {/* INTERACTIVE CAROUSEL CONTAINER (4s Auto-Advance with Prev/Next Controls) */}
+      <div className="relative w-full select-none">
         
-        {/* Row Sub-label (Centered on mobile) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-center sm:justify-between">
-          <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-[#7A6A4E] font-medium">
-            <Calendar className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
-            <span>Community Events &bull; Left to Right</span>
+        {/* Row Sub-label & Navigation Controls */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 flex items-center justify-between gap-4">
+          <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-mono tracking-wider uppercase text-[#7A6A4E] font-semibold">
+            <Calendar className="w-4 h-4 text-[#15341C]" aria-hidden="true" />
+            <span>Community Events</span>
+            <span className="text-[#8C7A5A]/50 hidden sm:inline">&bull;</span>
+            <span className="text-[11px] font-mono text-[#8C7A5A] font-bold">
+              {String(eventIndex + 1).padStart(2, '0')} / {String(eventMoments.length).padStart(2, '0')}
+            </span>
           </span>
-          <span className="text-[10px] font-mono text-[#8C7A5A]/80 uppercase hidden sm:inline-block">
-            2s Card Stay &bull; Click to View Details
-          </span>
+
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-mono text-[#8C7A5A]/80 uppercase hidden md:inline-block mr-1">
+              4s Delay &bull; Hover to Pause
+            </span>
+            <button
+              type="button"
+              onClick={handlePrevEvent}
+              aria-label="Previous community event"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5C09D] bg-white/90 hover:bg-[#15341C] text-[#15341C] hover:text-[#FAF7F2] hover:border-[#15341C] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={handleNextEvent}
+              aria-label="Next community event"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5C09D] bg-white/90 hover:bg-[#15341C] text-[#15341C] hover:text-[#FAF7F2] hover:border-[#15341C] flex items-center justify-center transition-all shadow-xs cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        {/* Marquee Track: Duplicated sets seamlessly looping -50% to 0% with 2-second hold (Centered offset on mobile) */}
-        <div className="relative w-full overflow-hidden">
-          <div className="flex w-max animate-marquee-stepped-ltr pl-[calc((100vw-300px)/2)] sm:pl-0">
-            
-            {/* Set 1 */}
-            <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
-              {eventMoments.map((item, idx) => (
-                <button
-                  type="button"
-                  key={`event-set1-${item.id}-${idx}`}
-                  onClick={() => setSelectedEvent(item)}
-                  aria-label={`View details for ${item.title}`}
-                  className={cn(
-                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0 text-left',
-                    'aspect-[16/10] rounded-2xl overflow-hidden relative group cursor-pointer',
-                    'border border-[#E0D5C1] bg-[#EDE5D5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]'
-                  )}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
+        {/* Track Wrapper with Floating Side Arrows */}
+        <div
+          className="relative w-full group/events"
+          onMouseEnter={() => setIsEventPaused(true)}
+          onMouseLeave={() => setIsEventPaused(false)}
+          onTouchStart={() => setIsEventPaused(true)}
+          onTouchEnd={() => setIsEventPaused(false)}
+        >
+          {/* Floating Left Arrow (Desktop / Tablet) */}
+          <button
+            type="button"
+            onClick={handlePrevEvent}
+            aria-label="Previous event"
+            className="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/60 hover:bg-[#15341C] text-white border border-white/20 backdrop-blur-md items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all cursor-pointer opacity-70 hover:opacity-100"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-                  {/* Top Badge: Image Moment tag (Centered on mobile, left on desktop) */}
-                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
-                      <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
-                      <span>{item.tag}</span>
-                    </span>
-                  </div>
+          {/* Floating Right Arrow (Desktop / Tablet) */}
+          <button
+            type="button"
+            onClick={handleNextEvent}
+            aria-label="Next event"
+            className="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/60 hover:bg-[#15341C] text-white border border-white/20 backdrop-blur-md items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all cursor-pointer opacity-70 hover:opacity-100"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
 
-                  {/* Top Right: "Details" subtle hint */}
-                  <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <span className="px-2.5 py-1 rounded-full bg-white/90 text-[#15341C] text-[10px] font-mono font-semibold uppercase tracking-wider shadow-xs">
-                      View Details &rarr;
-                    </span>
-                  </div>
+          {/* Scrollable Track */}
+          <div
+            ref={eventTrackRef}
+            className="flex overflow-x-auto no-scrollbar scroll-smooth gap-6 sm:gap-8 px-4 sm:px-6 lg:px-8 py-2"
+          >
+            {[...eventMoments, ...eventMoments].map((item, idx) => (
+              <button
+                type="button"
+                data-card
+                key={`event-${item.id}-${idx}`}
+                onClick={() => setSelectedEvent(item)}
+                aria-label={`View details for ${item.title}`}
+                className={cn(
+                  'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0 text-left cursor-pointer',
+                  'aspect-[16/10] rounded-2xl overflow-hidden relative group',
+                  'border border-[#E0D5C1] bg-[#EDE5D5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]',
+                  'transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]'
+                )}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
 
-                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors w-full">
-                      {item.title}
-                    </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
-                      {item.subtitle}
-                    </p>
-                  </div>
-                </button>
-              ))}
-            </div>
+                {/* Top Badge: Image Moment tag */}
+                <div className="absolute top-3.5 sm:top-4 left-3.5 sm:left-4 z-10 flex items-center gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
+                    <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
+                    <span>{item.tag}</span>
+                  </span>
+                </div>
 
-            {/* Set 2 (Identical duplicate for seamless continuous circular wrap) */}
-            <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8" aria-hidden="true">
-              {eventMoments.map((item, idx) => (
-                <button
-                  type="button"
-                  key={`event-set2-${item.id}-${idx}`}
-                  onClick={() => setSelectedEvent(item)}
-                  aria-label={`View details for ${item.title}`}
-                  className={cn(
-                    'w-[300px] xs:w-[320px] sm:w-[340px] lg:w-[380px] shrink-0 text-left',
-                    'aspect-[16/10] rounded-2xl overflow-hidden relative group cursor-pointer',
-                    'border border-[#E0D5C1] bg-[#EDE5D5] shadow-[0_10px_30px_rgba(17,22,19,0.06)]',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]'
-                  )}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" aria-hidden="true" />
+                {/* Top Right: "Details" hint */}
+                <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <span className="px-2.5 py-1 rounded-full bg-white/90 text-[#15341C] text-[10px] font-mono font-semibold uppercase tracking-wider shadow-xs">
+                    View Details &rarr;
+                  </span>
+                </div>
 
-                  {/* Top Badge: Image Moment tag (Centered on mobile, left on desktop) */}
-                  <div className="absolute top-3.5 sm:top-4 inset-x-0 sm:inset-x-auto sm:left-4 z-10 flex justify-center sm:justify-start">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#FAF7F2] text-[10px] font-mono tracking-wider uppercase font-semibold">
-                      <Camera className="w-3 h-3 text-[#55c40d]" aria-hidden="true" />
-                      <span>{item.tag}</span>
-                    </span>
-                  </div>
-
-                  {/* Top Right: "Details" subtle hint */}
-                  <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <span className="px-2.5 py-1 rounded-full bg-white/90 text-[#15341C] text-[10px] font-mono font-semibold uppercase tracking-wider shadow-xs">
-                      View Details &rarr;
-                    </span>
-                  </div>
-
-                  {/* Bottom Caption Bar (Centered on mobile, left on desktop) */}
-                  <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1 flex flex-col items-center sm:items-start text-center sm:text-left">
-                    <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors w-full">
-                      {item.title}
-                    </h3>
-                    <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1 w-full">
-                      {item.subtitle}
-                    </p>
-                  </div>
-                </button>
-              ))}
-            </div>
-
+                {/* Bottom Caption Bar */}
+                <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-1">
+                  <h3 className="font-serif text-base sm:text-lg font-normal text-[#FAF7F2] tracking-tight leading-snug line-clamp-1 group-hover:text-[#F2CF84] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="font-sans text-xs text-[#D8E4DC] leading-relaxed line-clamp-1">
+                    {item.subtitle}
+                  </p>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
 
       </div>
 
       {/* Bottom Note */}
-      <Container size="default" className="relative z-10 mt-10 text-center">
+      <Container size="default" className="relative z-10 mt-10 sm:mt-12 text-center">
         <p className="font-mono text-xs text-[#8C7A5A] tracking-wider uppercase">
           Open to Registered Landowners &amp; Prospective Buyers by Appointment
         </p>
@@ -313,7 +386,7 @@ export default function HomeEvents() {
                 type="button"
                 onClick={() => setSelectedEvent(null)}
                 aria-label="Close event details"
-                className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors shadow-md"
+                className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors shadow-md cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>

@@ -141,10 +141,10 @@ export default function FinalCtaSection() {
 
             {/* Secondary Action Button: Translucent Natural Treatment */}
             <Link
-              href="/farm-management"
+              href="/managed-farmland"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-[#18261B]/80 hover:bg-[#1F3324] border border-[#35543B]/65 text-[#EDE7DD] hover:border-[#4B7553]/80 text-xs sm:text-[13px] font-semibold tracking-[0.16em] uppercase shadow-[0_6px_20px_rgba(0,0,0,0.2)] hover:scale-[1.02] backdrop-blur-md transition-all duration-200"
             >
-              <span>Explore Farm Management</span>
+              <span>Explore Managed Farmland</span>
             </Link>
           </motion.div>
         </div>

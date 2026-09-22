@@ -23,11 +23,6 @@ export const siteRoutes = {
       description: 'Managed farmland ownership and long-term stewardship'
     },
     {
-      title: 'Farm Management',
-      path: '/farm-management',
-      description: 'Professional farm management and operational services'
-    },
-    {
       title: 'How It Works',
       path: '/how-it-works',
       description: 'The ownership and professional management process'
@@ -94,7 +89,6 @@ export const footerNavGroups = [
     title: 'Offerings',
     links: [
       { title: 'Managed Farmland', path: '/managed-farmland' },
-      { title: 'Farm Management', path: '/farm-management' },
       { title: 'How It Works', path: '/how-it-works' },
       { title: 'Projects', path: '/projects' }
     ]

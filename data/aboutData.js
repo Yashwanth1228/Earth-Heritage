@@ -26,6 +26,9 @@ export const aboutData = {
         name: 'Sathish Agastya',
         role: 'Co-Founder',
         initials: 'SA',
+        image: '/images/about/founder-sathish-agastya.jpg',
+        imageAlt: 'Sathish Agastya, Co-Founder of Earth Heritage',
+        imagePosition: 'center 15%',
         background: [
           'Early interest in technology and computers',
           'Experience across media, business and digital marketing',
@@ -42,6 +45,9 @@ export const aboutData = {
         role: 'Co-Founder',
         positioning: 'Founder | Entrepreneur | Visionary',
         initials: 'KJ',
+        image: '/images/about/founder-khushi-jain.jpg',
+        imageAlt: 'Khushi Jain, Co-Founder of Earth Heritage',
+        imagePosition: 'center 15%',
         background: [
           'Fashion Designing + B.Com background',
           'Experience/interests across education, social work, real estate and investments',

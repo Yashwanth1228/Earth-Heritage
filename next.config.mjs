@@ -8,6 +8,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/farm-management', destination: '/managed-farmland', permanent: false },
       { source: '/sustainability', destination: '/#principles', permanent: false },
       { source: '/insights', destination: '/#philosophy', permanent: false },
       { source: '/contact', destination: '/#contact-cta', permanent: false }

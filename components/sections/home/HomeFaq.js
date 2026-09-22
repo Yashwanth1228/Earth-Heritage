@@ -24,43 +24,51 @@ export default function HomeFaq() {
   const faqs = [
     {
       id: 'faq-1',
-      question: 'What is managed farmland?',
+      question: 'What does “Managed Farmland” mean at Earth Heritage?',
       answer:
-        'Managed farmland allows you to own agricultural land legally registered in your name while Earth Heritage coordinates professional farm management, daily maintenance, and agricultural stewardship on your behalf.',
-      linkText: 'Learn about our Managed Farmland offering',
-      href: '/managed-farmland'
+        'Managed farmland means that agreed agricultural and land-management activities can be professionally handled on behalf of owners. The exact services vary by project and are clearly explained before purchase, allowing owners to stay connected to their land without having to manage every activity themselves.'
     },
     {
       id: 'faq-2',
-      question: 'Who owns the farmland?',
+      question: 'What makes Earth Heritage different?',
       answer:
-        'You retain complete, unambiguous ownership. The legal deed and title remain strictly registered in the landowner’s name, while Earth Heritage executes agreed on-ground operations.',
-      linkText: 'Read about our ownership clarity',
-      href: '/about#model'
+        'We go beyond land ownership by combining nature, thoughtful development, responsible management, and community.'
     },
     {
       id: 'faq-3',
-      question: 'What does Earth Heritage manage?',
+      question: 'What does “Rooted in Nature. Built for Generations.” mean?',
       answer:
-        'Earth Heritage coordinates manpower supervision, crop planning, seasonal cultivation, routine maintenance, water infrastructure management, and harvest logistics according to agreed farm plans.',
-      linkText: 'Explore our 6 operational scopes',
-      href: '/farm-management'
+        'It reflects our belief in creating spaces that connect people with nature and become meaningful legacies for future generations.'
     },
     {
       id: 'faq-4',
-      question: 'How does Earth Heritage approach land and nature?',
+      question: 'What do I actually own?',
       answer:
-        'We practice responsible, ecologically balanced stewardship. Agricultural activities are structured to nourish living soil, respect seasonal cycles, and protect indigenous flora.',
-      linkText: 'Discover our principles',
-      href: '/about#philosophy'
+        'You own the specific plot or property described in your registered sale and ownership documents, subject to the applicable legal terms and project structure.'
     },
     {
       id: 'faq-5',
-      question: 'How can I begin a conversation or visit the land?',
+      question: 'What is the vision behind Earth Heritage?',
       answer:
-        'You can reach out directly via the enquiry form below or through WhatsApp to discuss available farmland parcels, operational scopes, or to schedule a private guided estate walkthrough.',
-      linkText: 'See the full ownership journey',
-      href: '/how-it-works'
+        'Our vision is to redefine the way people own, experience, and connect with land—creating spaces that can become meaningful legacies for generations.'
+    },
+    {
+      id: 'faq-6',
+      question: 'Why choose Earth Heritage?',
+      answer:
+        'We bring together thoughtful development, responsible land management, transparency, and a strong connection with nature to create more meaningful land-ownership experiences.'
+    },
+    {
+      id: 'faq-7',
+      question: 'Is the farmland registered under my name?',
+      answer:
+        'Yes, the plot is registered in the buyer’s name as per the applicable legal and registration process.'
+    },
+    {
+      id: 'faq-8',
+      question: 'What crops are grown on the farmland?',
+      answer:
+        'We grow carefully selected crops and plantations suited to the local soil, climate, and project location, with specific crops varying by project.'
     }
   ];
 
@@ -140,21 +148,11 @@ export default function HomeFaq() {
                       id={`faq-answer-${idx}`}
                       role="region"
                       aria-labelledby={`faq-btn-${idx}`}
-                      className="pb-6 pt-1 pl-14 sm:pl-18 md:pl-22 pr-4 sm:pr-8 space-y-4"
+                      className="pb-6 pt-1 pl-14 sm:pl-18 md:pl-22 pr-4 sm:pr-8"
                     >
-                      <p className="font-sans text-sm sm:text-base font-medium text-[#2E3B30] leading-relaxed max-w-4xl">
+                      <p className="font-sans text-sm sm:text-base font-normal text-[#2E3B30] leading-relaxed max-w-4xl">
                         {faq.answer}
                       </p>
-
-                      <div>
-                        <Link
-                          href={faq.href}
-                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-[#15341C] hover:text-[#1E460B] hover:underline transition-colors"
-                        >
-                          <span>{faq.linkText}</span>
-                          <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                        </Link>
-                      </div>
                     </div>
                   )}
                 </div>

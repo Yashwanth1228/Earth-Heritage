@@ -124,10 +124,18 @@ export const companyData = {
     operational: 'Earth Heritage provides professional farm management and operational stewardship. All arrangements are subject to formal agreements. Earth Heritage does not offer guaranteed investment returns, fixed percentage yields, or financial advisory services.'
   },
   contact: {
-    // Official Earth Heritage WhatsApp number (Pending from company; keep empty until officially provided)
-    // DO NOT invent or hardcode a fake phone number.
-    whatsappNumber: '',
+    email: 'earthheritageit@gmail.com',
+    phone: '9902096969',
+    phoneDisplay: '+91 99020 96969',
+    address: '4,5,6, BBMP Khata, SAMRUDDI “ No3, No 565/769, GIDADAKONENAHALLI MAIN ROAD, Nagarbhavi, Bengaluru, Karnataka 560091',
+    whatsappNumber: '9902096969',
     whatsappDefaultMessage: 'Hello Earth Heritage, I would like to know more about your managed farmland and farm management services.'
+  },
+  social: {
+    instagram: 'https://www.instagram.com/earthheritages?stkn=eWI5NnZ2OTdqM3Jt&utm_source=qr',
+    linkedin: 'https://www.linkedin.com/company/earthheritage/',
+    facebook: 'https://www.facebook.com/share/1FEyYWmhmn/',
+    youtube: 'https://youtube.com/@earthheritage?si=gqlnshFzsb2mNeC8'
   }
 };
 

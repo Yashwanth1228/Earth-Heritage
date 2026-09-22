@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
@@ -8,9 +9,9 @@ import { aboutData } from '@/data/aboutData';
 /**
  * 06 — Founders Section
  * 
- * Heading: "Two journeys. One vision."
- * Sathish Agastya & Khushi Jain verified profiles with architectural monogram placeholders.
- * Set on warm neutral background with subtle organic survey framing.
+ * Leadership: Sathish Agastya & Khushi Jain authentic leadership portrait presentation.
+ * Refined editorial layout featuring two side-by-side portrait panels on desktop,
+ * vertically stacked on mobile, with equal visual height, clean framing, and verified profiles.
  */
 export default function FoundersSection() {
   const { eyebrow, heading, subheading, profiles } = aboutData.founders;
@@ -51,26 +52,21 @@ export default function FoundersSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {profiles.map((founder, idx) => (
             <MotionReveal key={founder.id} delay={0.15 + idx * 0.1} className="h-full">
-              <article className="h-full bg-white/95 rounded-2xl sm:rounded-3xl border border-[#D5C09D] p-8 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgba(17,22,19,0.05)] flex flex-col justify-between space-y-8 backdrop-blur-xs">
+              <article className="h-full bg-white rounded-xl sm:rounded-2xl border border-[#D5C09D] p-6 sm:p-8 lg:p-10 shadow-[0_4px_24px_rgba(17,22,19,0.04)] flex flex-col justify-between space-y-8">
                 <div>
-                  {/* Architectural Portrait Placeholder Slot */}
-                  <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-[#F0E0C6]/70 border border-[#D5C09D] mb-8 flex flex-col items-center justify-center p-6 text-center">
-                    {/* Subtle geometric contour grid */}
-                    <div className="absolute inset-0 bg-[radial-gradient(#D5C09D_1px,transparent_1px)] [background-size:16px_16px] opacity-70 pointer-events-none" />
-
-                    <div className="relative z-10 space-y-3">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-[#EAD5B5] border-2 border-[#1E460B]/35 flex items-center justify-center text-xl sm:text-2xl font-serif font-bold text-[#1E460B] shadow-inner">
-                        {founder.initials}
-                      </div>
-                      <div className="space-y-1">
-                        <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#1E460B]/10 text-[10px] font-mono uppercase tracking-wider text-[#1E460B] font-semibold">
-                          Executive Portrait Slot
-                        </span>
-                        <p className="text-xs font-sans text-[#5E6960]">
-                          Reserved for official photography of {founder.name}
-                        </p>
-                      </div>
-                    </div>
+                  {/* Executive Portrait Panel */}
+                  <div className="relative w-full aspect-[4/5] rounded-lg sm:rounded-xl overflow-hidden bg-[#E8DFC8] border border-[#D5C09D] mb-8 shadow-xs">
+                    {founder.image ? (
+                      <Image
+                        src={founder.image}
+                        alt={founder.imageAlt || `${founder.name}, ${founder.role}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 540px"
+                        className="object-cover transition-transform duration-700 hover:scale-[1.02]"
+                        style={{ objectPosition: founder.imagePosition || 'center 15%' }}
+                        priority={idx === 0}
+                      />
+                    ) : null}
                   </div>
 
                   {/* Founder Identification */}
@@ -103,7 +99,7 @@ export default function FoundersSection() {
                 </div>
 
                 {/* Verified Founder Quote */}
-                <blockquote className="pt-6 border-t border-[#E6D8C3] bg-[#F5E9D3]/50 p-4 sm:p-5 rounded-xl border border-[#D5C09D]/50">
+                <blockquote className="pt-6 border-t border-[#E6D8C3] bg-[#F5E9D3]/50 p-4 sm:p-5 rounded-lg border border-[#D5C09D]/50">
                   <p className="font-serif text-base sm:text-lg italic text-[#1E460B] leading-relaxed">
                     “{founder.quote}”
                   </p>
