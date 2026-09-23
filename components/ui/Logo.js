@@ -22,6 +22,7 @@ export default function Logo({
   const sizes = {
     sm: { height: 36, width: variant === 'mark' ? 36 : 32 },
     navbar: { height: 48, width: variant === 'mark' ? 48 : 43 },
+    hero: { height: 72, width: variant === 'mark' ? 72 : 65 },
     md: { height: 48, width: variant === 'mark' ? 48 : 43 },
     lg: { height: 68, width: variant === 'mark' ? 68 : 61 },
     xl: { height: 88, width: variant === 'mark' ? 88 : 79 },
@@ -38,8 +39,9 @@ export default function Logo({
 
   const src = logoSrcs[variant] || logoSrcs.dark;
 
-  // Specialized Navbar Logo rendering: emblem on top with prominently scaled authentic wordmark below
-  if (size === 'navbar') {
+  // Specialized Navbar & Hero Logo rendering: emblem on top with prominently scaled authentic wordmark below
+  if (size === 'navbar' || size === 'hero') {
+    const isHero = size === 'hero';
     const wordmarkSrc = variant === 'light'
       ? '/images/earth-heritage-wordmark-light.png'
       : '/images/earth-heritage-wordmark-dark.png';
@@ -52,24 +54,38 @@ export default function Logo({
         )}
       >
         {/* Emblem on top */}
-        <div className="relative h-[23px] w-[23px] sm:h-[26px] sm:w-[26px] flex-shrink-0">
+        <div
+          className={cn(
+            'relative flex-shrink-0',
+            isHero
+              ? 'h-[32px] w-[32px] sm:h-[40px] sm:w-[40px]'
+              : 'h-[23px] w-[23px] sm:h-[26px] sm:w-[26px]'
+          )}
+        >
           <Image
             src="/images/earth-heritage-mark.png"
             alt="Earth Heritage Emblem"
             fill
-            sizes="64px"
+            sizes="96px"
             priority={priority}
             className="object-contain object-center"
           />
         </div>
 
         {/* Wordmark below emblem: prominently scaled with seamless 300ms opacity cross-fade */}
-        <div className="relative h-[13px] w-[66px] sm:h-[15px] sm:w-[76px] mt-0.5 flex-shrink-0">
+        <div
+          className={cn(
+            'relative mt-1 flex-shrink-0',
+            isHero
+              ? 'h-[17px] w-[86px] sm:h-[22px] sm:w-[114px]'
+              : 'h-[13px] w-[66px] sm:h-[15px] sm:w-[76px]'
+          )}
+        >
           <Image
             src="/images/earth-heritage-wordmark-dark.png"
             alt="Earth Heritage"
             fill
-            sizes="160px"
+            sizes="200px"
             priority={priority}
             className={cn(
               'object-contain object-center transition-opacity duration-300 ease-out',
@@ -80,7 +96,7 @@ export default function Logo({
             src="/images/earth-heritage-wordmark-light.png"
             alt="Earth Heritage"
             fill
-            sizes="160px"
+            sizes="200px"
             priority={priority}
             className={cn(
               'object-contain object-center transition-opacity duration-300 ease-out',

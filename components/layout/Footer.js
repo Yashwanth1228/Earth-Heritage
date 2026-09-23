@@ -53,7 +53,7 @@ export default function Footer() {
         <FooterLandscapeBackground />
 
         {/* 3. MAIN FOOTER CONTENT CONTAINER */}
-        <div className="relative z-10 pt-2 sm:pt-4 pb-10 sm:pb-14">
+        <div className="relative z-10 pt-2 sm:pt-4 pb-3 sm:pb-5">
         <Container size="wide">
           {/* Top Brand Banner: Logo + Brand Name with "Back to Roots" tagline below */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 sm:pb-6">
@@ -203,21 +203,29 @@ export default function Footer() {
           </div>
 
           {/* ---------------------------------------------------------- */}
-          {/* C. COPYRIGHT & PRIVACY POLICY ROW (LARGER FONT & CLEARANCE)*/}
+          {/* C. COPYRIGHT & LEGAL POLICIES ROW                         */}
           {/* ---------------------------------------------------------- */}
-          <div className="pt-8 pb-4">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm sm:text-base font-medium text-white pr-20 sm:pr-24 lg:pr-28">
-              <p className="font-sans tracking-wide">
-                &copy; {currentYear} Earth Heritage Private Limited. All rights reserved.
+          <div className="pt-6 sm:pt-7 pb-1">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4 text-xs sm:text-base font-medium text-white pr-0 md:pr-20 lg:pr-28 w-full">
+              {/* Copyright Notice */}
+              <p className="font-sans tracking-wide text-[#FAF7F2] text-xs sm:text-base">
+                Copyright&copy; {currentYear} <span className="text-[#F8C32C] font-semibold">Earth Heritage</span>. All Rights Reserved.
               </p>
 
-              {/* Privacy Policy Legal Link (Enlarged font, clear of floating WhatsApp button) */}
-              <div className="flex items-center">
+              {/* Separate Terms and Condition & Privacy and Policy Links (Always Same Line) */}
+              <div className="flex flex-row flex-nowrap items-center gap-3 xs:gap-4 sm:gap-6 text-xs sm:text-base whitespace-nowrap">
+                <Link
+                  href="/terms"
+                  className="hover:text-[#F8C32C] text-[#FAF7F2] transition-colors underline underline-offset-4 decoration-white/30 hover:decoration-[#F8C32C] shrink-0"
+                >
+                  Terms and Condition
+                </Link>
+                <span className="text-white/40 select-none text-[10px] sm:text-xs" aria-hidden="true">&bull;</span>
                 <Link
                   href="/privacy-policy"
-                  className="hover:text-brand-primary transition-colors underline underline-offset-4 decoration-white/40 hover:decoration-brand-primary"
+                  className="hover:text-[#F8C32C] text-[#FAF7F2] transition-colors underline underline-offset-4 decoration-white/30 hover:decoration-[#F8C32C] shrink-0"
                 >
-                  Privacy Policy
+                  Privacy and Policy
                 </Link>
               </div>
             </div>

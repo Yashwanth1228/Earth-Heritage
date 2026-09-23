@@ -66,8 +66,19 @@ export default function FloatingEnquiryButton({ className }) {
     };
   }, [isHome]);
 
-  // Visible once past hero, UNLESS entering the footer/contact zone, and not actively scrolling down on Home
-  const isVisible = isPastHero && !isNearFooter && !(isHome && isScrollingDown);
+  // Hide when mobile menu drawer is open so drawer bottom content is not obscured
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleToggle = (e) => {
+      setIsMobileMenuOpen(!!e.detail?.isOpen);
+    };
+    window.addEventListener('mobile-menu-toggle', handleToggle);
+    return () => window.removeEventListener('mobile-menu-toggle', handleToggle);
+  }, []);
+
+  // Visible once past hero, UNLESS entering the footer/contact zone, scrolling down on Home, or mobile menu is open
+  const isVisible = isPastHero && !isNearFooter && !(isHome && isScrollingDown) && !isMobileMenuOpen;
   const reducedMotion = typeof window !== 'undefined' && isReducedMotion();
 
   // Attention breathing state: activated after entrance completes (~500ms delay)
@@ -104,8 +115,11 @@ export default function FloatingEnquiryButton({ className }) {
     openEnquiryModal('General Enquiry', e.currentTarget);
   };
 
+  if (isMobileMenuOpen) return null;
+
   return (
     <div
+      data-floating-action="enquiry"
       className={cn(
         // Outer Positioning & Entrance/Exit Container (Horizontally Centered at Bottom)
         'fixed bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-40',

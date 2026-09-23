@@ -1,10 +1,10 @@
 import Container from '@/components/ui/Container';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Globe, ShieldCheck, FileText, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, ShieldCheck, ArrowUpRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Privacy Policy & Terms of Service | Earth Heritage Pvt. Ltd.',
-  description: 'Official Privacy Policy and Terms & Conditions for Earth Heritage Pvt. Ltd.',
+  title: 'Privacy Policy | Earth Heritage Pvt. Ltd.',
+  description: 'Official Privacy Policy for Earth Heritage Pvt. Ltd. detailing how we collect, use, store, protect, and handle personal information.',
   alternates: {
     canonical: '/privacy-policy'
   }
@@ -16,37 +16,31 @@ export default function PrivacyPolicyPage() {
       <Container size="default" className="max-w-4xl">
         
         {/* ============================================================ */}
-        {/* QUICK JUMP / PAGE NAVIGATION HEADER                          */}
+        {/* HEADER / NAVIGATION                                          */}
         {/* ============================================================ */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-[#E5DAC4]">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EFE7D5] text-xs font-mono uppercase tracking-widest text-[#15341C] font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-[#15341C]" aria-hidden="true" />
-              <span>Legal Agreements</span>
+              <span>Privacy Policy</span>
             </span>
           </div>
 
-          <nav aria-label="Legal document jump links" className="flex items-center gap-3 text-xs font-mono uppercase tracking-wider text-[#705C3B]">
-            <a
-              href="#privacy-policy"
-              className="hover:text-[#15341C] hover:underline underline-offset-4 transition-colors"
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#705C3B]">
+            <Link
+              href="/terms"
+              className="hover:text-[#15341C] hover:underline underline-offset-4 transition-colors inline-flex items-center gap-1"
             >
-              1. Privacy Policy
-            </a>
-            <span className="text-[#C4B79B]">&bull;</span>
-            <a
-              href="#terms"
-              className="hover:text-[#15341C] hover:underline underline-offset-4 transition-colors"
-            >
-              2. Terms &amp; Conditions
-            </a>
-          </nav>
+              <span>View Terms &amp; Conditions</span>
+              <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
         {/* ============================================================ */}
-        {/* DOCUMENT 1: PRIVACY POLICY                                   */}
+        {/* PRIVACY POLICY DOCUMENT                                      */}
         {/* ============================================================ */}
-        <article id="privacy-policy" aria-labelledby="privacy-policy-heading" className="scroll-mt-28 sm:scroll-mt-36 pt-10">
+        <article id="privacy-policy" aria-labelledby="privacy-policy-heading" className="pt-10">
           {/* Header */}
           <div className="space-y-4">
             <h1
@@ -99,437 +93,148 @@ export default function PrivacyPolicyPage() {
               <h2 id="pp-sec-2" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
                 2. How We Use Your Information
               </h2>
-              <p>We may use your information to:</p>
+              <p>We may use the information collected to:</p>
               <ul className="list-disc list-inside space-y-1.5 pl-2 text-[#2E3C32]">
-                <li>Respond to your enquiries and requests</li>
-                <li>Arrange site visits and provide project information</li>
-                <li>Communicate with you regarding our projects and services</li>
-                <li>Provide customer support</li>
-                <li>Improve our website and services</li>
-                <li>Maintain business and transaction records</li>
-                <li>Meet applicable legal and regulatory requirements</li>
-                <li>Send promotional or marketing communications where permitted and appropriately consented to</li>
+                <li>Respond to enquiries, requests, and questions</li>
+                <li>Schedule and coordinate property visits</li>
+                <li>Provide information about farmland projects, amenities, and related services</li>
+                <li>Communicate via call, SMS, email, WhatsApp, or messaging platforms where permitted</li>
+                <li>Maintain internal records and improve our services, customer experience, and website</li>
+                <li>Comply with applicable legal, statutory, and regulatory obligations</li>
               </ul>
-              <p>
-                We will use personal information for specified and lawful purposes. India&apos;s data-protection framework emphasises clear notice, purpose-specific processing, and collection of information necessary for the stated purpose.
-              </p>
             </section>
 
-            {/* 3. Consent */}
+            {/* 3. Consent and Communications */}
             <section aria-labelledby="pp-sec-3" className="space-y-3">
               <h2 id="pp-sec-3" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                3. Consent
+                3. Consent and Communications
               </h2>
               <p>
-                Where consent is required, we will seek it through a clear and understandable notice.
+                By submitting your contact information through our website, enquiry forms, campaigns, messaging channels, or during conversations with our representatives, you consent to being contacted by Earth Heritage Pvt. Ltd. regarding your enquiry, project updates, site visits, and related offerings.
               </p>
               <p>
-                You may withdraw consent where consent is the basis for processing your personal information. The withdrawal process should be reasonably easy to use, although withdrawal may affect our ability to provide certain services or respond to certain requests.
+                You may request to opt out of promotional communications at any time by contacting us through the details below.
               </p>
             </section>
 
-            {/* 4. Sharing of Information */}
+            {/* 4. Information Sharing and Disclosure */}
             <section aria-labelledby="pp-sec-4" className="space-y-3">
               <h2 id="pp-sec-4" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                4. Sharing of Information
+                4. Information Sharing and Disclosure
               </h2>
-              <p>
-                We do not sell your personal information.
-              </p>
-              <p>
-                We may share information with trusted service providers, professional advisers, technology providers, or other parties where reasonably necessary to operate our business, provide requested services, comply with legal obligations, or protect our rights.
-              </p>
-              <p>
-                Where third parties process personal information on our behalf, we expect appropriate safeguards and contractual controls to be maintained.
-              </p>
+              <div className="p-4 rounded-xl bg-[#EFE7D5]/40 border border-[#E5DAC4] font-medium text-[#15341C]">
+                We do not sell, rent, or trade your personal information to third parties for independent marketing purposes.
+              </div>
+              <p>We may share information only in limited circumstances:</p>
+              <ul className="list-disc list-inside space-y-1.5 pl-2 text-[#2E3C32]">
+                <li>
+                  <strong>Authorized Service Providers:</strong> With trusted service providers, consultants, website hosts, communication tools, and operational partners assisting in our business, under confidentiality obligations.
+                </li>
+                <li>
+                  <strong>Legal Requirements:</strong> Where required by applicable law, court order, regulatory request, or governmental authority.
+                </li>
+                <li>
+                  <strong>Rights &amp; Safety:</strong> To protect the rights, property, safety, or legal interests of Earth Heritage, our customers, employees, or others.
+                </li>
+              </ul>
             </section>
 
-            {/* 5. Cookies and Website Technologies */}
+            {/* 5. Data Security */}
             <section aria-labelledby="pp-sec-5" className="space-y-3">
               <h2 id="pp-sec-5" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                5. Cookies and Website Technologies
+                5. Data Security
               </h2>
               <p>
-                Our website may use cookies or similar technologies to improve website functionality, understand website usage, and enhance your experience.
+                We implement reasonable administrative, technical, and physical safeguards appropriate to the nature of the information to help protect personal information against unauthorized access, loss, misuse, alteration, or disclosure.
               </p>
-              <p>
-                Where applicable, you may be able to manage cookie preferences through your browser or the controls provided on our website.
+              <p className="text-xs sm:text-sm text-[#627065] italic">
+                However, no transmission over the internet or method of electronic storage is 100% secure, and we cannot guarantee absolute security.
               </p>
             </section>
 
-            {/* 6. Data Security */}
+            {/* 6. Data Retention */}
             <section aria-labelledby="pp-sec-6" className="space-y-3">
               <h2 id="pp-sec-6" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                6. Data Security
+                6. Data Retention
               </h2>
               <p>
-                We take reasonable security measures to protect personal information against unauthorised access, misuse, alteration, disclosure, or loss.
-              </p>
-              <p>
-                However, no method of transmission or electronic storage can be guaranteed to be completely secure.
+                We retain personal information for as long as necessary to fulfill the purposes described in this Privacy Policy, satisfy operational and customer service needs, resolve disputes, maintain business records, and comply with applicable laws.
               </p>
             </section>
 
-            {/* 7. Data Retention */}
+            {/* 7. Cookies and Analytics */}
             <section aria-labelledby="pp-sec-7" className="space-y-3">
               <h2 id="pp-sec-7" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                7. Data Retention
+                7. Cookies and Analytics
               </h2>
               <p>
-                We retain personal information only for as long as reasonably necessary for the purpose for which it was collected, to provide our services, maintain appropriate business records, comply with legal obligations, resolve disputes, and enforce our agreements.
+                Our website may use cookies, tracking pixels, or standard analytics tools to analyze website performance, track user engagement, improve usability, and optimize marketing campaigns.
               </p>
               <p>
-                When information is no longer required, we may delete or securely dispose of it, subject to applicable legal requirements.
+                You may adjust your browser settings to decline or manage cookies, though some website features may function differently as a result.
               </p>
             </section>
 
-            {/* 8. Your Rights */}
+            {/* 8. Third-Party Links */}
             <section aria-labelledby="pp-sec-8" className="space-y-3">
               <h2 id="pp-sec-8" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                8. Your Rights
+                8. Third-Party Links
               </h2>
-              <p>Subject to applicable law, you may have rights regarding your personal information, including the ability to:</p>
-              <ul className="list-disc list-inside space-y-1.5 pl-2 text-[#2E3C32]">
-                <li>Request information about the processing of your personal data</li>
-                <li>Request correction of inaccurate information</li>
-                <li>Request erasure where applicable</li>
-                <li>Withdraw consent where consent is the basis of processing</li>
-                <li>Raise a grievance regarding the processing of your personal information</li>
-              </ul>
               <p>
-                The DPDP Act provides rights including access to information about processing, correction and erasure, grievance redressal, and withdrawal of consent in applicable circumstances.
+                Our website may contain links to external sites, map locations, or platforms not operated by us. We are not responsible for the privacy practices, content, or policies of third-party websites.
+              </p>
+              <p>
+                We encourage you to review the privacy policies of any third-party websites you visit.
               </p>
             </section>
 
-            {/* 9. Third-Party Websites */}
+            {/* 9. Children’s Privacy */}
             <section aria-labelledby="pp-sec-9" className="space-y-3">
               <h2 id="pp-sec-9" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                9. Third-Party Websites
+                9. Children&apos;s Privacy
               </h2>
               <p>
-                Our website may contain links to third-party websites, platforms, or services.
-              </p>
-              <p>
-                Earth Heritage is not responsible for the privacy practices or content of third-party websites. We encourage you to review their respective privacy policies before providing personal information.
+                Our services and website are not directed to individuals under the age of 18. We do not knowingly collect personal information from children without appropriate parental or legal consent.
               </p>
             </section>
 
-            {/* 10. Children's Privacy */}
+            {/* 10. Your Rights and Choices */}
             <section aria-labelledby="pp-sec-10" className="space-y-3">
               <h2 id="pp-sec-10" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                10. Children&apos;s Privacy
+                10. Your Rights and Choices
               </h2>
-              <p>
-                Our website and services are not intentionally directed toward children.
-              </p>
-              <p>
-                We do not knowingly seek to collect personal information from children in circumstances where applicable law requires parental or guardian consent.
+              <p>Subject to applicable law, you may have the right to:</p>
+              <ul className="list-disc list-inside space-y-1.5 pl-2 text-[#2E3C32]">
+                <li>Request access to the personal information we hold about you</li>
+                <li>Request correction or updating of inaccurate information</li>
+                <li>Request deletion of your information, subject to legal and regulatory retention obligations</li>
+                <li>Withdraw consent to receiving promotional communications</li>
+              </ul>
+              <p className="text-xs sm:text-sm text-[#627065]">
+                To exercise any of these rights, please contact us using the information in Section 11.
               </p>
             </section>
 
-            {/* 11. Changes to This Privacy Policy */}
+            {/* 11. Updates to this Policy */}
             <section aria-labelledby="pp-sec-11" className="space-y-3">
               <h2 id="pp-sec-11" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                11. Changes to This Privacy Policy
+                11. Updates to this Policy
               </h2>
               <p>
-                We may update this Privacy Policy from time to time to reflect changes in our business, services, technology, or applicable legal requirements.
+                We may modify or update this Privacy Policy periodically to reflect changes in our practices, services, operational requirements, or legal requirements.
               </p>
               <p>
-                Any updated version will be published on this page with a revised &ldquo;Last Updated&rdquo; date.
+                The updated policy will be posted on this page with an updated &ldquo;Last Updated&rdquo; date.
               </p>
             </section>
 
-            {/* 12. Contact Us */}
+            {/* 12. Contact Us & Grievance Officer */}
             <section aria-labelledby="pp-sec-12" className="space-y-4 pt-4 border-t border-[#E5DAC4]">
               <h2 id="pp-sec-12" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                12. Contact Us
+                12. Contact Us &amp; Grievance Officer
               </h2>
               <p>
-                If you have questions about this Privacy Policy or wish to exercise an applicable privacy right, please contact us:
-              </p>
-
-              <div className="p-6 rounded-2xl bg-white border border-[#E5DAC4] shadow-xs space-y-4">
-                <div className="font-serif text-lg text-[#15341C] font-medium">
-                  Earth Heritage Pvt. Ltd.
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-[#3E4C41]">
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-4 h-4 text-[#15341C] shrink-0 mt-0.5" aria-hidden="true" />
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-[#8C7A5A]">Email</span>
-                      <a href="mailto:earthheritageit@gmail.com" className="text-[#15341C] hover:underline">
-                        earthheritageit@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-4 h-4 text-[#15341C] shrink-0 mt-0.5" aria-hidden="true" />
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-[#8C7A5A]">Phone</span>
-                      <a href="tel:+919902096969" className="text-[#15341C] hover:underline">
-                        9902096969
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 sm:col-span-2">
-                    <MapPin className="w-4 h-4 text-[#15341C] shrink-0 mt-0.5" aria-hidden="true" />
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-[#8C7A5A]">Registered Address</span>
-                      <address className="not-italic leading-relaxed">
-                        Earth Heritage Pvt. Ltd., 4,5,6, BBMP Khata, SAMRUDDI &ldquo; No3, No 565/769, GIDADAKONENAHALLI MAIN ROAD, Nagarbhavi, Bengaluru, Karnataka 560091
-                      </address>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 sm:col-span-2">
-                    <Globe className="w-4 h-4 text-[#15341C] shrink-0 mt-0.5" aria-hidden="true" />
-                    <div>
-                      <span className="block font-mono text-[10px] uppercase tracking-wider text-[#8C7A5A]">Website</span>
-                      <a
-                        href="https://earthheritage.in"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#15341C] hover:underline inline-flex items-center gap-1"
-                      >
-                        <span>https://earthheritage.in</span>
-                        <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-xs text-[#627065] pt-2 border-t border-[#E5DAC4]/60">
-                  We will review and respond to privacy-related requests in accordance with applicable law.
-                </p>
-              </div>
-            </section>
-
-          </div>
-        </article>
-
-        {/* ============================================================ */}
-        {/* CLEAR VISUAL DIVIDER BETWEEN PRIVACY POLICY & TERMS          */}
-        {/* ============================================================ */}
-        <div className="my-16 sm:my-24 relative" aria-hidden="true">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t-2 border-[#D8C7A9]" />
-          </div>
-          <div className="relative flex justify-center">
-            <span className="px-4 py-1.5 rounded-full bg-[#FAF7F2] border border-[#D8C7A9] font-mono text-xs uppercase tracking-widest text-[#15341C] font-semibold shadow-xs flex items-center gap-2">
-              <FileText className="w-3.5 h-3.5 text-[#B88E3E]" />
-              <span>Section Divider &bull; Terms &amp; Conditions</span>
-            </span>
-          </div>
-        </div>
-
-        {/* ============================================================ */}
-        {/* DOCUMENT 2: TERMS & CONDITIONS                               */}
-        {/* ============================================================ */}
-        <article id="terms" aria-labelledby="terms-heading" className="scroll-mt-28 sm:scroll-mt-36 pt-2">
-          {/* Header */}
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFE7D5] text-xs font-mono uppercase tracking-widest text-[#15341C]">
-              Terms of Agreement
-            </div>
-            <h2
-              id="terms-heading"
-              className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#111613] tracking-tight"
-            >
-              Terms &amp; Conditions
-            </h2>
-            <p className="text-xs sm:text-sm font-mono text-[#8C7A5A]">
-              Earth Heritage Pvt. Ltd. &bull; Effective: September 2026
-            </p>
-          </div>
-
-          {/* Terms & Conditions Sections 1 - 15 */}
-          <div className="mt-10 space-y-10 font-sans text-sm sm:text-base text-[#3E4C41] leading-relaxed">
-            
-            {/* 1. Introduction */}
-            <section aria-labelledby="tc-sec-1" className="space-y-3">
-              <h3 id="tc-sec-1" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                1. Introduction
-              </h3>
-              <p>
-                These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern the use of the services, website, properties, and facilities provided by <strong>Earth Heritage Pvt. Ltd.</strong> (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;).
-              </p>
-              <p>
-                By accessing our website, purchasing or booking a farmland property, or using our services, you agree to these Terms.
-              </p>
-            </section>
-
-            {/* 2. Property Information */}
-            <section aria-labelledby="tc-sec-2" className="space-y-3">
-              <h3 id="tc-sec-2" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                2. Property Information
-              </h3>
-              <p>
-                We make reasonable efforts to ensure that information relating to farmland properties, including location, area, photographs, amenities, boundaries, agricultural facilities, and pricing, is accurate and up to date.
-              </p>
-              <p>
-                However, photographs, illustrations, maps, layouts, and other promotional materials may be for representation purposes only and may differ from the actual property or completed facilities.
-              </p>
-            </section>
-
-            {/* 3. Property Purchase or Booking */}
-            <section aria-labelledby="tc-sec-3" className="space-y-3">
-              <h3 id="tc-sec-3" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                3. Property Purchase or Booking
-              </h3>
-              <p>
-                Any booking, expression of interest, advance payment, or reservation is subject to the availability of the property and execution of the applicable sale, purchase, lease, or other agreement.
-              </p>
-              <p>
-                A booking does not by itself constitute transfer of ownership unless expressly stated in a legally executed agreement.
-              </p>
-            </section>
-
-            {/* 4. Payments */}
-            <section aria-labelledby="tc-sec-4" className="space-y-3">
-              <h3 id="tc-sec-4" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                4. Payments
-              </h3>
-              <p>
-                Customers must make payments according to the payment schedule communicated by the Company.
-              </p>
-              <p>
-                All applicable taxes, registration charges, stamp duty, legal expenses, government fees, and other statutory charges shall be borne by the party responsible for such charges under the applicable agreement or law.
-              </p>
-            </section>
-
-            {/* 5. Cancellation and Refunds */}
-            <section aria-labelledby="tc-sec-5" className="space-y-3">
-              <h3 id="tc-sec-5" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                5. Cancellation and Refunds
-              </h3>
-              <p>
-                Cancellation and refund conditions will be governed by the applicable booking form, allotment letter, sale agreement, or other written agreement.
-              </p>
-              <p>
-                Any refundable amount will be processed subject to applicable deductions, contractual terms, and applicable law.
-              </p>
-            </section>
-
-            {/* 6. Land Use and Agricultural Activities */}
-            <section aria-labelledby="tc-sec-6" className="space-y-3">
-              <h3 id="tc-sec-6" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                6. Land Use and Agricultural Activities
-              </h3>
-              <p>
-                The use of the property shall comply with applicable land-use regulations, zoning requirements, environmental laws, agricultural regulations, and other government requirements.
-              </p>
-              <p>
-                Owners or users must obtain any approvals, permissions, or licenses required for their proposed activities.
-              </p>
-              <p>
-                The Company does not guarantee that every proposed activity will be permitted by government authorities.
-              </p>
-            </section>
-
-            {/* 7. Development and Amenities */}
-            <section aria-labelledby="tc-sec-7" className="space-y-3">
-              <h3 id="tc-sec-7" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                7. Development and Amenities
-              </h3>
-              <p>
-                Where the Company provides or proposes roads, fencing, water facilities, electricity, landscaping, farm infrastructure, security, common areas, or other amenities, such facilities shall be subject to the specifications and conditions stated in the relevant agreement.
-              </p>
-              <p>
-                Maintenance arrangements and associated charges may apply.
-              </p>
-            </section>
-
-            {/* 8. Possession and Documentation */}
-            <section aria-labelledby="tc-sec-8" className="space-y-3">
-              <h3 id="tc-sec-8" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                8. Possession and Documentation
-              </h3>
-              <p>
-                Possession and/or transfer of the property shall take place in accordance with the applicable agreement and subject to completion of required legal and regulatory formalities.
-              </p>
-              <p>
-                The customer is responsible for providing accurate information and documents required for the transaction.
-              </p>
-            </section>
-
-            {/* 9. Due Diligence */}
-            <section aria-labelledby="tc-sec-9" className="space-y-3">
-              <h3 id="tc-sec-9" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                9. Due Diligence
-              </h3>
-              <p>
-                Customers are encouraged to independently verify property boundaries, title documents, access, measurements, land-use restrictions, government records, approvals, and other relevant matters before entering into a transaction.
-              </p>
-              <p>
-                Where applicable, the Company will provide documents available to it for reasonable customer due diligence.
-              </p>
-            </section>
-
-            {/* 10. Limitation of Liability */}
-            <section aria-labelledby="tc-sec-10" className="space-y-3">
-              <h3 id="tc-sec-10" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                10. Limitation of Liability
-              </h3>
-              <p>
-                To the extent permitted by applicable law, the Company shall not be responsible for delays, changes, restrictions, or losses arising from circumstances beyond its reasonable control, including government actions, changes in law, natural disasters, extreme weather, infrastructure disruptions, or other force-majeure events.
-              </p>
-              <p>
-                Nothing in these Terms limits any liability that cannot legally be excluded or limited.
-              </p>
-            </section>
-
-            {/* 11. Website and Content */}
-            <section aria-labelledby="tc-sec-11" className="space-y-3">
-              <h3 id="tc-sec-11" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                11. Website and Content
-              </h3>
-              <p>
-                The Company&apos;s website, photographs, designs, text, videos, maps, logos, and other content are protected by applicable intellectual-property laws.
-              </p>
-              <p>
-                Users may not reproduce, distribute, modify, or commercially exploit such content without prior written permission.
-              </p>
-            </section>
-
-            {/* 12. Privacy */}
-            <section aria-labelledby="tc-sec-12" className="space-y-3">
-              <h3 id="tc-sec-12" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                12. Privacy
-              </h3>
-              <p>
-                Personal information collected from customers will be handled in accordance with the Company&apos;s Privacy Policy and applicable data-protection laws.
-              </p>
-            </section>
-
-            {/* 13. Changes to Terms */}
-            <section aria-labelledby="tc-sec-13" className="space-y-3">
-              <h3 id="tc-sec-13" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                13. Changes to Terms
-              </h3>
-              <p>
-                The Company may update these Terms from time to time. Updated Terms will become effective when published on the Company&apos;s website or otherwise communicated to customers, subject to applicable law and existing contractual obligations.
-              </p>
-            </section>
-
-            {/* 14. Governing Law and Jurisdiction */}
-            <section aria-labelledby="tc-sec-14" className="space-y-3">
-              <h3 id="tc-sec-14" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                14. Governing Law and Jurisdiction
-              </h3>
-              <p>
-                These Terms shall be governed by the laws of India and the applicable laws of Karnataka.
-              </p>
-              <p>
-                Subject to applicable law and the dispute-resolution provisions of the relevant agreement, courts located in Bengaluru, Karnataka shall have jurisdiction.
-              </p>
-            </section>
-
-            {/* 15. Contact */}
-            <section aria-labelledby="tc-sec-15" className="space-y-4 pt-4 border-t border-[#E5DAC4]">
-              <h3 id="tc-sec-15" className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
-                15. Contact
-              </h3>
-              <p>
-                For questions regarding these Terms, please contact:
+                For questions, concerns, or requests relating to this Privacy Policy or your personal information, please contact:
               </p>
 
               <div className="p-6 rounded-2xl bg-white border border-[#E5DAC4] shadow-xs space-y-4">
@@ -564,7 +269,25 @@ export default function PrivacyPolicyPage() {
                       </a>
                     </div>
                   </div>
+                  <div className="flex items-start gap-3 sm:col-span-2">
+                    <Globe className="w-4 h-4 text-[#15341C] shrink-0 mt-0.5" aria-hidden="true" />
+                    <div>
+                      <span className="block font-mono text-[10px] uppercase tracking-wider text-[#8C7A5A]">Website</span>
+                      <a
+                        href="https://earthheritage.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#15341C] hover:underline inline-flex items-center gap-1"
+                      >
+                        <span>https://earthheritage.in</span>
+                        <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
+                <p className="text-xs text-[#627065] pt-2 border-t border-[#E5DAC4]/60">
+                  We will review and respond to privacy-related requests in accordance with applicable law.
+                </p>
               </div>
             </section>
 

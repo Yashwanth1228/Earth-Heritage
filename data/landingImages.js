@@ -13,8 +13,8 @@
 export const landingImages = {
   hero: {
     id: 'hero-landscape',
-    src: '/images/landing/hero-family-farmland.jpg',
-    alt: 'Happy family walking along a sunlit coconut and mango tree plantation pathway on a managed farmland estate',
+    src: '/images/landing/hero-farmland-estate.jpg',
+    alt: 'Breathtaking panoramic view of an expansive managed farmland estate with rolling green meadows, coconut groves, eco-farmhouse villa, and misty mountain hills',
     usage: 'Hero full-screen landscape background',
     temporary: false,
     width: 2400,
@@ -40,12 +40,12 @@ export const landingImages = {
   },
   solution: {
     id: 'solution-management',
-    src: '/images/landing/solution-management.jpg',
-    alt: 'Neatly cultivated agricultural rows under expansive open skies',
+    src: '/images/landing/hero-managed-crops.jpg',
+    alt: 'Expansive managed agricultural estate with lush crop rows, drip irrigation, and fruit orchards',
     usage: 'Section 4 — Core proposition ("You own the land. We manage the farm.")',
-    temporary: true,
-    width: 1600,
-    height: 1067
+    temporary: false,
+    width: 2400,
+    height: 1350
   },
   managementCards: [
     {
@@ -210,8 +210,8 @@ export const heroSlides = [
     number: '01',
     chapter: 'THE VISION',
     image: {
-      src: '/images/landing/hero-family-farmland.jpg',
-      alt: 'Happy family walking along a sunlit coconut and mango tree plantation pathway on a managed farmland estate',
+      src: '/images/landing/hero-farmland-estate.jpg',
+      alt: 'Breathtaking panoramic view of an expansive managed farmland estate with rolling green meadows, coconut groves, eco-farmhouse villa, and misty mountain hills',
       width: 2400,
       height: 1350
     },
@@ -258,10 +258,10 @@ export const heroSlides = [
     number: '03',
     chapter: 'THE CARE',
     image: {
-      src: '/images/landing/solution-management.jpg',
-      alt: 'Neatly cultivated agricultural rows under expansive open skies',
-      width: 1600,
-      height: 1067
+      src: '/images/landing/hero-managed-crops.jpg',
+      alt: 'Expansive managed agricultural estate with lush crop rows, drip irrigation, and fruit orchards',
+      width: 2400,
+      height: 1350
     },
     theme: 'dark',
     eyebrow: 'THE PARTNERSHIP • MANAGEMENT & STEWARDSHIP',

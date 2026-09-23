@@ -57,12 +57,18 @@ export default function MobileMenu({ isOpen, onClose }) {
   // Robust body & Lenis scroll locking when menu is open
   useEffect(() => {
     if (isOpen) {
+      document.body.setAttribute('data-mobile-menu-open', 'true');
+      window.dispatchEvent(new CustomEvent('mobile-menu-toggle', { detail: { isOpen: true } }));
       lockScroll();
     } else {
+      document.body.removeAttribute('data-mobile-menu-open');
+      window.dispatchEvent(new CustomEvent('mobile-menu-toggle', { detail: { isOpen: false } }));
       unlockScroll();
       setIsProjectsExpanded(false);
     }
     return () => {
+      document.body.removeAttribute('data-mobile-menu-open');
+      window.dispatchEvent(new CustomEvent('mobile-menu-toggle', { detail: { isOpen: false } }));
       unlockScroll();
     };
   }, [isOpen]);

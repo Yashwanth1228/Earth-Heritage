@@ -30,7 +30,18 @@ export default function WhatsAppButton({ className }) {
   const { isPastHero } = useFloatingControls();
   const whatsappUrl = getWhatsAppUrl();
 
-  const isVisible = isPastHero;
+  // Hide when mobile menu is open
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleToggle = (e) => {
+      setIsMobileMenuOpen(!!e.detail?.isOpen);
+    };
+    window.addEventListener('mobile-menu-toggle', handleToggle);
+    return () => window.removeEventListener('mobile-menu-toggle', handleToggle);
+  }, []);
+
+  const isVisible = isPastHero && !isMobileMenuOpen;
   const reducedMotion = typeof window !== 'undefined' && isReducedMotion();
 
   // Attention breathing state: activates after entrance settles (~500ms delay)
@@ -74,8 +85,11 @@ export default function WhatsAppButton({ className }) {
     </svg>
   );
 
+  if (isMobileMenuOpen) return null;
+
   return (
     <div
+      data-floating-action="whatsapp"
       className={cn(
         // Outer Positioning & Entrance/Exit Container (Fixed Bottom-Right)
         'fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40',

@@ -25,11 +25,11 @@ function AnimatedWords({ text, className = '', baseDelay = 0, wordClassName = ''
         <span key={`${word}-${i}`}>
           <span className="inline-block overflow-hidden py-0.5 align-top">
             <motion.span
-              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: '115%' }}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: '75%' }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.75,
-                delay: shouldReduceMotion ? 0 : baseDelay + i * 0.075,
+                duration: 0.42,
+                delay: shouldReduceMotion ? 0 : baseDelay + i * 0.04,
                 ease: [0.16, 1, 0.3, 1]
               }}
               className={`inline-block ${wordClassName}`}
@@ -79,26 +79,21 @@ export default function HeroSection() {
     };
   }, [startAutoplay]);
 
-  const handleSlideSelect = (index) => {
-    setCurrentSlideIndex(index);
-    startAutoplay();
-  };
-
   return (
     <section
       id="hero"
       ref={heroRef}
       data-navbar-theme="dark"
-      className="relative w-full min-h-[88vh] sm:min-h-screen flex items-center justify-start overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 outline-none"
+      className="relative w-full min-h-[72vh] sm:min-h-[85vh] lg:min-h-screen flex items-center justify-start overflow-hidden pt-12 sm:pt-20 lg:pt-28 pb-6 sm:pb-12 lg:pb-16 outline-none"
       aria-label="Earth Heritage — Managed Farmland"
       aria-roledescription="carousel"
       aria-live="polite"
     >
       {/* Top-Left Company Logo */}
-      <div className="absolute top-4 sm:top-6 left-6 sm:left-12 md:left-16 lg:left-24 xl:left-32 2xl:left-44 z-30 flex items-center select-none transition-transform duration-200 hover:scale-102">
+      <div className="absolute top-4 sm:top-6 left-4 sm:left-10 md:left-16 lg:left-24 xl:left-32 2xl:left-44 z-30 flex items-center select-none transition-transform duration-200 hover:scale-102">
         <Logo
           variant="light"
-          size="navbar"
+          size="hero"
           priority
         />
       </div>
@@ -146,125 +141,99 @@ export default function HeroSection() {
         {/* Natural, Soft Directional Contrast (Bright & Vibrant — NOT overly dark!) */}
         {/* Left directional soft gradient for typography readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none z-10"
+          className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/5 to-transparent pointer-events-none z-10"
           aria-hidden="true"
         />
         {/* Top subtle gradient for navbar visibility */}
         <div
-          className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-black/40 via-transparent to-transparent pointer-events-none z-10"
+          className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-black/25 via-transparent to-transparent pointer-events-none z-10"
           aria-hidden="true"
         />
         {/* Bottom subtle grounding gradient */}
         <div
-          className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none z-10"
+          className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none z-10"
           aria-hidden="true"
         />
       </div>
 
       {/* 2. Left-Aligned Editorial Content Block (Matching Reference Screenshot) */}
-      <div className="relative z-20 w-full px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
-        <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl flex flex-col items-start text-left">
+      <div className="relative z-20 w-full px-4 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
+        <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl flex flex-col items-start text-left">
           
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide.id}
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
-              exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -14, filter: 'blur(4px)', transition: { duration: 0.4, ease: 'easeIn' } }}
-              className="w-full text-left space-y-3 sm:space-y-4 flex flex-col items-start"
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="w-full text-left space-y-3 sm:space-y-4 md:space-y-5 flex flex-col items-start"
             >
-              {/* Eyebrow: Warm Honey-Gold Letterspaced Label */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center justify-start"
-              >
-                <span className="font-sans text-[11px] sm:text-xs md:text-[13px] uppercase tracking-[0.22em] font-bold text-[#E5B869] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] select-none">
+              {/* Eyebrow: Farmhouse Typography Style */}
+              <div className="flex items-center justify-start">
+                <span className="font-eyebrow-bold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[11px] xs:text-[13px] sm:text-[16px] md:text-[19px] lg:text-[21px] text-[#F8C32C] drop-shadow-sm select-none">
                   {currentSlide.eyebrow}
                 </span>
-              </motion.div>
-
-              {/* Primary Headline: Dual-Style Typography Strictly in 2 Lines */}
-              <div className="w-full">
-                {currentSlide.isMainH1 ? (
-                  <h1 className="tracking-tight text-[28px] xs:text-[34px] sm:text-[42px] md:text-[48px] lg:text-[54px] xl:text-[60px] 2xl:text-[64px] leading-[1.12] sm:leading-[1.14]">
-                    {/* Line 1: Bold White Sans + Warm Gold Italic Serif */}
-                    <span className="block whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                      <span className="font-sans font-extrabold text-white">
-                        <AnimatedWords text={currentSlide.titlePart1} baseDelay={0.1} />
-                      </span>
-                      <span className="font-serif italic font-normal text-[#E5B869] ml-2 sm:ml-3 inline-block">
-                        <AnimatedWords text={currentSlide.titleAccent1} baseDelay={0.25} />
-                      </span>
-                    </span>
-
-                    {/* Line 2: Bold White Sans + Warm Gold Italic Serif */}
-                    <span className="block whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] mt-1 sm:mt-2">
-                      <span className="font-sans font-extrabold text-white">
-                        <AnimatedWords text={currentSlide.titlePart2} baseDelay={0.4} />
-                      </span>
-                      <span className="font-serif italic font-normal text-[#E5B869] ml-2 sm:ml-3 inline-block">
-                        <AnimatedWords text={currentSlide.titleAccent2} baseDelay={0.55} />
-                      </span>
-                    </span>
-                  </h1>
-                ) : (
-                  <h2 className="tracking-tight text-[28px] xs:text-[34px] sm:text-[42px] md:text-[48px] lg:text-[54px] xl:text-[60px] 2xl:text-[64px] leading-[1.12] sm:leading-[1.14]">
-                    {/* Line 1: Bold White Sans + Warm Gold Italic Serif */}
-                    <span className="block whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                      <span className="font-sans font-extrabold text-white">
-                        <AnimatedWords text={currentSlide.titlePart1} baseDelay={0.1} />
-                      </span>
-                      <span className="font-serif italic font-normal text-[#E5B869] ml-2 sm:ml-3 inline-block">
-                        <AnimatedWords text={currentSlide.titleAccent1} baseDelay={0.25} />
-                      </span>
-                    </span>
-
-                    {/* Line 2: Bold White Sans + Warm Gold Italic Serif */}
-                    <span className="block whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] mt-1 sm:mt-2">
-                      <span className="font-sans font-extrabold text-white">
-                        <AnimatedWords text={currentSlide.titlePart2} baseDelay={0.4} />
-                      </span>
-                      <span className="font-serif italic font-normal text-[#E5B869] ml-2 sm:ml-3 inline-block">
-                        <AnimatedWords text={currentSlide.titleAccent2} baseDelay={0.55} />
-                      </span>
-                    </span>
-                  </h2>
-                )}
               </div>
 
+              {/* Primary Headline: Expanded Mobile Font Size with Word-by-Word Luxury Reveal & Minimal Soft Contrast */}
+              {(() => {
+                const titleSizeClass = currentSlide.id === 'slide-02'
+                  ? 'text-[25px] min-[360px]:text-[28px] min-[390px]:text-[31px] xs:text-[37px] sm:text-[48px] md:text-[66px] lg:text-[80px] xl:text-[92px] 2xl:text-[102px]'
+                  : 'text-[30px] min-[360px]:text-[34px] min-[390px]:text-[38px] xs:text-[44px] sm:text-[56px] md:text-[72px] lg:text-[86px] xl:text-[98px] 2xl:text-[106px]';
+
+                const headlineContent = (
+                  <>
+                    {/* Line 1: Farmhouse White + Fraunces Italic Gold */}
+                    <span className="block whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.48)]">
+                      <span className="font-hero-bold uppercase tracking-[0.05em] sm:tracking-[0.07em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
+                        <AnimatedWords text={currentSlide.titlePart1} baseDelay={0.03} />
+                      </span>
+                      <span className="font-serif italic font-bold text-[#F8C32C] ml-2 sm:ml-4 md:ml-6 inline-block [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
+                        <AnimatedWords text={currentSlide.titleAccent1} baseDelay={0.12} />
+                      </span>
+                    </span>
+
+                    {/* Line 2: Farmhouse White + Fraunces Italic Gold */}
+                    <span className="block whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.48)] mt-0.5 sm:mt-1.5">
+                      <span className="font-hero-bold uppercase tracking-[0.05em] sm:tracking-[0.07em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
+                        <AnimatedWords text={currentSlide.titlePart2} baseDelay={0.18} />
+                      </span>
+                      <span className="font-serif italic font-bold text-[#F8C32C] ml-2 sm:ml-4 md:ml-6 inline-block [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
+                        <AnimatedWords text={currentSlide.titleAccent2} baseDelay={0.27} />
+                      </span>
+                    </span>
+                  </>
+                );
+
+                return (
+                  <div className="w-full overflow-visible">
+                    {currentSlide.isMainH1 ? (
+                      <h1 className={`tracking-wide ${titleSizeClass} leading-[1.08] sm:leading-[1.04]`}>
+                        {headlineContent}
+                      </h1>
+                    ) : (
+                      <h2 className={`tracking-wide ${titleSizeClass} leading-[1.08] sm:leading-[1.04]`}>
+                        {headlineContent}
+                      </h2>
+                    )}
+                  </div>
+                );
+              })()}
+
               {/* Supporting Copy: Clean Left-Aligned Subtext */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{
-                  duration: 0.75,
-                  delay: shouldReduceMotion ? 0 : 0.6,
-                  ease: [0.16, 1, 0.3, 1]
-                }}
-                className="w-full"
-              >
-                <p className="font-sans text-[14px] sm:text-[16px] md:text-[17px] font-normal leading-relaxed text-[#F7F4EC] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] max-w-lg lg:max-w-xl">
+              <div className="w-full">
+                <p className="font-sans text-[13px] xs:text-[14px] sm:text-[16px] md:text-[18px] lg:text-[19px] font-medium leading-relaxed text-white drop-shadow-sm max-w-sm sm:max-w-lg lg:max-w-xl">
                   {currentSlide.description}
                 </p>
-              </motion.div>
+              </div>
 
-              {/* Left-Aligned Action CTA Buttons */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.7,
-                  delay: shouldReduceMotion ? 0 : 0.7,
-                  ease: [0.16, 1, 0.3, 1]
-                }}
-                className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2 w-full sm:w-auto"
-              >
+              {/* Action CTA Buttons: Stacked One After the Other on Mobile, Side-by-Side on Desktop */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-2 sm:pt-2 w-full sm:w-auto max-w-xs sm:max-w-none">
                 <button
                   type="button"
                   onClick={(e) => openEnquiryModal('General Enquiry', e.currentTarget)}
-                  className="inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-3 sm:py-3.5 rounded-xl text-xs sm:text-[13px] font-bold tracking-[0.14em] uppercase whitespace-nowrap bg-[#E5B869] text-[#111613] hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-200 shadow-md cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl text-xs sm:text-[14px] font-bold tracking-[0.14em] uppercase whitespace-nowrap bg-[#F8C32C] text-[#111613] hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-200 shadow-lg cursor-pointer"
                 >
                   <span>CONTACT US</span>
                   <ArrowRight className="w-4 h-4 text-inherit" aria-hidden="true" />
@@ -272,40 +241,18 @@ export default function HeroSection() {
 
                 <Link
                   href={currentSlide.primaryAction.href}
-                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl text-xs sm:text-[13px] font-semibold tracking-[0.14em] uppercase whitespace-nowrap bg-black/35 hover:bg-black/55 border border-white/25 text-white backdrop-blur-sm hover:scale-[1.02] transition-all duration-200"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl text-xs sm:text-[14px] font-bold tracking-[0.14em] uppercase whitespace-nowrap bg-black/45 hover:bg-black/65 border border-white/35 text-white backdrop-blur-sm hover:scale-[1.02] transition-all duration-200 shadow-md"
                 >
                   <span>{currentSlide.primaryAction.label}</span>
                 </Link>
-              </motion.div>
+              </div>
             </motion.div>
           </AnimatePresence>
 
         </div>
       </div>
 
-      {/* 3. Vertical Carousel Dots on the Right (Matching Hebbevu Reference Screenshot) */}
-      <div className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 flex flex-col items-center gap-3" role="tablist" aria-label="Slide controls">
-        {heroSlides.map((slide, idx) => {
-          const isActive = idx === currentSlideIndex;
-          return (
-            <button
-              key={slide.id}
-              type="button"
-              onClick={() => handleSlideSelect(idx)}
-              role="tab"
-              aria-selected={isActive}
-              aria-label={`Jump to slide ${idx + 1}: ${slide.chapter}`}
-              className={`transition-all duration-300 rounded-full focus:outline-none cursor-pointer ${
-                isActive
-                  ? 'w-3 h-3 bg-[#E5B869] ring-4 ring-[#E5B869]/30 shadow-[0_0_12px_rgba(229,184,105,0.8)]'
-                  : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/90'
-              }`}
-            />
-          );
-        })}
-      </div>
-
-      {/* 4. Subtle Bottom Scroll Indicator */}
+      {/* 3. Subtle Bottom Scroll Indicator */}
       <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 hidden md:block">
         <Link
           href="#statement"
