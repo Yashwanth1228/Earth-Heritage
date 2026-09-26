@@ -11,7 +11,7 @@ import EnquiryModal from '@/components/ui/EnquiryModal';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import FloatingEnquiryButton from '@/components/ui/FloatingEnquiryButton';
 
-import { Fraunces, Inter } from 'next/font/google';
+import { Fraunces, Inter, Montserrat } from 'next/font/google';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -26,6 +26,13 @@ const inter = Inter({
   display: 'swap',
 });
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
 export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
@@ -33,7 +40,7 @@ export default function RootLayout({ children }) {
   const webSiteSchema = getWebSiteSchema();
 
   return (
-    <html lang="en" className={`h-full ${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`h-full ${fraunces.variable} ${inter.variable} ${montserrat.variable}`}>
       <head>
         <script
           type="application/ld+json"

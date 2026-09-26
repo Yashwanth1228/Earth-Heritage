@@ -169,37 +169,35 @@ export default function HeroSection() {
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="w-full text-left space-y-3 sm:space-y-4 md:space-y-5 flex flex-col items-start"
             >
-              {/* Eyebrow: Farmhouse Typography Style */}
+              {/* Eyebrow: Farmhouse / Brand Typography Style */}
               <div className="flex items-center justify-start">
-                <span className="font-eyebrow-bold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[11px] xs:text-[13px] sm:text-[16px] md:text-[19px] lg:text-[21px] text-[#F8C32C] drop-shadow-sm select-none">
+                <span className="font-eyebrow-bold uppercase tracking-[0.14em] text-[11px] xs:text-xs sm:text-sm text-[#F8C32C] drop-shadow-sm select-none">
                   {currentSlide.eyebrow}
                 </span>
               </div>
 
-              {/* Primary Headline: Expanded Mobile Font Size with Word-by-Word Luxury Reveal & Minimal Soft Contrast */}
+              {/* Primary Headline: Matching Rajan Farms Font Size & Weight (text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold) */}
               {(() => {
-                const titleSizeClass = currentSlide.id === 'slide-02'
-                  ? 'text-[25px] min-[360px]:text-[28px] min-[390px]:text-[31px] xs:text-[37px] sm:text-[48px] md:text-[66px] lg:text-[80px] xl:text-[92px] 2xl:text-[102px]'
-                  : 'text-[30px] min-[360px]:text-[34px] min-[390px]:text-[38px] xs:text-[44px] sm:text-[56px] md:text-[72px] lg:text-[86px] xl:text-[98px] 2xl:text-[106px]';
+                const titleSizeClass = 'text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-6xl';
 
                 const headlineContent = (
                   <>
-                    {/* Line 1: Farmhouse White + Fraunces Italic Gold */}
-                    <span className="block whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.48)]">
-                      <span className="font-hero-bold uppercase tracking-[0.05em] sm:tracking-[0.07em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
+                    {/* Line 1: Montserrat White + Warm Honey Gold */}
+                    <span className="block drop-shadow-[0_2px_8px_rgba(0,0,0,0.48)]">
+                      <span className="font-hero-bold tracking-tight text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
                         <AnimatedWords text={currentSlide.titlePart1} baseDelay={0.03} />
                       </span>
-                      <span className="font-serif italic font-bold text-[#F8C32C] ml-2 sm:ml-4 md:ml-6 inline-block [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
+                      <span className="font-hero-bold text-[#F8C32C] ml-2 sm:ml-3 inline-block tracking-tight [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
                         <AnimatedWords text={currentSlide.titleAccent1} baseDelay={0.12} />
                       </span>
                     </span>
 
-                    {/* Line 2: Farmhouse White + Fraunces Italic Gold */}
-                    <span className="block whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.48)] mt-0.5 sm:mt-1.5">
-                      <span className="font-hero-bold uppercase tracking-[0.05em] sm:tracking-[0.07em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
+                    {/* Line 2: Montserrat White + Warm Honey Gold */}
+                    <span className="block drop-shadow-[0_2px_8px_rgba(0,0,0,0.48)] mt-0.5 sm:mt-1.5">
+                      <span className="font-hero-bold tracking-tight text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
                         <AnimatedWords text={currentSlide.titlePart2} baseDelay={0.18} />
                       </span>
-                      <span className="font-serif italic font-bold text-[#F8C32C] ml-2 sm:ml-4 md:ml-6 inline-block [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
+                      <span className="font-hero-bold text-[#F8C32C] ml-2 sm:ml-3 inline-block tracking-tight [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
                         <AnimatedWords text={currentSlide.titleAccent2} baseDelay={0.27} />
                       </span>
                     </span>
@@ -207,13 +205,13 @@ export default function HeroSection() {
                 );
 
                 return (
-                  <div className="w-full overflow-visible">
+                  <div className="w-full">
                     {currentSlide.isMainH1 ? (
-                      <h1 className={`tracking-wide ${titleSizeClass} leading-[1.08] sm:leading-[1.04]`}>
+                      <h1 className={`tracking-tight ${titleSizeClass} leading-[1.15] sm:leading-[1.12]`}>
                         {headlineContent}
                       </h1>
                     ) : (
-                      <h2 className={`tracking-wide ${titleSizeClass} leading-[1.08] sm:leading-[1.04]`}>
+                      <h2 className={`tracking-tight ${titleSizeClass} leading-[1.15] sm:leading-[1.12]`}>
                         {headlineContent}
                       </h2>
                     )}

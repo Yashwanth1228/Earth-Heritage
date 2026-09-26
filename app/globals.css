@@ -11,17 +11,15 @@
 }
 
 .font-hero-bold {
-  font-family: 'Farmhouse', sans-serif;
-  font-weight: 800;
-  -webkit-text-stroke: 1.3px currentColor;
-  paint-order: stroke fill;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 .font-eyebrow-bold {
-  font-family: 'Farmhouse', sans-serif;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
   font-weight: 700;
-  -webkit-text-stroke: 0.5px currentColor;
-  paint-order: stroke fill;
+  letter-spacing: 0.12em;
 }
 
 /* Hide floating conversion action buttons (Enquire Now, WhatsApp) when mobile drawer is open */
