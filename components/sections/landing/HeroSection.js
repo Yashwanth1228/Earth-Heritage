@@ -169,9 +169,9 @@ export default function HeroSection() {
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="w-full text-left space-y-3 sm:space-y-4 md:space-y-5 flex flex-col items-start"
             >
-              {/* Eyebrow: Farmhouse / Brand Typography Style */}
+              {/* Eyebrow: Gold Background Badge Box for Crisp Readability & Visual Appeal */}
               <div className="flex items-center justify-start">
-                <span className="font-eyebrow-bold uppercase tracking-[0.14em] text-[11px] xs:text-xs sm:text-sm text-[#F8C32C] drop-shadow-sm select-none">
+                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg bg-[#F8C32C] text-[#111613] font-eyebrow-bold font-bold uppercase tracking-[0.14em] text-[11px] xs:text-xs sm:text-[13px] md:text-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] border border-[#f5b81a]/50 select-none leading-none">
                   {currentSlide.eyebrow}
                 </span>
               </div>

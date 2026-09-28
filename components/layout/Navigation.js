@@ -65,14 +65,14 @@ export default function Navigation({ className, isInverse = false }) {
         const isActive = pathname === route.path || (route.path !== '/' && pathname.startsWith(route.path));
 
         const linkClasses = cn(
-          'text-[13px] xl:text-[14px] 2xl:text-[14.5px] font-sans tracking-normal whitespace-nowrap transition-colors duration-300 ease-out relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm',
+          'text-[14.5px] xl:text-[15.5px] 2xl:text-[16.5px] font-sans tracking-normal whitespace-nowrap transition-colors duration-300 ease-out relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm',
           isInverse
             ? isActive
-              ? 'text-[#FAF7F2] font-semibold'
-              : 'text-[#FAF7F2]/80 hover:text-white font-[520]'
+              ? 'text-[#FAF7F2] font-bold'
+              : 'text-[#FAF7F2]/85 hover:text-white font-semibold'
             : isActive
-            ? 'text-text-primary font-semibold'
-            : 'text-text-primary/85 hover:text-text-primary font-[520]'
+            ? 'text-text-primary font-bold'
+            : 'text-text-primary/90 hover:text-text-primary font-semibold'
         );
 
         if (isProjects) {
@@ -138,7 +138,7 @@ export default function Navigation({ className, isInverse = false }) {
                           href={`/projects/${project.slug}`}
                           onClick={() => setIsProjectsOpen(false)}
                           className={cn(
-                            'flex items-center justify-between px-3 py-2 text-[13px] font-sans rounded-xl transition-all duration-150 group/item focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
+                            'flex items-center justify-between px-3 py-2 text-[14px] font-sans font-medium rounded-xl transition-all duration-150 group/item focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
                             isInverse
                               ? 'text-[#FAF7F2]/90 hover:text-brand-primary hover:bg-[#163A20]'
                               : 'text-text-primary/90 hover:text-brand-primary hover:bg-surface-subtle'
@@ -178,7 +178,7 @@ export default function Navigation({ className, isInverse = false }) {
                     href="/projects"
                     onClick={() => setIsProjectsOpen(false)}
                     className={cn(
-                      'flex items-center justify-between px-3 py-2 text-xs font-sans font-semibold rounded-xl transition-all duration-150 group/all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
+                      'flex items-center justify-between px-3 py-2 text-[13.5px] font-sans font-semibold rounded-xl transition-all duration-150 group/all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
                       isInverse
                         ? 'text-brand-primary hover:text-[#76e52c] hover:bg-[#163A20]'
                         : 'text-brand-primary hover:text-brand-dark hover:bg-surface-subtle'
