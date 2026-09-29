@@ -33,7 +33,7 @@ export const companyData = {
   founders: [
     {
       name: 'Sathish Agastya',
-      role: 'Co-Founder',
+      role: 'Founder',
       initials: 'SA',
       bio: 'With an early foundation in technology and computers, Sathish developed extensive experience across media, business, digital marketing, and client relationships. Rooted in a personal farming background and enduring connection to agriculture, he combined his technology and business experience with agricultural roots to create Earth Heritage.'
     },

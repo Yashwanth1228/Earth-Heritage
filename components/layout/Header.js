@@ -187,7 +187,7 @@ export default function Header() {
             onClick={(e) => openEnquiryModal('General Enquiry', e.currentTarget)}
             className={cn(
               'inline-flex items-center justify-center font-sans font-semibold select-none rounded-full',
-              'px-4.5 xl:px-5.5 py-2 text-[13px] xl:text-[14px] tracking-wide text-[#FAF6F0]',
+              'px-4.5 xl:px-5 py-2 text-xs xl:text-[13px] tracking-wide text-[#FAF6F0]',
               'bg-[linear-gradient(135deg,#163A20_0%,#24552A_50%,#1E460B_100%)]',
               'transition-all duration-250 ease-out',
               isDarkTheme

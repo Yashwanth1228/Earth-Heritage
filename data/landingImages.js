@@ -192,7 +192,7 @@ export const landingImages = {
     khushi: {
       id: 'founder-khushi',
       name: 'Khushi Jain',
-      role: 'Founder',
+      role: 'Co-Founder',
       usage: 'Section 9 — Founders introduction portrait slot',
       temporary: true
     }
@@ -264,7 +264,7 @@ export const heroSlides = [
       height: 1350
     },
     theme: 'dark',
-    eyebrow: 'THE PARTNERSHIP • MANAGEMENT & STEWARDSHIP',
+    eyebrow: 'PARTNERSHIP • MANAGEMENT & STEWARDSHIP',
     titlePart1: 'You Own the',
     titleAccent1: 'Land.',
     titlePart2: 'We Manage the',
@@ -288,7 +288,7 @@ export const heroSlides = [
       height: 1200
     },
     theme: 'dark',
-    eyebrow: 'OUR PHILOSOPHY • ROOTED IN RESPONSIBILITY',
+    eyebrow: 'OUR PHILOSOPHY • ROOTED IN PURPOSE',
     titlePart1: 'Back to',
     titleAccent1: 'Roots.',
     titlePart2: 'Forward with',

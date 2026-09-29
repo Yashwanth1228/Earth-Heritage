@@ -11,9 +11,9 @@ import { cn } from '@/lib/utils';
  * Floating "Enquire Now" Conversion Action Button
  * 
  * High-Visibility Magnetic Aesthetic:
- * - Brown to Biscuit linear gradient (#4A2A12 -> #7A4B20 -> #B88E3E -> #F0E0C6)
- *   representing fertile earth soil flowing into luminous project biscuit (#f0e0c6).
- *   High-contrast obsidian typography (#111613) and glowing dark gold & biscuit rings.
+ * - Luxury Forest Green linear gradient (#0E2413 -> #184523 -> #113119) matching the project theme.
+ *   Framed with Warm Honey Gold border (#F8C32C), luminous ivory typography (#FAF7F2),
+ *   gold sparkle beacon, and dual expanding gold & emerald radiant rings.
  * - Dynamic Pop-Up Animation: Energy-infused heartbeat pop every ~2 seconds.
  * - Dual Visible Expanding Radar Rings: Concentric glowing waves ripple outward,
  *   immediately catching the eye from anywhere on the landing page.
@@ -141,31 +141,31 @@ export default function FloatingEnquiryButton({ className }) {
           hasEntered && !reducedMotion && 'animate-enquire-pop pause-pulse-on-hover'
         )}
       >
-        {/* 1. Ambient Breathing Radiant Aura (Warm Earth Halo) */}
+        {/* 1. Ambient Breathing Radiant Aura (Brand Green Halo) */}
         {hasEntered && !reducedMotion && (
           <span
-            className="absolute -inset-2 rounded-full bg-[#B88E3E]/25 blur-xl pointer-events-none animate-enquire-aura -z-20"
+            className="absolute -inset-2 rounded-full bg-[#55c40d]/20 blur-xl pointer-events-none animate-enquire-aura -z-20"
             aria-hidden="true"
           />
         )}
 
-        {/* 2. Primary Highly Visible Glowing Expanding Ring (Wave 1 - Warm Earth Dark Gold #B88E3E) */}
+        {/* 2. Primary Highly Visible Glowing Expanding Ring (Wave 1 - Warm Honey Gold #F8C32C) */}
         {hasEntered && !reducedMotion && (
           <span
-            className="absolute -inset-1 rounded-full border-2 border-[#B88E3E] pointer-events-none animate-enquire-ring-1 pulse-child shadow-[0_0_22px_rgba(184,142,62,0.85),inset_0_0_8px_rgba(240,224,198,0.50)] -z-10"
+            className="absolute -inset-1 rounded-full border-2 border-[#F8C32C] pointer-events-none animate-enquire-ring-1 pulse-child shadow-[0_0_22px_rgba(248,195,44,0.75)] -z-10"
             aria-hidden="true"
           />
         )}
 
-        {/* 3. Secondary Visible Glowing Expanding Ring (Wave 2 - Luminous Biscuit #F0E0C6) */}
+        {/* 3. Secondary Visible Glowing Expanding Ring (Wave 2 - Brand Emerald Green #55c40d) */}
         {hasEntered && !reducedMotion && (
           <span
-            className="absolute -inset-1 rounded-full border-1.5 border-[#F0E0C6]/90 pointer-events-none animate-enquire-ring-2 pulse-child shadow-[0_0_28px_rgba(240,224,198,0.65)] -z-10"
+            className="absolute -inset-1 rounded-full border-1.5 border-[#55c40d]/80 pointer-events-none animate-enquire-ring-2 pulse-child shadow-[0_0_26px_rgba(85,196,13,0.55)] -z-10"
             aria-hidden="true"
           />
         )}
 
-        {/* 4. The Vibrant, High-Conversion Action Button: Brown to Biscuit Gradient */}
+        {/* 4. The Vibrant, High-Conversion Action Button: Luxury Forest Green + Warm Gold Theme */}
         <button
           ref={buttonRef}
           type="button"
@@ -176,40 +176,40 @@ export default function FloatingEnquiryButton({ className }) {
           className={cn(
             'relative inline-flex items-center justify-center gap-2.5 select-none rounded-full overflow-hidden',
             'px-5 py-3 sm:px-7 sm:py-3.5',
-            'bg-[linear-gradient(135deg,#4A2A12_0%,#7A4B20_30%,#B88E3E_65%,#F0E0C6_100%)]',
-            'hover:bg-[linear-gradient(135deg,#593318_0%,#8C5627_30%,#C89D4B_65%,#FAF2E3_100%)]',
-            'border-2 border-[#F0E0C6]/90',
-            'shadow-[0_8px_30px_rgba(58,32,13,0.40),0_3px_8px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.75)]',
-            'hover:shadow-[0_12px_40px_rgba(58,32,13,0.55),0_4px_12px_rgba(0,0,0,0.30),inset_0_1px_1px_rgba(255,255,255,0.90)]',
+            'bg-[linear-gradient(135deg,#0E2413_0%,#184523_50%,#113119_100%)]',
+            'hover:bg-[linear-gradient(135deg,#13381B_0%,#205A2E_50%,#164021_100%)]',
+            'border-2 border-[#F8C32C]',
+            'shadow-[0_8px_30px_rgba(14,36,19,0.50),0_3px_10px_rgba(0,0,0,0.30),inset_0_1px_1px_rgba(255,255,255,0.20)]',
+            'hover:shadow-[0_12px_40px_rgba(14,36,19,0.65),0_4px_14px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.35)]',
             'hover:scale-[1.05] active:scale-[0.97]',
             'transition-all duration-200 ease-out',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88E3E] focus-visible:ring-offset-2',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F8C32C] focus-visible:ring-offset-2',
             'cursor-pointer pointer-events-auto'
           )}
         >
           {/* Specular Light Reflection Shimmer Beam */}
           {!reducedMotion && (
             <span className="absolute inset-0 rounded-full overflow-hidden pointer-events-none" aria-hidden="true">
-              <span className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/55 to-transparent animate-button-shimmer pointer-events-none" />
+              <span className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-button-shimmer pointer-events-none" />
             </span>
           )}
 
           {/* Eye-catching Sparkle Beacon Badge */}
           <span
-            className="flex items-center justify-center w-5 h-5 rounded-full bg-[#111613] text-[#F0E0C6] text-[10px] font-bold shadow-sm flex-shrink-0"
+            className="flex items-center justify-center w-5 h-5 rounded-full bg-[#F8C32C] text-[#111613] text-[10px] font-bold shadow-sm flex-shrink-0"
             aria-hidden="true"
           >
             ✦
           </span>
 
-          {/* Crisp, High-Contrast Typography in Obsidian with Specular Drop Shadow */}
-          <span className="font-sans font-extrabold text-xs sm:text-[13px] tracking-[0.16em] uppercase text-[#111613] drop-shadow-[0_1px_0_rgba(255,255,255,0.55)]">
+          {/* Crisp, High-Contrast Typography in Ivory/Cream */}
+          <span className="font-sans font-bold text-xs sm:text-[13px] tracking-[0.16em] uppercase text-[#FAF7F2] drop-shadow-[0_1px_2px_rgba(0,0,0,0.65)]">
             Enquire Now
           </span>
 
           {/* Directional Action Indicator Arrow */}
           <svg
-            className="w-3.5 h-3.5 text-[#111613] stroke-[2.8] transition-transform duration-200 group-hover:translate-x-0.5 flex-shrink-0"
+            className="w-3.5 h-3.5 text-[#F8C32C] stroke-[2.8] transition-transform duration-200 group-hover:translate-x-0.5 flex-shrink-0"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

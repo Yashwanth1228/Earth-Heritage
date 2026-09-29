@@ -169,9 +169,9 @@ export default function HeroSection() {
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="w-full text-left space-y-3 sm:space-y-4 md:space-y-5 flex flex-col items-start"
             >
-              {/* Eyebrow: Gold Background Badge Box for Crisp Readability & Visual Appeal */}
-              <div className="flex items-center justify-start">
-                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg bg-[#F8C32C] text-[#111613] font-eyebrow-bold font-bold uppercase tracking-[0.14em] text-[11px] xs:text-xs sm:text-[13px] md:text-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] border border-[#f5b81a]/50 select-none leading-none">
+              {/* Eyebrow: Gold Background Badge Box for Crisp Readability & Single-Line Mobile Appeal */}
+              <div className="flex items-center justify-start max-w-full">
+                <span className="inline-flex items-center whitespace-nowrap px-2.5 xs:px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-lg bg-[#F8C32C] text-[#111613] font-eyebrow-bold font-bold uppercase tracking-[0.05em] xs:tracking-[0.08em] sm:tracking-[0.12em] text-[9px] xs:text-[10.5px] sm:text-xs md:text-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] border border-[#f5b81a]/50 select-none leading-none">
                   {currentSlide.eyebrow}
                 </span>
               </div>
