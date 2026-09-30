@@ -11,6 +11,15 @@ import ProjectDetailGallery from '@/components/projects/ProjectDetailGallery';
 import ProjectDetailNavigation from '@/components/projects/ProjectDetailNavigation';
 import ProjectDetailCta from '@/components/projects/ProjectDetailCta';
 
+// Nairuthya Whispering Wood — Bespoke Real Project Components (12-Section Architecture)
+import NairuthyaHero from '@/components/projects/nairuthya/NairuthyaHero';
+import NairuthyaSnapshot from '@/components/projects/nairuthya/NairuthyaSnapshot';
+import NairuthyaPlantations from '@/components/projects/nairuthya/NairuthyaPlantations';
+import NairuthyaAmenities from '@/components/projects/nairuthya/NairuthyaAmenities';
+import NairuthyaLocation from '@/components/projects/nairuthya/NairuthyaLocation';
+import NairuthyaNearby from '@/components/projects/nairuthya/NairuthyaNearby';
+import NairuthyaGallery from '@/components/projects/nairuthya/NairuthyaGallery';
+
 /**
  * Generate SEO metadata for dynamic project detail page
  * Derives exclusively from verified project data without invented claims
@@ -67,16 +76,21 @@ export async function generateStaticParams() {
 /**
  * Dynamic Individual Project Detail Page (/projects/[slug])
  * 
- * Editorial Project Exhibition Architecture:
- * 1. Schema.org Place (omitted for concept/demo projects)
- * 2. ProjectDetailHero — Compact cinematic hero (CONCEPT PROJECT, 01, MANAGED FARMLAND, title, narrative, hero visual)
- * 3. ProjectDetailOverview — Visual Story ("An approach to managed farmland.")
- * 4. ProjectDetailOwnership — Dedicated Ownership + Management ("YOU OWN THE LAND. WE MANAGE THE FARM.")
- * 5. ProjectDetailStewardship — Agronomic Farm Care & Operational Oversight
- * 6. ProjectDetailFeatures — Numbered Editorial Attributes (01, 02, 03, 04...)
- * 7. ProjectDetailGallery — Curated Visual Gallery with varied proportions & concept captions
- * 8. ProjectDetailNavigation — Previous / Next Project & All Projects Traversal
- * 9. ProjectDetailCta — Consultation closer with pre-filled enquiry modal context
+ * For 'nairuthya-whispering-wood', renders the 12-section real project presentation:
+ * 1. PROJECT HERO
+ * 2. PROJECT SNAPSHOT
+ * 3. ABOUT THE PROJECT
+ * 4. FARM & PLANTATIONS
+ * 5. AMENITIES
+ * 6. FARM DEVELOPMENT & MANAGEMENT
+ * 7. LOCATION & CONNECTIVITY
+ * 8. NEARBY PLACES / THINGS TO EXPLORE
+ * 9. PROJECT GALLERY
+ * 10. AVAILABLE PLOTS / ENQUIRY
+ * 11. PROJECT FAQ
+ * 12. FINAL CTA
+ * 
+ * For concept/demo projects, falls back to the existing concept project structure.
  */
 export default async function ProjectDetailPage({ params }) {
   const resolvedParams = await params;
@@ -88,6 +102,7 @@ export default async function ProjectDetailPage({ params }) {
   }
 
   const projectSchema = getProjectDetailSchema(project);
+  const isNairuthya = project.slug === 'nairuthya-whispering-wood';
 
   return (
     <>
@@ -98,30 +113,57 @@ export default async function ProjectDetailPage({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
         />
       )}
-      <div className="w-full bg-[#FAF6F0]">
-        {/* 1. Project Hero */}
-        <ProjectDetailHero project={project} />
+      <div className="w-full bg-[#FAF6F0] overflow-x-hidden">
+        {isNairuthya ? (
+          <>
+            {/* 1. PROJECT HERO */}
+            <NairuthyaHero project={project} />
 
-        {/* 2. Visual Story / Overview ("An approach to managed farmland.") */}
-        <ProjectDetailOverview project={project} />
+            {/* 2. PROJECT SNAPSHOT */}
+            <NairuthyaSnapshot project={project} />
 
-        {/* 3. Ownership + Management ("YOU OWN THE LAND. WE MANAGE THE FARM.") */}
-        <ProjectDetailOwnership project={project} />
+            {/* 3. FARM & PLANTATIONS */}
+            <NairuthyaPlantations project={project} />
 
-        {/* 4. Stewardship / Farm Care (Disciplined Agricultural Care) */}
-        <ProjectDetailStewardship project={project} />
+            {/* 4. AMENITIES */}
+            <NairuthyaAmenities project={project} />
 
-        {/* 5. Numbered Project Features */}
-        <ProjectDetailFeatures project={project} />
+            {/* 5. LOCATION & CONNECTIVITY */}
+            <NairuthyaLocation project={project} />
 
-        {/* 6. Visual Documentation Gallery */}
-        <ProjectDetailGallery project={project} />
+            {/* 6. NEARBY PLACES / THINGS TO EXPLORE */}
+            <NairuthyaNearby project={project} />
 
-        {/* 7. Adjacent Project Navigation */}
-        <ProjectDetailNavigation currentSlug={project.slug} />
+            {/* 7. PROJECT GALLERY */}
+            <NairuthyaGallery project={project} />
+          </>
+        ) : (
+          <>
+            {/* 1. Project Hero */}
+            <ProjectDetailHero project={project} />
 
-        {/* 8. Consultation CTA ("Own the land. Let us help care for the farm.") */}
-        <ProjectDetailCta project={project} />
+            {/* 2. Visual Story / Overview ("An approach to managed farmland.") */}
+            <ProjectDetailOverview project={project} />
+
+            {/* 3. Ownership + Management ("YOU OWN THE LAND. WE MANAGE THE FARM.") */}
+            <ProjectDetailOwnership project={project} />
+
+            {/* 4. Stewardship / Farm Care (Disciplined Agricultural Care) */}
+            <ProjectDetailStewardship project={project} />
+
+            {/* 5. Numbered Project Features */}
+            <ProjectDetailFeatures project={project} />
+
+            {/* 6. Visual Documentation Gallery */}
+            <ProjectDetailGallery project={project} />
+
+            {/* 7. Adjacent Project Navigation */}
+            <ProjectDetailNavigation currentSlug={project.slug} />
+
+            {/* 8. Consultation CTA ("Own the land. Let us help care for the farm.") */}
+            <ProjectDetailCta project={project} />
+          </>
+        )}
       </div>
     </>
   );

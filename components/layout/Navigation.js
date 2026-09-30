@@ -3,14 +3,14 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { headerNavRoutes } from '@/data/routes';
-import { projects } from '@/data/projects';
+import { PROJECT_STATUS_CATEGORIES, getProjectsByStatus } from '@/data/projects';
 import { cn } from '@/lib/utils';
 
 /**
  * Accessible desktop navigation menu with active route tracking,
- * subtle inverse state support, and compact hover/keyboard dropdown for Projects.
+ * subtle inverse state support, and 4-status direct category dropdown for Projects.
  */
 export default function Navigation({ className, isInverse = false }) {
   const pathname = usePathname();
@@ -92,16 +92,24 @@ export default function Navigation({ className, isInverse = false }) {
               }}
               onKeyDown={handleKeyDown}
             >
-              {/* Primary Link: clicking navigates directly to /projects */}
+              {/* Primary Link with Down Arrow Symbol */}
               <Link
                 href={route.path}
-                className={linkClasses}
+                className={cn(linkClasses, 'inline-flex items-center gap-1.5')}
                 aria-current={isActive ? 'page' : undefined}
                 aria-haspopup="true"
                 aria-expanded={isProjectsOpen}
                 id="nav-projects-trigger"
               >
-                {route.title}
+                <span>{route.title}</span>
+                <ChevronDown
+                  className={cn(
+                    'w-3.5 h-3.5 transition-transform duration-200 shrink-0 opacity-75',
+                    isProjectsOpen && 'rotate-180 opacity-100',
+                    isInverse ? 'text-[#FAF7F2]' : 'text-text-primary'
+                  )}
+                  aria-hidden="true"
+                />
                 {isActive && (
                   <span
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
@@ -110,7 +118,7 @@ export default function Navigation({ className, isInverse = false }) {
                 )}
               </Link>
 
-              {/* Invisible hover bridge + Compact Dropdown Panel */}
+              {/* Invisible hover bridge + 4-Status Dropdown Panel */}
               <div
                 className={cn(
                   'absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 transition-all duration-200 ease-out',
@@ -123,74 +131,66 @@ export default function Navigation({ className, isInverse = false }) {
               >
                 <div
                   className={cn(
-                    'w-56 sm:w-60 rounded-2xl p-2.5 overflow-hidden transition-colors duration-300',
+                    'w-48 sm:w-52 rounded-2xl p-2 overflow-hidden transition-colors duration-300',
                     isInverse
                       ? 'bg-[#0E2413] border border-[#245832] shadow-[0_16px_36px_rgba(0,0,0,0.5)]'
                       : 'bg-[#FAF6F0] border border-[#D5C09D]/80 shadow-[0_16px_36px_rgba(26,22,17,0.14)]'
                   )}
                 >
-                  {/* List of projects if populated */}
-                  {projects.length > 0 ? (
-                    <div className="space-y-0.5" role="none">
-                      {projects.map((project) => (
+                  <div className="space-y-0.5" role="none">
+                    {PROJECT_STATUS_CATEGORIES.map((cat) => {
+                      const catProjects = getProjectsByStatus(cat.key);
+                      const hasProjects = catProjects.length > 0;
+                      const targetHref = hasProjects
+                        ? `/projects/${catProjects[0].slug}`
+                        : '/projects';
+
+                      return (
                         <Link
-                          key={project.slug}
-                          href={`/projects/${project.slug}`}
+                          key={cat.key}
+                          href={targetHref}
                           onClick={() => setIsProjectsOpen(false)}
                           className={cn(
                             'flex items-center justify-between px-3 py-2 text-[14px] font-sans font-medium rounded-xl transition-all duration-150 group/item focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
                             isInverse
-                              ? 'text-[#FAF7F2]/90 hover:text-brand-primary hover:bg-[#163A20]'
-                              : 'text-text-primary/90 hover:text-brand-primary hover:bg-surface-subtle'
+                              ? 'text-[#FAF7F2]/90 hover:text-white hover:bg-[#163A20]'
+                              : 'text-text-primary/90 hover:text-[#1E460B] hover:bg-surface-subtle'
                           )}
                           role="menuitem"
                         >
-                          <span className="truncate">{project.name}</span>
-                          <ArrowRight
-                            className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-primary flex-shrink-0 ml-2"
-                            aria-hidden="true"
-                          />
+                          <div className="flex items-center gap-2.5">
+                            <span
+                              className={cn(
+                                'w-2 h-2 rounded-full transition-colors shrink-0',
+                                hasProjects
+                                  ? isInverse
+                                    ? 'bg-[#76e52c]'
+                                    : 'bg-[#1E460B]'
+                                  : isInverse
+                                  ? 'bg-[#2A4833]'
+                                  : 'bg-[#D2C5AE]'
+                              )}
+                              aria-hidden="true"
+                            />
+                            <span>{cat.label}</span>
+                          </div>
+
+                          {hasProjects && (
+                            <span
+                              className={cn(
+                                'text-[10px] font-mono px-1.5 py-0.2 rounded-full font-semibold',
+                                isInverse
+                                  ? 'bg-[#0E2413] text-[#76e52c] border border-[#245832]'
+                                  : 'bg-[#E0D3BC] text-[#1E460B]'
+                              )}
+                            >
+                              {catProjects.length}
+                            </span>
+                          )}
                         </Link>
-                      ))}
-                    </div>
-                  ) : (
-                    <div
-                      className={cn(
-                        'px-3 py-2.5 text-xs font-sans italic select-none',
-                        isInverse ? 'text-[#8A9C90]' : 'text-text-muted'
-                      )}
-                    >
-                      No projects available yet
-                    </div>
-                  )}
-
-                  {/* Divider */}
-                  <div
-                    className={cn(
-                      'my-1.5 border-t',
-                      isInverse ? 'border-[#1E4D2A]' : 'border-border-subtle'
-                    )}
-                    role="separator"
-                  />
-
-                  {/* View All Projects link */}
-                  <Link
-                    href="/projects"
-                    onClick={() => setIsProjectsOpen(false)}
-                    className={cn(
-                      'flex items-center justify-between px-3 py-2 text-[13.5px] font-sans font-semibold rounded-xl transition-all duration-150 group/all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
-                      isInverse
-                        ? 'text-brand-primary hover:text-[#76e52c] hover:bg-[#163A20]'
-                        : 'text-brand-primary hover:text-brand-dark hover:bg-surface-subtle'
-                    )}
-                    role="menuitem"
-                  >
-                    <span>View All Projects</span>
-                    <ArrowRight
-                      className="w-3.5 h-3.5 transition-transform duration-150 group-hover/all:translate-x-0.5"
-                      aria-hidden="true"
-                    />
-                  </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
