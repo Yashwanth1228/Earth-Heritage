@@ -58,8 +58,8 @@ export default function Logo({
           className={cn(
             'relative flex-shrink-0',
             isHero
-              ? 'h-[32px] w-[32px] sm:h-[40px] sm:w-[40px]'
-              : 'h-[23px] w-[23px] sm:h-[26px] sm:w-[26px]'
+              ? 'h-[34px] w-[34px] sm:h-[42px] sm:w-[42px]'
+              : 'h-[36px] w-[36px] sm:h-[38px] sm:w-[38px]'
           )}
         >
           <Image
@@ -72,13 +72,13 @@ export default function Logo({
           />
         </div>
 
-        {/* Wordmark below emblem: prominently scaled with seamless 300ms opacity cross-fade */}
+        {/* Wordmark below emblem: unchanged size with tight spacing */}
         <div
           className={cn(
-            'relative mt-1 flex-shrink-0',
+            'relative mt-0.5 flex-shrink-0',
             isHero
-              ? 'h-[17px] w-[86px] sm:h-[22px] sm:w-[114px]'
-              : 'h-[13px] w-[66px] sm:h-[15px] sm:w-[76px]'
+              ? 'h-[18px] w-[90px] sm:h-[22px] sm:w-[114px]'
+              : 'h-[14px] w-[70px] sm:h-[16px] sm:w-[80px]'
           )}
         >
           <Image

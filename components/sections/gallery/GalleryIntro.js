@@ -18,7 +18,7 @@ export default function GalleryIntro() {
   return (
     <section
       id="hero"
-      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 overflow-hidden"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8 lg:pb-8 border-b border-[#DCCDB7]/50 overflow-hidden"
       aria-label="Earth Heritage Gallery Introduction"
     >
       {/* Signature Earth Heritage Organic Contours */}
@@ -56,16 +56,16 @@ export default function GalleryIntro() {
 
           {/* 1. Page Eyebrow Badge */}
           <MotionReveal delay={0.05}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E4D1B5]/80 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase mb-6 sm:mb-8 shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" aria-hidden="true" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/80 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase mb-4 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D] animate-pulse" aria-hidden="true" />
               <span>{eyebrow}</span>
             </div>
           </MotionReveal>
 
-          {/* 2. Editorial Two-Tone Display Title */}
-          <MotionReveal delay={0.15}>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[70px] font-normal tracking-tight leading-[1.12] text-center">
-              <span className="text-[#111613]">{headingPart1}</span>
+          {/* 2. Editorial Two-Tone Display Title (Aligned with other pages) */}
+          <MotionReveal delay={0.1}>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight leading-[1.14] text-center">
+              <span className="text-[#111613]">{headingPart1} </span>
               <span className="text-[#1E460B] italic font-normal block sm:inline">
                 {headingPart2}
               </span>
@@ -73,8 +73,8 @@ export default function GalleryIntro() {
           </MotionReveal>
 
           {/* 3. Centered Supporting Description */}
-          <MotionReveal delay={0.25}>
-            <p className="mt-6 sm:mt-8 font-sans text-base sm:text-lg md:text-xl text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
+          <MotionReveal delay={0.15}>
+            <p className="mt-4 font-sans text-sm sm:text-base md:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
               {description}
             </p>
           </MotionReveal>

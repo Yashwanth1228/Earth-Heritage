@@ -22,7 +22,7 @@ export default function GalleryExhibition({ onSelectImage }) {
   // When a specific category (e.g., LAND) is chosen, all matching items are shown.
   const exhibitionItems = useMemo(() => {
     if (activeCategory === 'ALL') {
-      return galleryImages.filter((img) => !img.isFeature);
+      return galleryImages;
     }
     return galleryImages.filter((img) => img.category === activeCategory);
   }, [activeCategory]);
@@ -58,7 +58,7 @@ export default function GalleryExhibition({ onSelectImage }) {
               const isActive = activeCategory === cat.id;
               const count =
                 cat.id === 'ALL'
-                  ? galleryImages.filter((img) => !img.isFeature).length
+                  ? galleryImages.length
                   : galleryImages.filter((img) => img.category === cat.id).length;
 
               return (

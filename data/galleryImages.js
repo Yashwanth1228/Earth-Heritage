@@ -1,18 +1,12 @@
 /**
  * Centralized Exhibition Gallery Images Architecture (/gallery)
  * 
- * Curated photographic collection spanning:
+ * Curated authentic photographic collection from Nairuthya Whispering Wood:
  * - LAND
  * - NATURE
  * - CULTIVATION
  * - FARM LIFE
  * - EXPERIENCES
- * 
- * IMPORTANT:
- * All images are curated temporary visual assets for development.
- * Each object includes descriptive alt text of what is visually depicted
- * and does not claim to represent specific Earth Heritage project locations.
- * All gallery exhibition items are standardized to equal dimensions (aspect-[4/3], col-span-1).
  */
 
 export const galleryCategories = [
@@ -25,219 +19,76 @@ export const galleryCategories = [
 ];
 
 export const galleryImages = [
-  // 1. Hero / Exhibition Feature Landmark
   {
-    id: 'gal-feature-01',
-    src: '/images/gallery/hero-feature.jpg',
-    alt: 'Breathtaking misty agricultural valley and rolling green hills at sunrise with golden light breaking through morning clouds',
-    title: 'Morning Light over the Valley',
+    id: 'gal-real-01',
+    src: '/images/gallery/nairuthya-01-entrance.jpg',
+    alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola',
+    title: 'Grand Stone Steps & Temple Pergola',
+    description: 'Master-crafted stone stairway leading up to the pergola shrine, framed by mature trees and landscaped terraces.',
     category: 'LAND',
-    aspect: 'aspect-[16/9] lg:aspect-[21/9]',
-    isFeature: true,
-    temporary: true,
-    width: 2400,
-    height: 1350
+    aspect: 'aspect-[16/10]',
+    span: 'col-span-1',
+    width: 1100,
+    height: 485
   },
-
-  // 2. LAND
   {
-    id: 'gal-land-01',
-    src: '/images/managed-farmland/intro-farmland.jpg',
-    alt: 'Expansive managed agricultural estate with disciplined crop rows, fruit orchards, and rich dark earth',
-    title: 'Cultivated Acreage & Orchards',
+    id: 'gal-real-02',
+    src: '/images/gallery/nairuthya-02-stone-terraces.jpg',
+    alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping',
+    title: 'Stone Terracing & Themed Landscaping',
+    description: 'Naturally contoured dry-stone retaining walls with vibrant flowering beds, solar street lighting, and native tree groves.',
+    category: 'NATURE',
+    aspect: 'aspect-[16/10]',
+    span: 'col-span-1',
+    width: 1024,
+    height: 460
+  },
+  {
+    id: 'gal-real-03',
+    src: '/images/gallery/nairuthya-03-plots-irrigation.jpg',
+    alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads',
+    title: 'Drip-Irrigated Farmland Plots',
+    description: 'Nutrient-rich red soil plots demarcated with precast concrete fencing, active drip irrigation lines, and internal concrete avenues.',
+    category: 'CULTIVATION',
+    aspect: 'aspect-[16/10]',
+    span: 'col-span-1',
+    width: 1024,
+    height: 460
+  },
+  {
+    id: 'gal-real-04',
+    src: '/images/gallery/nairuthya-04-children-play.jpg',
+    alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park & Adventure Amenities",
+    title: "Children's Outdoor Play Park",
+    description: 'Dedicated outdoor recreation zone featuring swings, slides, seesaws, spring riders, safety sand bed, and perimeter fencing.',
+    category: 'EXPERIENCES',
+    aspect: 'aspect-[16/10]',
+    span: 'col-span-1',
+    width: 1024,
+    height: 460
+  },
+  {
+    id: 'gal-real-05',
+    src: '/images/gallery/nairuthya-05-elevated-vista.jpg',
+    alt: 'Nairuthya Whispering Wood — Elevated Farmland Vista & 30-ft Road Network',
+    title: 'Elevated Farmland Vista & Roads',
+    description: 'Panoramic view overlooking the master-planned layout, wide internal roadways, titled plot boundaries, and surrounding rural countryside.',
     category: 'LAND',
-    aspect: 'aspect-[4/3]',
+    aspect: 'aspect-[16/10]',
     span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
+    width: 1024,
+    height: 460
   },
   {
-    id: 'gal-land-02',
-    src: '/images/farm-management/responsible-care.jpg',
-    alt: 'Rolling green agricultural acreage with orderly contour furrows and native shade trees',
-    title: 'Topographic Contours & Living Soil',
-    category: 'LAND',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
-  },
-
-  // 3. NATURE
-  {
-    id: 'gal-nature-01',
-    src: '/images/gallery/nature-canopy.jpg',
-    alt: 'Sunbeams filtering through an ancient biodiverse tree canopy with wild ferns and forest flora',
-    title: 'Native Canopy & Sunbeams',
-    category: 'NATURE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1600,
-    height: 1200
-  },
-  {
-    id: 'gal-nature-02',
-    src: '/images/managed-farmland/nature-responsibility.jpg',
-    alt: 'Expansive golden-hour agroforestry landscape with mature indigenous trees and distant hills',
-    title: 'Ecosystem Harmony at Golden Hour',
-    category: 'NATURE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
-  },
-  {
-    id: 'gal-nature-03',
-    src: '/images/landing/philosophy-panorama.jpg',
-    alt: 'Misty tree-lined ridge and panoramic agricultural valley bathed in soft morning light',
-    title: 'The Breath of the Horizon',
-    category: 'NATURE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1200
-  },
-
-  // 4. CULTIVATION
-  {
-    id: 'gal-cult-01',
-    src: '/images/gallery/cultivation-detail.jpg',
-    alt: 'Close-up detail of fresh organic vegetable shoots emerging from nutrient-rich dark crumbly soil with morning dew drops',
-    title: 'Seedling Emergence & Soil Vitality',
-    category: 'CULTIVATION',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1200,
-    height: 1600
-  },
-  {
-    id: 'gal-cult-02',
-    src: '/images/landing/manage-02-crop.jpg',
-    alt: 'Young vibrant agricultural crop seedlings planted in disciplined straight field rows',
-    title: 'Scheduled Seasonal Planting',
-    category: 'CULTIVATION',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1000,
-    height: 667
-  },
-  {
-    id: 'gal-cult-03',
-    src: '/images/landing/manage-03-cultivation.jpg',
-    alt: 'Thriving agricultural cultivation beds growing under natural sunlight',
-    title: 'Growth Care & Natural Cycles',
-    category: 'CULTIVATION',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1000,
-    height: 667
-  },
-
-  // 5. FARM LIFE
-  {
-    id: 'gal-life-01',
-    src: '/images/farm-management/people-and-land.jpg',
-    alt: 'Agricultural field specialists and farm hands assessing young fruit trees and soil structure',
-    title: 'Hands-on Agronomic Stewardship',
+    id: 'gal-real-06',
+    src: '/images/gallery/nairuthya-06-outdoor-fitness.jpg',
+    alt: 'Nairuthya Whispering Wood — Outdoor Recreation & Fitness Zone',
+    title: 'Outdoor Recreation & Fitness Zone',
+    description: "Open-air wellness and children's activity area set against stone-lined agrarian corridors and bamboo plantation borders.",
     category: 'FARM LIFE',
-    aspect: 'aspect-[4/3]',
+    aspect: 'aspect-[16/10]',
     span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
-  },
-  {
-    id: 'gal-life-02',
-    src: '/images/landing/manage-01-people.jpg',
-    alt: 'Skilled agricultural team preparing seedlings and tending soil in morning light',
-    title: 'Coordinated Field Teams',
-    category: 'FARM LIFE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1200,
-    height: 800
-  },
-  {
-    id: 'gal-life-03',
-    src: '/images/landing/manage-04-care.jpg',
-    alt: 'Orderly orchard grove maintenance, soil enrichment, and healthy canopy upkeep',
-    title: 'Continuous Orchard Care',
-    category: 'FARM LIFE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1000,
-    height: 667
-  },
-  {
-    id: 'gal-life-04',
-    src: '/images/landing/manage-05-operations.jpg',
-    alt: 'Agricultural roadway and organized irrigation infrastructure traversing managed acreage',
-    title: 'Daily Farm Infrastructure & Routines',
-    category: 'FARM LIFE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1000,
-    height: 667
-  },
-  {
-    id: 'gal-life-05',
-    src: '/images/landing/manage-06-harvest.jpg',
-    alt: 'Bountiful fresh seasonal harvest produce gathered with systematic agricultural care',
-    title: 'Seasonal Harvest Produce Handover',
-    category: 'FARM LIFE',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 1000,
-    height: 667
-  },
-
-  // 6. EXPERIENCES
-  {
-    id: 'gal-exp-01',
-    src: '/images/gallery/experiences-gathering.jpg',
-    alt: 'Warm twilight gathering under an open timber farm pavilion with lantern light and starlight over open fields',
-    title: 'Evening Gatherings Under the Stars',
-    category: 'EXPERIENCES',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
-  },
-  {
-    id: 'gal-exp-02',
-    src: '/images/managed-farmland/core-proposition.jpg',
-    alt: 'Peaceful gravel farm pathway meandering through open fields and shade trees',
-    title: 'The Quiet Sanctuary of the Land',
-    category: 'EXPERIENCES',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
-  },
-  {
-    id: 'gal-exp-03',
-    src: '/images/landing/cta-landscape.jpg',
-    alt: 'Tranquil evening sunset casting warm amber light across fertile farmland acreage',
-    title: 'Sunset over Living Legacies',
-    category: 'EXPERIENCES',
-    aspect: 'aspect-[4/3]',
-    span: 'col-span-1',
-    temporary: true,
-    width: 2400,
-    height: 1350
+    width: 1024,
+    height: 460
   }
 ];

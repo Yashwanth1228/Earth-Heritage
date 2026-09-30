@@ -40,10 +40,349 @@
 
 export const projects = [
   {
+    id: 'nairuthya-whispering-wood',
+    slug: 'nairuthya-whispering-wood',
+    name: 'Nairuthya Whispering Wood',
+    number: '01',
+    category: 'Managed Farmland',
+    tagline: '5-Acre Managed Farmland in Honnasandra, Nelamangala',
+    shortDescription:
+      'A 5-acre managed farmland development in Honnasandra, Nelamangala. 24 master-planned plots with titled land ownership, active timber and crop plantations, and ongoing farm stewardship by Earth Heritage.',
+    overview:
+      'Nairuthya Whispering Wood is a 5-acre managed farmland estate situated in Honnasandra, Nelamangala Taluk. The project brings together direct titled land ownership with disciplined agricultural development and long-term professional farm management by Earth Heritage.\n\nComprising a boutique enclave of 24 plots starting from 6,000 sq.ft, the estate is planted with valuable timber species including Mahogany, Teak wood, and Red sandal, alongside perennial Coconut, Areca nut, and seasonal fruit varieties.',
+    stewardshipApproach:
+      'Earth Heritage acquired the estate land, undertakes complete on-ground farm development, sells titled plots to individual buyers, and continues managing all daily farm operations, irrigation networks, and plantation care.',
+    location: 'Honnasandra · Nelamangala · Bengaluru',
+    locationDetails: {
+      village: 'Honnasandra',
+      taluk: 'Nelamangala',
+      district: 'Bengaluru Rural',
+      state: 'Karnataka',
+      distanceBengaluru: '35 km from Bengaluru',
+      distanceNelamangala: '8 km from Nelamangala',
+      mapQuery: 'Whispering Wood by Nairuthya Properties',
+      mapEmbedUrl:
+        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.00800222693!2d77.33212307359022!3d13.03516221348457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae310049c2514b%3A0x31df4bed6b535bbd!2sWhispering%20Wood%20by%20Nairuthya%20Properties!5e0!3m2!1sen!2sin!4v1790763247598!5m2!1sen!2sin',
+      mapShareUrl:
+        'https://www.google.com/maps/place/Whispering+Wood+by+Nairuthya+Properties/@13.0351622,77.332123,17z'
+    },
+    status: 'new',
+    isDemo: false,
+    featured: true,
+    heroImage: {
+      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+      alt: 'Nairuthya Whispering Wood — Farmland Estate Entrance & Temple at Honnasandra, Nelamangala'
+    },
+    coverImage: {
+      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+      alt: 'Nairuthya Whispering Wood — 5-Acre Managed Farmland Estate'
+    },
+    locationMapImage: {
+      src: null,
+      alt: 'Nairuthya Whispering Wood — Regional Location & Route Map'
+    },
+    snapshot: {
+      totalArea: '5 Acres',
+      totalPlots: '24 Total Plots',
+      minPlotSize: '6,000 sq.ft Minimum Plot',
+      pricePerSqFt: '₹1,699 / sq.ft',
+      distBengaluru: '35 km from Bengaluru',
+      distNelamangala: '8 km from Nelamangala'
+    },
+    aboutModel: {
+      eyebrow: 'LAND DEVELOPMENT & STEWARDSHIP MODEL',
+      title: 'Acquired, Developed, and Professionally Managed by Earth Heritage',
+      points: [
+        {
+          num: '01',
+          title: 'Direct Land Acquisition',
+          description: 'Earth Heritage has purchased and secured the project land under thorough legal due diligence.'
+        },
+        {
+          num: '02',
+          title: 'Comprehensive Farm Development',
+          description: 'Earth Heritage develops the complete agricultural layout including 30-ft internal roads, drainage, boundary fencing, entrance arch, and water supply.'
+        },
+        {
+          num: '03',
+          title: 'Individual Titled Plot Ownership',
+          description: 'Farmland plots starting from 6,000 sq.ft are sold directly to buyers with registered, individual legal title deeds.'
+        },
+        {
+          num: '04',
+          title: 'Sustained Operational Farm Management',
+          description: 'Earth Heritage continues managing the farmland post-purchase, coordinating agrarian manpower, cultivation, maintenance, irrigation, and day-to-day operations.'
+        }
+      ]
+    },
+    plantations: [
+      {
+        id: 'mahogany',
+        name: 'Mahogany',
+        botanical: 'Swietenia macrophylla',
+        category: 'Hardwood Timber',
+        description:
+          'A deep-rooting timber species that develops an expansive green canopy, enriches topsoil structure, and establishes an enduring long-term green asset.',
+        image: {
+          src: '/images/plantations/mahogany.jpg',
+          alt: 'Mahogany plantation at Nairuthya Whispering Wood',
+          caption: 'Mahogany Hardwood Timber'
+        }
+      },
+      {
+        id: 'teak-wood',
+        name: 'Teak Wood',
+        botanical: 'Tectona grandis',
+        category: 'Valuable Timber',
+        description:
+          'World-renowned for structural durability, dense grain, and natural weather resistance, cultivated along dedicated farm corridors.',
+        image: {
+          src: '/images/plantations/teak-wood.jpg',
+          alt: 'Teak wood cultivation at Nairuthya Whispering Wood',
+          caption: 'Teak Wood Cultivation'
+        }
+      },
+      {
+        id: 'coconut',
+        name: 'Coconut',
+        botanical: 'Cocos nucifera',
+        category: 'Perennial Palm',
+        description:
+          'An iconic perennial palm of Karnataka’s agrarian landscape, providing continuous perimeter shade, soil stabilization, and seasonal yield.',
+        image: {
+          src: '/images/plantations/coconut.jpg',
+          alt: 'Coconut palms at Nairuthya Whispering Wood',
+          caption: 'Coconut Palm Grove'
+        }
+      },
+      {
+        id: 'areca-nut',
+        name: 'Areca Nut',
+        botanical: 'Areca catechu',
+        category: 'Commercial Plantation',
+        description:
+          'A high-yielding regional commercial plantation crop deeply rooted in Nelamangala’s farming tradition, cared for with systematic micro-irrigation.',
+        image: {
+          src: '/images/plantations/areca-nut.jpg',
+          alt: 'Areca nut plantation at Nairuthya Whispering Wood',
+          caption: 'Areca Nut Plantation'
+        }
+      },
+      {
+        id: 'red-sandal',
+        name: 'Red Sandal',
+        botanical: 'Pterocarpus santalinus',
+        category: 'Indigenous Hardwood',
+        description:
+          'A slow-growing, precious indigenous hardwood species celebrated for its dense, rich heartwood, cultivated under structured agricultural care.',
+        image: {
+          src: '/images/plantations/red-sandal.jpg',
+          alt: 'Red sandal cultivation at Nairuthya Whispering Wood',
+          caption: 'Red Sandal Hardwood'
+        }
+      },
+      {
+        id: 'seasonal-fruits',
+        name: 'Seasonal Fruits',
+        botanical: 'Curated Local Varieties',
+        category: 'Orchard & Biodiversity',
+        description:
+          '2–3 varieties of seasonal fruits suited to local soil and climatic conditions, introducing ecological biodiversity and fresh seasonal harvests.',
+        image: {
+          src: '/images/plantations/seasonal-fruits.jpg',
+          alt: 'Seasonal fruit orchard at Nairuthya Whispering Wood',
+          caption: 'Seasonal Fruit Orchard'
+        }
+      }
+    ],
+    amenities: {
+      experience: [
+        {
+          id: 'pond-area',
+          title: 'Pond Area',
+          category: 'Water & Habitat',
+          description: 'A dedicated pond area within the project.',
+          image: { src: '/images/amenities/pond-area.jpg', alt: 'Pond Area at Nairuthya Whispering Wood' }
+        },
+        {
+          id: 'yoga-meditation',
+          title: 'Yoga & Meditation Area',
+          category: 'Mindfulness & Wellness',
+          description: 'A designated space for yoga and meditation.',
+          image: { src: '/images/amenities/yoga-meditation.jpg', alt: 'Yoga & Meditation Area at Nairuthya Whispering Wood' }
+        },
+        {
+          id: 'viewpoint',
+          title: 'Viewpoint',
+          category: 'Scenic Vista',
+          description: 'An elevated viewpoint overlooking the farmland and surrounding landscape.',
+          image: { src: '/images/amenities/viewpoint.jpg', alt: 'Viewpoint at Nairuthya Whispering Wood' }
+        },
+        {
+          id: 'garden-area',
+          title: 'Garden Area',
+          category: 'Flora & Landscaping',
+          description: 'A planned garden area within the project.',
+          image: { src: '/images/amenities/garden-area.jpg', alt: 'Garden Area at Nairuthya Whispering Wood' }
+        },
+        {
+          id: 'jogging-track',
+          title: 'Jogging Track',
+          category: 'Active Lifestyle',
+          description: 'A dedicated perimeter track for walking and jogging within the farmland.',
+          image: { src: '/images/amenities/jogging-track.jpg', alt: 'Jogging Track at Nairuthya Whispering Wood' }
+        },
+        {
+          id: 'play-area',
+          title: "Children's Play Area",
+          category: 'Family & Play',
+          description: 'A dedicated outdoor play area for children within natural surroundings.',
+          image: { src: '/images/amenities/children-play-area.jpg', alt: "Children's Play Area at Nairuthya Whispering Wood" }
+        },
+        {
+          id: 'multi-play-court',
+          title: 'Multi-Play Court Area',
+          category: 'Sports & Leisure',
+          description: 'A versatile outdoor court area for sports and community recreation.',
+          image: { src: '/images/amenities/multi-court.jpg', alt: 'Multi-Play Court Area at Nairuthya Whispering Wood' }
+        }
+      ],
+      infrastructure: [
+        { name: 'Solar Lights', note: 'Energy-efficient illumination along main internal roads and common areas.' },
+        { name: 'Grand Entrance Arch', note: 'A distinct, welcoming architectural gateway marking the private estate entrance.' },
+        { name: '30-ft Double Road', note: 'Wide central arterial road ensuring seamless vehicular circulation across the farm.' },
+        { name: 'Concrete Road', note: 'Durable, all-weather internal road network designed for year-round reliability.' },
+        { name: 'Individual Plot Fencing', note: 'Clear legal demarcation with perimeter wire/pole fencing for every single plot.' },
+        { name: 'Drainage', note: 'Systematic rainwater run-off and storm water drainage channels preventing waterlogging.' },
+        { name: 'Drip Irrigation', note: 'Water-efficient sub-surface and surface drip systems for all timber and crop trees.' },
+        { name: 'CCTV Surveillance', note: 'Round-the-clock perimeter monitoring covering key access points and pathways.' },
+        { name: 'Water Supply', note: 'Dedicated agrarian water distribution with storage infrastructure serving all plots.' },
+        { name: 'Security Guard', note: 'Stationed on-ground security personnel monitoring estate access and property safety.' }
+      ]
+    },
+    managementProcess: [
+      {
+        step: '01',
+        action: 'OWN',
+        title: 'Titled Land Ownership',
+        description: 'You acquire and retain direct, registered legal ownership of your individual farmland plot with clear title deeds.'
+      },
+      {
+        step: '02',
+        action: 'DEVELOP',
+        title: 'Planned Infrastructure',
+        description: 'Earth Heritage develops the complete agricultural layout—30-ft concrete roads, boundary fencing, drainage, and irrigation.'
+      },
+      {
+        step: '03',
+        action: 'CULTIVATE',
+        title: 'Active Plantation Planting',
+        description: 'Systematic planting and cultivation of high-value timber, coconut, areca nut, and curated seasonal fruit varieties.'
+      },
+      {
+        step: '04',
+        action: 'MANAGE',
+        title: 'Day-to-Day Operations',
+        description: 'Earth Heritage coordinates on-ground agrarian manpower, pruning, soil health management, and irrigation scheduling.'
+      },
+      {
+        step: '05',
+        action: 'CONTINUE',
+        title: 'Generational Stewardship',
+        description: 'Your farmland matures under continuous professional care, creating an enduring living legacy for your family.'
+      }
+    ],
+    nearbyPlaces: [
+      {
+        id: 'nelamangala-town',
+        name: 'Nelamangala Town',
+        distance: 'Approx. 8 km',
+        note: 'Nearest taluk center with essential civic infrastructure'
+      },
+      {
+        id: 'bengaluru-city',
+        name: 'Bengaluru (Yeshwanthpur)',
+        distance: 'Approx. 35 km',
+        note: 'Direct highway connectivity via elevated corridor'
+      },
+      {
+        id: 'tumkur-road',
+        name: 'Tumkur Road (NH 48)',
+        distance: 'Direct Access',
+        note: 'Primary 6-lane regional expressway corridor'
+      },
+      {
+        id: 'strr-corridor',
+        name: 'STRR (Satellite Town Ring Road)',
+        distance: 'Orbital Corridor',
+        note: 'Fast orbital ring road connecting satellite towns'
+      },
+      {
+        id: 'shivagange',
+        name: 'Shivagange Heritage Hill & Temple',
+        distance: 'Approx. 22 km',
+        note: 'Historic monolithic hill and heritage temple destination'
+      },
+      {
+        id: 'hesaraghatta',
+        name: 'Hesaraghatta Lake & Grasslands',
+        distance: 'Approx. 24 km',
+        note: 'Scenic pastoral grasslands and protected lakebed'
+      }
+    ],
+    gallery: [
+      { id: 'nairuthya-gal-1', src: '/images/gallery/nairuthya-01-entrance.jpg', alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola', caption: 'Grand Stone Steps & Temple Pergola' },
+      { id: 'nairuthya-gal-2', src: '/images/gallery/nairuthya-02-stone-terraces.jpg', alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping', caption: 'Stone Terraces & Boundary Landscaping' },
+      { id: 'nairuthya-gal-3', src: '/images/gallery/nairuthya-03-plots-irrigation.jpg', alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads', caption: 'Drip-Irrigated Farmland Plots & Roads' },
+      { id: 'nairuthya-gal-4', src: '/images/gallery/nairuthya-04-children-play.jpg', alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park", caption: "Children's Outdoor Play Area" },
+      { id: 'nairuthya-gal-5', src: '/images/gallery/nairuthya-05-elevated-vista.jpg', alt: 'Nairuthya Whispering Wood — Elevated Farmland Vista & 30-ft Road Network', caption: 'Elevated Farmland Vista & 30-ft Roads' },
+      { id: 'nairuthya-gal-6', src: '/images/gallery/nairuthya-06-outdoor-fitness.jpg', alt: 'Nairuthya Whispering Wood — Outdoor Recreation & Fitness Zone', caption: 'Outdoor Recreation & Fitness Zone' }
+    ],
+    faqs: [
+      {
+        question: 'Where is Nairuthya Whispering Wood located?',
+        answer: 'Nairuthya Whispering Wood is situated in Honnasandra, Nelamangala Taluk, Bengaluru Rural District, Karnataka. It is approximately 8 km from Nelamangala town and approximately 35 km from Bengaluru.'
+      },
+      {
+        question: 'What is the total project size?',
+        answer: 'The total project area is 5 acres of master-planned, developing agricultural farmland.'
+      },
+      {
+        question: 'How many plots are there in the project?',
+        answer: 'The project comprises a boutique, limited-density layout of 24 total farmland plots.'
+      },
+      {
+        question: 'What is the minimum plot size available?',
+        answer: 'The minimum individual farmland plot size is 6,000 sq.ft, providing generous acreage for personal enjoyment and cultivation.'
+      },
+      {
+        question: 'What is the current price per sq.ft?',
+        answer: 'The farmland plots are currently priced at ₹1,699 per sq.ft.'
+      },
+      {
+        question: 'How many plots are currently available?',
+        answer: 'Currently, 9 plots are available for acquisition out of the total 24 plots.'
+      },
+      {
+        question: 'What plantations are planned and grown on the land?',
+        answer: 'Confirmed plantations cultivated across the estate include Mahogany, Teak wood, Coconut, Areca nut, Red sandal, and 2 to 3 curated seasonal fruit varieties suited to the local soil and climate.'
+      },
+      {
+        question: 'What amenities and infrastructure are provided?',
+        answer: 'Experience amenities include a Children’s Play Area, Pond Area, Yoga & Meditation Area, Viewpoint, Garden Area, Jogging Track, and Multi-Play Court Area. Infrastructure includes Solar Lights, Grand Entrance Arch, 30-ft Double Road, Concrete Roads, Individual Plot Fencing, Drainage, Drip Irrigation, CCTV Surveillance, Water Supply, and Security Guard.'
+      },
+      {
+        question: 'How does Earth Heritage manage the farmland after purchase?',
+        answer: 'Earth Heritage acquires the project land, develops the agricultural layout, and sells individual titled plots to buyers. Following your purchase, Earth Heritage continues to handle all agreed day-to-day farm management—including manpower coordination, irrigation, plantation maintenance, and operational supervision—while you retain full legal ownership of your plot.'
+      }
+    ],
+    enquiryInterest: 'Nairuthya Whispering Wood'
+  },
+  {
     id: 'demo-concept-01',
     slug: 'managed-farmland-concept-i',
     name: 'Managed Farmland — Concept I',
-    number: '01',
+    number: '02',
     category: 'Managed Farmland',
     shortDescription:
       'A concept exploration of the Earth Heritage managed farmland approach, where land ownership remains with the landowner while agreed farm operations are professionally managed.',
@@ -56,7 +395,7 @@ export const projects = [
     status: 'Concept Preview',
     isDemo: true,
     imageIsTemporary: true,
-    featured: true,
+    featured: false,
     coverImage: {
       src: '/images/managed-farmland/intro-farmland.jpg',
       alt: 'Managed Farmland — Concept I agricultural landscape'
@@ -191,5 +530,54 @@ export function getAdjacentProjects(slug) {
   const prev = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const next = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
   return { prev, next };
+}
+
+/**
+ * Canonical Project Status Categories Enum
+ * 1. New
+ * 2. Upcoming
+ * 3. Ongoing
+ * 4. Completed
+ */
+export const PROJECT_STATUS_CATEGORIES = [
+  {
+    key: 'new',
+    label: 'New',
+    description: 'Newly introduced farmland development',
+    emptyMessage: 'No new projects listed at this time.'
+  },
+  {
+    key: 'upcoming',
+    label: 'Upcoming',
+    description: 'In planning and preparation',
+    emptyMessage: 'No upcoming projects announced yet.'
+  },
+  {
+    key: 'ongoing',
+    label: 'Ongoing',
+    description: 'Active development and stewardship',
+    emptyMessage: 'No ongoing projects currently listed.'
+  },
+  {
+    key: 'completed',
+    label: 'Completed',
+    description: 'Fully developed and handed over',
+    emptyMessage: 'No completed projects currently listed.'
+  }
+];
+
+/**
+ * Retrieve non-demo projects dynamically grouped by status enum
+ * @param {string} statusKey - 'new' | 'upcoming' | 'ongoing' | 'completed'
+ * @returns {Array} Projects matching the status
+ */
+export function getProjectsByStatus(statusKey) {
+  if (!statusKey) return [];
+  const normalizedKey = String(statusKey).trim().toLowerCase();
+  return projects.filter(
+    (project) =>
+      !project.isDemo &&
+      String(project.status || '').trim().toLowerCase() === normalizedKey
+  );
 }
 

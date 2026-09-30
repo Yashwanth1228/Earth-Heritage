@@ -14,7 +14,7 @@ import {
   Facebook
 } from 'lucide-react';
 import { headerNavRoutes } from '@/data/routes';
-import { projects } from '@/data/projects';
+import { PROJECT_STATUS_CATEGORIES, getProjectsByStatus } from '@/data/projects';
 import { cn } from '@/lib/utils';
 import Logo from '@/components/ui/Logo';
 import { useEnquiry } from '@/context/EnquiryContext';
@@ -192,37 +192,41 @@ export default function MobileMenu({ isOpen, onClose }) {
                       </button>
                     </div>
 
-                    {/* Expandable Projects Submenu Card */}
+                    {/* Expandable Projects Submenu Card with 4 Status Categories */}
                     {isProjectsExpanded && (
                       <div className="ml-3 pl-3 pr-2 py-2 mt-1 mb-2 rounded-xl bg-[#EBE0CC]/70 border border-[#DACBB0] flex flex-col space-y-1 animate-in fade-in slide-in-from-top-1 duration-200">
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C7A5A] font-semibold px-2 pt-1 pb-0.5">
-                          Selected Properties
-                        </span>
-                        {projects.length > 0 ? (
-                          projects.map((project) => (
+                        {PROJECT_STATUS_CATEGORIES.map((cat) => {
+                          const catProjects = getProjectsByStatus(cat.key);
+                          const hasProjects = catProjects.length > 0;
+                          const targetHref = hasProjects
+                            ? `/projects/${catProjects[0].slug}`
+                            : '/projects';
+
+                          return (
                             <Link
-                              key={project.slug}
-                              href={`/projects/${project.slug}`}
+                              key={cat.key}
+                              href={targetHref}
                               onClick={onClose}
-                              className="text-xs sm:text-[13px] font-sans py-2 px-2.5 text-[#334237] hover:text-[#15341C] hover:bg-[#E0D3BC]/60 rounded-lg transition-colors flex items-center gap-2"
+                              className="text-xs sm:text-[13px] font-sans py-2 px-2.5 text-[#334237] hover:text-[#15341C] hover:bg-[#E0D3BC]/60 rounded-lg transition-colors flex items-center justify-between"
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#1E460B] shrink-0" />
-                              <span className="font-medium line-clamp-1">{project.name}</span>
+                              <div className="flex items-center gap-2">
+                                <span
+                                  className={cn(
+                                    'w-1.5 h-1.5 rounded-full shrink-0',
+                                    hasProjects ? 'bg-[#1E460B]' : 'bg-[#C5B79F]'
+                                  )}
+                                  aria-hidden="true"
+                                />
+                                <span className="font-medium">{cat.label}</span>
+                              </div>
+                              {hasProjects && (
+                                <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded-md bg-[#D4C3A6] text-[#1E460B] font-semibold">
+                                  {catProjects.length}
+                                </span>
+                              )}
                             </Link>
-                          ))
-                        ) : (
-                          <span className="text-xs font-sans py-2 px-2 text-[#8C7A5A] italic select-none">
-                            No projects available yet
-                          </span>
-                        )}
-                        <Link
-                          href="/projects"
-                          onClick={onClose}
-                          className="text-xs font-sans font-semibold pt-2 pb-1.5 px-2.5 text-[#1E460B] hover:text-[#15341C] transition-colors inline-flex items-center gap-1.5 border-t border-[#D6C5A6] mt-1"
-                        >
-                          <span>Explore All Farmland Projects</span>
-                          <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                        </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
