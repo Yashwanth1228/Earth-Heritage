@@ -26,11 +26,15 @@ export default function Header() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const activeDarkElements = useRef(new Set());
   const pathname = usePathname();
-  const isHeroScrollPage = pathname === '/' || pathname === '/home' || pathname === '/lp/managed-farmland';
+  const isHeroScrollPage =
+    pathname === '/' ||
+    pathname === '/home' ||
+    pathname === '/lp/managed-farmland' ||
+    Boolean(pathname?.startsWith('/projects/'));
   const isIsolatedCampaign = pathname?.startsWith('/lp') && pathname !== '/lp/managed-farmland';
   const { openEnquiryModal } = useEnquiry();
 
-  // Coordinate entrance and exit on hero-scroll pages (home / and lp/managed-farmland)
+  // Coordinate entrance and exit on hero-scroll pages (home, lp/managed-farmland, and project pages)
   useEffect(() => {
     if (isIsolatedCampaign) return;
 
@@ -42,7 +46,7 @@ export default function Header() {
 
     // On hero-scroll pages, check scroll position against hero
     const checkScroll = () => {
-      const heroEl = document.getElementById('hero');
+      const heroEl = document.getElementById('hero') || document.getElementById('project-hero');
       if (heroEl) {
         const rect = heroEl.getBoundingClientRect();
         // Reveal once user has meaningfully scrolled past ~80% of hero
@@ -56,7 +60,7 @@ export default function Header() {
 
     // GSAP ScrollTrigger to coordinate entrance and exit
     const ctx = gsap.context(() => {
-      const heroEl = document.getElementById('hero');
+      const heroEl = document.getElementById('hero') || document.getElementById('project-hero');
       if (heroEl) {
         ScrollTrigger.create({
           trigger: heroEl,
@@ -154,7 +158,7 @@ export default function Header() {
       <div
         className={cn(
           'w-[94vw] md:w-[92vw] lg:w-[90vw] max-w-[1400px] rounded-full mx-auto',
-          'px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5',
+          'px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2',
           'flex items-center justify-between',
           // Seamless 300ms CSS transitions for background, border, shadow
           'transition-[background-color,border-color,box-shadow,opacity,transform] duration-300 ease-out',

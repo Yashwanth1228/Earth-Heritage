@@ -92,9 +92,9 @@ export default function NairuthyaGallery({ project }) {
           </MotionReveal>
         </div>
 
-        {/* Gallery Showcase Grid (Equal-Sized Cards Grid: 4 cols Desktop, 2 cols Tablet, 1 col Mobile) */}
+        {/* Gallery Showcase Grid (Equal-Sized Cards Grid: 3 cols Desktop, 2 cols Tablet, 1 col Mobile) */}
         {hasRealImages ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
             {galleryItems.map((item, idx) => (
               <MotionReveal key={item.id || idx} delay={0.06 * (idx + 1)}>
                 <figure

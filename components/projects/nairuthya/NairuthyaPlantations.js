@@ -41,13 +41,13 @@ export default function NairuthyaPlantations({ project }) {
     setActiveIndex((prev) => (prev - 1 + total) % total);
   }, [total]);
 
-  // Auto-advance every 5 seconds (paused on hover or when reduced-motion is preferred)
+  // Auto-advance every 3 seconds (paused on hover or when reduced-motion is preferred)
   useEffect(() => {
     if (shouldReduceMotion || isPaused || total <= 1) return;
 
     timerRef.current = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 3000);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -62,19 +62,15 @@ export default function NairuthyaPlantations({ project }) {
     <section
       id="plantations"
       data-navbar-theme="light"
-      className="relative bg-[#FAF7F2] text-[#111613] py-10 sm:py-12 lg:py-14 border-b border-[#DCCDB7]/80 overflow-hidden"
+      className="relative bg-[#FAF7F2] text-[#111613] py-6 sm:py-8 lg:py-9 border-b border-[#DCCDB7]/80 overflow-hidden"
       aria-label="Cultivated Farm and Plantations"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocusCapture={() => setIsPaused(true)}
-      onBlurCapture={() => setIsPaused(false)}
     >
       <LandContourPattern variant="biscuit-topography" className="opacity-25 pointer-events-none" />
 
       <Container size="default" className="relative z-10 max-w-4xl px-5 sm:px-8">
         
         {/* Centered Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-2">
+        <div className="text-center max-w-xl mx-auto mb-5 sm:mb-6 space-y-1.5">
           <MotionReveal delay={0.05}>
             <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold tracking-widest text-[#7A6A4E] uppercase">
               <Sprout className="w-3.5 h-3.5 text-[#55C40D]" aria-hidden="true" />
@@ -95,8 +91,14 @@ export default function NairuthyaPlantations({ project }) {
           </MotionReveal>
         </div>
 
-        {/* Centered Plantation Stage (Image on top, details below) */}
-        <div className="relative max-w-md mx-auto text-center">
+        {/* Centered Plantation Stage (Pauses ONLY when hovering on or close to the object) */}
+        <div
+          className="relative max-w-md mx-auto text-center"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocusCapture={() => setIsPaused(true)}
+          onBlurCapture={() => setIsPaused(false)}
+        >
           
           <AnimatePresence mode="wait">
             <motion.div
@@ -104,17 +106,17 @@ export default function NairuthyaPlantations({ project }) {
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.8, ease: 'easeInOut' }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
               className="flex flex-col items-center"
             >
-              {/* Circular Medallion Image (Inspired by reference screenshot) */}
-              <div className="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full border-4 border-[#DDD3BF] p-1.5 bg-white shadow-md mx-auto overflow-hidden">
+              {/* Circular Medallion Image */}
+              <div className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full border-4 border-[#DDD3BF] p-1.5 bg-white shadow-sm mx-auto overflow-hidden">
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
                     src={current.image?.src}
                     alt={current.name}
                     fill
-                    sizes="(max-width: 640px) 208px, 240px"
+                    sizes="(max-width: 640px) 160px, 176px"
                     className="object-cover object-center"
                     priority={activeIndex === 0}
                   />
@@ -122,16 +124,16 @@ export default function NairuthyaPlantations({ project }) {
               </div>
 
               {/* Details Below the Image */}
-              <div className="mt-5 sm:mt-6 space-y-1.5">
-                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#111613] tracking-tight">
+              <div className="mt-3.5 sm:mt-4 space-y-1">
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111613] tracking-tight">
                   {current.name}
                 </h3>
 
-                <p className="font-serif italic text-xs sm:text-sm text-[#7A6A4E]">
+                <p className="font-serif italic text-xs sm:text-[13px] text-[#7A6A4E]">
                   {current.botanical} &bull; {current.category}
                 </p>
 
-                <p className="font-sans text-xs sm:text-sm text-[#4E5C50] max-w-md mx-auto leading-relaxed pt-1">
+                <p className="font-sans text-xs sm:text-[13px] text-[#4E5C50] max-w-md mx-auto leading-relaxed pt-0.5">
                   {current.description}
                 </p>
               </div>
@@ -139,7 +141,7 @@ export default function NairuthyaPlantations({ project }) {
           </AnimatePresence>
 
           {/* Progress Indicator Dots + Minimal Arrows Below Details */}
-          <div className="flex items-center justify-center gap-3 mt-6 sm:mt-7">
+          <div className="flex items-center justify-center gap-3 mt-4 sm:mt-5">
             <button
               type="button"
               onClick={prevSlide}
@@ -176,10 +178,6 @@ export default function NairuthyaPlantations({ project }) {
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
-
-          <p className="font-mono text-[10px] text-[#A8987E] mt-3">
-            0{activeIndex + 1} of 0{total} &bull; Auto-transitions every 5s &bull; Hover to pause
-          </p>
 
         </div>
 

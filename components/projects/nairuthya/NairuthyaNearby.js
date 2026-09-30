@@ -2,125 +2,293 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
-import LandContourPattern from '@/components/ui/LandContourPattern';
-import { MapPin, Navigation, Compass } from 'lucide-react';
 
 /**
- * 08 — NEARBY PLACES / THINGS TO EXPLORE: Data-Driven Regional Architecture
+ * Botanical two-leaf sprout icon in crisp white
+ */
+function SproutIcon({ className = 'w-4 h-4 text-white shrink-0' }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 22v-9" strokeWidth="2.4" />
+      <path
+        d="M12 13C8.5 13 5.5 10 5.5 6c3 0 6.5 3 6.5 7Z"
+        fill="currentColor"
+        fillOpacity="0.85"
+      />
+      <path
+        d="M12 11c3 0 6.5-3 6.5-7-3 0-6.5 3-6.5 7Z"
+        fill="currentColor"
+        fillOpacity="0.85"
+      />
+    </svg>
+  );
+}
+
+/**
+ * 06 — NEARBY ATTRACTIONS & ROUTE MAP BANNER
  * 
- * Strict Standards:
- * - DO NOT invent fake nearby attractions or speculative driving claims
- * - Clean data-driven architecture ready for verified destinations:
- *   name · distance · short description · image · location link
- * - When array is empty, renders an authentic editorial note explaining that regional destinations are detailed during guided estate walkthroughs
- * - Visually original to Earth Heritage design philosophy
+ * Original Earth Heritage composition inspired by the reference layout:
+ * - Rich Earth Heritage deep forest green banner (#173822 -> #1E462B -> #14321E)
+ * - Flowing champagne-gold topographical contour lines watermark
+ * - Left column: "Nearby Attractions" in high-contrast white serif with compact sprout bullet list
+ * - Right column: "Route Map" in matching white serif with illustrated white vector road network
+ * - Destination marker: "WHISPERING WOOD" (without any repetitive location text)
+ * - Removed extra action buttons for a cleaner, editorial presentation
  */
 export default function NairuthyaNearby({ project }) {
-  const nearbyPlaces = project?.nearbyPlaces || [];
-  const hasPlaces = nearbyPlaces.length > 0;
+  const attractions = [
+    'Nelamangala Town (Approx. 8 km)',
+    'Bengaluru / Yeshwanthpur (Approx. 35 km)',
+    'Tumkur Road (NH 48 Expressway)',
+    'STRR (Satellite Town Ring Road)',
+    'Shivagange Heritage Hill & Temple (~22 km)',
+    'Hesaraghatta Lake & Grasslands (~24 km)'
+  ];
 
   return (
     <section
       id="nearby-places"
-      data-navbar-theme="light"
-      className="relative bg-[#FAF7F2] text-[#111613] py-8 sm:py-10 lg:py-12 border-b border-[#DCCDB7]/80 overflow-hidden"
-      aria-label="Nearby Places and Region"
+      className="relative bg-[#FAF7F2] py-8 sm:py-10 lg:py-12 border-b border-[#DCCDB7]/80 overflow-hidden"
+      aria-label="Nearby Attractions and Route Map"
     >
-      <LandContourPattern variant="biscuit-topography" className="opacity-25 pointer-events-none" />
-
-      <Container size="default" className="relative z-10">
+      <Container size="default" className="relative z-10 max-w-6xl px-3 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-6 sm:mb-8 space-y-2">
-          <MotionReveal delay={0.05}>
-            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold tracking-widest text-[#7A6A4E] uppercase">
-              <Compass className="w-3.5 h-3.5 text-[#55C40D]" aria-hidden="true" />
-              <span>THE REGION &bull; EXPLORATION</span>
-            </div>
-          </MotionReveal>
-
-          <MotionReveal delay={0.1}>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight">
-              Nearby Places &amp; Things to Explore
-            </h2>
-          </MotionReveal>
-
-          <MotionReveal delay={0.15}>
-            <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-              Nelamangala Taluk and its surrounding green countryside offer peaceful agro-tourism sanctuaries, scenic rural hillscapes, and historic temples.
-            </p>
-          </MotionReveal>
-        </div>
-
-        {/* Content Showcase */}
-        {hasPlaces ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            {nearbyPlaces.map((place, idx) => (
-              <MotionReveal key={place.id || idx} delay={0.08 * (idx + 1)}>
-                <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#DDD3BF] shadow-2xs space-y-3 flex flex-col justify-between h-full">
-                  <div className="space-y-1.5">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-semibold text-[#1E460B] uppercase">
-                        {place.distance}
-                      </span>
-                      <MapPin className="w-4 h-4 text-[#C6923C]" />
-                    </div>
-                    <h3 className="font-serif text-lg font-medium text-[#111613]">
-                      {place.name}
-                    </h3>
-                    <p className="font-sans text-xs text-[#4E5C50] leading-relaxed">
-                      {place.description}
-                    </p>
-                  </div>
-                  {place.locationLink && (
-                    <a
-                      href={place.locationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[#15341C] hover:underline pt-2 border-t border-[#EFE5D5]"
-                    >
-                      <span>View Location</span>
-                      <Navigation className="w-3 h-3" />
-                    </a>
-                  )}
-                </div>
-              </MotionReveal>
-            ))}
+        {/* Main Banner in Earth Heritage Deep Forest Green */}
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-r from-[#173822] via-[#1E462B] to-[#14321E] text-white shadow-lg border border-[#2A5734]/40">
+          
+          {/* Topographical Contour Lines Background Watermark in Warm Champagne */}
+          <div className="absolute inset-0 pointer-events-none opacity-20 select-none overflow-hidden">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 1200 500"
+              fill="none"
+              stroke="#EEDFC6"
+              strokeWidth="1.2"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M -50 80 Q 200 40 450 120 T 950 100 T 1250 160" />
+              <path d="M -50 140 Q 250 110 500 180 T 1000 160 T 1250 230" />
+              <path d="M -50 210 Q 300 180 580 250 T 1050 230 T 1250 310" />
+              <path d="M -50 280 Q 350 250 640 320 T 1100 300 T 1250 390" />
+              <path d="M -50 360 Q 400 330 700 400 T 1150 380 T 1250 470" />
+              <path d="M -50 440 Q 450 410 760 480 T 1200 450 T 1250 540" />
+            </svg>
           </div>
-        ) : (
-          /* Editorial Content-Ready State (Zero Invented Destinations) */
-          <MotionReveal delay={0.15}>
-            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#DDD3BF] shadow-2xs space-y-4 max-w-4xl">
-              <div className="space-y-1">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-[#7A6A4E] font-semibold block">
-                  REGIONAL ACCESS &bull; ON-GROUND ORIENTATION
-                </span>
-                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111613] tracking-tight">
-                  Guided Regional Walkthroughs with Farm Operations
-                </h3>
+
+          {/* Banner Content: 2-Column Grid */}
+          <div className="relative z-10 p-6 sm:p-8 lg:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* LEFT COLUMN — Nearby Attractions */}
+              <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
+                <MotionReveal delay={0.05}>
+                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug">
+                    Nearby Attractions
+                  </h3>
+                </MotionReveal>
+
+                {/* Compact Sprout Bullet List */}
+                <div className="space-y-2.5 sm:space-y-3 pt-1">
+                  {attractions.map((item, idx) => (
+                    <MotionReveal key={idx} delay={0.05 * (idx + 1)}>
+                      <div className="flex items-center gap-2.5 sm:gap-3 text-white/95">
+                        <SproutIcon className="w-4 h-4 text-white/90 shrink-0" />
+                        <span className="font-serif text-[14px] sm:text-[15.5px] lg:text-[16px] tracking-tight font-normal leading-tight">
+                          {item}
+                        </span>
+                      </div>
+                    </MotionReveal>
+                  ))}
+                </div>
               </div>
 
-              <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-                Honnasandra is situated in a green agricultural belt of Nelamangala with direct access to local village markets, agrarian lakes, and regional temples. Specific local landmarks, travel access routes, and nearby scenic points are personally verified and shared with prospective buyers during private, scheduled estate walkthroughs.
-              </p>
+              {/* RIGHT COLUMN — Route Map (Illustrated White Line Vector Map) */}
+              <div className="lg:col-span-7 flex flex-col justify-center space-y-3">
+                <MotionReveal delay={0.1}>
+                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug">
+                    Route Map
+                  </h3>
+                </MotionReveal>
 
-              <div className="pt-3 border-t border-[#EFE5D5] flex flex-wrap items-center gap-4 text-xs font-mono text-[#5A685D]">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
-                  <span>Honnasandra Countryside</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
-                  <span>Nelamangala Agrarian Belt</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
-                  <span>Private Visits by Appointment</span>
+                {/* Vector Route Map Canvas */}
+                <div className="relative w-full h-[240px] sm:h-[280px] lg:h-[300px] rounded-xl overflow-hidden">
+                  <svg
+                    className="w-full h-full"
+                    viewBox="0 0 540 280"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Background contour accents */}
+                    <path
+                      d="M 20 60 Q 180 30 320 70 T 520 60"
+                      stroke="rgba(238,223,198,0.12)"
+                      strokeWidth="1"
+                    />
+                    <path
+                      d="M 10 140 Q 200 110 360 150 T 530 140"
+                      stroke="rgba(238,223,198,0.12)"
+                      strokeWidth="1"
+                    />
+                    <path
+                      d="M 30 220 Q 220 190 380 230 T 520 220"
+                      stroke="rgba(238,223,198,0.12)"
+                      strokeWidth="1"
+                    />
+
+                    {/* Main Highway Route Trunk (Tumkur Road NH 48 Axis) */}
+                    <path
+                      d="M 40 250 L 110 220 L 190 200 L 260 170 L 330 130 L 410 120 L 440 60"
+                      stroke="white"
+                      strokeWidth="3.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Branch 1: STRR Ring Corridor */}
+                    <path
+                      d="M 190 200 L 250 240 L 330 260"
+                      stroke="white"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeDasharray="4 3"
+                    />
+
+                    {/* Branch 2: Towards Shivagange */}
+                    <path
+                      d="M 260 170 L 220 120 L 150 90"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Branch 3: Towards Nelamangala town center */}
+                    <path
+                      d="M 330 130 L 380 180 L 450 200"
+                      stroke="white"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Milestone Junction Nodes (White Dots) */}
+                    <circle cx="110" cy="220" r="3.5" fill="white" />
+                    <circle cx="190" cy="200" r="4.5" fill="white" />
+                    <circle cx="260" cy="170" r="4" fill="white" />
+                    <circle cx="330" cy="130" r="4.5" fill="white" />
+                    <circle cx="410" cy="120" r="3.5" fill="white" />
+
+                    {/* Road Text Annotations (Crisp White Labels) */}
+                    <text
+                      x="40"
+                      y="266"
+                      fill="white"
+                      fontSize="9"
+                      fontFamily="sans-serif"
+                      opacity="0.9"
+                    >
+                      Towards Bengaluru (NH 48)
+                    </text>
+
+                    <text
+                      x="145"
+                      y="190"
+                      fill="white"
+                      fontSize="8.5"
+                      fontFamily="sans-serif"
+                      opacity="0.85"
+                    >
+                      STRR Interchange
+                    </text>
+
+                    <text
+                      x="90"
+                      y="95"
+                      fill="white"
+                      fontSize="8.5"
+                      fontFamily="sans-serif"
+                      opacity="0.8"
+                    >
+                      Shivagange Hills
+                    </text>
+
+                    <text
+                      x="345"
+                      y="145"
+                      fill="white"
+                      fontSize="8.5"
+                      fontFamily="sans-serif"
+                      opacity="0.9"
+                    >
+                      Nelamangala Taluk (~8 km)
+                    </text>
+
+                    <text
+                      x="260"
+                      y="255"
+                      fill="white"
+                      fontSize="8"
+                      fontFamily="sans-serif"
+                      opacity="0.75"
+                    >
+                      STRR Orbital Road
+                    </text>
+
+                    {/* Destination Marker Flag / Badge */}
+                    <g transform="translate(370, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="144"
+                        height="28"
+                        rx="4"
+                        fill="rgba(255,255,255,0.95)"
+                        stroke="rgba(255,255,255,0.4)"
+                        strokeWidth="1"
+                      />
+                      <text
+                        x="72"
+                        y="18"
+                        textAnchor="middle"
+                        fill="#14321D"
+                        fontSize="9.5"
+                        fontWeight="bold"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.06em"
+                      >
+                        WHISPERING WOOD
+                      </text>
+
+                      {/* Pin pole down to road */}
+                      <circle cx="72" cy="28" r="3" fill="white" />
+                      <line
+                        x1="72"
+                        y1="28"
+                        x2="72"
+                        y2="34"
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                    </g>
+                  </svg>
                 </div>
               </div>
+
             </div>
-          </MotionReveal>
-        )}
+          </div>
+
+        </div>
 
       </Container>
     </section>

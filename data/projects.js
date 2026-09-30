@@ -60,18 +60,26 @@ export const projects = [
       state: 'Karnataka',
       distanceBengaluru: '35 km from Bengaluru',
       distanceNelamangala: '8 km from Nelamangala',
-      mapQuery: 'Honnasandra, Nelamangala, Karnataka'
+      mapQuery: 'Whispering Wood by Nairuthya Properties',
+      mapEmbedUrl:
+        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.00800222693!2d77.33212307359022!3d13.03516221348457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae310049c2514b%3A0x31df4bed6b535bbd!2sWhispering%20Wood%20by%20Nairuthya%20Properties!5e0!3m2!1sen!2sin!4v1790763247598!5m2!1sen!2sin',
+      mapShareUrl:
+        'https://www.google.com/maps/place/Whispering+Wood+by+Nairuthya+Properties/@13.0351622,77.332123,17z'
     },
     status: 'new',
     isDemo: false,
     featured: true,
     heroImage: {
-      src: null,
-      alt: 'Nairuthya Whispering Wood — Farmland Landscape at Honnasandra, Nelamangala'
+      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+      alt: 'Nairuthya Whispering Wood — Farmland Estate Entrance & Temple at Honnasandra, Nelamangala'
     },
     coverImage: {
-      src: null,
+      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
       alt: 'Nairuthya Whispering Wood — 5-Acre Managed Farmland Estate'
+    },
+    locationMapImage: {
+      src: null,
+      alt: 'Nairuthya Whispering Wood — Regional Location & Route Map'
     },
     snapshot: {
       totalArea: '5 Acres',
@@ -285,13 +293,50 @@ export const projects = [
       }
     ],
     nearbyPlaces: [
-      // Data-driven architecture ready for verified destinations
+      {
+        id: 'nelamangala-town',
+        name: 'Nelamangala Town',
+        distance: 'Approx. 8 km',
+        note: 'Nearest taluk center with essential civic infrastructure'
+      },
+      {
+        id: 'bengaluru-city',
+        name: 'Bengaluru (Yeshwanthpur)',
+        distance: 'Approx. 35 km',
+        note: 'Direct highway connectivity via elevated corridor'
+      },
+      {
+        id: 'tumkur-road',
+        name: 'Tumkur Road (NH 48)',
+        distance: 'Direct Access',
+        note: 'Primary 6-lane regional expressway corridor'
+      },
+      {
+        id: 'strr-corridor',
+        name: 'STRR (Satellite Town Ring Road)',
+        distance: 'Orbital Corridor',
+        note: 'Fast orbital ring road connecting satellite towns'
+      },
+      {
+        id: 'shivagange',
+        name: 'Shivagange Heritage Hill & Temple',
+        distance: 'Approx. 22 km',
+        note: 'Historic monolithic hill and heritage temple destination'
+      },
+      {
+        id: 'hesaraghatta',
+        name: 'Hesaraghatta Lake & Grasslands',
+        distance: 'Approx. 24 km',
+        note: 'Scenic pastoral grasslands and protected lakebed'
+      }
     ],
     gallery: [
-      { id: 'nairuthya-gal-1', src: null, alt: 'Nairuthya Whispering Wood — 5-Acre Farmland Estate', caption: 'Overview of the 5-Acre Estate at Honnasandra' },
-      { id: 'nairuthya-gal-2', src: null, alt: 'Nairuthya Whispering Wood — Plantation Layout', caption: 'Mahogany and Teak Wood Cultivation Zones' },
-      { id: 'nairuthya-gal-3', src: null, alt: 'Nairuthya Whispering Wood — Natural Pond Area', caption: 'Rainwater Retention Pond and Surrounding Greenery' },
-      { id: 'nairuthya-gal-4', src: null, alt: 'Nairuthya Whispering Wood — 30-ft Road Network', caption: '30-ft Arterial Internal Road Network' }
+      { id: 'nairuthya-gal-1', src: '/images/gallery/nairuthya-01-entrance.jpg', alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola', caption: 'Grand Stone Steps & Temple Pergola' },
+      { id: 'nairuthya-gal-2', src: '/images/gallery/nairuthya-02-stone-terraces.jpg', alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping', caption: 'Stone Terraces & Boundary Landscaping' },
+      { id: 'nairuthya-gal-3', src: '/images/gallery/nairuthya-03-plots-irrigation.jpg', alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads', caption: 'Drip-Irrigated Farmland Plots & Roads' },
+      { id: 'nairuthya-gal-4', src: '/images/gallery/nairuthya-04-children-play.jpg', alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park", caption: "Children's Outdoor Play Area" },
+      { id: 'nairuthya-gal-5', src: '/images/gallery/nairuthya-05-elevated-vista.jpg', alt: 'Nairuthya Whispering Wood — Elevated Farmland Vista & 30-ft Road Network', caption: 'Elevated Farmland Vista & 30-ft Roads' },
+      { id: 'nairuthya-gal-6', src: '/images/gallery/nairuthya-06-outdoor-fitness.jpg', alt: 'Nairuthya Whispering Wood — Outdoor Recreation & Fitness Zone', caption: 'Outdoor Recreation & Fitness Zone' }
     ],
     faqs: [
       {

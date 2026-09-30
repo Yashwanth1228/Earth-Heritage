@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from 'react';
 import GalleryIntro from './GalleryIntro';
-import GalleryFeatureImage from './GalleryFeatureImage';
 import GalleryExhibition from './GalleryExhibition';
 import GalleryPhilosophy from './GalleryPhilosophy';
 import GalleryLightbox from './GalleryLightbox';
@@ -12,7 +11,6 @@ import { galleryImages } from '@/data/galleryImages';
  * Gallery Client Controller & View
  * 
  * Orchestrates:
- * - Feature opening photograph
  * - Interactive exhibition grid with category filtering and equal-sized cards
  * - Fullscreen accessible lightbox with keyboard controls and Lenis scroll-locking
  * - Brand philosophy statement
@@ -49,12 +47,7 @@ export default function GalleryClientView() {
       {/* 1. Page Editorial Introduction */}
       <GalleryIntro />
 
-      {/* 2. Opening Feature Photograph */}
-      <GalleryFeatureImage
-        onSelectImage={(feature) => handleSelectImage(feature, [feature])}
-      />
-
-      {/* 3. Interactive Photographic Exhibition Grid */}
+      {/* 2. Interactive Photographic Exhibition Grid */}
       <GalleryExhibition
         onSelectImage={(item, filteredList) => handleSelectImage(item, filteredList)}
       />
