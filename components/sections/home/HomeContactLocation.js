@@ -57,9 +57,10 @@ export default function HomeContactLocation() {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errs.email = 'Please enter a valid email address';
     }
-    if (!formData.phoneNumber.trim()) {
-      errs.phoneNumber = 'Please enter your phone number';
-    } else if (formData.phoneNumber.replace(/\D/g, '').length < 10) {
+    const cleanPhone = formData.phoneNumber.replace(/\D/g, '');
+    if (!cleanPhone) {
+      errs.phoneNumber = 'Please enter your 10-digit phone number';
+    } else if (cleanPhone.length !== 10) {
       errs.phoneNumber = 'Please enter a valid 10-digit phone number';
     }
     return errs;
@@ -201,9 +202,29 @@ export default function HomeContactLocation() {
                       <input
                         id="touch-phone"
                         type="tel"
+                        inputMode="numeric"
+                        pattern="[0-9]{10}"
+                        maxLength={10}
                         value={formData.phoneNumber}
-                        onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        onChange={(e) => {
+                          const onlyNums = e.target.value.replace(/\D/g, '').slice(0, 10);
+                          setFormData({ ...formData, phoneNumber: onlyNums });
+                          if (errors.phoneNumber) {
+                            setErrors((prev) => ({ ...prev, phoneNumber: undefined }));
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          if (
+                            ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight'].includes(e.key) ||
+                            (e.ctrlKey || e.metaKey)
+                          ) {
+                            return;
+                          }
+                          if (!/^[0-9]$/.test(e.key)) {
+                            e.preventDefault();
+                          }
+                        }}
+                        placeholder="10-digit mobile number"
                         className={cn(
                           'w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
                           errors.phoneNumber ? 'border-red-400' : 'border-[#DDD3BF]'

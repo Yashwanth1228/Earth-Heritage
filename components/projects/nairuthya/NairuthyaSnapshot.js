@@ -49,7 +49,7 @@ export default function NairuthyaSnapshot({ project }) {
             <div className="space-y-2">
               <MotionReveal delay={0.05}>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-normal text-[#111613] tracking-tight">
-                  Key Project Snapshot
+                  Project Overview
                 </h2>
               </MotionReveal>
               <MotionReveal delay={0.1}>
@@ -74,11 +74,11 @@ export default function NairuthyaSnapshot({ project }) {
                     className="flex items-center gap-2.5 text-xs sm:text-[13.5px]"
                   >
                     <Sprout className="w-3.5 h-3.5 text-[#55C40D] shrink-0" aria-hidden="true" />
-                    <span className="font-sans text-[#5A685D] font-normal">
+                    <span className="font-sans font-extrabold text-[#5A685D]">
                       {item.label}
                     </span>
-                    <span className="text-[#C8BAA3] mx-0.5">—</span>
-                    <span className="font-sans font-semibold text-[#111613]">
+                    <span className="text-[#5A685D] font-extrabold mx-0.5">—</span>
+                    <span className="font-sans font-extrabold text-[#5A685D]">
                       {item.value}
                     </span>
                   </div>
