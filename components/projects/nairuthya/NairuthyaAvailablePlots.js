@@ -58,7 +58,7 @@ export default function NairuthyaAvailablePlots({ project }) {
 
               <MotionReveal delay={0.15}>
                 <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-                  Only 9 farmland plots remain available within this boutique 5-acre enclave in Honnasandra, Nelamangala. Every plot comes with registered legal title deeds and ongoing agronomic management by Earth Heritage.
+                  Only 9 farmland plots remain available within this boutique 8-acre enclave in Honnasandra, Nelamangala. Every plot comes with registered legal title deeds and ongoing agronomic management by Earth Heritage.
                 </p>
               </MotionReveal>
 
@@ -109,7 +109,7 @@ export default function NairuthyaAvailablePlots({ project }) {
                     </div>
                     <div className="flex items-center justify-between py-1 border-b border-[#E2D7C5]">
                       <span className="text-[#5A685D] uppercase text-[11px]">Total Estate Area</span>
-                      <span className="text-[#111613] font-semibold">5.0 Acres</span>
+                      <span className="text-[#111613] font-semibold">8.0 Acres</span>
                     </div>
                     <div className="flex items-center justify-between py-1 border-b border-[#E2D7C5]">
                       <span className="text-[#5A685D] uppercase text-[11px]">Current Availability</span>

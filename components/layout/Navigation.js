@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { headerNavRoutes } from '@/data/routes';
 import { PROJECT_STATUS_CATEGORIES, getProjectsByStatus } from '@/data/projects';
 import { cn } from '@/lib/utils';
@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils';
 export default function Navigation({ className, isInverse = false }) {
   const pathname = usePathname();
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const [activeStatus, setActiveStatus] = useState('new');
   const timeoutRef = useRef(null);
   const projectsContainerRef = useRef(null);
 
@@ -131,65 +132,145 @@ export default function Navigation({ className, isInverse = false }) {
               >
                 <div
                   className={cn(
-                    'w-48 sm:w-52 rounded-2xl p-2 overflow-hidden transition-colors duration-300',
+                    'w-72 sm:w-80 rounded-2xl p-3 overflow-hidden transition-colors duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.18)]',
                     isInverse
-                      ? 'bg-[#0E2413] border border-[#245832] shadow-[0_16px_36px_rgba(0,0,0,0.5)]'
-                      : 'bg-[#FAF6F0] border border-[#D5C09D]/80 shadow-[0_16px_36px_rgba(26,22,17,0.14)]'
+                      ? 'bg-[#0E2413] border border-[#245832]'
+                      : 'bg-[#FAF6F0] border border-[#D5C09D]/80'
                   )}
                 >
-                  <div className="space-y-0.5" role="none">
+                  {/* Status Selection Pills */}
+                  <div
+                    className={cn(
+                      'grid grid-cols-4 gap-1 p-1 rounded-xl mb-2.5',
+                      isInverse ? 'bg-[#08170C] border border-[#1A3F22]' : 'bg-[#EFE6D7] border border-[#D5C09D]/60'
+                    )}
+                    role="tablist"
+                    aria-label="Project Status Tabs"
+                  >
                     {PROJECT_STATUS_CATEGORIES.map((cat) => {
-                      const catProjects = getProjectsByStatus(cat.key);
-                      const hasProjects = catProjects.length > 0;
-                      const targetHref = hasProjects
-                        ? `/projects/${catProjects[0].slug}`
-                        : '/projects';
+                      const isSelected = activeStatus === cat.key;
+                      const count = getProjectsByStatus(cat.key).length;
 
                       return (
-                        <Link
+                        <button
                           key={cat.key}
-                          href={targetHref}
-                          onClick={() => setIsProjectsOpen(false)}
+                          type="button"
+                          role="tab"
+                          aria-selected={isSelected}
+                          onClick={() => setActiveStatus(cat.key)}
+                          onMouseEnter={() => setActiveStatus(cat.key)}
                           className={cn(
-                            'flex items-center justify-between px-3 py-2 text-[14px] font-sans font-medium rounded-xl transition-all duration-150 group/item focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary',
-                            isInverse
-                              ? 'text-[#FAF7F2]/90 hover:text-white hover:bg-[#163A20]'
-                              : 'text-text-primary/90 hover:text-[#1E460B] hover:bg-surface-subtle'
+                            'py-1.5 px-1 rounded-lg text-xs font-sans font-medium text-center transition-all duration-150 cursor-pointer flex flex-col items-center justify-center gap-0.5',
+                            isSelected
+                              ? isInverse
+                                ? 'bg-[#1E460B] text-[#FAF7F2] font-semibold shadow-xs'
+                                : 'bg-[#15341C] text-[#FAF7F2] font-semibold shadow-xs'
+                              : isInverse
+                              ? 'text-[#FAF7F2]/65 hover:text-[#FAF7F2] hover:bg-white/5'
+                              : 'text-[#4E5C50] hover:text-[#111613] hover:bg-black/5'
                           )}
-                          role="menuitem"
                         >
-                          <div className="flex items-center gap-2.5">
-                            <span
-                              className={cn(
-                                'w-2 h-2 rounded-full transition-colors shrink-0',
-                                hasProjects
-                                  ? isInverse
-                                    ? 'bg-[#76e52c]'
-                                    : 'bg-[#1E460B]'
-                                  : isInverse
-                                  ? 'bg-[#2A4833]'
-                                  : 'bg-[#D2C5AE]'
-                              )}
-                              aria-hidden="true"
-                            />
-                            <span>{cat.label}</span>
-                          </div>
-
-                          {hasProjects && (
-                            <span
-                              className={cn(
-                                'text-[10px] font-mono px-1.5 py-0.2 rounded-full font-semibold',
-                                isInverse
-                                  ? 'bg-[#0E2413] text-[#76e52c] border border-[#245832]'
-                                  : 'bg-[#E0D3BC] text-[#1E460B]'
-                              )}
-                            >
-                              {catProjects.length}
-                            </span>
-                          )}
-                        </Link>
+                          <span className="leading-none">{cat.label}</span>
+                          <span
+                            className={cn(
+                              'text-[9px] font-mono leading-none',
+                              isSelected
+                                ? isInverse
+                                  ? 'text-[#76e52c]'
+                                  : 'text-[#55C40D]'
+                                : 'opacity-60'
+                            )}
+                          >
+                            ({count})
+                          </span>
+                        </button>
                       );
                     })}
+                  </div>
+
+                  {/* Active Status Projects List */}
+                  <div className="min-h-[85px] flex flex-col justify-center">
+                    {(() => {
+                      const statusProjects = getProjectsByStatus(activeStatus);
+
+                      if (statusProjects.length > 0) {
+                        return (
+                          <div className="space-y-1.5" role="none">
+                            {statusProjects.map((proj) => (
+                              <Link
+                                key={proj.slug}
+                                href={`/projects/${proj.slug}`}
+                                onClick={() => setIsProjectsOpen(false)}
+                                className={cn(
+                                  'flex items-center justify-between p-2.5 rounded-xl transition-all duration-150 group/proj border',
+                                  isInverse
+                                    ? 'bg-[#132E1A]/80 hover:bg-[#1A3F22] border-[#245832]/60 hover:border-[#38844D] text-[#FAF7F2]'
+                                    : 'bg-[#F2EAE0] hover:bg-[#EAE0D0] border-[#D5C09D]/70 hover:border-[#BFAF93] text-[#111613]'
+                                )}
+                                role="menuitem"
+                              >
+                                <div className="space-y-0.5 pr-2">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D] shrink-0" aria-hidden="true" />
+                                    <span className="font-serif text-[13.5px] font-medium leading-tight">
+                                      {proj.name}
+                                    </span>
+                                  </div>
+                                  <p className="text-[10.5px] font-mono text-[#7A6A4E] pl-3">
+                                    8 Acres &bull; Honnasandra, Nelamangala
+                                  </p>
+                                </div>
+                                <ArrowUpRight
+                                  className={cn(
+                                    'w-4 h-4 shrink-0 transition-transform duration-200 group-hover/proj:translate-x-0.5 group-hover/proj:-translate-y-0.5',
+                                    isInverse ? 'text-[#76e52c]' : 'text-[#1E460B]'
+                                  )}
+                                  aria-hidden="true"
+                                />
+                              </Link>
+                            ))}
+                          </div>
+                        );
+                      }
+
+                      // Empty state for status categories without projects (Upcoming, Ongoing, Completed)
+                      const currentCategory = PROJECT_STATUS_CATEGORIES.find((c) => c.key === activeStatus);
+                      return (
+                        <div className="py-4 px-3 text-center space-y-1 rounded-xl bg-black/[0.02] dark:bg-white/[0.02]">
+                          <p className={cn(
+                            'text-xs font-sans italic',
+                            isInverse ? 'text-[#FAF7F2]/60' : 'text-[#7A6A4E]'
+                          )}>
+                            {currentCategory?.emptyMessage || 'No projects currently in this category'}
+                          </p>
+                          <p className="text-[10px] font-mono text-[#9B8C73]">
+                            Only &quot;New&quot; currently has active projects
+                          </p>
+                        </div>
+                      );
+                    })()}
+                  </div>
+
+                  {/* Dropdown Footer: All Projects Navigation */}
+                  <div
+                    className={cn(
+                      'pt-2 mt-2 border-t flex items-center justify-between px-1',
+                      isInverse ? 'border-[#1E460B]' : 'border-[#D5C09D]/60'
+                    )}
+                  >
+                    <Link
+                      href="/projects"
+                      onClick={() => setIsProjectsOpen(false)}
+                      className={cn(
+                        'flex items-center justify-between w-full px-2 py-1 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider transition-colors',
+                        isInverse
+                          ? 'text-[#76e52c] hover:bg-white/5'
+                          : 'text-[#1E460B] hover:bg-black/5'
+                      )}
+                    >
+                      <span>Explore All Projects</span>
+                      <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    </Link>
                   </div>
                 </div>
               </div>

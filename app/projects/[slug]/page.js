@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getProjectBySlug, getAllProjects } from '@/data/projects';
 import { constructMetadata } from '@/lib/seo';
-import { getProjectDetailSchema } from '@/lib/schema';
+import { getProjectDetailSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ProjectDetailHero from '@/components/projects/ProjectDetailHero';
 import ProjectDetailOverview from '@/components/projects/ProjectDetailOverview';
 import ProjectDetailOwnership from '@/components/projects/ProjectDetailOwnership';
@@ -34,7 +34,9 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const projectTitle = project.seoTitle || project.name;
   const projectDescription =
+    project.seoDescription ||
     project.shortDescription ||
     project.tagline ||
     project.overview ||
@@ -51,16 +53,14 @@ export async function generateMetadata({ params }) {
       ? heroImg.src
       : undefined;
 
-  return {
-    ...constructMetadata({
-      title: project.name,
-      description: projectDescription,
-      canonicalUrl: `/projects/${project.slug}`,
-      noIndex: !!project.isDemo,
-      ...(ogImage ? { image: ogImage } : {})
-    }),
-    title: `${project.name} | Earth Heritage`
-  };
+  return constructMetadata({
+    title: projectTitle,
+    description: projectDescription,
+    canonicalUrl: `/projects/${project.slug}`,
+    noIndex: !!project.isDemo,
+    exactTitle: !!project.seoTitle,
+    ...(ogImage ? { image: ogImage } : {})
+  });
 }
 
 /**
@@ -103,6 +103,13 @@ export default async function ProjectDetailPage({ params }) {
 
   const projectSchema = getProjectDetailSchema(project);
   const isNairuthya = project.slug === 'nairuthya-whispering-wood';
+  const breadcrumbSchema = isNairuthya
+    ? getBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Projects', path: '/projects' },
+        { name: 'Nairuthya Whispering Wood', path: '/projects/nairuthya-whispering-wood' }
+      ])
+    : null;
 
   return (
     <>
@@ -111,6 +118,13 @@ export default async function ProjectDetailPage({ params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+        />
+      )}
+      {/* Breadcrumb Schema (Schema.org BreadcrumbList) */}
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       )}
       <div className="w-full bg-[#FAF6F0] overflow-x-hidden">

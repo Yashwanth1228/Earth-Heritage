@@ -114,7 +114,7 @@ export default function NairuthyaAmenities({ project }) {
                     {item.image?.src ? (
                       <Image
                         src={item.image.src}
-                        alt={item.title}
+                        alt={item.image?.alt || `${item.title} at Nairuthya Whispering Wood`}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
@@ -178,13 +178,13 @@ export default function NairuthyaAmenities({ project }) {
               </div>
             </MotionReveal>
             <MotionReveal delay={0.1}>
-              <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-normal text-[#111613] tracking-tight">
+              <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-normal text-[#111613] tracking-tight">
                 Built-In Farm Infrastructure
-              </h3>
+              </h2>
             </MotionReveal>
             <MotionReveal delay={0.15}>
               <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-                Essential on-ground utilities and layout specifications delivered across the 5-acre estate layout.
+                Essential on-ground utilities and layout specifications delivered across the 8-acre estate layout.
               </p>
             </MotionReveal>
           </div>
@@ -202,9 +202,9 @@ export default function NairuthyaAmenities({ project }) {
                       <IconComponent className="w-4 h-4 text-[#1E460B]" />
                     </div>
                     <div className="min-w-0 space-y-0.5">
-                      <h4 className="font-serif text-sm sm:text-base font-medium text-[#111613] leading-snug">
+                      <h3 className="font-serif text-sm sm:text-base font-medium text-[#111613] leading-snug">
                         {item.name}
-                      </h4>
+                      </h3>
                       <p className="font-sans text-xs text-[#5A685D] leading-relaxed">
                         {item.note}
                       </p>

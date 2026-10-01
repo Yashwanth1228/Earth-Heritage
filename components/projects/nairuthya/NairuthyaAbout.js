@@ -22,7 +22,7 @@ export default function NairuthyaAbout({ project }) {
     {
       num: '01',
       title: 'Direct Land Acquisition',
-      description: 'Earth Heritage has acquired and secured the 5-acre estate land under comprehensive legal due diligence.'
+      description: 'Earth Heritage has acquired and secured the 8-acre estate land under comprehensive legal due diligence.'
     },
     {
       num: '02',
@@ -68,7 +68,7 @@ export default function NairuthyaAbout({ project }) {
 
               <MotionReveal delay={0.15}>
                 <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed pt-0.5">
-                  At Nairuthya Whispering Wood, we bridge titled land ownership with disciplined agricultural stewardship. The land is acquired by Earth Heritage, master-planned into 24 boutique plots, and maintained through active agrarian oversight.
+                  At Nairuthya Whispering Wood, we bridge titled land ownership with disciplined agricultural stewardship. The land is acquired by Earth Heritage, master-planned into 25 premium plots, and maintained through active agrarian oversight.
                 </p>
               </MotionReveal>
             </div>
@@ -111,9 +111,9 @@ export default function NairuthyaAbout({ project }) {
               <div className="relative space-y-3">
                 <EditorialImageSlot
                   src={project?.coverImage?.src}
-                  alt="Nairuthya Whispering Wood 5-Acre Layout"
+                  alt="Nairuthya Whispering Wood 8-Acre Layout"
                   slotLabel="Estate Land Slot"
-                  caption="5 Acres Master-Planned Farmland Layout · Honnasandra, Nelamangala"
+                  caption="8 Acres Master-Planned Farmland Layout · Honnasandra, Nelamangala"
                   aspectRatio="aspect-[4/4]"
                   variant="neutral"
                 />
@@ -126,7 +126,7 @@ export default function NairuthyaAbout({ project }) {
                   </div>
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-[#7A8A7E] uppercase text-[11px]">Total Acreage</span>
-                    <span className="text-[#111613] font-semibold">5.0 Acres</span>
+                    <span className="text-[#111613] font-semibold">8.0 Acres</span>
                   </div>
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-[#7A8A7E] uppercase text-[11px]">Legal Title</span>

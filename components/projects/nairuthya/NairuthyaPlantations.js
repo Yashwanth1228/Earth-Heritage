@@ -114,7 +114,7 @@ export default function NairuthyaPlantations({ project }) {
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
                     src={current.image?.src}
-                    alt={current.name}
+                    alt={current.image?.alt || `${current.name} plantation at Nairuthya Whispering Wood`}
                     fill
                     sizes="(max-width: 640px) 160px, 176px"
                     className="object-cover object-center"

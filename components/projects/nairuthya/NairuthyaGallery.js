@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { Camera, X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 import { cn } from '@/lib/utils';
 
 /**
@@ -14,13 +16,19 @@ import { cn } from '@/lib/utils';
  * Strict Standards:
  * - Uses only actual project images supplied later (zero fake stock photos)
  * - Large feature visual + companion editorial layout
- * - Full Lightbox modal with Escape-to-close, Left/Right navigation, and focus management
+ * - Full Lightbox modal with createPortal to document.body, z-[9999]
+ * - Lenis scroll-lock integration preventing background scroll and footer bleed
+ * - Escape-to-close, Left/Right navigation, and focus management
  * - Responsive layout, reduced-motion support
- * - Clean content-ready architecture when photos are pending
  */
 export default function NairuthyaGallery({ project }) {
   const galleryItems = project?.gallery || [];
   const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Check if any items actually have valid images
   const hasRealImages = galleryItems.some(
@@ -44,6 +52,16 @@ export default function NairuthyaGallery({ project }) {
     if (activeLightboxIndex === null) return;
     setActiveLightboxIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
   }, [activeLightboxIndex, galleryItems.length]);
+
+  // Lock body scroll and pause Lenis while Lightbox is active
+  useEffect(() => {
+    if (activeLightboxIndex !== null) {
+      lockScroll();
+      return () => {
+        unlockScroll();
+      };
+    }
+  }, [activeLightboxIndex]);
 
   // Keyboard navigation for Lightbox
   useEffect(() => {
@@ -160,76 +178,110 @@ export default function NairuthyaGallery({ project }) {
           </div>
         )}
 
-        {/* Lightbox Modal */}
-        {activeLightboxIndex !== null && galleryItems[activeLightboxIndex] && (
+        {/* Lightbox Modal rendered via Portal directly into document.body */}
+        {mounted && activeLightboxIndex !== null && galleryItems[activeLightboxIndex] && createPortal(
           <div
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[9999] flex flex-col justify-between bg-[#090D0A] text-[#FAF6F0] animate-in fade-in duration-200 select-none overflow-hidden overscroll-contain"
             role="dialog"
             aria-modal="true"
             aria-label="Image Lightbox"
-            onClick={closeLightbox}
+            data-lenis-prevent="true"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) closeLightbox();
+            }}
           >
-            {/* Close Button */}
-            <button
-              type="button"
-              onClick={closeLightbox}
-              aria-label="Close Lightbox"
-              className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer z-20"
-            >
-              <X className="w-6 h-6" />
-            </button>
+            {/* Top Bar with Counter and Close Button */}
+            <div className="relative z-10 flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5 border-b border-white/10 bg-[#090D0A]/95 backdrop-blur-sm select-none">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-xs sm:text-sm tracking-widest text-[#55C40D] font-semibold">
+                  {String(activeLightboxIndex + 1).padStart(2, '0')} / {String(galleryItems.length).padStart(2, '0')}
+                </span>
+                <span className="w-1 h-1 rounded-full bg-white/30" aria-hidden="true" />
+                <span className="font-mono text-[10px] sm:text-xs text-[#E4D1B5] tracking-wider uppercase">
+                  Verified Field Visual
+                </span>
+              </div>
 
-            {/* Prev Button */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                prevLightbox();
-              }}
-              aria-label="Previous Image"
-              className="absolute left-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer z-20"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={closeLightbox}
+                aria-label="Close Lightbox (Escape)"
+                className="group flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white/90 hover:text-white transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#55C40D]"
+              >
+                <span className="font-mono text-xs hidden sm:inline tracking-wider uppercase">Close</span>
+                <X className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:rotate-90 duration-300" />
+              </button>
+            </div>
 
-            {/* Next Button */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                nextLightbox();
-              }}
-              aria-label="Next Image"
-              className="absolute right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer z-20"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Center Image Content */}
+            {/* Center Stage: Image and Prev/Next Navigation */}
             <div
-              className="relative max-w-5xl max-h-[85vh] w-full flex flex-col items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
+              className="relative flex-1 min-h-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden select-none"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) closeLightbox();
+              }}
             >
-              {galleryItems[activeLightboxIndex].src ? (
-                <div className="relative w-full aspect-[16/10] max-h-[70vh] rounded-2xl overflow-hidden">
+              {/* Prev Button */}
+              {galleryItems.length > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prevLightbox();
+                  }}
+                  aria-label="Previous Image"
+                  className="absolute left-3 sm:left-6 lg:left-8 z-20 p-2.5 sm:p-3.5 rounded-full bg-[#111613]/90 hover:bg-[#1E460B] border border-white/25 text-white transition-colors duration-200 shadow-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#55C40D]"
+                >
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              )}
+
+              {/* Main Image Stage */}
+              <div
+                className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[76vh] max-w-6xl flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {galleryItems[activeLightboxIndex].src ? (
                   <Image
+                    key={galleryItems[activeLightboxIndex].id || activeLightboxIndex}
                     src={galleryItems[activeLightboxIndex].src}
                     alt={galleryItems[activeLightboxIndex].alt || 'Gallery View'}
                     fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 1200px"
                     className="object-contain"
                   />
-                </div>
-              ) : (
-                <div className="w-full h-80 rounded-2xl bg-white/10 flex items-center justify-center text-white font-mono text-sm">
-                  {galleryItems[activeLightboxIndex].caption}
-                </div>
-              )}
+                ) : (
+                  <div className="w-full h-80 rounded-2xl bg-white/10 flex items-center justify-center text-white font-mono text-sm">
+                    {galleryItems[activeLightboxIndex].caption}
+                  </div>
+                )}
+              </div>
 
-              <p className="mt-4 font-mono text-xs sm:text-sm text-white/80 text-center">
-                {galleryItems[activeLightboxIndex].caption}
+              {/* Next Button */}
+              {galleryItems.length > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    nextLightbox();
+                  }}
+                  aria-label="Next Image"
+                  className="absolute right-3 sm:right-6 lg:right-8 z-20 p-2.5 sm:p-3.5 rounded-full bg-[#111613]/90 hover:bg-[#1E460B] border border-white/25 text-white transition-colors duration-200 shadow-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#55C40D]"
+                >
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              )}
+            </div>
+
+            {/* Bottom Caption Bar */}
+            <div className="relative z-10 px-4 sm:px-8 py-3.5 sm:py-4 border-t border-white/10 bg-[#090D0A]/95 text-center">
+              <p className="font-sans text-xs sm:text-sm text-white/90">
+                {galleryItems[activeLightboxIndex].caption || galleryItems[activeLightboxIndex].alt}
               </p>
             </div>
-          </div>
+          </div>,
+          document.body
         )}
 
       </Container>

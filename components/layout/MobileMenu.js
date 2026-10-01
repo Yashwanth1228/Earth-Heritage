@@ -194,39 +194,67 @@ export default function MobileMenu({ isOpen, onClose }) {
 
                     {/* Expandable Projects Submenu Card with 4 Status Categories */}
                     {isProjectsExpanded && (
-                      <div className="ml-3 pl-3 pr-2 py-2 mt-1 mb-2 rounded-xl bg-[#EBE0CC]/70 border border-[#DACBB0] flex flex-col space-y-1 animate-in fade-in slide-in-from-top-1 duration-200">
+                      <div className="ml-3 pl-3 pr-2 py-2 mt-1 mb-2 rounded-xl bg-[#EBE0CC]/70 border border-[#DACBB0] flex flex-col space-y-1.5 animate-in fade-in slide-in-from-top-1 duration-200">
                         {PROJECT_STATUS_CATEGORIES.map((cat) => {
                           const catProjects = getProjectsByStatus(cat.key);
                           const hasProjects = catProjects.length > 0;
-                          const targetHref = hasProjects
-                            ? `/projects/${catProjects[0].slug}`
-                            : '/projects';
 
+                          if (hasProjects) {
+                            return (
+                              <div key={cat.key} className="space-y-1">
+                                <div className="flex items-center justify-between px-2.5 py-1 text-xs font-mono text-[#1E460B] font-semibold uppercase tracking-wider">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" aria-hidden="true" />
+                                    <span>{cat.label}</span>
+                                  </div>
+                                  <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-md bg-[#D4C3A6] text-[#1E460B]">
+                                    {catProjects.length}
+                                  </span>
+                                </div>
+                                {catProjects.map((p) => (
+                                  <Link
+                                    key={p.slug}
+                                    href={`/projects/${p.slug}`}
+                                    onClick={onClose}
+                                    className="block ml-2 px-2.5 py-1.5 rounded-lg bg-white/70 hover:bg-white text-xs font-sans text-[#111613] hover:text-[#1E460B] transition-colors border border-[#DACBB0]/50"
+                                  >
+                                    <div className="font-medium">{p.name}</div>
+                                    <div className="text-[10px] font-mono text-[#7A6A4E]">8 Acres &bull; Honnasandra</div>
+                                  </Link>
+                                ))}
+                              </div>
+                            );
+                          }
+
+                          // Empty status category (Upcoming, Ongoing, Completed)
                           return (
                             <Link
                               key={cat.key}
-                              href={targetHref}
+                              href={`/projects?status=${cat.key}`}
                               onClick={onClose}
-                              className="text-xs sm:text-[13px] font-sans py-2 px-2.5 text-[#334237] hover:text-[#15341C] hover:bg-[#E0D3BC]/60 rounded-lg transition-colors flex items-center justify-between"
+                              className="text-xs sm:text-[13px] font-sans py-1.5 px-2.5 text-[#6B796F] hover:text-[#15341C] hover:bg-[#E0D3BC]/40 rounded-lg transition-colors flex items-center justify-between"
                             >
                               <div className="flex items-center gap-2">
-                                <span
-                                  className={cn(
-                                    'w-1.5 h-1.5 rounded-full shrink-0',
-                                    hasProjects ? 'bg-[#1E460B]' : 'bg-[#C5B79F]'
-                                  )}
-                                  aria-hidden="true"
-                                />
-                                <span className="font-medium">{cat.label}</span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C5B79F] shrink-0" aria-hidden="true" />
+                                <span>{cat.label}</span>
                               </div>
-                              {hasProjects && (
-                                <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded-md bg-[#D4C3A6] text-[#1E460B] font-semibold">
-                                  {catProjects.length}
-                                </span>
-                              )}
+                              <span className="text-[9.5px] font-mono text-[#8C9A8E]">
+                                0
+                              </span>
                             </Link>
                           );
                         })}
+
+                        {/* Link to all projects */}
+                        <div className="pt-1.5 mt-1 border-t border-[#DACBB0]/60">
+                          <Link
+                            href="/projects"
+                            onClick={onClose}
+                            className="block px-2.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-[#1E460B] hover:underline"
+                          >
+                            Explore All Projects &rarr;
+                          </Link>
+                        </div>
                       </div>
                     )}
                   </div>

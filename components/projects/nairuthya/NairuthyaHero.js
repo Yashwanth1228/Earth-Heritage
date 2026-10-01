@@ -18,7 +18,7 @@ export default function NairuthyaHero({ project }) {
   const heroImageSrc =
     project?.heroImage?.src || '/images/projects/nairuthya-whispering-wood-hero.jpg';
   const heroImageAlt =
-    project?.heroImage?.alt || 'Nairuthya Whispering Wood — Farmland Estate Entrance & Temple';
+    project?.heroImage?.alt || 'Nairuthya Whispering Wood farmland landscape in Honnasandra';
 
   return (
     <section
@@ -29,7 +29,7 @@ export default function NairuthyaHero({ project }) {
     >
       {/* Accessible single <h1> for SEO and screen-readers without visual clutter */}
       <h1 className="sr-only">
-        {project?.name || 'Nairuthya Whispering Wood'}
+        {project?.h1 || 'Nairuthya Whispering Wood — Managed Farmland in Honnasandra, Nelamangala'}
       </h1>
 
       {/* Pure, Unobstructed Landscape Visual with Padding on All Sides */}

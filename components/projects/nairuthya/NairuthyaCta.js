@@ -46,9 +46,9 @@ export default function NairuthyaCta({ project }) {
           {/* Heading */}
           <MotionReveal delay={0.1}>
             <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-normal text-[#FAF7F2] tracking-tight leading-[1.14]">
-              Build Your Living Legacy at{' '}
+              Talk to Earth Heritage &mdash;{' '}
               <span className="italic text-[#F8C32C] block sm:inline">
-                Nairuthya Whispering Wood.
+                Nairuthya Whispering Wood
               </span>
             </h2>
           </MotionReveal>
@@ -56,7 +56,7 @@ export default function NairuthyaCta({ project }) {
           {/* Factual Narrative */}
           <MotionReveal delay={0.15}>
             <p className="font-sans text-sm sm:text-base text-[#C4D1C7] font-light leading-relaxed max-w-2xl mx-auto">
-              5 acres of master-planned managed farmland in Honnasandra, Nelamangala. 9 plots available from 6,000 sq.ft at ₹1,699/sq.ft with titled land ownership and continuing professional farm care.
+              8 acres of master-planned managed farmland in Honnasandra, Nelamangala. 25 premium plots from 6,000 sq.ft at ₹1,699/sq.ft with titled land ownership and continuing professional farm care.
             </p>
           </MotionReveal>
 
@@ -77,16 +77,22 @@ export default function NairuthyaCta({ project }) {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-sans font-semibold text-xs sm:text-[13px] tracking-wider uppercase transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 text-[#55C40D]" />
-                <span>All Projects</span>
+                <span>Explore all Earth Heritage projects</span>
               </Link>
             </div>
           </MotionReveal>
 
           {/* Reassurance Disclaimer */}
-          <MotionReveal delay={0.35} className="pt-4 border-t border-white/10">
+          <MotionReveal delay={0.35} className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <p className="font-mono text-[11px] text-[#BAC8BE]/70 uppercase tracking-widest">
               Direct Titled Land Ownership &bull; Agronomic Management &bull; Earth Heritage Private Limited
             </p>
+            <Link
+              href="/contact"
+              className="font-mono text-[11px] text-[#F8C32C] hover:underline uppercase tracking-wider shrink-0"
+            >
+              Contact Earth Heritage &rarr;
+            </Link>
           </MotionReveal>
 
         </div>
