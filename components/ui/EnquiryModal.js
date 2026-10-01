@@ -152,11 +152,11 @@ export default function EnquiryModal() {
       newErrors.fullName = 'Name should be at least 2 characters.';
     }
 
-    const cleanPhone = formData.phoneNumber.trim().replace(/[\s\-\(\)\.]/g, '');
-    if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = 'Please enter your phone number.';
-    } else if (!/^[\+]?[0-9]{7,16}$/.test(cleanPhone)) {
-      newErrors.phoneNumber = 'Please enter a valid phone number (7 to 15 digits).';
+    const cleanPhone = formData.phoneNumber.trim().replace(/\D/g, '');
+    if (!cleanPhone) {
+      newErrors.phoneNumber = 'Please enter your 10-digit phone number.';
+    } else if (cleanPhone.length !== 10) {
+      newErrors.phoneNumber = 'Please enter a valid 10-digit phone number.';
     }
 
     if (formData.email.trim()) {
@@ -176,7 +176,11 @@ export default function EnquiryModal() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    let finalValue = value;
+    if (name === 'phoneNumber') {
+      finalValue = value.replace(/\D/g, '').slice(0, 10);
+    }
+    setFormData((prev) => ({ ...prev, [name]: finalValue }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -416,12 +420,25 @@ export default function EnquiryModal() {
                     id="enquiry-phone"
                     name="phoneNumber"
                     type="tel"
-                    inputMode="tel"
+                    inputMode="numeric"
+                    pattern="[0-9]{10}"
+                    maxLength={10}
                     required
                     autoComplete="tel"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    placeholder="e.g. +91 98765 43210"
+                    onKeyDown={(e) => {
+                      if (
+                        ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight'].includes(e.key) ||
+                        (e.ctrlKey || e.metaKey)
+                      ) {
+                        return;
+                      }
+                      if (!/^[0-9]$/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
+                    placeholder="10-digit mobile number"
                     aria-invalid={errors.phoneNumber ? 'true' : 'false'}
                     aria-describedby={errors.phoneNumber ? 'enquiry-phone-error' : undefined}
                     className={cn(

@@ -141,10 +141,10 @@ export default function FloatingEnquiryButton({ className }) {
           hasEntered && !reducedMotion && 'animate-enquire-pop pause-pulse-on-hover'
         )}
       >
-        {/* 1. Ambient Breathing Radiant Aura (Brand Green Halo) */}
+        {/* 1. Ambient Breathing Radiant Aura (Warm Amber Timber Glow) */}
         {hasEntered && !reducedMotion && (
           <span
-            className="absolute -inset-2 rounded-full bg-[#55c40d]/20 blur-xl pointer-events-none animate-enquire-aura -z-20"
+            className="absolute -inset-2 rounded-full bg-[#D4A373]/25 blur-xl pointer-events-none animate-enquire-aura -z-20"
             aria-hidden="true"
           />
         )}
@@ -157,15 +157,15 @@ export default function FloatingEnquiryButton({ className }) {
           />
         )}
 
-        {/* 3. Secondary Visible Glowing Expanding Ring (Wave 2 - Brand Emerald Green #55c40d) */}
+        {/* 3. Secondary Visible Glowing Expanding Ring (Wave 2 - Warm Bronze Timber #D4A373) */}
         {hasEntered && !reducedMotion && (
           <span
-            className="absolute -inset-1 rounded-full border-1.5 border-[#55c40d]/80 pointer-events-none animate-enquire-ring-2 pulse-child shadow-[0_0_26px_rgba(85,196,13,0.55)] -z-10"
+            className="absolute -inset-1 rounded-full border-1.5 border-[#D4A373]/85 pointer-events-none animate-enquire-ring-2 pulse-child shadow-[0_0_26px_rgba(212,163,115,0.65)] -z-10"
             aria-hidden="true"
           />
         )}
 
-        {/* 4. The Vibrant, High-Conversion Action Button: Luxury Forest Green + Warm Gold Theme */}
+        {/* 4. Luxury Handcrafted Wood Design Action Button */}
         <button
           ref={buttonRef}
           type="button"
@@ -173,43 +173,53 @@ export default function FloatingEnquiryButton({ className }) {
           tabIndex={isVisible ? 0 : -1}
           aria-label="Open Earth Heritage enquiry form"
           aria-hidden={!isVisible}
+          style={{
+            backgroundImage: "url('/images/wood-texture.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
           className={cn(
             'relative inline-flex items-center justify-center gap-2.5 select-none rounded-full overflow-hidden',
             'px-5 py-3 sm:px-7 sm:py-3.5',
-            'bg-[linear-gradient(135deg,#0E2413_0%,#184523_50%,#113119_100%)]',
-            'hover:bg-[linear-gradient(135deg,#13381B_0%,#205A2E_50%,#164021_100%)]',
-            'border-2 border-[#F8C32C]',
-            'shadow-[0_8px_30px_rgba(14,36,19,0.50),0_3px_10px_rgba(0,0,0,0.30),inset_0_1px_1px_rgba(255,255,255,0.20)]',
-            'hover:shadow-[0_12px_40px_rgba(14,36,19,0.65),0_4px_14px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.35)]',
+            'bg-[#2B170B]',
+            'border-2 border-[#E5B54F]',
+            'shadow-[0_8px_30px_rgba(43,23,11,0.65),0_3px_10px_rgba(0,0,0,0.45),inset_0_1px_1px_rgba(255,255,255,0.35)]',
+            'hover:shadow-[0_12px_40px_rgba(43,23,11,0.85),0_4px_14px_rgba(0,0,0,0.55),inset_0_1px_2px_rgba(255,255,255,0.50)]',
             'hover:scale-[1.05] active:scale-[0.97]',
             'transition-all duration-200 ease-out',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F8C32C] focus-visible:ring-offset-2',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5B54F] focus-visible:ring-offset-2',
             'cursor-pointer pointer-events-auto'
           )}
         >
+          {/* Subtle Polished Wood Lacquer Warmth Overlay */}
+          <span
+            className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/40 pointer-events-none rounded-full"
+            aria-hidden="true"
+          />
+
           {/* Specular Light Reflection Shimmer Beam */}
           {!reducedMotion && (
             <span className="absolute inset-0 rounded-full overflow-hidden pointer-events-none" aria-hidden="true">
-              <span className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-button-shimmer pointer-events-none" />
+              <span className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/35 to-transparent animate-button-shimmer pointer-events-none" />
             </span>
           )}
 
           {/* Eye-catching Sparkle Beacon Badge */}
           <span
-            className="flex items-center justify-center w-5 h-5 rounded-full bg-[#F8C32C] text-[#111613] text-[10px] font-bold shadow-sm flex-shrink-0"
+            className="relative z-10 flex items-center justify-center w-5 h-5 rounded-full bg-[#E5B54F] text-[#111613] text-[10px] font-bold shadow-sm flex-shrink-0"
             aria-hidden="true"
           >
             ✦
           </span>
 
-          {/* Crisp, High-Contrast Typography in Ivory/Cream */}
-          <span className="font-sans font-bold text-xs sm:text-[13px] tracking-[0.16em] uppercase text-[#FAF7F2] drop-shadow-[0_1px_2px_rgba(0,0,0,0.65)]">
+          {/* Crisp, High-Contrast Typography in Ivory with subtle wood shadow */}
+          <span className="relative z-10 font-sans font-bold text-xs sm:text-[13px] tracking-[0.16em] uppercase text-[#FFFDF9] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
             Enquire Now
           </span>
 
           {/* Directional Action Indicator Arrow */}
           <svg
-            className="w-3.5 h-3.5 text-[#F8C32C] stroke-[2.8] transition-transform duration-200 group-hover:translate-x-0.5 flex-shrink-0"
+            className="relative z-10 w-3.5 h-3.5 text-[#E5B54F] stroke-[2.8] transition-transform duration-200 group-hover:translate-x-0.5 flex-shrink-0 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
