@@ -16,6 +16,7 @@ export default function EditorialImageSlot({
   src,
   alt = 'Nairuthya Whispering Wood',
   slotLabel = 'Project Photography Slot',
+  location = 'Honnasandra \u2022 Nelamangala',
   caption,
   className,
   aspectRatio = 'aspect-[16/10]',
@@ -81,7 +82,7 @@ export default function EditorialImageSlot({
           {/* Center Brand Identity Watermark */}
           <div className="relative z-10 my-auto text-center py-2 space-y-0.5">
             <span className="block font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#7A6A4E] font-medium">
-              Honnasandra &bull; Nelamangala
+              {location}
             </span>
             <h4 className="font-serif text-base sm:text-lg font-medium text-[#111613] tracking-tight line-clamp-1">
               {alt}
@@ -121,7 +122,7 @@ export default function EditorialImageSlot({
           {/* Center Brand Identity Watermark */}
           <div className="relative z-10 my-auto text-center py-3 space-y-1">
             <span className="block font-mono text-[10px] uppercase tracking-[0.25em] text-[#C6923C] font-semibold">
-              Honnasandra &bull; Nelamangala
+              {location}
             </span>
             <h4 className="font-serif text-lg sm:text-xl font-normal text-[#FAF7F2] tracking-tight">
               {alt}

@@ -44,7 +44,14 @@ export default function ProjectCard({
     images = []
   } = project;
 
-  const activeImage = coverImage || heroImage || (images && images.length > 0 ? images[0] : null);
+  const activeImage =
+    (coverImage && typeof coverImage.src === 'string' && coverImage.src.trim().length > 0)
+      ? coverImage
+      : (heroImage && typeof heroImage.src === 'string' && heroImage.src.trim().length > 0)
+      ? heroImage
+      : (Array.isArray(images) && images.length > 0 && images[0] && typeof images[0].src === 'string' && images[0].src.trim().length > 0)
+      ? images[0]
+      : null;
   const narrativeText = shortDescription || tagline || overview || description || null;
   const projectNumber = index || number || null;
 

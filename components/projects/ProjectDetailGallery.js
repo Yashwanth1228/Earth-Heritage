@@ -45,7 +45,13 @@ export default function ProjectDetailGallery({ project }) {
   const galleryItems =
     Array.isArray(project.gallery) && project.gallery.length > 0
       ? project.gallery
-      : fallbackGallery;
+      : isDemo
+      ? fallbackGallery
+      : [];
+
+  if (!galleryItems || galleryItems.length === 0) {
+    return null;
+  }
 
   return (
     <section

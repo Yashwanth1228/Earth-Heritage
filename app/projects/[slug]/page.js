@@ -20,6 +20,15 @@ import NairuthyaLocation from '@/components/projects/nairuthya/NairuthyaLocation
 import NairuthyaNearby from '@/components/projects/nairuthya/NairuthyaNearby';
 import NairuthyaGallery from '@/components/projects/nairuthya/NairuthyaGallery';
 
+// Coconut Garden — Bespoke Real Project Components (Matching Master Reference Architecture)
+import CoconutHero from '@/components/projects/coconut/CoconutHero';
+import CoconutSnapshot from '@/components/projects/coconut/CoconutSnapshot';
+import CoconutPlantations from '@/components/projects/coconut/CoconutPlantations';
+import CoconutAmenities from '@/components/projects/coconut/CoconutAmenities';
+import CoconutLocation from '@/components/projects/coconut/CoconutLocation';
+import CoconutNearby from '@/components/projects/coconut/CoconutNearby';
+import CoconutGallery from '@/components/projects/coconut/CoconutGallery';
+
 /**
  * Generate SEO metadata for dynamic project detail page
  * Derives exclusively from verified project data without invented claims
@@ -103,11 +112,12 @@ export default async function ProjectDetailPage({ params }) {
 
   const projectSchema = getProjectDetailSchema(project);
   const isNairuthya = project.slug === 'nairuthya-whispering-wood';
-  const breadcrumbSchema = isNairuthya
+  const isCoconutGarden = project.slug === 'coconut-garden';
+  const breadcrumbSchema = !project.isDemo
     ? getBreadcrumbSchema([
         { name: 'Home', path: '/' },
         { name: 'Projects', path: '/projects' },
-        { name: 'Nairuthya Whispering Wood', path: '/projects/nairuthya-whispering-wood' }
+        { name: project.name, path: `/projects/${project.slug}` }
       ])
     : null;
 
@@ -150,6 +160,29 @@ export default async function ProjectDetailPage({ params }) {
 
             {/* 7. PROJECT GALLERY */}
             <NairuthyaGallery project={project} />
+          </>
+        ) : isCoconutGarden ? (
+          <>
+            {/* 1. PROJECT HERO */}
+            <CoconutHero project={project} />
+
+            {/* 2. PROJECT SNAPSHOT */}
+            <CoconutSnapshot project={project} />
+
+            {/* 3. FARM & PLANTATIONS */}
+            <CoconutPlantations project={project} />
+
+            {/* 4. AMENITIES */}
+            <CoconutAmenities project={project} />
+
+            {/* 5. LOCATION & CONNECTIVITY */}
+            <CoconutLocation project={project} />
+
+            {/* 6. NEARBY PLACES / PROJECT HIGHLIGHTS */}
+            <CoconutNearby project={project} />
+
+            {/* 7. PROJECT GALLERY */}
+            <CoconutGallery project={project} />
           </>
         ) : (
           <>

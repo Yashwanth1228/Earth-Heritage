@@ -188,14 +188,19 @@ export default function Navigation({ className, isInverse = false }) {
                     })}
                   </div>
 
-                  {/* Active Status Projects List */}
+                  {/* Status Projects Lists */}
                   <div className="min-h-[85px] flex flex-col justify-center">
-                    {(() => {
-                      const statusProjects = getProjectsByStatus(activeStatus);
+                    {PROJECT_STATUS_CATEGORIES.map((cat) => {
+                      const statusProjects = getProjectsByStatus(cat.key);
+                      const isSelected = activeStatus === cat.key;
 
                       if (statusProjects.length > 0) {
                         return (
-                          <div className="space-y-1.5" role="none">
+                          <div
+                            key={cat.key}
+                            className={cn('space-y-1.5', isSelected ? 'block' : 'hidden')}
+                            role="none"
+                          >
                             {statusProjects.map((proj) => (
                               <Link
                                 key={proj.slug}
@@ -217,7 +222,7 @@ export default function Navigation({ className, isInverse = false }) {
                                     </span>
                                   </div>
                                   <p className="text-[10.5px] font-mono text-[#7A6A4E] pl-3">
-                                    8 Acres &bull; Honnasandra, Nelamangala
+                                    {proj.snapshot?.totalArea || proj.category} &bull; {proj.locationDetails?.village ? `${proj.locationDetails.village}, ${proj.locationDetails.taluk}` : proj.location}
                                   </p>
                                 </div>
                                 <ArrowUpRight
@@ -233,22 +238,21 @@ export default function Navigation({ className, isInverse = false }) {
                         );
                       }
 
-                      // Empty state for status categories without projects (Upcoming, Ongoing, Completed)
-                      const currentCategory = PROJECT_STATUS_CATEGORIES.find((c) => c.key === activeStatus);
+                      // Empty state for status categories without projects (Upcoming, Completed)
                       return (
-                        <div className="py-4 px-3 text-center space-y-1 rounded-xl bg-black/[0.02] dark:bg-white/[0.02]">
+                        <div
+                          key={cat.key}
+                          className={cn('py-4 px-3 text-center space-y-1 rounded-xl bg-black/[0.02] dark:bg-white/[0.02]', isSelected ? 'block' : 'hidden')}
+                        >
                           <p className={cn(
                             'text-xs font-sans italic',
                             isInverse ? 'text-[#FAF7F2]/60' : 'text-[#7A6A4E]'
                           )}>
-                            {currentCategory?.emptyMessage || 'No projects currently in this category'}
-                          </p>
-                          <p className="text-[10px] font-mono text-[#9B8C73]">
-                            Only &quot;New&quot; currently has active projects
+                            {cat.emptyMessage || 'No projects currently in this category'}
                           </p>
                         </div>
                       );
-                    })()}
+                    })}
                   </div>
 
                   {/* Dropdown Footer: All Projects Navigation */}

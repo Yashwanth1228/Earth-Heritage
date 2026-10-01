@@ -219,7 +219,9 @@ export default function MobileMenu({ isOpen, onClose }) {
                                     className="block ml-2 px-2.5 py-1.5 rounded-lg bg-white/70 hover:bg-white text-xs font-sans text-[#111613] hover:text-[#1E460B] transition-colors border border-[#DACBB0]/50"
                                   >
                                     <div className="font-medium">{p.name}</div>
-                                    <div className="text-[10px] font-mono text-[#7A6A4E]">8 Acres &bull; Honnasandra</div>
+                                    <div className="text-[10px] font-mono text-[#7A6A4E]">
+                                      {p.snapshot?.totalArea || p.category} &bull; {p.locationDetails?.village || p.location}
+                                    </div>
                                   </Link>
                                 ))}
                               </div>

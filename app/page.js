@@ -6,6 +6,7 @@ import HomeStories from '@/components/sections/home/HomeStories';
 import HomeEvents from '@/components/sections/home/HomeEvents';
 import HomeFaq from '@/components/sections/home/HomeFaq';
 import HomeContactLocation from '@/components/sections/home/HomeContactLocation';
+import GandhiJayantiPopup from '@/components/campaigns/GandhiJayantiPopup';
 
 export const metadata = {
   title: 'Earth Heritage | Own a Piece of Earth. Build a Legacy.',
@@ -31,6 +32,7 @@ export const metadata = {
  * 06. HomeEvents — Community moments, harvest walks, and estate visits linking to /events
  * 07. HomeFaq — 5 essential first-visit questions with smooth accessible accordion
  * 08. HomeContactLocation — Editorial split: Direct on-page enquiry form + official Google Maps embed
+ * 09. GandhiJayantiPopup — Temporary campaign modal for October 2, 2026
  */
 export default function HomePage() {
   return (
@@ -43,6 +45,7 @@ export default function HomePage() {
       <HomeEvents />
       <HomeFaq />
       <HomeContactLocation />
+      <GandhiJayantiPopup />
     </div>
   );
 }
