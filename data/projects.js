@@ -43,13 +43,17 @@ export const projects = [
     id: 'nairuthya-whispering-wood',
     slug: 'nairuthya-whispering-wood',
     name: 'Nairuthya Whispering Wood',
+    seoTitle: 'Nairuthya Whispering Wood | Managed Farmland in Nelamangala',
+    seoDescription:
+      'Explore Nairuthya Whispering Wood, an 8-acre managed farmland project in Honnasandra, Nelamangala, with 25 premium plots, plantations and farm-focused amenities.',
+    h1: 'Nairuthya Whispering Wood — Managed Farmland in Honnasandra, Nelamangala',
     number: '01',
     category: 'Managed Farmland',
-    tagline: '5-Acre Managed Farmland in Honnasandra, Nelamangala',
+    tagline: '8-Acre Managed Farmland in Honnasandra, Nelamangala',
     shortDescription:
-      'A 5-acre managed farmland development in Honnasandra, Nelamangala. 24 master-planned plots with titled land ownership, active timber and crop plantations, and ongoing farm stewardship by Earth Heritage.',
+      'Explore Nairuthya Whispering Wood, an 8-acre managed farmland project in Honnasandra, Nelamangala, with 25 premium plots, plantations and farm-focused amenities.',
     overview:
-      'Nairuthya Whispering Wood is a 5-acre managed farmland estate situated in Honnasandra, Nelamangala Taluk. The project brings together direct titled land ownership with disciplined agricultural development and long-term professional farm management by Earth Heritage.\n\nComprising a boutique enclave of 24 plots starting from 6,000 sq.ft, the estate is planted with valuable timber species including Mahogany, Teak wood, and Red sandal, alongside perennial Coconut, Areca nut, and seasonal fruit varieties.',
+      'Nairuthya Whispering Wood is an 8-acre managed farmland project situated in Honnasandra, Nelamangala. The project brings together direct titled land ownership with disciplined agricultural development and long-term professional farm management by Earth Heritage.\n\nComprising a boutique enclave of 25 premium plots starting from 6,000 sq.ft at ₹1,699/sq.ft, the estate is planted with valuable timber species including Mahogany, Teak Wood, and Red Sandal, alongside perennial Coconut, Areca Nut, and seasonal fruit varieties.',
     stewardshipApproach:
       'Earth Heritage acquired the estate land, undertakes complete on-ground farm development, sells titled plots to individual buyers, and continues managing all daily farm operations, irrigation networks, and plantation care.',
     location: 'Honnasandra · Nelamangala · Bengaluru',
@@ -58,8 +62,8 @@ export const projects = [
       taluk: 'Nelamangala',
       district: 'Bengaluru Rural',
       state: 'Karnataka',
-      distanceBengaluru: '35 km from Bengaluru',
-      distanceNelamangala: '8 km from Nelamangala',
+      distanceBengaluru: 'Approximately 35 km',
+      distanceNelamangala: 'Approximately 8 km',
       mapQuery: 'Whispering Wood by Nairuthya Properties',
       mapEmbedUrl:
         'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.00800222693!2d77.33212307359022!3d13.03516221348457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae310049c2514b%3A0x31df4bed6b535bbd!2sWhispering%20Wood%20by%20Nairuthya%20Properties!5e0!3m2!1sen!2sin!4v1790763247598!5m2!1sen!2sin',
@@ -71,23 +75,23 @@ export const projects = [
     featured: true,
     heroImage: {
       src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
-      alt: 'Nairuthya Whispering Wood — Farmland Estate Entrance & Temple at Honnasandra, Nelamangala'
+      alt: 'Nairuthya Whispering Wood farmland landscape in Honnasandra'
     },
     coverImage: {
       src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
-      alt: 'Nairuthya Whispering Wood — 5-Acre Managed Farmland Estate'
+      alt: 'Nairuthya Whispering Wood 8-acre managed farmland layout plan in Honnasandra'
     },
     locationMapImage: {
       src: null,
       alt: 'Nairuthya Whispering Wood — Regional Location & Route Map'
     },
     snapshot: {
-      totalArea: '5 Acres',
-      totalPlots: '24 Total Plots',
+      totalArea: '8 Acres',
+      totalPlots: '25 Premium Plots',
       minPlotSize: '6,000 sq.ft Minimum Plot',
       pricePerSqFt: '₹1,699 / sq.ft',
-      distBengaluru: '35 km from Bengaluru',
-      distNelamangala: '8 km from Nelamangala'
+      distBengaluru: 'Approximately 35 km',
+      distNelamangala: 'Approximately 8 km'
     },
     aboutModel: {
       eyebrow: 'LAND DEVELOPMENT & STEWARDSHIP MODEL',
@@ -345,11 +349,11 @@ export const projects = [
       },
       {
         question: 'What is the total project size?',
-        answer: 'The total project area is 5 acres of master-planned, developing agricultural farmland.'
+        answer: 'The total project area is 8 acres of master-planned, developing agricultural farmland in Honnasandra, Nelamangala.'
       },
       {
         question: 'How many plots are there in the project?',
-        answer: 'The project comprises a boutique, limited-density layout of 24 total farmland plots.'
+        answer: 'The project comprises a planned layout of 25 premium farmland plots.'
       },
       {
         question: 'What is the minimum plot size available?',
@@ -360,12 +364,8 @@ export const projects = [
         answer: 'The farmland plots are currently priced at ₹1,699 per sq.ft.'
       },
       {
-        question: 'How many plots are currently available?',
-        answer: 'Currently, 9 plots are available for acquisition out of the total 24 plots.'
-      },
-      {
         question: 'What plantations are planned and grown on the land?',
-        answer: 'Confirmed plantations cultivated across the estate include Mahogany, Teak wood, Coconut, Areca nut, Red sandal, and 2 to 3 curated seasonal fruit varieties suited to the local soil and climate.'
+        answer: 'Confirmed plantations cultivated across the estate include Mahogany, Teak Wood, Coconut, Areca Nut, Red Sandal, and 2 to 3 varieties of seasonal fruits suited to the local soil and climate.'
       },
       {
         question: 'What amenities and infrastructure are provided?',

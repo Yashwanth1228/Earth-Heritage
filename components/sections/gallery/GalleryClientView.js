@@ -3,7 +3,6 @@
 import { useState, useCallback } from 'react';
 import GalleryIntro from './GalleryIntro';
 import GalleryExhibition from './GalleryExhibition';
-import GalleryPhilosophy from './GalleryPhilosophy';
 import GalleryLightbox from './GalleryLightbox';
 import { galleryImages } from '@/data/galleryImages';
 
@@ -51,9 +50,6 @@ export default function GalleryClientView() {
       <GalleryExhibition
         onSelectImage={(item, filteredList) => handleSelectImage(item, filteredList)}
       />
-
-      {/* 4. Brand Philosophy Panorama */}
-      <GalleryPhilosophy />
 
       {/* Accessible Fullscreen Lightbox Modal */}
       <GalleryLightbox

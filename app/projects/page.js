@@ -24,7 +24,9 @@ export const metadata = {
  * 3. ProjectsPortfolio — Monumental editorial "PROJECTS · 2026 / COMING SOON" exhibition
  * 4. ProjectsCta — Conversational closing section with "Talk to Us" enquiry action
  */
-export default function ProjectsPage() {
+export default async function ProjectsPage({ searchParams }) {
+  const resolvedParams = await searchParams;
+  const initialStatus = resolvedParams?.status || 'all';
   const allProjects = getAllProjects();
   // Filter out demo/concept entries so only real confirmed projects appear publicly
   const confirmedProjects = (allProjects || []).filter((p) => p && !p.isDemo);
@@ -39,7 +41,7 @@ export default function ProjectsPage() {
       />
       <div className="w-full bg-[#FAF6F0]">
         <ProjectsHero />
-        <ProjectsPortfolio projects={confirmedProjects} />
+        <ProjectsPortfolio projects={confirmedProjects} initialStatus={initialStatus} />
         <ProjectsCta />
       </div>
     </>

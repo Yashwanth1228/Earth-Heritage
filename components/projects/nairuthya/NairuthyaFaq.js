@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
@@ -62,7 +63,13 @@ export default function NairuthyaFaq({ project }) {
 
           <MotionReveal delay={0.15}>
             <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-              Essential verified details regarding land ownership, plot dimensions, pricing, plantations, and ongoing farm management at Nairuthya Whispering Wood.
+              Essential verified details regarding land ownership, plot dimensions, pricing, plantations, and ongoing farm management at Nairuthya Whispering Wood.{' '}
+              <Link
+                href="/managed-farmland"
+                className="text-[#1E460B] font-medium underline underline-offset-2 hover:text-[#55C40D] transition-colors"
+              >
+                Explore our farm management approach
+              </Link>
             </p>
           </MotionReveal>
         </div>
