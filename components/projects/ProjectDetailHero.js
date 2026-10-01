@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
+import LandContourPattern from '@/components/ui/LandContourPattern';
 
 /**
  * Image-First Editorial Project Showcase Hero for /projects/[slug]
@@ -35,7 +36,10 @@ export default function ProjectDetailHero({ project }) {
   } = project;
 
   // Derive primary landscape visual
-  const activeHeroImage = heroImage || coverImage || (images && images.length > 0 ? images[0] : null);
+  const activeHeroImage =
+    (heroImage?.src && heroImage) ||
+    (coverImage?.src && coverImage) ||
+    (Array.isArray(images) && images.length > 0 && images[0]?.src ? images[0] : null);
   const narrative = shortDescription || tagline || null;
   const projectNumber = number || '01';
 
@@ -50,8 +54,8 @@ export default function ProjectDetailHero({ project }) {
         {/* Cinematic Image-First Banner Frame */}
         <div className="relative w-full h-[68svh] min-h-[460px] max-h-[580px] sm:h-[74vh] sm:min-h-[540px] sm:max-h-[700px] lg:h-[80vh] lg:min-h-[600px] lg:max-h-[820px] rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden border border-[#D5C09D]/60 shadow-[0_20px_50px_rgba(17,22,19,0.12)] bg-[#102B17]">
           
-          {/* 1. Project Visual with Subtle Slow Scale Zoom */}
-          {activeHeroImage && (
+          {/* 1. Project Visual with Subtle Slow Scale Zoom (or Topographic Contours when awaiting real photography) */}
+          {activeHeroImage && activeHeroImage.src ? (
             <motion.div
               initial={shouldReduceMotion ? { scale: 1, opacity: 1 } : { scale: 1, opacity: 0.85 }}
               animate={shouldReduceMotion ? { scale: 1, opacity: 1 } : { scale: 1.05, opacity: 1 }}
@@ -70,6 +74,10 @@ export default function ProjectDetailHero({ project }) {
                 className="object-cover object-center"
               />
             </motion.div>
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center opacity-25 pointer-events-none select-none">
+              <LandContourPattern variant="biscuit-topography" />
+            </div>
           )}
 
           {/* 2. Top-down Vignette Gradient (for header / back button readability) */}
