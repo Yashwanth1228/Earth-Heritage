@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin, isSupabaseAdminConfigured } from '@/lib/supabaseAdmin';
+import { sendEnquiryNotification } from '@/lib/email';
 
 /**
  * Handle unsupported HTTP methods
@@ -30,8 +31,10 @@ export async function PATCH() {
  * POST /api/enquiries
  * 
  * Secure server-side ingestion endpoint for Earth Heritage enquiries.
- * Validates submission payload and inserts directly into public.enquiries
- * using the server-only Supabase service-role client.
+ * 1. Validates submission payload.
+ * 2. Inserts directly into public.enquiries using the server-only Supabase service-role client.
+ * 3. Dispatches transactional email notification to support@earthheritage.in via Resend.
+ * 4. Preserves database as single source of truth without rolling back on email failure.
  */
 export async function POST(request) {
   // 1. Parse JSON Request Body
@@ -49,7 +52,7 @@ export async function POST(request) {
   }
 
   // 2. Anti-spam Honeypot Inspection
-  // If an automated bot fills any hidden decoy field, safely intercept without database persistence
+  // If an automated bot fills any hidden decoy field, safely intercept without database persistence or email
   if (body?.website || body?.honeypot || body?.company_fax) {
     return NextResponse.json(
       {
@@ -154,9 +157,11 @@ export async function POST(request) {
 
   // 7. Secure Insertion via Supabase Admin Client
   try {
-    const { error: dbError } = await supabaseAdmin
+    const { data: insertedData, error: dbError } = await supabaseAdmin
       .from('enquiries')
-      .insert([record]);
+      .insert([record])
+      .select('id, created_at')
+      .single();
 
     if (dbError) {
       // Log technical error code/message without exposing visitor PII to server logs
@@ -170,11 +175,36 @@ export async function POST(request) {
       );
     }
 
-    // 8. Successful Response (HTTP 201)
+    // 8. Transactional Notification Email via Resend
+    // Strictly invoked AFTER the database insert succeeds.
+    // Database remains the source of truth; email failure will never rollback the saved record.
+    let emailResult = { attempted: false, success: false };
+    try {
+      emailResult = await sendEnquiryNotification({
+        id: insertedData?.id,
+        createdAt: insertedData?.created_at || new Date().toISOString(),
+        fullName: cleanFullName,
+        phoneNumber: cleanPhone,
+        email: cleanEmail || null,
+        interestedIn: cleanInterestedIn,
+        message: cleanMessage || null
+      });
+    } catch (emailErr) {
+      console.error('[Enquiries API] Unexpected error during notification dispatch:', emailErr?.message || 'unknown');
+      emailResult = { attempted: true, success: false, error: 'dispatch_exception' };
+    }
+
+    // 9. Successful Response (HTTP 201)
+    // Preserves database persistence as source of truth even if email notification fails.
+    // Never expose technical Resend/API keys/internal errors to the visitor.
     return NextResponse.json(
       {
         success: true,
-        message: 'Enquiry submitted successfully.'
+        message: 'Enquiry submitted successfully.',
+        data: {
+          id: insertedData?.id,
+          notificationSent: Boolean(emailResult?.success)
+        }
       },
       { status: 201 }
     );

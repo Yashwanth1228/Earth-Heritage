@@ -178,7 +178,7 @@ export default async function ProjectDetailPage({ params }) {
             {/* 5. LOCATION & CONNECTIVITY */}
             <CoconutLocation project={project} />
 
-            {/* 6. NEARBY PLACES / PROJECT HIGHLIGHTS */}
+            {/* 6. NEARBY ATTRACTIONS */}
             <CoconutNearby project={project} />
 
             {/* 7. PROJECT GALLERY */}

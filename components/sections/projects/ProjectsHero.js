@@ -53,7 +53,7 @@ export default function ProjectsHero() {
             </svg>
           </div>
 
-          {/* 1. Compact Page Eyebrow Badge */}
+          {/* 1. Page Eyebrow Badge */}
           <MotionReveal delay={0.05}>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAD5B5]/80 border border-[#D5C09D] text-xs font-mono font-semibold tracking-widest text-[#1E460B] uppercase mb-4 shadow-2xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D] animate-pulse" aria-hidden="true" />
@@ -61,20 +61,17 @@ export default function ProjectsHero() {
             </div>
           </MotionReveal>
 
-          {/* 2. Editorial Two-Tone Display Title */}
+          {/* 2. Single H1 Editorial Display Headline */}
           <MotionReveal delay={0.1}>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] font-normal tracking-tight leading-[1.14] text-center">
-              <span className="text-[#111613]">The first chapters are </span>
-              <span className="text-[#1E460B] italic font-normal block sm:inline">
-                taking shape.
-              </span>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] font-normal tracking-tight leading-[1.14] text-center text-[#111613]">
+              Land, developed with <span className="text-[#1E460B] italic font-normal">purpose.</span>
             </h1>
           </MotionReveal>
 
           {/* 3. Centered Supporting Description */}
           <MotionReveal delay={0.15}>
             <p className="mt-4 font-sans text-sm sm:text-base md:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
-              Earth Heritage is at the beginning of its journey. Our upcoming projects will bring together land, nature, thoughtful development and long-term care.
+              Earth Heritage projects bring together land ownership, farm development, nature, and ongoing care.
             </p>
           </MotionReveal>
 

@@ -1,11 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { aboutData } from '@/data/aboutData';
-import { aboutImages } from '@/data/aboutImages';
 
 /**
  * Editorial Centered Introduction Section for /about
@@ -17,8 +15,6 @@ import { aboutImages } from '@/data/aboutImages';
  * It is a living legacy.
  * ↓
  * Supporting Description (Centered, comfortable reading width)
- * ↓
- * Large High-Quality Image (Aspect ratio 16:9 / 21:9 with subtle rounded corners)
  */
 export default function AboutIntro() {
   const { eyebrow, headingLine1, headingLine2, description } = aboutData.intro;
@@ -26,7 +22,7 @@ export default function AboutIntro() {
   return (
     <section
       id="hero"
-      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 overflow-hidden border-b border-[#DCCDB7]"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 overflow-hidden border-b border-[#DCCDB7]"
       aria-label="About Earth Heritage Introduction"
     >
       {/* Signature Earth Heritage Visible Organic Background Pattern */}
@@ -89,27 +85,6 @@ export default function AboutIntro() {
             </p>
           </MotionReveal>
         </div>
-
-        {/* 4. Large Centered High-Quality Image */}
-        <MotionReveal delay={0.35} className="mt-12 sm:mt-16 lg:mt-20 max-w-6xl mx-auto">
-          <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#D5C09D] shadow-[0_20px_50px_rgba(17,22,19,0.09)] bg-[#E4D1B5]">
-            <Image
-              src={aboutImages.intro.src}
-              alt={aboutImages.intro.alt}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 92vw, 1150px"
-              className="object-cover object-center transform hover:scale-[1.01] transition-transform duration-700 ease-out"
-            />
-            {/* Subtle atmospheric gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none" />
-
-            {/* Editorial Caption Badge */}
-            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 px-3 py-1.5 rounded-md bg-[#111613]/75 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-wider text-white/95 uppercase pointer-events-none">
-              Earth Heritage · Stewardship & Scale
-            </div>
-          </div>
-        </MotionReveal>
       </Container>
     </section>
   );

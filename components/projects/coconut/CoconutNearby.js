@@ -34,29 +34,30 @@ function SproutIcon({ className = 'w-4 h-4 text-white shrink-0' }) {
 }
 
 /**
- * 06 — PROJECT HIGHLIGHTS & DESTINATION ROUTE BANNER
+ * 06 — NEARBY ATTRACTIONS & ROUTE MAP BANNER
  * 
  * Styled directly after the master reference (Nairuthya Whispering Wood):
  * - Rich Earth Heritage deep forest green banner (#173822 -> #1E462B -> #14321E)
  * - Flowing champagne-gold topographical contour lines watermark
- * - Left column: "Project Highlights" in high-contrast white serif with compact sprout bullet list
- * - Right column: "Route Map" destination canvas illustrating the Bidadi connectivity network
- * - Destination marker: "DESTINY COCONUT GARDEN"
+ * - Left column: "Nearby Attractions" in high-contrast white serif with compact sprout bullet list (single line)
+ * - Right column: "Route Map" in matching white serif with illustrated white vector road network showing the nearby attractions
+ * - Destination marker: "COCONUT GARDEN" with white pill badge and pin pole
  */
 export default function CoconutNearby({ project }) {
-  const highlights = project?.highlights || [
-    'Premium Farm Land',
-    'Ideal for Weekend Homes',
-    'Green & Peaceful Environment',
-    'Excellent Investment Opportunity',
-    'Surrounded by Nature'
+  const attractions = project?.nearbyAttractions || [
+    'Bidadi Town Center',
+    'Bengaluru / Kengeri (NH 275)',
+    'Wonderla Amusement Park',
+    'Eagleton Golf Resort',
+    'Janapada Loka Folk Museum',
+    'Ramadevara Betta Sanctuary'
   ];
 
   return (
     <section
       id="nearby-places"
       className="relative bg-[#FAF7F2] py-8 sm:py-10 lg:py-12 border-b border-[#DCCDB7]/80 overflow-hidden"
-      aria-label="Project Highlights and Destination Map"
+      aria-label="Nearby Attractions and Route Map"
     >
       <Container size="default" className="relative z-10 max-w-6xl px-3 sm:px-6 lg:px-8">
         
@@ -87,21 +88,21 @@ export default function CoconutNearby({ project }) {
           <div className="relative z-10 p-6 sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
-              {/* LEFT COLUMN — Project Highlights */}
+              {/* LEFT COLUMN — Nearby Attractions */}
               <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
                 <MotionReveal delay={0.05}>
                   <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug">
-                    Project Highlights
+                    Nearby Attractions
                   </h3>
                 </MotionReveal>
 
-                {/* Compact Sprout Bullet List */}
+                {/* Compact Sprout Bullet List (Single Line items strictly preserved) */}
                 <div className="space-y-2.5 sm:space-y-3 pt-1">
-                  {highlights.map((item, idx) => (
+                  {attractions.map((item, idx) => (
                     <MotionReveal key={idx} delay={0.05 * (idx + 1)}>
                       <div className="flex items-center gap-2.5 sm:gap-3 text-white/95">
                         <SproutIcon className="w-4 h-4 text-white/90 shrink-0" />
-                        <span className="font-serif text-[14px] sm:text-[15.5px] lg:text-[16px] tracking-tight font-normal leading-tight">
+                        <span className="font-serif text-[14px] sm:text-[15.5px] lg:text-[16px] tracking-tight font-normal leading-tight whitespace-nowrap">
                           {item}
                         </span>
                       </div>
@@ -110,21 +111,22 @@ export default function CoconutNearby({ project }) {
                 </div>
               </div>
 
-              {/* RIGHT COLUMN — Route Map (Illustrated White Line Vector Map) */}
+              {/* RIGHT COLUMN — Regional Attractions Illustrated Composition */}
               <div className="lg:col-span-7 flex flex-col justify-center space-y-3">
                 <MotionReveal delay={0.1}>
                   <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug">
-                    Route Map
+                    Regional Map
                   </h3>
                 </MotionReveal>
 
-                {/* Vector Route Map Canvas */}
+                {/* Illustrated Regional Composition Canvas */}
                 <div className="relative w-full h-[240px] sm:h-[280px] lg:h-[300px] rounded-xl overflow-hidden">
                   <svg
                     className="w-full h-full"
                     viewBox="0 0 540 280"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Illustrative regional attractions overview around Coconut Garden"
                   >
                     {/* Background contour accents */}
                     <path
@@ -143,64 +145,280 @@ export default function CoconutNearby({ project }) {
                       strokeWidth="1"
                     />
 
-                    {/* Main Highway Route Trunk (Bengaluru - Mysuru Expressway Corridor) */}
-                    <path
-                      d="M 40 250 L 120 220 L 210 190 L 300 160 L 380 120 L 460 70"
-                      stroke="white"
-                      strokeWidth="3.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    {/* Concentric Locality Proximity Arcs (Abstract regional vicinity ripples) */}
+                    <ellipse
+                      cx="270"
+                      cy="136"
+                      rx="105"
+                      ry="58"
+                      stroke="rgba(238,223,198,0.14)"
+                      strokeWidth="1"
+                      strokeDasharray="3 3"
                     />
-
-                    {/* Regional Route Link */}
-                    <path
-                      d="M 210 190 L 270 230 L 350 250"
-                      stroke="white"
-                      strokeWidth="2"
+                    <ellipse
+                      cx="270"
+                      cy="136"
+                      rx="205"
+                      ry="96"
+                      stroke="rgba(238,223,198,0.08)"
+                      strokeWidth="1"
                       strokeDasharray="4 4"
-                      strokeLinecap="round"
                     />
 
-                    {/* Destination Approach Branch */}
+                    {/* Abstract Constellation Links (Connecting Regional Attractions to Locality Network) */}
+                    {/* Wonderla to Bidadi */}
                     <path
-                      d="M 300 160 L 330 110 L 370 100"
-                      stroke="#55C40D"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
+                      d="M 115 74 Q 90 98 83 122"
+                      stroke="rgba(238,223,198,0.3)"
+                      strokeWidth="1.2"
+                      strokeDasharray="3 3"
+                    />
+                    {/* Bidadi to Coconut Garden */}
+                    <path
+                      d="M 146 136 Q 172 136 198 136"
+                      stroke="rgba(238,223,198,0.4)"
+                      strokeWidth="1.4"
+                      strokeDasharray="3 3"
+                    />
+                    {/* Coconut Garden to Eagleton */}
+                    <path
+                      d="M 330 122 Q 380 95 420 74"
+                      stroke="rgba(238,223,198,0.3)"
+                      strokeWidth="1.2"
+                      strokeDasharray="3 3"
+                    />
+                    {/* Coconut Garden to Ramanagara & Ramadevara Betta */}
+                    <path
+                      d="M 330 148 Q 375 178 410 206"
+                      stroke="rgba(238,223,198,0.3)"
+                      strokeWidth="1.2"
+                      strokeDasharray="3 3"
+                    />
+                    {/* Bidadi to Janapada Loka */}
+                    <path
+                      d="M 83 148 Q 88 178 100 206"
+                      stroke="rgba(238,223,198,0.3)"
+                      strokeWidth="1.2"
+                      strokeDasharray="3 3"
+                    />
+                    {/* Janapada Loka to Ramanagara */}
+                    <path
+                      d="M 160 223 Q 235 240 310 223"
+                      stroke="rgba(238,223,198,0.2)"
+                      strokeWidth="1"
+                      strokeDasharray="4 4"
                     />
 
-                    {/* Origin Node — Greater Bengaluru */}
-                    <circle cx="40" cy="250" r="5" fill="#FAF6F0" />
-                    <text x="52" y="254" fill="rgba(255,255,255,0.85)" fontSize="11" fontFamily="sans-serif">
-                      Bengaluru
-                    </text>
-
-                    {/* Regional Node — Bidadi Town */}
-                    <circle cx="210" cy="190" r="4.5" fill="#FAF6F0" />
-                    <text x="175" y="175" fill="rgba(255,255,255,0.85)" fontSize="11" fontFamily="sans-serif">
-                      Bidadi
-                    </text>
-
-                    {/* Destination Marker Pill — DESTINY COCONUT GARDEN */}
-                    <g transform="translate(370, 75)">
+                    {/* Node 1: Wonderla Amusement Park (Top-Left) */}
+                    <g>
                       <rect
-                        x="-10"
-                        y="-12"
-                        width="168"
-                        height="44"
-                        rx="8"
-                        fill="#0A1E11"
-                        stroke="#55C40D"
-                        strokeWidth="1.2"
+                        x="30"
+                        y="44"
+                        width="170"
+                        height="26"
+                        rx="4"
+                        fill="rgba(255,255,255,0.12)"
+                        stroke="rgba(255,255,255,0.25)"
+                        strokeWidth="1"
                       />
-                      <circle cx="4" cy="10" r="5" fill="#55C40D" />
-                      <text x="16" y="7" fill="#FFFFFF" fontSize="10.5" fontWeight="bold" fontFamily="sans-serif" letterSpacing="0.05em">
-                        COCONUT GARDEN
-                      </text>
-                      <text x="16" y="21" fill="#C4D1C7" fontSize="9" fontFamily="sans-serif">
-                        6 Acres &bull; Premium Farm Plots
+                      <circle cx="115" cy="74" r="3" fill="#EEDFC6" />
+                      <circle cx="115" cy="74" r="6" fill="none" stroke="rgba(238,223,198,0.4)" />
+                      <line x1="115" y1="70" x2="115" y2="74" stroke="#EEDFC6" strokeWidth="1" />
+                      <text
+                        x="115"
+                        y="60"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="8.5"
+                        fontWeight="500"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.02em"
+                      >
+                        Wonderla Amusement Park
                       </text>
                     </g>
+
+                    {/* Node 2: Eagleton Golf Resort (Top-Right) */}
+                    <g>
+                      <rect
+                        x="345"
+                        y="44"
+                        width="150"
+                        height="26"
+                        rx="4"
+                        fill="rgba(255,255,255,0.12)"
+                        stroke="rgba(255,255,255,0.25)"
+                        strokeWidth="1"
+                      />
+                      <circle cx="420" cy="74" r="3" fill="#EEDFC6" />
+                      <circle cx="420" cy="74" r="6" fill="none" stroke="rgba(238,223,198,0.4)" />
+                      <line x1="420" y1="70" x2="420" y2="74" stroke="#EEDFC6" strokeWidth="1" />
+                      <text
+                        x="420"
+                        y="60"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="8.5"
+                        fontWeight="500"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.02em"
+                      >
+                        Eagleton Golf Resort
+                      </text>
+                    </g>
+
+                    {/* Node 3: Bidadi Town Center (Center-Left) */}
+                    <g>
+                      <rect
+                        x="20"
+                        y="122"
+                        width="126"
+                        height="26"
+                        rx="4"
+                        fill="rgba(255,255,255,0.15)"
+                        stroke="rgba(255,255,255,0.3)"
+                        strokeWidth="1"
+                      />
+                      <circle cx="83" cy="148" r="3" fill="#EEDFC6" />
+                      <circle cx="83" cy="148" r="6" fill="none" stroke="rgba(238,223,198,0.4)" />
+                      <text
+                        x="83"
+                        y="138"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="9"
+                        fontWeight="600"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.02em"
+                      >
+                        Bidadi Town Center
+                      </text>
+                    </g>
+
+                    {/* Node 4: Janapada Loka (Bottom-Left) */}
+                    <g>
+                      <rect
+                        x="40"
+                        y="210"
+                        width="120"
+                        height="26"
+                        rx="4"
+                        fill="rgba(255,255,255,0.12)"
+                        stroke="rgba(255,255,255,0.25)"
+                        strokeWidth="1"
+                      />
+                      <circle cx="100" cy="206" r="3" fill="#EEDFC6" />
+                      <circle cx="100" cy="206" r="6" fill="none" stroke="rgba(238,223,198,0.4)" />
+                      <line x1="100" y1="206" x2="100" y2="210" stroke="#EEDFC6" strokeWidth="1" />
+                      <text
+                        x="100"
+                        y="226"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="8.5"
+                        fontWeight="500"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.02em"
+                      >
+                        Janapada Loka
+                      </text>
+                    </g>
+
+                    {/* Node 5: Ramanagara & Ramadevara Betta (Bottom-Right) */}
+                    <g>
+                      <rect
+                        x="310"
+                        y="210"
+                        width="200"
+                        height="26"
+                        rx="4"
+                        fill="rgba(255,255,255,0.12)"
+                        stroke="rgba(255,255,255,0.25)"
+                        strokeWidth="1"
+                      />
+                      <circle cx="410" cy="206" r="3" fill="#EEDFC6" />
+                      <circle cx="410" cy="206" r="6" fill="none" stroke="rgba(238,223,198,0.4)" />
+                      <line x1="410" y1="206" x2="410" y2="210" stroke="#EEDFC6" strokeWidth="1" />
+                      <text
+                        x="410"
+                        y="226"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="8.5"
+                        fontWeight="500"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.02em"
+                      >
+                        Ramanagara &amp; Ramadevara Betta
+                      </text>
+                    </g>
+
+                    {/* PROJECT LOCATION: COCONUT GARDEN (Central Focal Badge) */}
+                    <g transform="translate(198, 122)">
+                      {/* Outer subtle halo ring */}
+                      <rect
+                        x="-5"
+                        y="-5"
+                        width="154"
+                        height="38"
+                        rx="6"
+                        fill="rgba(238,223,198,0.08)"
+                        stroke="rgba(238,223,198,0.22)"
+                        strokeWidth="1"
+                        strokeDasharray="4 2"
+                      />
+                      {/* Crisp white badge matching Nairuthya Whispering Wood style */}
+                      <rect
+                        x="0"
+                        y="0"
+                        width="144"
+                        height="28"
+                        rx="4"
+                        fill="rgba(255,255,255,0.95)"
+                        stroke="rgba(255,255,255,0.5)"
+                        strokeWidth="1"
+                      />
+                      <circle cx="16" cy="14" r="3.5" fill="#14321D" />
+                      <text
+                        x="76"
+                        y="18"
+                        textAnchor="middle"
+                        fill="#14321D"
+                        fontSize="9.5"
+                        fontWeight="bold"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.06em"
+                      >
+                        COCONUT GARDEN
+                      </text>
+                      {/* Editorial sub-tag under the badge */}
+                      <text
+                        x="72"
+                        y="42"
+                        textAnchor="middle"
+                        fill="#EEDFC6"
+                        fontSize="7.5"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.1em"
+                        opacity="0.9"
+                      >
+                        PROJECT LOCATION
+                      </text>
+                    </g>
+
+                    {/* Editorial Disclaimer at bottom */}
+                    <text
+                      x="270"
+                      y="270"
+                      textAnchor="middle"
+                      fill="#EEDFC6"
+                      fontSize="7.5"
+                      fontFamily="sans-serif"
+                      letterSpacing="0.08em"
+                      opacity="0.6"
+                    >
+                      Illustrative Regional Composition • Not to Scale
+                    </text>
                   </svg>
                 </div>
               </div>
