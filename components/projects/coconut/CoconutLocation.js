@@ -20,7 +20,7 @@ export default function CoconutLocation({ project }) {
     district: 'Ramanagara',
     state: 'Karnataka',
     mapEmbedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.091233352843!2d77.39462277358344!3d12.672078021377338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e1!3m2!1sen!2sin!4v1790853482568!5m2!1sen!2sin',
+      'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.265340472722!2d77.397198!3d12.672073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e0!3m2!1sen!2sin!4v1790916445325!5m2!1sen!2sin',
     mapShareUrl:
       'https://www.google.com/maps/place/Destiny+coconut+Garden+by+Destiny+Promoters/@12.672078,77.3946228,17z'
   };

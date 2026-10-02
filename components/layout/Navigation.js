@@ -3,21 +3,22 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { headerNavRoutes } from '@/data/routes';
-import { PROJECT_STATUS_CATEGORIES, getProjectsByStatus } from '@/data/projects';
+import { getAllProjects } from '@/data/projects';
 import { cn } from '@/lib/utils';
 
 /**
  * Accessible desktop navigation menu with active route tracking,
- * subtle inverse state support, and 4-status direct category dropdown for Projects.
+ * subtle inverse state support, and direct project list dropdown on Projects hover.
  */
 export default function Navigation({ className, isInverse = false }) {
   const pathname = usePathname();
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
-  const [activeStatus, setActiveStatus] = useState('new');
   const timeoutRef = useRef(null);
   const projectsContainerRef = useRef(null);
+
+  const confirmedProjects = getAllProjects().filter((p) => p && !p.isDemo);
 
   // Close dropdown on outside click or route change
   useEffect(() => {
@@ -119,162 +120,49 @@ export default function Navigation({ className, isInverse = false }) {
                 )}
               </Link>
 
-              {/* Invisible hover bridge + 4-Status Dropdown Panel */}
+              {/* Invisible hover bridge + Dropdown Panel matching reference image */}
               <div
                 className={cn(
                   'absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 transition-all duration-200 ease-out',
                   isProjectsOpen
                     ? 'opacity-100 translate-y-0 visible pointer-events-auto'
-                    : 'opacity-0 -translate-y-1.5 invisible pointer-events-none group-hover/projects:opacity-100 group-hover/projects:translate-y-0 group-hover/projects:visible group-hover/projects:pointer-events-auto'
+                    : 'opacity-0 -translate-y-1 invisible pointer-events-none group-hover/projects:opacity-100 group-hover/projects:translate-y-0 group-hover/projects:visible group-hover/projects:pointer-events-auto'
                 )}
                 role="menu"
                 aria-labelledby="nav-projects-trigger"
               >
                 <div
                   className={cn(
-                    'w-72 sm:w-80 rounded-2xl p-3 overflow-hidden transition-colors duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.18)]',
+                    'w-max min-w-[200px] rounded-2xl py-3.5 sm:py-4 px-5 sm:px-5.5 transition-colors duration-300 shadow-[0_16px_36px_rgba(20,38,25,0.14)]',
                     isInverse
-                      ? 'bg-[#0E2413] border border-[#245832]'
-                      : 'bg-[#FAF6F0] border border-[#D5C09D]/80'
+                      ? 'bg-[#122A18] border border-[#245832]/70 text-[#FAF7F2]'
+                      : 'bg-[#EDE4D5] border border-[#D8C7B0]/70 text-[#0F382A]'
                   )}
                 >
-                  {/* Status Selection Pills */}
-                  <div
-                    className={cn(
-                      'grid grid-cols-4 gap-1 p-1 rounded-xl mb-2.5',
-                      isInverse ? 'bg-[#08170C] border border-[#1A3F22]' : 'bg-[#EFE6D7] border border-[#D5C09D]/60'
-                    )}
-                    role="tablist"
-                    aria-label="Project Status Tabs"
-                  >
-                    {PROJECT_STATUS_CATEGORIES.map((cat) => {
-                      const isSelected = activeStatus === cat.key;
-                      const count = getProjectsByStatus(cat.key).length;
-
+                  <div className="flex flex-col space-y-3 sm:space-y-3.5" role="none">
+                    {confirmedProjects.map((proj) => {
+                      const isCurrentProject = pathname === `/projects/${proj.slug}`;
                       return (
-                        <button
-                          key={cat.key}
-                          type="button"
-                          role="tab"
-                          aria-selected={isSelected}
-                          onClick={() => setActiveStatus(cat.key)}
-                          onMouseEnter={() => setActiveStatus(cat.key)}
+                        <Link
+                          key={proj.slug}
+                          href={`/projects/${proj.slug}`}
+                          onClick={() => setIsProjectsOpen(false)}
                           className={cn(
-                            'py-1.5 px-1 rounded-lg text-xs font-sans font-medium text-center transition-all duration-150 cursor-pointer flex flex-col items-center justify-center gap-0.5',
-                            isSelected
-                              ? isInverse
-                                ? 'bg-[#1E460B] text-[#FAF7F2] font-semibold shadow-xs'
-                                : 'bg-[#15341C] text-[#FAF7F2] font-semibold shadow-xs'
-                              : isInverse
-                              ? 'text-[#FAF7F2]/65 hover:text-[#FAF7F2] hover:bg-white/5'
-                              : 'text-[#4E5C50] hover:text-[#111613] hover:bg-black/5'
+                            'block text-[15px] sm:text-[16px] font-sans font-medium tracking-normal transition-colors duration-200 leading-snug whitespace-nowrap',
+                            isInverse
+                              ? isCurrentProject
+                                ? 'text-[#F3D079]'
+                                : 'text-[#FAF7F2] hover:text-[#F3D079]'
+                              : isCurrentProject
+                              ? 'text-[#C59B27]'
+                              : 'text-[#0F382A] hover:text-[#C59B27]'
                           )}
+                          role="menuitem"
                         >
-                          <span className="leading-none">{cat.label}</span>
-                          <span
-                            className={cn(
-                              'text-[9px] font-mono leading-none',
-                              isSelected
-                                ? isInverse
-                                  ? 'text-[#76e52c]'
-                                  : 'text-[#55C40D]'
-                                : 'opacity-60'
-                            )}
-                          >
-                            ({count})
-                          </span>
-                        </button>
+                          {proj.name}
+                        </Link>
                       );
                     })}
-                  </div>
-
-                  {/* Status Projects Lists */}
-                  <div className="min-h-[85px] flex flex-col justify-center">
-                    {PROJECT_STATUS_CATEGORIES.map((cat) => {
-                      const statusProjects = getProjectsByStatus(cat.key);
-                      const isSelected = activeStatus === cat.key;
-
-                      if (statusProjects.length > 0) {
-                        return (
-                          <div
-                            key={cat.key}
-                            className={cn('space-y-1.5', isSelected ? 'block' : 'hidden')}
-                            role="none"
-                          >
-                            {statusProjects.map((proj) => (
-                              <Link
-                                key={proj.slug}
-                                href={`/projects/${proj.slug}`}
-                                onClick={() => setIsProjectsOpen(false)}
-                                className={cn(
-                                  'flex items-center justify-between p-2.5 rounded-xl transition-all duration-150 group/proj border',
-                                  isInverse
-                                    ? 'bg-[#132E1A]/80 hover:bg-[#1A3F22] border-[#245832]/60 hover:border-[#38844D] text-[#FAF7F2]'
-                                    : 'bg-[#F2EAE0] hover:bg-[#EAE0D0] border-[#D5C09D]/70 hover:border-[#BFAF93] text-[#111613]'
-                                )}
-                                role="menuitem"
-                              >
-                                <div className="space-y-0.5 pr-2">
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D] shrink-0" aria-hidden="true" />
-                                    <span className="font-serif text-[13.5px] font-medium leading-tight">
-                                      {proj.name}
-                                    </span>
-                                  </div>
-                                  <p className="text-[10.5px] font-mono text-[#7A6A4E] pl-3">
-                                    {proj.snapshot?.totalArea || proj.category} &bull; {proj.locationDetails?.village ? `${proj.locationDetails.village}, ${proj.locationDetails.taluk}` : proj.location}
-                                  </p>
-                                </div>
-                                <ArrowUpRight
-                                  className={cn(
-                                    'w-4 h-4 shrink-0 transition-transform duration-200 group-hover/proj:translate-x-0.5 group-hover/proj:-translate-y-0.5',
-                                    isInverse ? 'text-[#76e52c]' : 'text-[#1E460B]'
-                                  )}
-                                  aria-hidden="true"
-                                />
-                              </Link>
-                            ))}
-                          </div>
-                        );
-                      }
-
-                      // Empty state for status categories without projects (Upcoming, Completed)
-                      return (
-                        <div
-                          key={cat.key}
-                          className={cn('py-4 px-3 text-center space-y-1 rounded-xl bg-black/[0.02] dark:bg-white/[0.02]', isSelected ? 'block' : 'hidden')}
-                        >
-                          <p className={cn(
-                            'text-xs font-sans italic',
-                            isInverse ? 'text-[#FAF7F2]/60' : 'text-[#7A6A4E]'
-                          )}>
-                            {cat.emptyMessage || 'No projects currently in this category'}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Dropdown Footer: All Projects Navigation */}
-                  <div
-                    className={cn(
-                      'pt-2 mt-2 border-t flex items-center justify-between px-1',
-                      isInverse ? 'border-[#1E460B]' : 'border-[#D5C09D]/60'
-                    )}
-                  >
-                    <Link
-                      href="/projects"
-                      onClick={() => setIsProjectsOpen(false)}
-                      className={cn(
-                        'flex items-center justify-between w-full px-2 py-1 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider transition-colors',
-                        isInverse
-                          ? 'text-[#76e52c] hover:bg-white/5'
-                          : 'text-[#1E460B] hover:bg-black/5'
-                      )}
-                    >
-                      <span>Explore All Projects</span>
-                      <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                    </Link>
                   </div>
                 </div>
               </div>

@@ -7,12 +7,13 @@ import ProjectsCta from '@/components/sections/projects/ProjectsCta';
 
 export const metadata = {
   ...constructMetadata({
-    title: 'Our Projects',
+    title: 'Projects | Earth Heritage Pvt. Ltd.',
     description:
-      'Earth Heritage is preparing its first managed farmland developments. Details will be shared as each project takes shape.',
-    canonicalUrl: '/projects'
+      'Explore Earth Heritage managed farmland projects, developed with purpose and cared for through thoughtful farm management.',
+    canonicalUrl: '/projects',
+    exactTitle: true
   }),
-  title: 'Our Projects | Earth Heritage'
+  title: 'Projects | Earth Heritage Pvt. Ltd.'
 };
 
 /**

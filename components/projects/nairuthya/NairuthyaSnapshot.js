@@ -22,7 +22,6 @@ export default function NairuthyaSnapshot({ project }) {
     { label: 'Total Project Area', value: '8 Acres' },
     { label: 'Total Plots', value: '25 Premium Plots' },
     { label: 'Minimum Plot Size', value: '6,000 sq.ft' },
-    { label: 'Price', value: '₹1,699 / sq.ft' },
     { label: 'Location', value: 'Honnasandra, Nelamangala' },
     { label: 'Distance from Bengaluru', value: 'Approximately 35 km' },
     { label: 'Distance from Nelamangala', value: 'Approximately 8 km' },

@@ -384,7 +384,7 @@ export const projects = [
     name: 'Coconut Garden',
     seoTitle: 'Coconut Garden | Premium Farm Plots in Bidadi',
     seoDescription:
-      'Explore Coconut Garden, an ongoing 6-acre premium farm plots project in Bidadi with 6,000 sq.ft minimum plot sizes, 25+ plantation trees, and peaceful natural surroundings.',
+      'Explore Coconut Garden, a 6-acre premium farm plot project in Bidadi with 6,000 sq. ft. minimum plots, plantation trees and lifestyle amenities.',
     h1: 'Coconut Garden — Premium Farm Plots in Bidadi',
     number: '02',
     category: 'Premium Farm Plots',
@@ -405,11 +405,11 @@ export const projects = [
       distanceBidadi: null,
       mapQuery: 'Destiny coconut Garden by Destiny Promoters',
       mapEmbedUrl:
-        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.091233352843!2d77.39462277358344!3d12.672078021377338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e1!3m2!1sen!2sin!4v1790853482568!5m2!1sen!2sin',
+        'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.265340472722!2d77.397198!3d12.672073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e0!3m2!1sen!2sin!4v1790916445325!5m2!1sen!2sin',
       mapShareUrl:
         'https://www.google.com/maps/place/Destiny+coconut+Garden+by+Destiny+Promoters/@12.672078,77.3946228,17z',
       mapEmbedCode:
-        '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.091233352843!2d77.39462277358344!3d12.672078021377338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e1!3m2!1sen!2sin!4v1790853482568!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.265340472722!2d77.397198!3d12.672073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e0!3m2!1sen!2sin!4v1790916445325!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>'
     },
     status: 'Ongoing',
     isDemo: false,
@@ -501,6 +501,14 @@ export const projects = [
       'Green & Peaceful Environment',
       'Excellent Investment Opportunity',
       'Surrounded by Nature'
+    ],
+    nearbyAttractions: [
+      'Bidadi Town Center',
+      'Bengaluru / Kengeri (NH 275)',
+      'Wonderla Amusement Park',
+      'Eagleton Golf Resort',
+      'Janapada Loka Folk Museum',
+      'Ramadevara Betta Sanctuary'
     ],
     features: [
       'Grand Entrance',

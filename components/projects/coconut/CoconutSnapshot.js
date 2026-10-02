@@ -28,7 +28,6 @@ export default function CoconutSnapshot({ project }) {
   const specifications = [
     { label: 'Total Project Area', value: '6 Acres' },
     { label: 'Minimum Plot Size', value: '6,000 Sq. Ft.' },
-    { label: 'Price', value: '₹749 per Sq. Ft.' },
     { label: 'Plantation', value: '25+ Plantation Trees' },
     { label: 'Location', value: 'Bidadi' },
     { label: 'Status', value: 'Ongoing' },
