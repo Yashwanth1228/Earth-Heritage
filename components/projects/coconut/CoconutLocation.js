@@ -33,17 +33,17 @@ export default function CoconutLocation({ project }) {
     {
       label: 'PROJECT LOCATION',
       value: 'Bidadi, Karnataka',
-      detail: 'Ramanagara District, Karnataka'
+      detail: 'Ramanagara District • Southwest of Bangalore / Bengaluru'
     },
     {
       label: 'NATURAL SURROUNDINGS',
-      value: 'Green & Peaceful Environment',
-      detail: 'Surrounded by nature and agricultural greenery'
+      value: 'Quiet Agrarian Greenery',
+      detail: 'Surrounded by nature, coconut palm groves, and fertile rural land'
     },
     {
-      label: 'DESTINATION',
-      value: 'Destiny Coconut Garden',
-      detail: 'Accessible via Bidadi regional connectivity corridor'
+      label: 'REGIONAL CORRIDOR',
+      value: 'Bidadi Regional Access',
+      detail: 'Accessible via Bidadi corridor and Bengaluru-Mysuru regional transit network'
     }
   ];
 
@@ -80,7 +80,7 @@ export default function CoconutLocation({ project }) {
 
           <MotionReveal delay={0.15}>
             <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed pt-0.5">
-              Situated in the quiet, agrarian countryside of Bidadi—providing a peaceful rural setting with straightforward regional access.
+              Situated in the quiet, agrarian countryside of Bidadi in Ramanagara district—providing a peaceful rural setting with convenient connectivity for weekend farm plot owners from Bangalore.
             </p>
           </MotionReveal>
         </div>

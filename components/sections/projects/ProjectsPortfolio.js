@@ -94,7 +94,7 @@ function getProjectFacts(project) {
  * Title Case Status Formatter
  */
 function getProjectStatusLabel(status) {
-  if (!status) return 'Ongoing';
+  if (!status) return null;
   const s = String(status).trim().toLowerCase();
   if (s === 'new') return 'New';
   if (s === 'upcoming') return 'Upcoming';
@@ -259,13 +259,15 @@ export default function ProjectsPortfolio({ projects: propProjects, initialStatu
                         <div className="space-y-3 sm:space-y-4">
                           {/* Status Indicator & Category Badge */}
                           <div className="flex flex-wrap items-center gap-2">
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAD5B5]/60 border border-[#D5C09D] text-xs font-mono font-medium tracking-wider text-[#1E460B] uppercase">
-                              <span
-                                className="w-1.5 h-1.5 rounded-full bg-[#55C40D] animate-pulse"
-                                aria-hidden="true"
-                              />
-                              <span>{statusLabel}</span>
-                            </div>
+                            {statusLabel && (
+                              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAD5B5]/60 border border-[#D5C09D] text-xs font-mono font-medium tracking-wider text-[#1E460B] uppercase">
+                                <span
+                                  className="w-1.5 h-1.5 rounded-full bg-[#55C40D] animate-pulse"
+                                  aria-hidden="true"
+                                />
+                                <span>{statusLabel}</span>
+                              </div>
+                            )}
 
                             {project.category && (
                               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wider uppercase bg-[#FAF6F0] border border-[#DCCDB7] text-[#5A685D]">

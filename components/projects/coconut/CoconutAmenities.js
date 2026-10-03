@@ -117,7 +117,7 @@ export default function CoconutAmenities({ project }) {
 
             <MotionReveal delay={0.15}>
               <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-                The project includes spaces intended for recreation, relaxation, movement and connection with the surrounding landscape.
+                Thoughtfully planned lifestyle and recreational amenities designed for weekend farmland living amidst the peaceful rural countryside of Bidadi.
               </p>
             </MotionReveal>
           </div>
@@ -224,7 +224,7 @@ export default function CoconutAmenities({ project }) {
             </MotionReveal>
             <MotionReveal delay={0.15}>
               <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-                Essential on-ground utilities and layout specifications delivered across the 6-acre estate layout.
+                Essential on-ground utilities and layout infrastructure delivered across the 6-acre estate in Bidadi for secure and disciplined farm plot ownership.
               </p>
             </MotionReveal>
           </div>

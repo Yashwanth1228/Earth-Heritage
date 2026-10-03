@@ -82,6 +82,14 @@ export default function GalleryLightbox({
             {counterText}
           </span>
           <span className="w-1 h-1 rounded-full bg-white/30" aria-hidden="true" />
+          {currentImage.projectName && (
+            <>
+              <span className="font-sans text-xs text-white/80 hidden sm:inline">
+                {currentImage.projectName}
+              </span>
+              <span className="w-1 h-1 rounded-full bg-white/30 hidden sm:inline" aria-hidden="true" />
+            </>
+          )}
           <span className="px-2.5 py-0.5 rounded-full bg-white/10 border border-white/15 text-[10px] sm:text-xs font-mono tracking-wider uppercase text-[#E4D1B5]">
             {currentImage.category}
           </span>

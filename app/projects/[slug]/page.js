@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
     project.tagline ||
     project.overview ||
     project.description ||
-    'An agricultural initiative managed with the Earth Heritage philosophy of titled ownership and active stewardship.';
+    'An agricultural initiative managed with the Earth Heritage philosophy of land ownership and active stewardship.';
 
   // If the project has a verified hero image, use it for OG/Twitter; otherwise omit image
   const heroImg =
