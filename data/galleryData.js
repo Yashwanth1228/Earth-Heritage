@@ -10,9 +10,7 @@ export const galleryData = {
   intro: {
     eyebrow: 'EARTH HERITAGE GALLERY',
     headingPart1: 'A closer look at the land, the work, and ',
-    headingPart2: 'the moments in between.',
-    description:
-      'A curated visual exhibition reflecting the enduring relationship between titled land, nature, farm care, disciplined cultivation, and the quiet moments of connection experienced upon the earth.'
+    headingPart2: 'the moments in between.'
   },
 
   featureCaption: {

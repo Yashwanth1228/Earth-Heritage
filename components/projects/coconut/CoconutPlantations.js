@@ -20,10 +20,10 @@ export default function CoconutPlantations({ project }) {
   const shouldReduceMotion = useReducedMotion();
   const plantationItem = project?.plantations?.[0] || {
     name: 'Plantation Trees',
-    botanical: '25+ Trees per Plot',
+    botanical: '25+ Plantation Trees',
     category: 'Agronomic Green Canopy',
     description:
-      'Each farm plot is cultivated with 25+ established plantation trees, nurturing long-term soil vitality and creating a lush green environment.'
+      'The estate features 25+ plantation trees, nurturing long-term soil vitality and creating a lush green environment.'
   };
 
   return (
@@ -54,7 +54,7 @@ export default function CoconutPlantations({ project }) {
 
           <MotionReveal delay={0.15}>
             <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-              Professionally cultivated and maintained for long-term agricultural vitality.
+              Cultivated farmland with 25+ plantation trees, nurtured for long-term soil health and agricultural vitality in Bidadi.
             </p>
           </MotionReveal>
         </div>
@@ -88,7 +88,7 @@ export default function CoconutPlantations({ project }) {
                       25+ Trees
                     </span>
                     <span className="font-serif text-[11px] text-white/80 relative z-10 line-clamp-1">
-                      Per Plot
+                      Plantations
                     </span>
                   </div>
                 )}

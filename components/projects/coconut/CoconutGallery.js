@@ -25,28 +25,35 @@ export default function CoconutGallery({ project }) {
       id: 'cg-gallery-01',
       title: 'Estate Entrance & Layout',
       caption: 'Grand Entrance & Perimeter Layout',
-      alt: 'Coconut Garden grand entrance and estate perimeter in Bidadi',
+      alt: 'Grand entrance gate and secure perimeter boundary wall at Coconut Garden in Bidadi',
       src: null
     },
     {
       id: 'cg-gallery-02',
-      title: '6-Acre Farm Land & Landscape',
-      caption: '6-Acre Farm Plots Landscape',
-      alt: '6-acre expanse of farm plots surrounded by nature in Bidadi',
+      title: 'Internal Road & Layout',
+      caption: 'Wide Internal Roads & Demarcated Plots',
+      alt: 'Wide internal avenue and demarcated farmland plots at Coconut Garden Bidadi',
       src: null
     },
     {
       id: 'cg-gallery-03',
-      title: 'Cultivated Plantation Trees',
-      caption: '25+ Plantation Trees per Plot',
-      alt: 'Lush tree plantation canopy across Coconut Garden in Bidadi',
+      title: 'Farm Plot Demarcation',
+      caption: 'Individual Plot Demarcation & Mature Trees',
+      alt: 'Demarcated farm plot with established coconut trees at Coconut Garden in Bidadi',
       src: null
     },
     {
       id: 'cg-gallery-04',
-      title: 'Community Recreation & Amenities',
-      caption: 'Lifestyle & Recreation Spaces',
-      alt: 'Recreational amenities and club facilities at Coconut Garden in Bidadi',
+      title: 'Cultivated Farm Land & Groves',
+      caption: 'Lush Coconut Palm Groves & Open Farmland',
+      alt: 'Cultivated farm plots with rows of coconut palm trees at Coconut Garden in Bidadi',
+      src: null
+    },
+    {
+      id: 'cg-gallery-05',
+      title: 'Perimeter Boundary Wall',
+      caption: 'Compound Wall & Plantation Green Cover',
+      alt: 'Precast concrete compound wall with green plantation boundary at Coconut Garden in Bidadi',
       src: null
     }
   ];
@@ -130,7 +137,7 @@ export default function CoconutGallery({ project }) {
 
           <MotionReveal delay={0.15}>
             <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-              Curated field photography documenting the 6-acre land expanse, layout demarcation, plantation development, and landscape character at Coconut Garden.
+              Curated field photography documenting the 6-acre land expanse, 6,000 sq. ft. plot demarcations, 25+ plantation trees, and countryside landscape character at Coconut Garden in Bidadi.
             </p>
           </MotionReveal>
         </div>

@@ -16,7 +16,7 @@ import { CalendarCheck, ArrowRight, Sprout } from 'lucide-react';
  * - "Project Overview" heading hierarchy
  * - Compact inline specifications with Sprout icons and unified font weight
  * - Interactive "Book a site visit" button triggering global enquiry modal
- * - Aspect-locked layout plan visual slot with titled ownership verification
+ * - Aspect-locked layout plan visual slot with verified layout demarcation
  */
 export default function CoconutSnapshot({ project }) {
   const { openEnquiryModal } = useEnquiry();
@@ -60,13 +60,20 @@ export default function CoconutSnapshot({ project }) {
               </MotionReveal>
               <MotionReveal delay={0.1}>
                 <p className="font-sans text-xs sm:text-[13px] text-[#4E5C50] leading-relaxed pt-0.5 max-w-lg">
-                  The project is being developed with essential infrastructure in place: Grand entrance, solar street lights, 24/7 security, and CCTV surveillance surrounded by peaceful nature.{' '}
+                  Coconut Garden by Earth Heritage is a 6-acre estate offering premium farm plots in Bidadi, southwest of Bangalore. Planned for peaceful weekend retreats and lasting rural land stewardship, the project offers 6,000 sq. ft. minimum plots with 25+ plantation trees and comprehensive infrastructure—including a grand entrance, solar street lights, 24/7 security, and CCTV surveillance.{' '}
+                  <Link
+                    href="/managed-farmland"
+                    className="text-[#1E460B] font-medium underline underline-offset-2 hover:text-[#55C40D] transition-colors"
+                  >
+                    Explore our managed farmland approach
+                  </Link>{' '}
+                  or{' '}
                   <Link
                     href="/how-it-works"
                     className="text-[#1E460B] font-medium underline underline-offset-2 hover:text-[#55C40D] transition-colors"
                   >
-                    Learn how managed farmland works
-                  </Link>
+                    learn how land stewardship works
+                  </Link>.
                 </p>
               </MotionReveal>
             </div>
@@ -127,7 +134,7 @@ export default function CoconutSnapshot({ project }) {
                 />
                 <div className="pt-2 px-1 flex items-center justify-between text-[11px] font-mono text-[#7A6A4E] shrink-0">
                   <span>Layout Plan &bull; 6 Acres</span>
-                  <span className="text-[#1E460B] font-semibold">Titled Ownership</span>
+                  <span className="text-[#1E460B] font-semibold">Farm Plot Ownership</span>
                 </div>
               </div>
             </MotionReveal>

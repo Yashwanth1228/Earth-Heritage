@@ -13,12 +13,12 @@ import { galleryData } from '@/data/galleryData';
  * Supporting: A curated visual exhibition reflecting the enduring relationship...
  */
 export default function GalleryIntro() {
-  const { eyebrow, headingPart1, headingPart2, description } = galleryData.intro;
+  const { eyebrow, headingPart1, headingPart2 } = galleryData.intro;
 
   return (
     <section
       id="hero"
-      className="relative bg-[#FAF6F0] text-[#111613] pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8 lg:pb-8 border-b border-[#DCCDB7]/50 overflow-hidden"
+      className="relative bg-[#FAF6F0] text-[#111613] pt-20 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-16 border-b border-[#DCCDB7]/50 overflow-hidden"
       aria-label="Earth Heritage Gallery Introduction"
     >
       {/* Signature Earth Heritage Organic Contours */}
@@ -70,13 +70,6 @@ export default function GalleryIntro() {
                 {headingPart2}
               </span>
             </h1>
-          </MotionReveal>
-
-          {/* 3. Centered Supporting Description */}
-          <MotionReveal delay={0.15}>
-            <p className="mt-4 font-sans text-sm sm:text-base md:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
-              {description}
-            </p>
           </MotionReveal>
 
         </div>

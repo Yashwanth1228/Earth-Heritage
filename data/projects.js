@@ -382,19 +382,19 @@ export const projects = [
     id: 'coconut-garden',
     slug: 'coconut-garden',
     name: 'Coconut Garden',
-    seoTitle: 'Coconut Garden | Premium Farm Plots in Bidadi',
+    seoTitle: 'Coconut Garden | Premium Farm Plots in Bidadi | Earth Heritage',
     seoDescription:
-      'Explore Coconut Garden, a 6-acre premium farm plot project in Bidadi with 6,000 sq. ft. minimum plots, plantation trees and lifestyle amenities.',
+      'Coconut Garden by Earth Heritage offers premium farm plots in Bidadi near Bangalore. 6-acre estate with 6,000 sq.ft plots, 25+ plantation trees & amenities.',
     h1: 'Coconut Garden — Premium Farm Plots in Bidadi',
     number: '02',
     category: 'Premium Farm Plots',
-    tagline: '6-Acre Premium Farm Plots in Bidadi',
+    tagline: '6-Acre Premium Farm Plots in Bidadi, Near Bangalore',
     shortDescription:
-      'An ongoing 6-acre premium farm plots project in Bidadi offering 6,000 sq.ft minimum plot sizes at ₹749/sq.ft, surrounded by nature and 25+ plantation trees.',
+      'An ongoing 6-acre premium farm plots project in Bidadi near Bangalore by Earth Heritage, offering 6,000 sq.ft minimum plot sizes at ₹749/sq.ft with 25+ plantation trees and lifestyle amenities.',
     overview:
-      'Coconut Garden is an ongoing 6-acre premium farm plots project located in Bidadi. Set in a green and peaceful environment surrounded by nature, the project offers minimum plot sizes of 6,000 sq.ft priced at ₹749/sq.ft.\n\nThe estate features 25+ plantation trees per plot, making it ideal for weekend homes and presenting an excellent investment opportunity in managed rural land.',
+      'Coconut Garden is an ongoing 6-acre premium farm plots and managed farmland project located in Bidadi, southwest of Bangalore in the Ramanagara district. Set in a quiet agrarian environment surrounded by nature, the estate offers farm plots starting from 6,000 sq. ft. priced at ₹749 per sq. ft.\n\nFeaturing 25+ plantation trees, Coconut Garden is ideal for weekend homes, peaceful countryside living, and long-term rural land ownership supported by professional farm stewardship and essential infrastructure.',
     stewardshipApproach:
-      'Focused on active on-ground agricultural stewardship, estate infrastructure maintenance, and preservation of the peaceful natural environment across the 6-acre project.',
+      'Focused on active on-ground agricultural stewardship, estate infrastructure maintenance, and preservation of the peaceful natural environment across the 6-acre project in Bidadi.',
     location: 'Bidadi',
     locationDetails: {
       village: null,
@@ -403,6 +403,8 @@ export const projects = [
       state: 'Karnataka',
       distanceBengaluru: null,
       distanceBidadi: null,
+      latitude: 12.672078,
+      longitude: 77.3946228,
       mapQuery: 'Destiny coconut Garden by Destiny Promoters',
       mapEmbedUrl:
         'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.265340472722!2d77.397198!3d12.672073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b0056537b67%3A0x776326ca88bf971c!2sDestiny%20coconut%20Garden%20by%20Destiny%20Promoters!5e0!3m2!1sen!2sin!4v1790916445325!5m2!1sen!2sin',
@@ -416,15 +418,15 @@ export const projects = [
     featured: false,
     heroImage: {
       src: '/images/projects/coconut-garden-hero.jpg',
-      alt: 'Coconut Garden premium farm plots in Bidadi'
+      alt: 'Coconut Garden premium farm plots landscape in Bidadi'
     },
     coverImage: {
       src: '/images/projects/coconut-garden/internal-road-layout.jpg',
-      alt: 'Coconut Garden 6-acre farm plots layout and internal road in Bidadi'
+      alt: 'Coconut Garden farm plots layout and internal road network in Bidadi'
     },
     locationMapImage: {
       src: null,
-      alt: 'Coconut Garden — Location Map in Bidadi'
+      alt: 'Coconut Garden — Location Map in Bidadi, Ramanagara'
     },
     images: [
       {
@@ -433,19 +435,19 @@ export const projects = [
       },
       {
         src: '/images/projects/coconut-garden/internal-road-layout.jpg',
-        alt: 'Wide internal road and demarcated farm plot boundaries at Coconut Garden'
+        alt: 'Wide internal road and demarcated farm plot boundaries at Coconut Garden in Bidadi'
       },
       {
         src: '/images/projects/coconut-garden/plot-demarcation-10.jpg',
-        alt: 'Demarcated farm plot with established coconut trees and irrigation hookup'
+        alt: 'Demarcated farm plot with established coconut trees at Coconut Garden in Bidadi'
       },
       {
         src: '/images/projects/coconut-garden/farm-landscape-groves.jpg',
-        alt: 'Cultivated farm plots with rows of coconut trees and open countryside'
+        alt: 'Cultivated farm plots with rows of coconut palm trees at Coconut Garden in Bidadi'
       },
       {
         src: '/images/projects/coconut-garden/boundary-plantation-wall.png',
-        alt: 'Precast concrete compound wall with verdant plantation tree line'
+        alt: 'Precast concrete compound wall with green plantation boundary at Coconut Garden in Bidadi'
       }
     ],
     gallery: [
@@ -460,28 +462,28 @@ export const projects = [
         id: 'cg-gallery-02',
         title: 'Internal Road & Layout',
         caption: 'Wide Internal Roads & Demarcated Plots',
-        alt: 'Wide internal road and demarcated farm plot boundaries at Coconut Garden',
+        alt: 'Wide internal road and demarcated farm plot boundaries at Coconut Garden in Bidadi',
         src: '/images/projects/coconut-garden/internal-road-layout.jpg'
       },
       {
         id: 'cg-gallery-03',
         title: 'Farm Plot Demarcation',
         caption: 'Individual Plot Demarcation & Mature Trees',
-        alt: 'Demarcated farm plot with established coconut trees and irrigation hookup',
+        alt: 'Demarcated farm plot with established coconut trees at Coconut Garden in Bidadi',
         src: '/images/projects/coconut-garden/plot-demarcation-10.jpg'
       },
       {
         id: 'cg-gallery-04',
         title: 'Cultivated Farm Land & Groves',
         caption: 'Lush Coconut Palm Groves & Open Farmland',
-        alt: 'Cultivated farm plots with rows of coconut trees and open countryside',
+        alt: 'Cultivated farm plots with rows of coconut palm trees at Coconut Garden in Bidadi',
         src: '/images/projects/coconut-garden/farm-landscape-groves.jpg'
       },
       {
         id: 'cg-gallery-05',
         title: 'Perimeter Boundary Wall',
         caption: 'Compound Wall & Plantation Green Cover',
-        alt: 'Precast concrete compound wall with verdant plantation tree line',
+        alt: 'Precast concrete compound wall with green plantation boundary at Coconut Garden in Bidadi',
         src: '/images/projects/coconut-garden/boundary-plantation-wall.png'
       }
     ],
@@ -525,7 +527,7 @@ export const projects = [
           description: 'Designated outdoor camping spaces immersed in the quiet countryside landscape.',
           image: {
             src: '/images/amenities/camping-area.jpg',
-            alt: 'Camping Area at Coconut Garden in Bidadi'
+            alt: 'Outdoor camping area at Coconut Garden in Bidadi'
           }
         },
         {
@@ -535,7 +537,7 @@ export const projects = [
           description: 'Peaceful farm cottage retreats designed for comfortable weekend stays surrounded by nature.',
           image: {
             src: '/images/amenities/cottages.jpg',
-            alt: 'Cottages at Coconut Garden in Bidadi'
+            alt: 'Farm cottages for weekend stays at Coconut Garden in Bidadi'
           }
         },
         {
@@ -545,7 +547,7 @@ export const projects = [
           description: 'Community gathering space for relaxation, social interaction, and countryside hospitality.',
           image: {
             src: '/images/amenities/club-house.jpg',
-            alt: 'Club House at Coconut Garden in Bidadi'
+            alt: 'Club house facility at Coconut Garden in Bidadi'
           }
         },
         {
@@ -555,7 +557,7 @@ export const projects = [
           description: 'Recreational indoor games facility providing leisure activities for all age groups.',
           image: {
             src: '/images/amenities/indoor-games.jpg',
-            alt: 'Indoor Games at Coconut Garden in Bidadi'
+            alt: 'Indoor games recreation area at Coconut Garden in Bidadi'
           }
         },
         {
@@ -565,7 +567,7 @@ export const projects = [
           description: 'Recreational swimming pool thoughtfully integrated into the green agricultural estate landscape.',
           image: {
             src: '/images/amenities/swimming-pool.jpg',
-            alt: 'Swimming Pool at Coconut Garden in Bidadi'
+            alt: 'Swimming pool at Coconut Garden farm plots in Bidadi'
           }
         },
         {
@@ -575,7 +577,7 @@ export const projects = [
           description: 'Dedicated open-air play zone for children amidst clean rural surroundings.',
           image: {
             src: '/images/amenities/children-play-area.jpg',
-            alt: 'Kids Play Area at Coconut Garden in Bidadi'
+            alt: 'Kids play area at Coconut Garden in Bidadi'
           }
         }
       ],
@@ -590,10 +592,10 @@ export const projects = [
       {
         id: 'plantation-trees',
         name: 'Plantation Trees',
-        botanical: '25+ Trees per Plot',
+        botanical: '25+ Plantation Trees',
         category: 'Agronomic Green Canopy',
         description:
-          'Each farm plot is cultivated with 25+ established plantation trees, nurturing long-term soil vitality and creating a lush green environment.',
+          'The estate features 25+ plantation trees, nurturing long-term soil vitality and creating a lush green environment.',
         image: {
           src: null,
           alt: '25+ plantation trees at Coconut Garden in Bidadi',

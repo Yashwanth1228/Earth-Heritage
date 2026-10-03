@@ -10,17 +10,18 @@ import { galleryImages } from '@/data/galleryImages';
  * Gallery Client Controller & View
  * 
  * Orchestrates:
- * - Interactive exhibition grid with category filtering and equal-sized cards
+ * - Editorial intro without deprecated descriptions
+ * - Interactive exhibition grid categorized by project (shows project cover images first, clicking opens that project's gallery)
  * - Fullscreen accessible lightbox with keyboard controls and Lenis scroll-locking
- * - Brand philosophy statement
  */
 export default function GalleryClientView() {
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentList, setCurrentList] = useState(galleryImages);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleSelectImage = useCallback((image, list = galleryImages) => {
-    const listToUse = list.length > 0 ? list : galleryImages;
+    const listToUse = list && list.length > 0 ? list : galleryImages;
     const foundIndex = listToUse.findIndex((item) => item.id === image.id);
     const indexToSet = foundIndex >= 0 ? foundIndex : 0;
 
@@ -46,9 +47,11 @@ export default function GalleryClientView() {
       {/* 1. Page Editorial Introduction */}
       <GalleryIntro />
 
-      {/* 2. Interactive Photographic Exhibition Grid */}
+      {/* 2. Interactive Photographic Exhibition Grid with Project Categorization */}
       <GalleryExhibition
-        onSelectImage={(item, filteredList) => handleSelectImage(item, filteredList)}
+        selectedProjectId={selectedProjectId}
+        onSelectProject={setSelectedProjectId}
+        onSelectImage={handleSelectImage}
       />
 
       {/* Accessible Fullscreen Lightbox Modal */}
