@@ -40,7 +40,7 @@ export const landingImages = {
   },
   solution: {
     id: 'solution-management',
-    src: '/images/landing/hero-managed-crops.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204927/earth-heritage/landing/hero-managed-crops.jpg',
     alt: 'Expansive managed agricultural estate with lush crop rows, drip irrigation, and fruit orchards',
     usage: 'Section 4 — Core proposition ("You own the land. We manage the farm.")',
     temporary: false,
@@ -77,7 +77,7 @@ export const landingImages = {
       number: '03',
       title: 'Manage the Harvest',
       quote: '“From ongoing farm operations to harvest, agreed management activities continue to care for the farm.”',
-      src: '/images/landing/manage-06-harvest.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Bountiful harvest produce fresh from cultivated farmland',
       description: 'From ongoing farm operations to harvest, agreed management activities continue to care for the farm.',
       width: 1000,
@@ -90,7 +90,7 @@ export const landingImages = {
       id: 'manage-01-people',
       stage: '01',
       title: 'People & Manpower',
-      src: '/images/landing/manage-01-people.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200711/earth-heritage/landing/manage-01-people.jpg',
       alt: 'Agricultural caretakers and skilled farm hands working with soil and seedlings',
       usage: 'Management sequence stage 01',
       temporary: true,
@@ -145,7 +145,7 @@ export const landingImages = {
       id: 'manage-06-harvest',
       stage: '06',
       title: 'Harvest Management',
-      src: '/images/landing/manage-06-harvest.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Bountiful harvest produce fresh from cultivated farmland',
       usage: 'Management sequence stage 06',
       temporary: true,
@@ -164,7 +164,7 @@ export const landingImages = {
   },
   principles: {
     id: 'principles-land',
-    src: '/images/landing/principles-land.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204926/earth-heritage/landing/principles-land.jpg',
     alt: 'Warm natural light across fertile farmland soil and green foliage',
     usage: 'Section 8 — "Built around what matters" editorial visual accent',
     temporary: true,
@@ -173,7 +173,7 @@ export const landingImages = {
   },
   cta: {
     id: 'cta-landscape',
-    src: '/images/landing/cta-landscape.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg',
     alt: 'Tranquil sunset over scenic farmland, trees, and expansive horizon',
     usage: 'Section 10 — Final closing cinematic CTA',
     temporary: true,
@@ -258,7 +258,7 @@ export const heroSlides = [
     number: '03',
     chapter: 'THE CARE',
     image: {
-      src: '/images/landing/hero-managed-crops.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204927/earth-heritage/landing/hero-managed-crops.jpg',
       alt: 'Expansive managed agricultural estate with lush crop rows, drip irrigation, and fruit orchards',
       width: 2400,
       height: 1350

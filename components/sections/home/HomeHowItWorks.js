@@ -34,7 +34,7 @@ export default function HomeHowItWorks() {
       title: 'Direct Legal Land Ownership',
       subtitle: 'Clear, registered deed in your name',
       desc: 'You legally acquire and retain registered ownership of your chosen agricultural farmland. Legal deeds and title documents remain strictly registered in the landowner’s name with complete transparency.',
-      image: '/images/how-it-works/stage-01-understand.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg',
       alt: 'Open expansive farmland acreage with clear boundaries and natural contours',
       highlights: [
         'Individual legal title registered in your name',
@@ -49,7 +49,7 @@ export default function HomeHowItWorks() {
       title: 'Customized Farm Plan',
       subtitle: 'Scientific soil and crop planning',
       desc: 'Earth Heritage establishes the structured farm management and seasonal cultivation blueprint suited to the land’s topography, soil biology, and local micro-climate conditions.',
-      image: '/images/how-it-works/stage-02-plan.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Agronomists planning crop rows and plantation layout with architectural maps',
       highlights: [
         'Bespoke seasonal crop & orchard layout',
@@ -64,7 +64,7 @@ export default function HomeHowItWorks() {
       title: 'Dedicated Agricultural Care',
       subtitle: 'Supervised agronomy teams on ground',
       desc: 'Dedicated field specialists carry out scientific planting, organic nourishment, and routine crop tending, revitalizing living soil structure while prioritizing ecological balance.',
-      image: '/images/how-it-works/stage-03-work.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
       alt: 'Active agricultural team cultivating healthy crops in disciplined straight rows',
       highlights: [
         'Precision drip irrigation management',
@@ -79,7 +79,7 @@ export default function HomeHowItWorks() {
       title: 'Routine Farm Infrastructure Upkeep',
       subtitle: 'Daily supervision and ongoing protection',
       desc: 'Routine boundary care, fence maintenance, organic weeding, canopy pruning, and irrigation upkeep are managed daily by our resident farm team with scheduled progress reports.',
-      image: '/images/how-it-works/stage-04-cultivate.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg',
       alt: 'Farm team inspecting lush green tree canopy and organic plantation health',
       highlights: [
         'Dedicated manpower & field supervision',
@@ -94,7 +94,7 @@ export default function HomeHowItWorks() {
       title: 'Seasonal Harvest & Family Legacy',
       subtitle: 'Bountiful harvest produce and generational pride',
       desc: 'Receive fresh seasonal produce harvested from your farmland while enjoying an enduring, fruitful sanctuary that your family can visit, cherish, and pass down for generations.',
-      image: '/images/how-it-works/stage-05-harvest.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Bountiful seasonal produce harvested fresh from organic managed farmland',
       highlights: [
         'Systematic produce harvest & logistics',

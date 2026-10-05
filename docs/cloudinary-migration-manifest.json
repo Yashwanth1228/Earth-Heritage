@@ -1,0 +1,1804 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-05T11:33:43.001Z",
+  "summary": {
+    "totalAssetsScanned": 91,
+    "totalCloudinaryCandidates": 75,
+    "totalKeepLocal": 16,
+    "totalContentDuplicateGroups": 12,
+    "totalFilenameCollisionGroups": 1,
+    "totalReusedAssetsAcrossMultipleLocations": 36,
+    "totalCandidateSizeBytes": 60099035,
+    "totalKeepLocalSizeBytes": 1607645,
+    "pilotMigratedCount": 54,
+    "notYetMigratedCount": 21,
+    "batch2MigratedCount": 15,
+    "batch3MigratedCount": 17,
+    "batch4MigratedCount": 14
+  },
+  "keepLocal": [
+    {
+      "localPath": "public/apple-icon.png",
+      "webPath": "/apple-icon.png",
+      "fileName": "apple-icon.png",
+      "extension": ".png",
+      "fileSize": 9813,
+      "fileSizeFormatted": "9.6 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/apple-touch-icon.png",
+      "webPath": "/apple-touch-icon.png",
+      "fileName": "apple-touch-icon.png",
+      "extension": ".png",
+      "fileSize": 9813,
+      "fileSizeFormatted": "9.6 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/favicon-48x48.png",
+      "webPath": "/favicon-48x48.png",
+      "fileName": "favicon-48x48.png",
+      "extension": ".png",
+      "fileSize": 2395,
+      "fileSizeFormatted": "2.3 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/favicon-96x96.png",
+      "webPath": "/favicon-96x96.png",
+      "fileName": "favicon-96x96.png",
+      "extension": ".png",
+      "fileSize": 4917,
+      "fileSizeFormatted": "4.8 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/favicon.ico",
+      "webPath": "/favicon.ico",
+      "fileName": "favicon.ico",
+      "extension": ".ico",
+      "fileSize": 20620,
+      "fileSizeFormatted": "20.1 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/icon.png",
+      "webPath": "/icon.png",
+      "fileName": "icon.png",
+      "extension": ".png",
+      "fileSize": 43799,
+      "fileSizeFormatted": "42.8 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/icons/icon-512.png",
+      "webPath": "/icons/icon-512.png",
+      "fileName": "icon-512.png",
+      "extension": ".png",
+      "fileSize": 43799,
+      "fileSizeFormatted": "42.8 KB",
+      "reason": "Favicon / PWA browser discovery asset",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-logo-dark-cropped.png",
+      "webPath": "/images/earth-heritage-logo-dark-cropped.png",
+      "fileName": "earth-heritage-logo-dark-cropped.png",
+      "extension": ".png",
+      "fileSize": 55928,
+      "fileSizeFormatted": "54.6 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-logo-dark.png",
+      "webPath": "/images/earth-heritage-logo-dark.png",
+      "fileName": "earth-heritage-logo-dark.png",
+      "extension": ".png",
+      "fileSize": 63092,
+      "fileSizeFormatted": "61.6 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-logo-light-cropped.png",
+      "webPath": "/images/earth-heritage-logo-light-cropped.png",
+      "fileName": "earth-heritage-logo-light-cropped.png",
+      "extension": ".png",
+      "fileSize": 58051,
+      "fileSizeFormatted": "56.7 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-logo-light.png",
+      "webPath": "/images/earth-heritage-logo-light.png",
+      "fileName": "earth-heritage-logo-light.png",
+      "extension": ".png",
+      "fileSize": 100309,
+      "fileSizeFormatted": "98.0 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-logo-original.png",
+      "webPath": "/images/earth-heritage-logo-original.png",
+      "fileName": "earth-heritage-logo-original.png",
+      "extension": ".png",
+      "fileSize": 100309,
+      "fileSizeFormatted": "98.0 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-mark.png",
+      "webPath": "/images/earth-heritage-mark.png",
+      "fileName": "earth-heritage-mark.png",
+      "extension": ".png",
+      "fileSize": 41139,
+      "fileSizeFormatted": "40.2 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-wordmark-dark.png",
+      "webPath": "/images/earth-heritage-wordmark-dark.png",
+      "fileName": "earth-heritage-wordmark-dark.png",
+      "extension": ".png",
+      "fileSize": 12904,
+      "fileSizeFormatted": "12.6 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/earth-heritage-wordmark-light.png",
+      "webPath": "/images/earth-heritage-wordmark-light.png",
+      "fileName": "earth-heritage-wordmark-light.png",
+      "extension": ".png",
+      "fileSize": 15014,
+      "fileSizeFormatted": "14.7 KB",
+      "reason": "Earth Heritage brand logo / wordmark / emblem",
+      "migrationStatus": "KEEP_LOCAL"
+    },
+    {
+      "localPath": "public/images/wood-texture.jpg",
+      "webPath": "/images/wood-texture.jpg",
+      "fileName": "wood-texture.jpg",
+      "extension": ".jpg",
+      "fileSize": 1025743,
+      "fileSizeFormatted": "1001.7 KB",
+      "reason": "Core UI architectural background texture",
+      "migrationStatus": "KEEP_LOCAL"
+    }
+  ],
+  "cloudinaryCandidates": [
+    {
+      "localPath": "public/images/about/founder-khushi-jain-hq.jpg",
+      "webPath": "/images/about/founder-khushi-jain-hq.jpg",
+      "fileName": "founder-khushi-jain-hq.jpg",
+      "extension": ".jpg",
+      "fileSize": 431911,
+      "fileSizeFormatted": "421.8 KB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "founder-khushi-jain-hq",
+      "targetCloudinaryPath": "earth-heritage/about/founder-khushi-jain-hq",
+      "sha256": "2de5c1be08ba1edcff01d189888b0616b739b90c4feb2e5a6ba0ae7a0619b97c",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/about/founder-khushi-jain.jpg",
+      "isCanonical": false,
+      "canonicalTarget": "public/images/about/founder-khushi-jain.jpg",
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/about/founder-khushi-jain.jpg",
+      "webPath": "/images/about/founder-khushi-jain.jpg",
+      "fileName": "founder-khushi-jain.jpg",
+      "extension": ".jpg",
+      "fileSize": 431911,
+      "fileSizeFormatted": "421.8 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/aboutData.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "founder-khushi-jain",
+      "targetCloudinaryPath": "earth-heritage/about/founder-khushi-jain",
+      "sha256": "2de5c1be08ba1edcff01d189888b0616b739b90c4feb2e5a6ba0ae7a0619b97c",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/about/founder-khushi-jain.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/about/founder-sathish-agastya-hq.jpg",
+      "webPath": "/images/about/founder-sathish-agastya-hq.jpg",
+      "fileName": "founder-sathish-agastya-hq.jpg",
+      "extension": ".jpg",
+      "fileSize": 380680,
+      "fileSizeFormatted": "371.8 KB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "founder-sathish-agastya-hq",
+      "targetCloudinaryPath": "earth-heritage/about/founder-sathish-agastya-hq",
+      "sha256": "f61d5368d601b32fc5086b3ae21c57ad75b8346e2864e3e24bd617207963973b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201961/earth-heritage/about/founder-sathish-agastya.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 2 (Step 8)",
+      "canonicalTarget": "public/images/about/founder-sathish-agastya.jpg"
+    },
+    {
+      "localPath": "public/images/about/founder-sathish-agastya.jpg",
+      "webPath": "/images/about/founder-sathish-agastya.jpg",
+      "fileName": "founder-sathish-agastya.jpg",
+      "extension": ".jpg",
+      "fileSize": 380680,
+      "fileSizeFormatted": "371.8 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/aboutData.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "founder-sathish-agastya",
+      "targetCloudinaryPath": "earth-heritage/about/founder-sathish-agastya",
+      "sha256": "f61d5368d601b32fc5086b3ae21c57ad75b8346e2864e3e24bd617207963973b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201961/earth-heritage/about/founder-sathish-agastya.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/about/intro-farmland.jpg",
+      "webPath": "/images/about/intro-farmland.jpg",
+      "fileName": "intro-farmland.jpg",
+      "extension": ".jpg",
+      "fileSize": 1041997,
+      "fileSizeFormatted": "1017.6 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/aboutImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "intro-farmland",
+      "targetCloudinaryPath": "earth-heritage/about/intro-farmland",
+      "sha256": "2e987c4c4bbaea965242e172203a76ddf19c651b58015e35ea1e1439edb686f9",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204925/earth-heritage/about/intro-farmland.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/about/philosophy-farmland.jpg",
+      "webPath": "/images/about/philosophy-farmland.jpg",
+      "fileName": "philosophy-farmland.jpg",
+      "extension": ".jpg",
+      "fileSize": 983717,
+      "fileSizeFormatted": "960.7 KB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "philosophy-farmland",
+      "targetCloudinaryPath": "earth-heritage/about/philosophy-farmland",
+      "sha256": "75be44428ab9059c3c426c0d618828fa4386fdb758d9a8710c6167205b04dff7",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/story-farmland.jpg",
+      "webPath": "/images/about/story-farmland.jpg",
+      "fileName": "story-farmland.jpg",
+      "extension": ".jpg",
+      "fileSize": 1243881,
+      "fileSizeFormatted": "1.19 MB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/about",
+      "proposedPublicId": "story-farmland",
+      "targetCloudinaryPath": "earth-heritage/about/story-farmland",
+      "sha256": "ab1e9fcbb99d9523097927eaa175b9d1eea00cb0c49b403af5f0b38454a6bd58",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/camping-area.jpg",
+      "webPath": "/images/amenities/camping-area.jpg",
+      "fileName": "camping-area.jpg",
+      "extension": ".jpg",
+      "fileSize": 1168467,
+      "fileSizeFormatted": "1.11 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "camping-area",
+      "targetCloudinaryPath": "earth-heritage/amenities/camping-area",
+      "sha256": "fa4f1d585c4fc603ef57ee787064b6d1659e8192fc043f81dea534ce4401f5bb",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204894/earth-heritage/amenities/camping-area.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/children-play-area.jpg",
+      "webPath": "/images/amenities/children-play-area.jpg",
+      "fileName": "children-play-area.jpg",
+      "extension": ".jpg",
+      "fileSize": 1261161,
+      "fileSizeFormatted": "1.20 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "children-play-area",
+      "targetCloudinaryPath": "earth-heritage/amenities/children-play-area",
+      "sha256": "60b2bb9917ba4add4723cf8fee4400fb44c126366e2a6ce78fc04334f1e68751",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203273/earth-heritage/amenities/children-play-area.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/amenities/club-house.jpg",
+      "webPath": "/images/amenities/club-house.jpg",
+      "fileName": "club-house.jpg",
+      "extension": ".jpg",
+      "fileSize": 1033941,
+      "fileSizeFormatted": "1009.7 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "club-house",
+      "targetCloudinaryPath": "earth-heritage/amenities/club-house",
+      "sha256": "84306a0dddf7fa7b52a945349f9fdd81eeb6aede9fcdd9f86da09359420b893d",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200710/earth-heritage/amenities/club-house.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/amenities/cottages.jpg",
+      "webPath": "/images/amenities/cottages.jpg",
+      "fileName": "cottages.jpg",
+      "extension": ".jpg",
+      "fileSize": 1259183,
+      "fileSizeFormatted": "1.20 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "cottages",
+      "targetCloudinaryPath": "earth-heritage/amenities/cottages",
+      "sha256": "7936560937cf4339b18ff714f031c2d650e2a88c40aafb0fe557d5a698bffad5",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203277/earth-heritage/amenities/cottages.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/amenities/garden-area.jpg",
+      "webPath": "/images/amenities/garden-area.jpg",
+      "fileName": "garden-area.jpg",
+      "extension": ".jpg",
+      "fileSize": 1298684,
+      "fileSizeFormatted": "1.24 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "garden-area",
+      "targetCloudinaryPath": "earth-heritage/amenities/garden-area",
+      "sha256": "ab24d48e1bb7a3422901ed992f2b5ed9aeb2a86614f84d1d4a92247fefbf04da",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201953/earth-heritage/amenities/garden-area.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/amenities/indoor-games.jpg",
+      "webPath": "/images/amenities/indoor-games.jpg",
+      "fileName": "indoor-games.jpg",
+      "extension": ".jpg",
+      "fileSize": 944761,
+      "fileSizeFormatted": "922.6 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "indoor-games",
+      "targetCloudinaryPath": "earth-heritage/amenities/indoor-games",
+      "sha256": "f1ee77dc3b426fdea9ec66f12f071d028171b149beb81e7da621f8b6d0e3eef5",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204918/earth-heritage/amenities/indoor-games.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/jogging-track.jpg",
+      "webPath": "/images/amenities/jogging-track.jpg",
+      "fileName": "jogging-track.jpg",
+      "extension": ".jpg",
+      "fileSize": 1122579,
+      "fileSizeFormatted": "1.07 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "jogging-track",
+      "targetCloudinaryPath": "earth-heritage/amenities/jogging-track",
+      "sha256": "e19f90dee37e05fa983ac0b9e3afa0d1faf2b9028fa5508951c1b71b44c51546",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204912/earth-heritage/amenities/jogging-track.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/multi-court.jpg",
+      "webPath": "/images/amenities/multi-court.jpg",
+      "fileName": "multi-court.jpg",
+      "extension": ".jpg",
+      "fileSize": 1071690,
+      "fileSizeFormatted": "1.02 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "multi-court",
+      "targetCloudinaryPath": "earth-heritage/amenities/multi-court",
+      "sha256": "b3338cfb1fbd52cd735a0e7c4dcb90b1ce51a2fff8a3372d0aa3b278846b53c8",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204915/earth-heritage/amenities/multi-court.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/pond-area.jpg",
+      "webPath": "/images/amenities/pond-area.jpg",
+      "fileName": "pond-area.jpg",
+      "extension": ".jpg",
+      "fileSize": 1164872,
+      "fileSizeFormatted": "1.11 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "pond-area",
+      "targetCloudinaryPath": "earth-heritage/amenities/pond-area",
+      "sha256": "9fa441bf39f8e972da17976736120200adfaf1028800eae6bf9567ca752a6963",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204908/earth-heritage/amenities/pond-area.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/swimming-pool.jpg",
+      "webPath": "/images/amenities/swimming-pool.jpg",
+      "fileName": "swimming-pool.jpg",
+      "extension": ".jpg",
+      "fileSize": 1115194,
+      "fileSizeFormatted": "1.06 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "swimming-pool",
+      "targetCloudinaryPath": "earth-heritage/amenities/swimming-pool",
+      "sha256": "7f95dc36de87232ae65b711d428d5be17472b3065a87f58c792d14f514fc7ac4",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204914/earth-heritage/amenities/swimming-pool.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/viewpoint.jpg",
+      "webPath": "/images/amenities/viewpoint.jpg",
+      "fileName": "viewpoint.jpg",
+      "extension": ".jpg",
+      "fileSize": 1017069,
+      "fileSizeFormatted": "993.2 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "viewpoint",
+      "targetCloudinaryPath": "earth-heritage/amenities/viewpoint",
+      "sha256": "eeb0df7c5af4550860137b7a9ba4d2ac80f5553a772e201002a01ab4a73c3060",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204917/earth-heritage/amenities/viewpoint.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/amenities/yoga-meditation.jpg",
+      "webPath": "/images/amenities/yoga-meditation.jpg",
+      "fileName": "yoga-meditation.jpg",
+      "extension": ".jpg",
+      "fileSize": 1212687,
+      "fileSizeFormatted": "1.16 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/amenities",
+      "proposedPublicId": "yoga-meditation",
+      "targetCloudinaryPath": "earth-heritage/amenities/yoga-meditation",
+      "sha256": "342be2561768a1a332bfd45735d2aadf5b0a095270384e52bbf10fffdd610792",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203279/earth-heritage/amenities/yoga-meditation.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/campaign/gandhi-jayanti-2026.jpg",
+      "webPath": "/images/campaign/gandhi-jayanti-2026.jpg",
+      "fileName": "gandhi-jayanti-2026.jpg",
+      "extension": ".jpg",
+      "fileSize": 181718,
+      "fileSizeFormatted": "177.5 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "components/campaigns/GandhiJayantiPopup.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/campaign",
+      "proposedPublicId": "gandhi-jayanti-2026",
+      "targetCloudinaryPath": "earth-heritage/campaign/gandhi-jayanti-2026",
+      "sha256": "cc613b2eb8a3d917579567631620f05f27182b15bf4e78f510ff06c4d064878b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201962/earth-heritage/campaign/gandhi-jayanti-2026.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/farm-management/intro-farm-management.jpg",
+      "webPath": "/images/farm-management/intro-farm-management.jpg",
+      "fileName": "intro-farm-management.jpg",
+      "extension": ".jpg",
+      "fileSize": 1026438,
+      "fileSizeFormatted": "1002.4 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/farmManagementImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/farm-management",
+      "proposedPublicId": "intro-farm-management",
+      "targetCloudinaryPath": "earth-heritage/farm-management/intro-farm-management",
+      "sha256": "3c03064551445e14e999da803e0779771bef95cd24bbd125f6acee2a072b7362",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204921/earth-heritage/farm-management/intro-farm-management.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/farm-management/people-and-land.jpg",
+      "webPath": "/images/farm-management/people-and-land.jpg",
+      "fileName": "people-and-land.jpg",
+      "extension": ".jpg",
+      "fileSize": 1101700,
+      "fileSizeFormatted": "1.05 MB",
+      "usageCount": 5,
+      "usageLocations": [
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js",
+        "data/blogs.js",
+        "data/events.js",
+        "data/farmManagementImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/farm-management",
+      "proposedPublicId": "people-and-land",
+      "targetCloudinaryPath": "earth-heritage/farm-management/people-and-land",
+      "sha256": "b02753516fd896dc59dcc9766262d192487ed5b87d034fa9f607251cef5181df",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/farm-management/responsible-care.jpg",
+      "webPath": "/images/farm-management/responsible-care.jpg",
+      "fileName": "responsible-care.jpg",
+      "extension": ".jpg",
+      "fileSize": 1039398,
+      "fileSizeFormatted": "1015.0 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeStories.js",
+        "data/farmManagementImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/farm-management",
+      "proposedPublicId": "responsible-care",
+      "targetCloudinaryPath": "earth-heritage/farm-management/responsible-care",
+      "sha256": "792a048fb6fa68f8504913cb1eebb17e07732fb450a3e62f53d75a2db54222b8",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/gallery/cultivation-detail.jpg",
+      "webPath": "/images/gallery/cultivation-detail.jpg",
+      "fileName": "cultivation-detail.jpg",
+      "extension": ".jpg",
+      "fileSize": 830583,
+      "fileSizeFormatted": "811.1 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "components/sections/home/HomeStories.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "cultivation-detail",
+      "targetCloudinaryPath": "earth-heritage/gallery/cultivation-detail",
+      "sha256": "58d65ae81eba9155b9a2f167c90b2579655dc1de4238061a12a613e4a6d1ab0e",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/gallery/experiences-gathering.jpg",
+      "webPath": "/images/gallery/experiences-gathering.jpg",
+      "fileName": "experiences-gathering.jpg",
+      "extension": ".jpg",
+      "fileSize": 941369,
+      "fileSizeFormatted": "919.3 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js",
+        "data/events.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "experiences-gathering",
+      "targetCloudinaryPath": "earth-heritage/gallery/experiences-gathering",
+      "sha256": "0d2bc7a54417137cf180d5db9cb3d909db1ee1bd1f7a19c9a2b1dc6156871116",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201951/earth-heritage/gallery/experiences-gathering.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/gallery/hero-feature.jpg",
+      "webPath": "/images/gallery/hero-feature.jpg",
+      "fileName": "hero-feature.jpg",
+      "extension": ".jpg",
+      "fileSize": 845843,
+      "fileSizeFormatted": "826.0 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "components/sections/home/HomeStories.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "hero-feature",
+      "targetCloudinaryPath": "earth-heritage/gallery/hero-feature",
+      "sha256": "8f17a5251ccdd36827b1c06831c28cd4bffddbcbe6042060189e184bb3671697",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-01-entrance.jpg",
+      "webPath": "/images/gallery/nairuthya-01-entrance.jpg",
+      "fileName": "nairuthya-01-entrance.jpg",
+      "extension": ".jpg",
+      "fileSize": 211886,
+      "fileSizeFormatted": "206.9 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nairuthya-01-entrance",
+      "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-01-entrance",
+      "sha256": "10ca9203aa141b2cf72c7ce60389ebd31e6fd7188d118ab2dbcbf38e9a330177",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg",
+      "isCanonical": false,
+      "canonicalTarget": "public/images/projects/nairuthya-whispering-wood-hero.jpg",
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-02-stone-terraces.jpg",
+      "webPath": "/images/gallery/nairuthya-02-stone-terraces.jpg",
+      "fileName": "nairuthya-02-stone-terraces.jpg",
+      "extension": ".jpg",
+      "fileSize": 216407,
+      "fileSizeFormatted": "211.3 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nairuthya-02-stone-terraces",
+      "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-02-stone-terraces",
+      "sha256": "96d9d3072d8ac9f48e7483dd66838818807939566736d26488cca8399c8b601d",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-03-plots-irrigation.jpg",
+      "webPath": "/images/gallery/nairuthya-03-plots-irrigation.jpg",
+      "fileName": "nairuthya-03-plots-irrigation.jpg",
+      "extension": ".jpg",
+      "fileSize": 207372,
+      "fileSizeFormatted": "202.5 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nairuthya-03-plots-irrigation",
+      "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-03-plots-irrigation",
+      "sha256": "ae91bf8c18865a91aeed03f3de11058502f2fca0961791f75213ad389330193d",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-04-children-play.jpg",
+      "webPath": "/images/gallery/nairuthya-04-children-play.jpg",
+      "fileName": "nairuthya-04-children-play.jpg",
+      "extension": ".jpg",
+      "fileSize": 242185,
+      "fileSizeFormatted": "236.5 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nairuthya-04-children-play",
+      "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-04-children-play",
+      "sha256": "6ea8026a5f04ce847708786f6f9ec7c4a96f40324ccc3cf0492990db661fa8a3",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-05-elevated-vista.jpg",
+      "webPath": "/images/gallery/nairuthya-05-elevated-vista.jpg",
+      "fileName": "nairuthya-05-elevated-vista.jpg",
+      "extension": ".jpg",
+      "fileSize": 193665,
+      "fileSizeFormatted": "189.1 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nairuthya-05-elevated-vista",
+      "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-05-elevated-vista",
+      "sha256": "23366d1eb4b28c05a56d425f10cdbb68f6ba8dbfbe06bce1e4fb2ae2c6c1d0e7",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-06-outdoor-fitness.jpg",
+      "webPath": "/images/gallery/nairuthya-06-outdoor-fitness.jpg",
+      "fileName": "nairuthya-06-outdoor-fitness.jpg",
+      "extension": ".jpg",
+      "fileSize": 233110,
+      "fileSizeFormatted": "227.6 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nairuthya-06-outdoor-fitness",
+      "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-06-outdoor-fitness",
+      "sha256": "f259ce12a471a2d27c0c0aa14772ceccf8bc752380d0568474ac9582067abb2d",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nature-canopy.jpg",
+      "webPath": "/images/gallery/nature-canopy.jpg",
+      "fileName": "nature-canopy.jpg",
+      "extension": ".jpg",
+      "fileSize": 1334194,
+      "fileSizeFormatted": "1.27 MB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js",
+        "data/events.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/gallery",
+      "proposedPublicId": "nature-canopy",
+      "targetCloudinaryPath": "earth-heritage/gallery/nature-canopy",
+      "sha256": "829b8d0cefdc0a05e2a1a32c5f81a8d479359647caa55271b68428fd9f99c341",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200706/earth-heritage/gallery/nature-canopy.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/how-it-works/responsible-care-panorama.jpg",
+      "webPath": "/images/how-it-works/responsible-care-panorama.jpg",
+      "fileName": "responsible-care-panorama.jpg",
+      "extension": ".jpg",
+      "fileSize": 1057775,
+      "fileSizeFormatted": "1.01 MB",
+      "usageCount": 5,
+      "usageLocations": [
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js",
+        "data/blogs.js",
+        "data/events.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "responsible-care-panorama",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/responsible-care-panorama",
+      "sha256": "0fc0254458e3794e44b2db50063a487e84acaf31cc851a104aa07bb0e6fd5e79",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-01-understand.jpg",
+      "webPath": "/images/how-it-works/stage-01-understand.jpg",
+      "fileName": "stage-01-understand.jpg",
+      "extension": ".jpg",
+      "fileSize": 845843,
+      "fileSizeFormatted": "826.0 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeHowItWorks.js",
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "stage-01-understand",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/stage-01-understand",
+      "sha256": "8f17a5251ccdd36827b1c06831c28cd4bffddbcbe6042060189e184bb3671697",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 3 (Step 9)",
+      "canonicalTarget": "public/images/gallery/hero-feature.jpg"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-02-plan.jpg",
+      "webPath": "/images/how-it-works/stage-02-plan.jpg",
+      "fileName": "stage-02-plan.jpg",
+      "extension": ".jpg",
+      "fileSize": 1155163,
+      "fileSizeFormatted": "1.10 MB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeHowItWorks.js",
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "stage-02-plan",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/stage-02-plan",
+      "sha256": "25059761e9553633f8ae221555d8955d48f5a0bd0157776be0f19ae3b2e48c6b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 2 (Step 8)",
+      "canonicalTarget": "public/images/managed-farmland/intro-farmland.jpg"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-03-work.jpg",
+      "webPath": "/images/how-it-works/stage-03-work.jpg",
+      "fileName": "stage-03-work.jpg",
+      "extension": ".jpg",
+      "fileSize": 1101700,
+      "fileSizeFormatted": "1.05 MB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeHowItWorks.js",
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "stage-03-work",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/stage-03-work",
+      "sha256": "b02753516fd896dc59dcc9766262d192487ed5b87d034fa9f607251cef5181df",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 2 (Step 8)",
+      "canonicalTarget": "public/images/farm-management/people-and-land.jpg"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-04-cultivate.jpg",
+      "webPath": "/images/how-it-works/stage-04-cultivate.jpg",
+      "fileName": "stage-04-cultivate.jpg",
+      "extension": ".jpg",
+      "fileSize": 830583,
+      "fileSizeFormatted": "811.1 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeHowItWorks.js",
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "stage-04-cultivate",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/stage-04-cultivate",
+      "sha256": "58d65ae81eba9155b9a2f167c90b2579655dc1de4238061a12a613e4a6d1ab0e",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 3 (Step 9)",
+      "canonicalTarget": "public/images/gallery/cultivation-detail.jpg"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-05-harvest.jpg",
+      "webPath": "/images/how-it-works/stage-05-harvest.jpg",
+      "fileName": "stage-05-harvest.jpg",
+      "extension": ".jpg",
+      "fileSize": 178908,
+      "fileSizeFormatted": "174.7 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/sections/home/HomeHowItWorks.js",
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "stage-05-harvest",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/stage-05-harvest",
+      "sha256": "8954822c12fe0fc0eda0d8675657e3723d945d9a16b0e4c65911590b0e9c26d5",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 3 (Step 9)",
+      "canonicalTarget": "public/images/landing/manage-06-harvest.jpg"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-06-continue.jpg",
+      "webPath": "/images/how-it-works/stage-06-continue.jpg",
+      "fileName": "stage-06-continue.jpg",
+      "extension": ".jpg",
+      "fileSize": 1436796,
+      "fileSizeFormatted": "1.37 MB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/how-it-works",
+      "proposedPublicId": "stage-06-continue",
+      "targetCloudinaryPath": "earth-heritage/how-it-works/stage-06-continue",
+      "sha256": "0e316c0f581c82cf062cfbdd47c199697a375a461d86180234d055e1921f8f75",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg",
+      "isCanonical": false,
+      "migrationBatch": "Batch 2 (Step 8)",
+      "canonicalTarget": "public/images/landing/cta-landscape.jpg"
+    },
+    {
+      "localPath": "public/images/landing/cta-landscape.jpg",
+      "webPath": "/images/landing/cta-landscape.jpg",
+      "fileName": "cta-landscape.jpg",
+      "extension": ".jpg",
+      "fileSize": 1436796,
+      "fileSizeFormatted": "1.37 MB",
+      "usageCount": 3,
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "cta-landscape",
+      "targetCloudinaryPath": "earth-heritage/landing/cta-landscape",
+      "sha256": "0e316c0f581c82cf062cfbdd47c199697a375a461d86180234d055e1921f8f75",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/landing/hero-family-farmland.jpg",
+      "webPath": "/images/landing/hero-family-farmland.jpg",
+      "fileName": "hero-family-farmland.jpg",
+      "extension": ".jpg",
+      "fileSize": 1132901,
+      "fileSizeFormatted": "1.08 MB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "hero-family-farmland",
+      "targetCloudinaryPath": "earth-heritage/landing/hero-family-farmland",
+      "sha256": "1a81af4bf751b2bd202f3b825ca6f9d75bc7c91dd2e3521c3093ccc94d3e4ad9",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-farmland-estate.jpg",
+      "webPath": "/images/landing/hero-farmland-estate.jpg",
+      "fileName": "hero-farmland-estate.jpg",
+      "extension": ".jpg",
+      "fileSize": 1017013,
+      "fileSizeFormatted": "993.2 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "hero-farmland-estate",
+      "targetCloudinaryPath": "earth-heritage/landing/hero-farmland-estate",
+      "sha256": "fb1a347bcf5db8ac4a92f03ae9575fbf9719e278e7d75df00138a22930c91f65",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-landscape.jpg",
+      "webPath": "/images/landing/hero-landscape.jpg",
+      "fileName": "hero-landscape.jpg",
+      "extension": ".jpg",
+      "fileSize": 611185,
+      "fileSizeFormatted": "596.9 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "components/sections/landing/ManagedFarmlandHero.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "hero-landscape",
+      "targetCloudinaryPath": "earth-heritage/landing/hero-landscape",
+      "sha256": "b0a8223a88e96af90a2e3d14c709a4a9b8d50ec249ceda074765f59ef3e6b442",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-managed-crops.jpg",
+      "webPath": "/images/landing/hero-managed-crops.jpg",
+      "fileName": "hero-managed-crops.jpg",
+      "extension": ".jpg",
+      "fileSize": 1134235,
+      "fileSizeFormatted": "1.08 MB",
+      "usageCount": 2,
+      "usageLocations": [
+        "components/sections/home/HomeManagedFarmland.js",
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "hero-managed-crops",
+      "targetCloudinaryPath": "earth-heritage/landing/hero-managed-crops",
+      "sha256": "7a12e2ead8089cddf1d248a8a7763baf08dc21dbdcab802c4d1245a4680369bd",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204927/earth-heritage/landing/hero-managed-crops.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/landing/hero-plantation-walk.jpg",
+      "webPath": "/images/landing/hero-plantation-walk.jpg",
+      "fileName": "hero-plantation-walk.jpg",
+      "extension": ".jpg",
+      "fileSize": 1301954,
+      "fileSizeFormatted": "1.24 MB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "hero-plantation-walk",
+      "targetCloudinaryPath": "earth-heritage/landing/hero-plantation-walk",
+      "sha256": "a8f57942ebd2d4dee9df5c716c632c68897677b0a2f0b12ebca0965898f367a3",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-villa-retreat.jpg",
+      "webPath": "/images/landing/hero-villa-retreat.jpg",
+      "fileName": "hero-villa-retreat.jpg",
+      "extension": ".jpg",
+      "fileSize": 1032062,
+      "fileSizeFormatted": "1007.9 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "hero-villa-retreat",
+      "targetCloudinaryPath": "earth-heritage/landing/hero-villa-retreat",
+      "sha256": "16c8ff342cca4523b9e0bb867a2e2ac8805dbb6cddd51d70729b99418e6dbe06",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-01-people.jpg",
+      "webPath": "/images/landing/manage-01-people.jpg",
+      "fileName": "manage-01-people.jpg",
+      "extension": ".jpg",
+      "fileSize": 137599,
+      "fileSizeFormatted": "134.4 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "manage-01-people",
+      "targetCloudinaryPath": "earth-heritage/landing/manage-01-people",
+      "sha256": "c48702475dc62d18bff61e34fb6b240e41d0e33808066607c819abc51c708de5",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200711/earth-heritage/landing/manage-01-people.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/landing/manage-02-crop.jpg",
+      "webPath": "/images/landing/manage-02-crop.jpg",
+      "fileName": "manage-02-crop.jpg",
+      "extension": ".jpg",
+      "fileSize": 125274,
+      "fileSizeFormatted": "122.3 KB",
+      "usageCount": 6,
+      "usageLocations": [
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js",
+        "data/events.js",
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "manage-02-crop",
+      "targetCloudinaryPath": "earth-heritage/landing/manage-02-crop",
+      "sha256": "adc5ec34abffbec129ad71b15df4746e036946e0a1bb5d6f6e26b13ed0cfd83b",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-03-cultivation.jpg",
+      "webPath": "/images/landing/manage-03-cultivation.jpg",
+      "fileName": "manage-03-cultivation.jpg",
+      "extension": ".jpg",
+      "fileSize": 219400,
+      "fileSizeFormatted": "214.3 KB",
+      "usageCount": 4,
+      "usageLocations": [
+        "components/sections/home/HomeStories.js",
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "manage-03-cultivation",
+      "targetCloudinaryPath": "earth-heritage/landing/manage-03-cultivation",
+      "sha256": "c3a0ed8ac3de79eba9e834380b01a97325d9a48e4ae04b2d1ed60945970a9599",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-04-care.jpg",
+      "webPath": "/images/landing/manage-04-care.jpg",
+      "fileName": "manage-04-care.jpg",
+      "extension": ".jpg",
+      "fileSize": 755215,
+      "fileSizeFormatted": "737.5 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "manage-04-care",
+      "targetCloudinaryPath": "earth-heritage/landing/manage-04-care",
+      "sha256": "204bbcc1bc0d10ed0af527a4dc5d014b1c26927d57b5fa29a27af793089d9836",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-05-operations.jpg",
+      "webPath": "/images/landing/manage-05-operations.jpg",
+      "fileName": "manage-05-operations.jpg",
+      "extension": ".jpg",
+      "fileSize": 76516,
+      "fileSizeFormatted": "74.7 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "manage-05-operations",
+      "targetCloudinaryPath": "earth-heritage/landing/manage-05-operations",
+      "sha256": "a2dc8b374e5011a02497e8ae8ae3a5d1e58ffac12b41790335039386bc5cd3e6",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-06-harvest.jpg",
+      "webPath": "/images/landing/manage-06-harvest.jpg",
+      "fileName": "manage-06-harvest.jpg",
+      "extension": ".jpg",
+      "fileSize": 178908,
+      "fileSizeFormatted": "174.7 KB",
+      "usageCount": 4,
+      "usageLocations": [
+        "components/sections/home/HomeStories.js",
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "manage-06-harvest",
+      "targetCloudinaryPath": "earth-heritage/landing/manage-06-harvest",
+      "sha256": "8954822c12fe0fc0eda0d8675657e3723d945d9a16b0e4c65911590b0e9c26d5",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/landing/philosophy-panorama.jpg",
+      "webPath": "/images/landing/philosophy-panorama.jpg",
+      "fileName": "philosophy-panorama.jpg",
+      "extension": ".jpg",
+      "fileSize": 667470,
+      "fileSizeFormatted": "651.8 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "components/sections/gallery/GalleryPhilosophy.js",
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "philosophy-panorama",
+      "targetCloudinaryPath": "earth-heritage/landing/philosophy-panorama",
+      "sha256": "2a6f8dcd190fe05cf463d695b204ee679223c2f59d68a5209ca48a7864e40f2e",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/principles-land.jpg",
+      "webPath": "/images/landing/principles-land.jpg",
+      "fileName": "principles-land.jpg",
+      "extension": ".jpg",
+      "fileSize": 1128707,
+      "fileSizeFormatted": "1.08 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "principles-land",
+      "targetCloudinaryPath": "earth-heritage/landing/principles-land",
+      "sha256": "3f8e9e6867add558e49ad5107d1db22b9ab7c12052bceb7e396b642e912254bd",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204926/earth-heritage/landing/principles-land.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/landing/problem-land.jpg",
+      "webPath": "/images/landing/problem-land.jpg",
+      "fileName": "problem-land.jpg",
+      "extension": ".jpg",
+      "fileSize": 350786,
+      "fileSizeFormatted": "342.6 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "problem-land",
+      "targetCloudinaryPath": "earth-heritage/landing/problem-land",
+      "sha256": "0b97cf5e294ede07f147821ccece441a49621bc01ed77c9b2c05dbe76c0e7d19",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/solution-management.jpg",
+      "webPath": "/images/landing/solution-management.jpg",
+      "fileName": "solution-management.jpg",
+      "extension": ".jpg",
+      "fileSize": 865352,
+      "fileSizeFormatted": "845.1 KB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "solution-management",
+      "targetCloudinaryPath": "earth-heritage/landing/solution-management",
+      "sha256": "44e1ebc0aa4e895ddc028cd0bd42a644e3a293472b59b77a81779cfc893645d1",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/statement-landscape.jpg",
+      "webPath": "/images/landing/statement-landscape.jpg",
+      "fileName": "statement-landscape.jpg",
+      "extension": ".jpg",
+      "fileSize": 566389,
+      "fileSizeFormatted": "553.1 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/landing",
+      "proposedPublicId": "statement-landscape",
+      "targetCloudinaryPath": "earth-heritage/landing/statement-landscape",
+      "sha256": "47da0d6bd0b99cde2147060c8e7cfc15fab5cf71621cda923205ec937c4032f0",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/managed-farmland/core-proposition.jpg",
+      "webPath": "/images/managed-farmland/core-proposition.jpg",
+      "fileName": "core-proposition.jpg",
+      "extension": ".jpg",
+      "fileSize": 1019863,
+      "fileSizeFormatted": "996.0 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/projects/ProjectDetailGallery.js",
+        "components/sections/home/HomeStories.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/managed-farmland",
+      "proposedPublicId": "core-proposition",
+      "targetCloudinaryPath": "earth-heritage/managed-farmland/core-proposition",
+      "sha256": "41e49035b68c6f853aaff0fe135edd469c149f03d1f0127750b1ca06ecd1295b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204923/earth-heritage/managed-farmland/core-proposition.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/managed-farmland/intro-farmland.jpg",
+      "webPath": "/images/managed-farmland/intro-farmland.jpg",
+      "fileName": "intro-farmland.jpg",
+      "extension": ".jpg",
+      "fileSize": 1155163,
+      "fileSizeFormatted": "1.10 MB",
+      "usageCount": 7,
+      "usageLocations": [
+        "components/projects/ProjectDetailGallery.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js",
+        "data/blogs.js",
+        "data/events.js",
+        "data/managedFarmlandImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/managed-farmland",
+      "proposedPublicId": "intro-farmland",
+      "targetCloudinaryPath": "earth-heritage/managed-farmland/intro-farmland",
+      "sha256": "25059761e9553633f8ae221555d8955d48f5a0bd0157776be0f19ae3b2e48c6b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/managed-farmland/nature-responsibility.jpg",
+      "webPath": "/images/managed-farmland/nature-responsibility.jpg",
+      "fileName": "nature-responsibility.jpg",
+      "extension": ".jpg",
+      "fileSize": 1072956,
+      "fileSizeFormatted": "1.02 MB",
+      "usageCount": 4,
+      "usageLocations": [
+        "components/projects/ProjectDetailGallery.js",
+        "components/sections/home/HomeAbout.js",
+        "data/managedFarmlandImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/managed-farmland",
+      "proposedPublicId": "nature-responsibility",
+      "targetCloudinaryPath": "earth-heritage/managed-farmland/nature-responsibility",
+      "sha256": "94c06ea1429cd5a67d1745e160ed989c492359e047e8693ed4e443fbdad4876c",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 4 (Step 10)"
+    },
+    {
+      "localPath": "public/images/plantations/areca-nut.jpg",
+      "webPath": "/images/plantations/areca-nut.jpg",
+      "fileName": "areca-nut.jpg",
+      "extension": ".jpg",
+      "fileSize": 1113271,
+      "fileSizeFormatted": "1.06 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/plantations",
+      "proposedPublicId": "areca-nut",
+      "targetCloudinaryPath": "earth-heritage/plantations/areca-nut",
+      "sha256": "39b65ccb3596c727e4066f8e240bdebb134d5f80d158e683c553285ff05c6ea3",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203253/earth-heritage/plantations/areca-nut.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/plantations/coconut.jpg",
+      "webPath": "/images/plantations/coconut.jpg",
+      "fileName": "coconut.jpg",
+      "extension": ".jpg",
+      "fileSize": 1117725,
+      "fileSizeFormatted": "1.07 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/plantations",
+      "proposedPublicId": "coconut",
+      "targetCloudinaryPath": "earth-heritage/plantations/coconut",
+      "sha256": "d0df583f353b53741998d205247986ddeb60f1289d168f77f579cf8ae17734ed",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203240/earth-heritage/plantations/coconut.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/plantations/mahogany.jpg",
+      "webPath": "/images/plantations/mahogany.jpg",
+      "fileName": "mahogany.jpg",
+      "extension": ".jpg",
+      "fileSize": 1192403,
+      "fileSizeFormatted": "1.14 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/plantations",
+      "proposedPublicId": "mahogany",
+      "targetCloudinaryPath": "earth-heritage/plantations/mahogany",
+      "sha256": "4b8cbd773db693c0d082219099ec90c3402463032f689d6cca7c0011e0d4d91f",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201956/earth-heritage/plantations/mahogany.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/plantations/red-sandal.jpg",
+      "webPath": "/images/plantations/red-sandal.jpg",
+      "fileName": "red-sandal.jpg",
+      "extension": ".jpg",
+      "fileSize": 1211524,
+      "fileSizeFormatted": "1.16 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/plantations",
+      "proposedPublicId": "red-sandal",
+      "targetCloudinaryPath": "earth-heritage/plantations/red-sandal",
+      "sha256": "13273abfa9799318f4c69b0f8a0eb1a3df6afb2e70f2c36f6f02143c985a296b",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201954/earth-heritage/plantations/red-sandal.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/plantations/seasonal-fruits.jpg",
+      "webPath": "/images/plantations/seasonal-fruits.jpg",
+      "fileName": "seasonal-fruits.jpg",
+      "extension": ".jpg",
+      "fileSize": 1092895,
+      "fileSizeFormatted": "1.04 MB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/plantations",
+      "proposedPublicId": "seasonal-fruits",
+      "targetCloudinaryPath": "earth-heritage/plantations/seasonal-fruits",
+      "sha256": "8f3f43bd2f0d0810010f569e447b9f3ff5df72f44e55ec810d8e794bbaa015da",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203256/earth-heritage/plantations/seasonal-fruits.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/plantations/teak-wood.jpg",
+      "webPath": "/images/plantations/teak-wood.jpg",
+      "fileName": "teak-wood.jpg",
+      "extension": ".jpg",
+      "fileSize": 1012547,
+      "fileSizeFormatted": "988.8 KB",
+      "usageCount": 1,
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/plantations",
+      "proposedPublicId": "teak-wood",
+      "targetCloudinaryPath": "earth-heritage/plantations/teak-wood",
+      "sha256": "0b025e88f2347a64e9ccc6f362347aadc6e2c34aa696b41fb5000d5ef5317ef0",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203260/earth-heritage/plantations/teak-wood.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/boundary-plantation-wall.png",
+      "webPath": "/images/projects/coconut-garden/boundary-plantation-wall.png",
+      "fileName": "boundary-plantation-wall.png",
+      "extension": ".png",
+      "fileSize": 1009068,
+      "fileSizeFormatted": "985.4 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "proposedPublicId": "boundary-plantation-wall",
+      "targetCloudinaryPath": "earth-heritage/projects/coconut-garden/boundary-plantation-wall",
+      "sha256": "2d1874408157a774f47b1152991892acaedb23a3c3f1158206de45da24331b67",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203224/earth-heritage/projects/coconut-garden/boundary-plantation-wall.png",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/entrance-gate.jpg",
+      "webPath": "/images/projects/coconut-garden/entrance-gate.jpg",
+      "fileName": "entrance-gate.jpg",
+      "extension": ".jpg",
+      "fileSize": 372495,
+      "fileSizeFormatted": "363.8 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "proposedPublicId": "entrance-gate",
+      "targetCloudinaryPath": "earth-heritage/projects/coconut-garden/entrance-gate",
+      "sha256": "c2f8ba62705a6ec936380a41ae4210c182322182c5b2bb02d7ffbe3313ed29e9",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201948/earth-heritage/projects/coconut-garden/entrance-gate.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/farm-landscape-groves.jpg",
+      "webPath": "/images/projects/coconut-garden/farm-landscape-groves.jpg",
+      "fileName": "farm-landscape-groves.jpg",
+      "extension": ".jpg",
+      "fileSize": 398937,
+      "fileSizeFormatted": "389.6 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "proposedPublicId": "farm-landscape-groves",
+      "targetCloudinaryPath": "earth-heritage/projects/coconut-garden/farm-landscape-groves",
+      "sha256": "8068ef2a3e523585041d785225b3c281113aede74f65a736834e06ddcf452682",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203230/earth-heritage/projects/coconut-garden/farm-landscape-groves.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/internal-road-layout.jpg",
+      "webPath": "/images/projects/coconut-garden/internal-road-layout.jpg",
+      "fileName": "internal-road-layout.jpg",
+      "extension": ".jpg",
+      "fileSize": 316766,
+      "fileSizeFormatted": "309.3 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "proposedPublicId": "internal-road-layout",
+      "targetCloudinaryPath": "earth-heritage/projects/coconut-garden/internal-road-layout",
+      "sha256": "937aa44911f37d53a51f0f05f2a43447951b24ee0e94dbbcb2a01c8b063b1195",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Pilot (Step 7)"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/plot-demarcation-10.jpg",
+      "webPath": "/images/projects/coconut-garden/plot-demarcation-10.jpg",
+      "fileName": "plot-demarcation-10.jpg",
+      "extension": ".jpg",
+      "fileSize": 544728,
+      "fileSizeFormatted": "532.0 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "proposedPublicId": "plot-demarcation-10",
+      "targetCloudinaryPath": "earth-heritage/projects/coconut-garden/plot-demarcation-10",
+      "sha256": "7704a7e1a65e701cd9fcadcd93341c357752d104f0bf849ba19f7e73d30d8f28",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203228/earth-heritage/projects/coconut-garden/plot-demarcation-10.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 3 (Step 9)"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden-hero.jpg",
+      "webPath": "/images/projects/coconut-garden-hero.jpg",
+      "fileName": "coconut-garden-hero.jpg",
+      "extension": ".jpg",
+      "fileSize": 398938,
+      "fileSizeFormatted": "389.6 KB",
+      "usageCount": 2,
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects",
+      "proposedPublicId": "coconut-garden-hero",
+      "targetCloudinaryPath": "earth-heritage/projects/coconut-garden-hero",
+      "sha256": "c18f9d058f935739f377687852d2f7dd18b450ab29f7d5e421b4c411f4193961",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201949/earth-heritage/projects/coconut-garden-hero.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 2 (Step 8)"
+    },
+    {
+      "localPath": "public/images/projects/nairuthya-project-overview.png",
+      "webPath": "/images/projects/nairuthya-project-overview.png",
+      "fileName": "nairuthya-project-overview.png",
+      "extension": ".png",
+      "fileSize": 342407,
+      "fileSizeFormatted": "334.4 KB",
+      "usageCount": 0,
+      "usageLocations": [],
+      "proposedCloudinaryFolder": "earth-heritage/projects",
+      "proposedPublicId": "nairuthya-project-overview",
+      "targetCloudinaryPath": "earth-heritage/projects/nairuthya-project-overview",
+      "sha256": "8896eba8d03440ac1fba58a057a0e833928de4ff56ac33af08ab15da97c0299b",
+      "migrationStatus": "NOT_YET_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/nairuthya-whispering-wood-hero.jpg",
+      "webPath": "/images/projects/nairuthya-whispering-wood-hero.jpg",
+      "fileName": "nairuthya-whispering-wood-hero.jpg",
+      "extension": ".jpg",
+      "fileSize": 211886,
+      "fileSizeFormatted": "206.9 KB",
+      "usageCount": 3,
+      "usageLocations": [
+        "components/projects/nairuthya/NairuthyaHero.js",
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "proposedCloudinaryFolder": "earth-heritage/projects",
+      "proposedPublicId": "nairuthya-whispering-wood-hero",
+      "targetCloudinaryPath": "earth-heritage/projects/nairuthya-whispering-wood-hero",
+      "sha256": "10ca9203aa141b2cf72c7ce60389ebd31e6fd7188d118ab2dbcbf38e9a330177",
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Pilot (Step 7)"
+    }
+  ],
+  "contentDuplicates": [
+    {
+      "sha256": "7339ba73b3e7a4544e4d1f8f2366add3f4e60ed5fac0b599b5feff986a652746",
+      "fileSize": 9813,
+      "files": [
+        "public/apple-icon.png",
+        "public/apple-touch-icon.png"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "2efae21fad5b83a5531f0ff0f39f7e4d20e6087b512d48240f98194c029314e6",
+      "fileSize": 43799,
+      "files": [
+        "public/icon.png",
+        "public/icons/icon-512.png"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "2de5c1be08ba1edcff01d189888b0616b739b90c4feb2e5a6ba0ae7a0619b97c",
+      "fileSize": 431911,
+      "files": [
+        "public/images/about/founder-khushi-jain-hq.jpg",
+        "public/images/about/founder-khushi-jain.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "f61d5368d601b32fc5086b3ae21c57ad75b8346e2864e3e24bd617207963973b",
+      "fileSize": 380680,
+      "files": [
+        "public/images/about/founder-sathish-agastya-hq.jpg",
+        "public/images/about/founder-sathish-agastya.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "5d1537eca4f82606e5664fa6bbbbc5c01c5a361f9ccc3fbad3b2158076212c10",
+      "fileSize": 100309,
+      "files": [
+        "public/images/earth-heritage-logo-light.png",
+        "public/images/earth-heritage-logo-original.png"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "b02753516fd896dc59dcc9766262d192487ed5b87d034fa9f607251cef5181df",
+      "fileSize": 1101700,
+      "files": [
+        "public/images/farm-management/people-and-land.jpg",
+        "public/images/how-it-works/stage-03-work.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "58d65ae81eba9155b9a2f167c90b2579655dc1de4238061a12a613e4a6d1ab0e",
+      "fileSize": 830583,
+      "files": [
+        "public/images/gallery/cultivation-detail.jpg",
+        "public/images/how-it-works/stage-04-cultivate.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "8f17a5251ccdd36827b1c06831c28cd4bffddbcbe6042060189e184bb3671697",
+      "fileSize": 845843,
+      "files": [
+        "public/images/gallery/hero-feature.jpg",
+        "public/images/how-it-works/stage-01-understand.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "10ca9203aa141b2cf72c7ce60389ebd31e6fd7188d118ab2dbcbf38e9a330177",
+      "fileSize": 211886,
+      "files": [
+        "public/images/gallery/nairuthya-01-entrance.jpg",
+        "public/images/projects/nairuthya-whispering-wood-hero.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "25059761e9553633f8ae221555d8955d48f5a0bd0157776be0f19ae3b2e48c6b",
+      "fileSize": 1155163,
+      "files": [
+        "public/images/how-it-works/stage-02-plan.jpg",
+        "public/images/managed-farmland/intro-farmland.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "8954822c12fe0fc0eda0d8675657e3723d945d9a16b0e4c65911590b0e9c26d5",
+      "fileSize": 178908,
+      "files": [
+        "public/images/how-it-works/stage-05-harvest.jpg",
+        "public/images/landing/manage-06-harvest.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    },
+    {
+      "sha256": "0e316c0f581c82cf062cfbdd47c199697a375a461d86180234d055e1921f8f75",
+      "fileSize": 1436796,
+      "files": [
+        "public/images/how-it-works/stage-06-continue.jpg",
+        "public/images/landing/cta-landscape.jpg"
+      ],
+      "recommendation": "Consolidate multiple duplicate local copies into a single canonical Cloudinary asset"
+    }
+  ],
+  "filenameCollisions": [
+    {
+      "fileName": "intro-farmland.jpg",
+      "files": [
+        "public/images/about/intro-farmland.jpg",
+        "public/images/managed-farmland/intro-farmland.jpg"
+      ],
+      "note": "Files have identical filenames but differ in content; folder isolation in Cloudinary avoids public_id collision"
+    }
+  ]
+}

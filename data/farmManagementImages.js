@@ -11,7 +11,7 @@
 export const farmManagementImages = {
   intro: {
     id: 'fm-intro-farmland',
-    src: '/images/farm-management/intro-farm-management.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204921/earth-heritage/farm-management/intro-farm-management.jpg',
     alt: 'Expansive agricultural estate with active farm management, disciplined fruit tree groves, rich fertile dark soil, irrigation pathways, and soft golden morning light',
     usage: 'Section 1 — Large editorial farmland hero image below page title',
     temporary: true,
@@ -24,7 +24,7 @@ export const farmManagementImages = {
       id: 'fm-act-01',
       number: '01',
       title: 'People & Manpower',
-      src: '/images/landing/manage-01-people.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200711/earth-heritage/landing/manage-01-people.jpg',
       alt: 'Dedicated agricultural team and skilled farm hands working with soil and seedlings',
       temporary: true,
       width: 1200,
@@ -74,7 +74,7 @@ export const farmManagementImages = {
       id: 'fm-act-06',
       number: '06',
       title: 'Harvest Management',
-      src: '/images/landing/manage-06-harvest.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Bountiful harvest produce fresh from cultivated farmland',
       temporary: true,
       width: 1000,
@@ -84,7 +84,7 @@ export const farmManagementImages = {
 
   peopleAndLand: {
     id: 'fm-people-stewardship',
-    src: '/images/farm-management/people-and-land.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
     alt: 'Dedicated agricultural managers and farm hands examining healthy young fruit trees and rich soil in a thriving agricultural orchard',
     usage: 'Section 4 — People + Land editorial split visual',
     temporary: true,
@@ -94,7 +94,7 @@ export const farmManagementImages = {
 
   responsibleCare: {
     id: 'fm-responsible-landscape',
-    src: '/images/farm-management/responsible-care.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg',
     alt: 'Expansive, pristine agricultural farmland with rich dark soil, healthy green crop rows, mature native shade trees, and gentle rolling landscape under warm soft afternoon light',
     usage: 'Section 5 — Responsible Farm Care landscape visual',
     temporary: true,
@@ -104,7 +104,7 @@ export const farmManagementImages = {
 
   cta: {
     id: 'fm-cta-landscape',
-    src: '/images/landing/cta-landscape.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg',
     alt: 'Serene sunset over fertile agricultural acreage, mature trees, and distant horizon',
     usage: 'Section 8 — Final closing enquiry CTA visual accent',
     temporary: true,

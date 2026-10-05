@@ -5,7 +5,13 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     qualities: [75, 90, 95],
-    remotePatterns: []
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**'
+      }
+    ]
   },
   async redirects() {
     return [

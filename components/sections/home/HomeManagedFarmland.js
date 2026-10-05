@@ -48,7 +48,7 @@ export default function HomeManagedFarmland() {
             <MotionReveal delay={0.15}>
               <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(17,22,19,0.07)] border border-[#D5C09D] bg-[#E4D1B5]">
                 <Image
-                  src="/images/landing/hero-managed-crops.jpg"
+                  src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791204927/earth-heritage/landing/hero-managed-crops.jpg"
                   alt="Neatly cultivated agricultural acreage with crops and irrigation under open skies"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

@@ -39,7 +39,7 @@ export default function HomeEvents() {
       timing: 'Saturdays & Sundays by Appointment',
       location: 'Earth Heritage Estate Sites, Bengaluru Region',
       details: 'A comprehensive 2-hour guided walkthrough across our active managed acreage. Inspect boundary contours, swales, living soil biology, and converse directly with our resident farm managers.',
-      src: '/images/managed-farmland/intro-farmland.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Landowners and farm team walking through orderly agricultural acreage'
     },
     {
@@ -50,7 +50,7 @@ export default function HomeEvents() {
       timing: 'Quarterly Seasonal Milestone',
       location: 'Central Pavilion & Active Harvest Blocks',
       details: 'Celebrate the seasonal crop yield with fellow landowners and agrarian specialists. Hands-on harvesting of seasonal organic crops followed by an open-air community lunch under the timber pavilion.',
-      src: '/images/gallery/experiences-gathering.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201951/earth-heritage/gallery/experiences-gathering.jpg',
       alt: 'Families and landowners gathered under open timber pavilion in evening light'
     },
     {
@@ -61,7 +61,7 @@ export default function HomeEvents() {
       timing: 'Monthly Weekend Sessions',
       location: 'Agronomy Training Grounds',
       details: 'An immersive field workshop led by our agricultural directors covering microbial soil nourishment, natural mulching techniques, tree canopy pruning, and sustainable drip irrigation management.',
-      src: '/images/farm-management/people-and-land.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
       alt: 'Agricultural team and landowners inspecting healthy crops and soil structure'
     },
     {
@@ -72,7 +72,7 @@ export default function HomeEvents() {
       timing: 'Early Mornings (6:30 AM - 8:30 AM)',
       location: 'Canopy Trails & Riparian Corridors',
       details: 'Experience the waking sounds and morning mist of the estate canopy. Guided by experienced regional naturalists documenting native tree species, bird life, and ecological preservation corridors.',
-      src: '/images/gallery/nature-canopy.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200706/earth-heritage/gallery/nature-canopy.jpg',
       alt: 'Sunlight shining through lush native tree canopy along farmland trail'
     },
     {
@@ -83,7 +83,7 @@ export default function HomeEvents() {
       timing: 'Bi-annual Owner Assemblies',
       location: 'Estate Assembly Hall & Online Broadcast',
       details: 'An informative review session presenting agricultural yields, soil vitality reports, upcoming seasonal crop selections, and infrastructure maintenance schedules for registered owners.',
-      src: '/images/how-it-works/responsible-care-panorama.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg',
       alt: 'Panoramic vista of managed acreage during an afternoon farm forum'
     },
     {

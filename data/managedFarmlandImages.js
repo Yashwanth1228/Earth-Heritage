@@ -14,7 +14,7 @@
 export const managedFarmlandImages = {
   intro: {
     id: 'mf-intro-farmland',
-    src: '/images/managed-farmland/intro-farmland.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
     alt: 'Expansive managed agricultural estate with neatly cultivated crop rows, thriving orchard trees, and rich organic soil under clear morning sunlight',
     usage: 'Section 1 — Large editorial farmland hero image below page title',
     temporary: true,
@@ -24,7 +24,7 @@ export const managedFarmlandImages = {
 
   coreProposition: {
     id: 'mf-core-estate',
-    src: '/images/managed-farmland/core-proposition.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204923/earth-heritage/managed-farmland/core-proposition.jpg',
     alt: 'Scenic managed farmland estate with peaceful rural pathway, mature shade trees, and deep fertile soil furrows under open skies',
     usage: 'Section 2 — Core proposition editorial visual pairing ("You own the land. We manage the farm.")',
     temporary: true,
@@ -37,7 +37,7 @@ export const managedFarmlandImages = {
       id: 'mf-stage-01',
       stage: '01',
       title: 'People & Manpower',
-      src: '/images/landing/manage-01-people.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200711/earth-heritage/landing/manage-01-people.jpg',
       alt: 'Dedicated agricultural team and skilled farm hands working with soil and seedlings',
       usage: 'Section 3 — Management sequence stage 01',
       temporary: true,
@@ -92,7 +92,7 @@ export const managedFarmlandImages = {
       id: 'mf-stage-06',
       stage: '06',
       title: 'Harvest Management',
-      src: '/images/landing/manage-06-harvest.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Bountiful harvest produce fresh from cultivated farmland',
       usage: 'Section 3 — Management sequence stage 06',
       temporary: true,
@@ -103,7 +103,7 @@ export const managedFarmlandImages = {
 
   natureResponsibility: {
     id: 'mf-nature-stewardship',
-    src: '/images/managed-farmland/nature-responsibility.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg',
     alt: 'Expansive biodiverse farmland at golden hour with ancient shaded trees, flourishing vegetation, and rolling hills bathed in amber sunlight',
     usage: 'Section 7 — Land, Nature & Responsibility ("Management isn\'t just about operating a farm. It\'s about caring for the land.")',
     temporary: true,
@@ -113,7 +113,7 @@ export const managedFarmlandImages = {
 
   cta: {
     id: 'mf-cta-landscape',
-    src: '/images/landing/cta-landscape.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg',
     alt: 'Serene sunset over fertile agricultural acreage, mature trees, and distant horizon',
     usage: 'Section 10 — Final closing enquiry CTA visual accent',
     temporary: true,

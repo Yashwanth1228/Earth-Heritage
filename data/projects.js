@@ -74,11 +74,11 @@ export const projects = [
     isDemo: false,
     featured: true,
     heroImage: {
-      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
       alt: 'Nairuthya Whispering Wood farmland landscape in Honnasandra'
     },
     coverImage: {
-      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
       alt: 'Nairuthya Whispering Wood 8-acre managed farmland layout plan in Honnasandra'
     },
     locationMapImage: {
@@ -128,7 +128,7 @@ export const projects = [
         description:
           'A deep-rooting timber species that develops an expansive green canopy, enriches topsoil structure, and establishes an enduring long-term green asset.',
         image: {
-          src: '/images/plantations/mahogany.jpg',
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201956/earth-heritage/plantations/mahogany.jpg',
           alt: 'Mahogany plantation at Nairuthya Whispering Wood',
           caption: 'Mahogany Hardwood Timber'
         }
@@ -141,7 +141,7 @@ export const projects = [
         description:
           'World-renowned for structural durability, dense grain, and natural weather resistance, cultivated along dedicated farm corridors.',
         image: {
-          src: '/images/plantations/teak-wood.jpg',
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203260/earth-heritage/plantations/teak-wood.jpg',
           alt: 'Teak wood cultivation at Nairuthya Whispering Wood',
           caption: 'Teak Wood Cultivation'
         }
@@ -154,7 +154,7 @@ export const projects = [
         description:
           'An iconic perennial palm of Karnataka’s agrarian landscape, providing continuous perimeter shade, soil stabilization, and seasonal yield.',
         image: {
-          src: '/images/plantations/coconut.jpg',
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203240/earth-heritage/plantations/coconut.jpg',
           alt: 'Coconut palms at Nairuthya Whispering Wood',
           caption: 'Coconut Palm Grove'
         }
@@ -167,7 +167,7 @@ export const projects = [
         description:
           'A high-yielding regional commercial plantation crop deeply rooted in Nelamangala’s farming tradition, cared for with systematic micro-irrigation.',
         image: {
-          src: '/images/plantations/areca-nut.jpg',
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203253/earth-heritage/plantations/areca-nut.jpg',
           alt: 'Areca nut plantation at Nairuthya Whispering Wood',
           caption: 'Areca Nut Plantation'
         }
@@ -180,7 +180,7 @@ export const projects = [
         description:
           'A slow-growing, precious indigenous hardwood species celebrated for its dense, rich heartwood, cultivated under structured agricultural care.',
         image: {
-          src: '/images/plantations/red-sandal.jpg',
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201954/earth-heritage/plantations/red-sandal.jpg',
           alt: 'Red sandal cultivation at Nairuthya Whispering Wood',
           caption: 'Red Sandal Hardwood'
         }
@@ -193,7 +193,7 @@ export const projects = [
         description:
           '2–3 varieties of seasonal fruits suited to local soil and climatic conditions, introducing ecological biodiversity and fresh seasonal harvests.',
         image: {
-          src: '/images/plantations/seasonal-fruits.jpg',
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203256/earth-heritage/plantations/seasonal-fruits.jpg',
           alt: 'Seasonal fruit orchard at Nairuthya Whispering Wood',
           caption: 'Seasonal Fruit Orchard'
         }
@@ -206,49 +206,49 @@ export const projects = [
           title: 'Pond Area',
           category: 'Water & Habitat',
           description: 'A dedicated pond area within the project.',
-          image: { src: '/images/amenities/pond-area.jpg', alt: 'Pond Area at Nairuthya Whispering Wood' }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204908/earth-heritage/amenities/pond-area.jpg', alt: 'Pond Area at Nairuthya Whispering Wood' }
         },
         {
           id: 'yoga-meditation',
           title: 'Yoga & Meditation Area',
           category: 'Mindfulness & Wellness',
           description: 'A designated space for yoga and meditation.',
-          image: { src: '/images/amenities/yoga-meditation.jpg', alt: 'Yoga & Meditation Area at Nairuthya Whispering Wood' }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203279/earth-heritage/amenities/yoga-meditation.jpg', alt: 'Yoga & Meditation Area at Nairuthya Whispering Wood' }
         },
         {
           id: 'viewpoint',
           title: 'Viewpoint',
           category: 'Scenic Vista',
           description: 'An elevated viewpoint overlooking the farmland and surrounding landscape.',
-          image: { src: '/images/amenities/viewpoint.jpg', alt: 'Viewpoint at Nairuthya Whispering Wood' }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204917/earth-heritage/amenities/viewpoint.jpg', alt: 'Viewpoint at Nairuthya Whispering Wood' }
         },
         {
           id: 'garden-area',
           title: 'Garden Area',
           category: 'Flora & Landscaping',
           description: 'A planned garden area within the project.',
-          image: { src: '/images/amenities/garden-area.jpg', alt: 'Garden Area at Nairuthya Whispering Wood' }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201953/earth-heritage/amenities/garden-area.jpg', alt: 'Garden Area at Nairuthya Whispering Wood' }
         },
         {
           id: 'jogging-track',
           title: 'Jogging Track',
           category: 'Active Lifestyle',
           description: 'A dedicated perimeter track for walking and jogging within the farmland.',
-          image: { src: '/images/amenities/jogging-track.jpg', alt: 'Jogging Track at Nairuthya Whispering Wood' }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204912/earth-heritage/amenities/jogging-track.jpg', alt: 'Jogging Track at Nairuthya Whispering Wood' }
         },
         {
           id: 'play-area',
           title: "Children's Play Area",
           category: 'Family & Play',
           description: 'A dedicated outdoor play area for children within natural surroundings.',
-          image: { src: '/images/amenities/children-play-area.jpg', alt: "Children's Play Area at Nairuthya Whispering Wood" }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203273/earth-heritage/amenities/children-play-area.jpg', alt: "Children's Play Area at Nairuthya Whispering Wood" }
         },
         {
           id: 'multi-play-court',
           title: 'Multi-Play Court Area',
           category: 'Sports & Leisure',
           description: 'A versatile outdoor court area for sports and community recreation.',
-          image: { src: '/images/amenities/multi-court.jpg', alt: 'Multi-Play Court Area at Nairuthya Whispering Wood' }
+          image: { src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204915/earth-heritage/amenities/multi-court.jpg', alt: 'Multi-Play Court Area at Nairuthya Whispering Wood' }
         }
       ],
       infrastructure: [
@@ -335,7 +335,7 @@ export const projects = [
       }
     ],
     gallery: [
-      { id: 'nairuthya-gal-1', src: '/images/gallery/nairuthya-01-entrance.jpg', alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola', caption: 'Grand Stone Steps & Temple Pergola' },
+      { id: 'nairuthya-gal-1', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg', alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola', caption: 'Grand Stone Steps & Temple Pergola' },
       { id: 'nairuthya-gal-2', src: '/images/gallery/nairuthya-02-stone-terraces.jpg', alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping', caption: 'Stone Terraces & Boundary Landscaping' },
       { id: 'nairuthya-gal-3', src: '/images/gallery/nairuthya-03-plots-irrigation.jpg', alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads', caption: 'Drip-Irrigated Farmland Plots & Roads' },
       { id: 'nairuthya-gal-4', src: '/images/gallery/nairuthya-04-children-play.jpg', alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park", caption: "Children's Outdoor Play Area" },
@@ -417,11 +417,11 @@ export const projects = [
     isDemo: false,
     featured: false,
     heroImage: {
-      src: '/images/projects/coconut-garden-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201949/earth-heritage/projects/coconut-garden-hero.jpg',
       alt: 'Coconut Garden premium farm plots landscape in Bidadi'
     },
     coverImage: {
-      src: '/images/projects/coconut-garden/internal-road-layout.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg',
       alt: 'Coconut Garden farm plots layout and internal road network in Bidadi'
     },
     locationMapImage: {
@@ -430,23 +430,23 @@ export const projects = [
     },
     images: [
       {
-        src: '/images/projects/coconut-garden/entrance-gate.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201948/earth-heritage/projects/coconut-garden/entrance-gate.jpg',
         alt: 'Grand entrance gate and perimeter wall at Coconut Garden in Bidadi'
       },
       {
-        src: '/images/projects/coconut-garden/internal-road-layout.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg',
         alt: 'Wide internal road and demarcated farm plot boundaries at Coconut Garden in Bidadi'
       },
       {
-        src: '/images/projects/coconut-garden/plot-demarcation-10.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203228/earth-heritage/projects/coconut-garden/plot-demarcation-10.jpg',
         alt: 'Demarcated farm plot with established coconut trees at Coconut Garden in Bidadi'
       },
       {
-        src: '/images/projects/coconut-garden/farm-landscape-groves.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203230/earth-heritage/projects/coconut-garden/farm-landscape-groves.jpg',
         alt: 'Cultivated farm plots with rows of coconut palm trees at Coconut Garden in Bidadi'
       },
       {
-        src: '/images/projects/coconut-garden/boundary-plantation-wall.png',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203224/earth-heritage/projects/coconut-garden/boundary-plantation-wall.png',
         alt: 'Precast concrete compound wall with green plantation boundary at Coconut Garden in Bidadi'
       }
     ],
@@ -456,35 +456,35 @@ export const projects = [
         title: 'Grand Entrance & Approach',
         caption: 'Grand Entrance Gateway & Boundary Access',
         alt: 'Grand entrance gate and perimeter wall at Coconut Garden in Bidadi',
-        src: '/images/projects/coconut-garden/entrance-gate.jpg'
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201948/earth-heritage/projects/coconut-garden/entrance-gate.jpg'
       },
       {
         id: 'cg-gallery-02',
         title: 'Internal Road & Layout',
         caption: 'Wide Internal Roads & Demarcated Plots',
         alt: 'Wide internal road and demarcated farm plot boundaries at Coconut Garden in Bidadi',
-        src: '/images/projects/coconut-garden/internal-road-layout.jpg'
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg'
       },
       {
         id: 'cg-gallery-03',
         title: 'Farm Plot Demarcation',
         caption: 'Individual Plot Demarcation & Mature Trees',
         alt: 'Demarcated farm plot with established coconut trees at Coconut Garden in Bidadi',
-        src: '/images/projects/coconut-garden/plot-demarcation-10.jpg'
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203228/earth-heritage/projects/coconut-garden/plot-demarcation-10.jpg'
       },
       {
         id: 'cg-gallery-04',
         title: 'Cultivated Farm Land & Groves',
         caption: 'Lush Coconut Palm Groves & Open Farmland',
         alt: 'Cultivated farm plots with rows of coconut palm trees at Coconut Garden in Bidadi',
-        src: '/images/projects/coconut-garden/farm-landscape-groves.jpg'
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203230/earth-heritage/projects/coconut-garden/farm-landscape-groves.jpg'
       },
       {
         id: 'cg-gallery-05',
         title: 'Perimeter Boundary Wall',
         caption: 'Compound Wall & Plantation Green Cover',
         alt: 'Precast concrete compound wall with green plantation boundary at Coconut Garden in Bidadi',
-        src: '/images/projects/coconut-garden/boundary-plantation-wall.png'
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203224/earth-heritage/projects/coconut-garden/boundary-plantation-wall.png'
       }
     ],
     snapshot: {
@@ -526,7 +526,7 @@ export const projects = [
           category: 'Outdoor Recreation',
           description: 'Designated outdoor camping spaces immersed in the quiet countryside landscape.',
           image: {
-            src: '/images/amenities/camping-area.jpg',
+            src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204894/earth-heritage/amenities/camping-area.jpg',
             alt: 'Outdoor camping area at Coconut Garden in Bidadi'
           }
         },
@@ -536,7 +536,7 @@ export const projects = [
           category: 'Farm Retreat',
           description: 'Peaceful farm cottage retreats designed for comfortable weekend stays surrounded by nature.',
           image: {
-            src: '/images/amenities/cottages.jpg',
+            src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203277/earth-heritage/amenities/cottages.jpg',
             alt: 'Farm cottages for weekend stays at Coconut Garden in Bidadi'
           }
         },
@@ -546,7 +546,7 @@ export const projects = [
           category: 'Social & Hospitality',
           description: 'Community gathering space for relaxation, social interaction, and countryside hospitality.',
           image: {
-            src: '/images/amenities/club-house.jpg',
+            src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200710/earth-heritage/amenities/club-house.jpg',
             alt: 'Club house facility at Coconut Garden in Bidadi'
           }
         },
@@ -556,7 +556,7 @@ export const projects = [
           category: 'Leisure & Sports',
           description: 'Recreational indoor games facility providing leisure activities for all age groups.',
           image: {
-            src: '/images/amenities/indoor-games.jpg',
+            src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204918/earth-heritage/amenities/indoor-games.jpg',
             alt: 'Indoor games recreation area at Coconut Garden in Bidadi'
           }
         },
@@ -566,7 +566,7 @@ export const projects = [
           category: 'Recreation & Wellness',
           description: 'Recreational swimming pool thoughtfully integrated into the green agricultural estate landscape.',
           image: {
-            src: '/images/amenities/swimming-pool.jpg',
+            src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204914/earth-heritage/amenities/swimming-pool.jpg',
             alt: 'Swimming pool at Coconut Garden farm plots in Bidadi'
           }
         },
@@ -576,7 +576,7 @@ export const projects = [
           category: 'Family & Children',
           description: 'Dedicated open-air play zone for children amidst clean rural surroundings.',
           image: {
-            src: '/images/amenities/children-play-area.jpg',
+            src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203273/earth-heritage/amenities/children-play-area.jpg',
             alt: 'Kids play area at Coconut Garden in Bidadi'
           }
         }
@@ -624,16 +624,16 @@ export const projects = [
     imageIsTemporary: true,
     featured: false,
     coverImage: {
-      src: '/images/managed-farmland/intro-farmland.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Managed Farmland — Concept I agricultural landscape'
     },
     heroImage: {
-      src: '/images/managed-farmland/intro-farmland.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Managed Farmland — Concept I agricultural landscape'
     },
     images: [
       {
-        src: '/images/managed-farmland/intro-farmland.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
         alt: 'Managed Farmland — Concept I agricultural landscape'
       }
     ],
@@ -664,16 +664,16 @@ export const projects = [
     imageIsTemporary: true,
     featured: false,
     coverImage: {
-      src: '/images/farm-management/responsible-care.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg',
       alt: 'Managed Farmland — Concept II farm care landscape'
     },
     heroImage: {
-      src: '/images/farm-management/responsible-care.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg',
       alt: 'Managed Farmland — Concept II farm care landscape'
     },
     images: [
       {
-        src: '/images/farm-management/responsible-care.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg',
         alt: 'Managed Farmland — Concept II farm care landscape'
       }
     ],
@@ -704,16 +704,16 @@ export const projects = [
     imageIsTemporary: true,
     featured: false,
     coverImage: {
-      src: '/images/managed-farmland/nature-responsibility.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg',
       alt: 'Land & Legacy — Concept III agroforestry landscape'
     },
     heroImage: {
-      src: '/images/managed-farmland/nature-responsibility.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg',
       alt: 'Land & Legacy — Concept III agroforestry landscape'
     },
     images: [
       {
-        src: '/images/managed-farmland/nature-responsibility.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg',
         alt: 'Land & Legacy — Concept III agroforestry landscape'
       }
     ],

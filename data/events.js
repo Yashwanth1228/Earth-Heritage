@@ -49,7 +49,7 @@ export const events = [
       'Informal roundtables discussing crop performance and seasonal weather patterns'
     ],
     coverImage: {
-      src: '/images/gallery/experiences-gathering.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201951/earth-heritage/gallery/experiences-gathering.jpg',
       alt: 'Families and landowners gathered under open timber pavilion in evening light',
       caption: 'Gathering at the timber pavilion during the quarterly harvest milestone'
     }
@@ -74,7 +74,7 @@ export const events = [
       'One-on-one dialogue with senior agricultural and estate stewardship managers'
     ],
     coverImage: {
-      src: '/images/managed-farmland/intro-farmland.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Landowners and farm team walking through orderly agricultural acreage',
       caption: 'Topographical site inspection with resident agronomy specialists'
     }
@@ -99,7 +99,7 @@ export const events = [
       'Calibrating precision root-zone drip emitters with irrigation engineers'
     ],
     coverImage: {
-      src: '/images/farm-management/people-and-land.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
       alt: 'Agricultural team and landowners inspecting healthy crops and soil structure',
       caption: 'Demonstrating living soil amendments and organic cultivation practices'
     }
@@ -124,7 +124,7 @@ export const events = [
       'Fresh botanical herbal infusions served at the dawn observation point'
     ],
     coverImage: {
-      src: '/images/gallery/nature-canopy.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200706/earth-heritage/gallery/nature-canopy.jpg',
       alt: 'Sunlight shining through lush native tree canopy along farmland trail',
       caption: 'Morning sunlight filtering through native canopy along the riparian trail'
     }
@@ -149,7 +149,7 @@ export const events = [
       'Direct open dialogue session with founders and agricultural operations heads'
     ],
     coverImage: {
-      src: '/images/how-it-works/responsible-care-panorama.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg',
       alt: 'Panoramic vista of managed acreage during an afternoon farm forum',
       caption: 'Annual estate assembly overlooking active agricultural plots'
     }

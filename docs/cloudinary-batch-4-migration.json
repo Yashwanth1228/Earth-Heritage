@@ -1,0 +1,426 @@
+{
+  "version": "1.0.0",
+  "batch": 4,
+  "executedAt": "2026-10-05T12:55:27.588Z",
+  "summary": {
+    "totalCanonicalUploads": 14,
+    "totalLocalPathsMapped": 14,
+    "foldersCovered": [
+      "earth-heritage/amenities",
+      "earth-heritage/farm-management",
+      "earth-heritage/managed-farmland",
+      "earth-heritage/about",
+      "earth-heritage/landing"
+    ],
+    "totalOriginalBytes": 15068226
+  },
+  "migratedAssets": [
+    {
+      "localPath": "public/images/amenities/camping-area.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/camping-area",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204894/earth-heritage/amenities/camping-area.jpg",
+      "originalFileSize": 1168467,
+      "originalFileSizeFormatted": "1141.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/pond-area.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/pond-area",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204908/earth-heritage/amenities/pond-area.jpg",
+      "originalFileSize": 1164872,
+      "originalFileSizeFormatted": "1137.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/jogging-track.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/jogging-track",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204912/earth-heritage/amenities/jogging-track.jpg",
+      "originalFileSize": 1122579,
+      "originalFileSizeFormatted": "1096.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/swimming-pool.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/swimming-pool",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204914/earth-heritage/amenities/swimming-pool.jpg",
+      "originalFileSize": 1115194,
+      "originalFileSizeFormatted": "1089.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/multi-court.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/multi-court",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204915/earth-heritage/amenities/multi-court.jpg",
+      "originalFileSize": 1071690,
+      "originalFileSizeFormatted": "1046.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/viewpoint.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/viewpoint",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204917/earth-heritage/amenities/viewpoint.jpg",
+      "originalFileSize": 1017069,
+      "originalFileSizeFormatted": "993.2 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/indoor-games.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/indoor-games",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204918/earth-heritage/amenities/indoor-games.jpg",
+      "originalFileSize": 944761,
+      "originalFileSizeFormatted": "922.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/farm-management/responsible-care.jpg",
+      "cloudinaryFolder": "earth-heritage/farm-management",
+      "publicId": "earth-heritage/farm-management/responsible-care",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg",
+      "originalFileSize": 1039398,
+      "originalFileSizeFormatted": "1015.0 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/projects.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/farm-management/intro-farm-management.jpg",
+      "cloudinaryFolder": "earth-heritage/farm-management",
+      "publicId": "earth-heritage/farm-management/intro-farm-management",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204921/earth-heritage/farm-management/intro-farm-management.jpg",
+      "originalFileSize": 1026438,
+      "originalFileSizeFormatted": "1002.4 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/managed-farmland/nature-responsibility.jpg",
+      "cloudinaryFolder": "earth-heritage/managed-farmland",
+      "publicId": "earth-heritage/managed-farmland/nature-responsibility",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg",
+      "originalFileSize": 1072956,
+      "originalFileSizeFormatted": "1047.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/managedFarmlandImages.js",
+        "data/projects.js",
+        "components/projects/ProjectDetailGallery.js",
+        "components/sections/home/HomeAbout.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/managed-farmland/core-proposition.jpg",
+      "cloudinaryFolder": "earth-heritage/managed-farmland",
+      "publicId": "earth-heritage/managed-farmland/core-proposition",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204923/earth-heritage/managed-farmland/core-proposition.jpg",
+      "originalFileSize": 1019863,
+      "originalFileSizeFormatted": "996.0 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/managedFarmlandImages.js",
+        "components/projects/ProjectDetailGallery.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/intro-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/intro-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204925/earth-heritage/about/intro-farmland.jpg",
+      "originalFileSize": 1041997,
+      "originalFileSizeFormatted": "1017.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/aboutImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/principles-land.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/principles-land",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204926/earth-heritage/landing/principles-land.jpg",
+      "originalFileSize": 1128707,
+      "originalFileSizeFormatted": "1102.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 2400,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-managed-crops.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-managed-crops",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204927/earth-heritage/landing/hero-managed-crops.jpg",
+      "originalFileSize": 1134235,
+      "originalFileSizeFormatted": "1107.7 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js",
+        "components/sections/home/HomeManagedFarmland.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ],
+  "routeVerification": {
+    "verifiedAt": "2026-10-05T12:59:25.863Z",
+    "allPassed": true,
+    "routes": [
+      {
+        "route": "/",
+        "status": 200
+      },
+      {
+        "route": "/projects",
+        "status": 200
+      },
+      {
+        "route": "/projects/coconut-garden",
+        "status": 200
+      },
+      {
+        "route": "/projects/nairuthya-whispering-wood",
+        "status": 200
+      },
+      {
+        "route": "/managed-farmland",
+        "status": 200
+      },
+      {
+        "route": "/farm-management",
+        "status": 200
+      },
+      {
+        "route": "/about",
+        "status": 200
+      },
+      {
+        "route": "/gallery",
+        "status": 200
+      },
+      {
+        "route": "/how-it-works",
+        "status": 200
+      },
+      {
+        "route": "/blogs",
+        "status": 200
+      },
+      {
+        "route": "/events",
+        "status": 200
+      },
+      {
+        "route": "/cloudinary-test",
+        "status": 200
+      }
+    ]
+  },
+  "imageOptimizationVerification": {
+    "allPassed": true,
+    "representativeImages": [
+      {
+        "name": "Camping Area (Amenities - JPG 1.14 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204894/earth-heritage/amenities/camping-area.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1168467,
+        "optimizedBytes": 91478,
+        "reductionPercent": "92.2%"
+      },
+      {
+        "name": "Swimming Pool (Amenities - JPG 1.09 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204914/earth-heritage/amenities/swimming-pool.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1115194,
+        "optimizedBytes": 85986,
+        "reductionPercent": "92.3%"
+      },
+      {
+        "name": "Responsible Care (Farm Management - JPG 1.02 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1039398,
+        "optimizedBytes": 59680,
+        "reductionPercent": "94.3%"
+      },
+      {
+        "name": "Nature Responsibility (Managed Farmland - JPG 1.05 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1072956,
+        "optimizedBytes": 61540,
+        "reductionPercent": "94.3%"
+      },
+      {
+        "name": "Intro Farmland (About - JPG 1.02 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204925/earth-heritage/about/intro-farmland.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1041997,
+        "optimizedBytes": 59592,
+        "reductionPercent": "94.3%"
+      },
+      {
+        "name": "Principles Land (Landing - JPG 1.10 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791204926/earth-heritage/landing/principles-land.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1128707,
+        "optimizedBytes": 151451,
+        "reductionPercent": "86.6%"
+      }
+    ]
+  },
+  "applicationChanges": {
+    "totalReferencesReplaced": 28,
+    "modifiedFilesCount": 9,
+    "filesModified": [
+      "data/projects.js (13 replacements)",
+      "data/landingImages.js (3 replacements)",
+      "data/farmManagementImages.js (2 replacements)",
+      "data/managedFarmlandImages.js (2 replacements)",
+      "components/projects/ProjectDetailGallery.js (2 replacements)",
+      "components/sections/home/HomeAbout.js (2 replacements)",
+      "components/sections/home/HomeStories.js (2 replacements)",
+      "data/aboutImages.js (1 replacement)",
+      "components/sections/home/HomeManagedFarmland.js (1 replacement)"
+    ]
+  },
+  "validation": {
+    "lintResult": "PASSED (0 warnings, 0 errors)",
+    "buildResult": "PASSED (Exit code 0, 29/29 routes compiled)",
+    "finalStatus": "COMPLETED"
+  }
+}

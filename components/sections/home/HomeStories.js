@@ -40,7 +40,7 @@ export default function HomeStories() {
       title: 'Morning Light over the Valley',
       subtitle: 'Capturing seasonal transitions, topography, and living soil',
       tag: 'Documentary Film',
-      src: '/images/gallery/hero-feature.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg',
       alt: 'Misty agricultural valley and rolling green hills at golden sunrise'
     },
     {
@@ -48,7 +48,7 @@ export default function HomeStories() {
       title: 'The Quiet Sanctuary of the Land',
       subtitle: 'A cinematic perspective on managed acreage and open horizons',
       tag: 'Field Chronicle',
-      src: '/images/managed-farmland/core-proposition.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204923/earth-heritage/managed-farmland/core-proposition.jpg',
       alt: 'Peaceful gravel farm pathway meandering through open fields and shade trees'
     },
     {
@@ -56,7 +56,7 @@ export default function HomeStories() {
       title: 'Hands-on Agronomic Stewardship',
       subtitle: 'Dedicated field specialists supervising daily agricultural care',
       tag: 'Farm Operations',
-      src: '/images/farm-management/people-and-land.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
       alt: 'Agricultural field specialists assessing healthy crops and soil structure'
     },
     {
@@ -64,7 +64,7 @@ export default function HomeStories() {
       title: 'Rhythms of the Plantation',
       subtitle: 'Documenting tree growth, canopy shade, and native biodiversity',
       tag: 'Agroforestry Film',
-      src: '/images/gallery/nature-canopy.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200706/earth-heritage/gallery/nature-canopy.jpg',
       alt: 'Lush green tree canopy with sunlight filtering through native trees'
     },
     {
@@ -72,7 +72,7 @@ export default function HomeStories() {
       title: 'Water Flow & Natural Contours',
       subtitle: 'Topographic swales and watershed engineering in practice',
       tag: 'Land Stewardship',
-      src: '/images/how-it-works/responsible-care-panorama.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg',
       alt: 'Panoramic agricultural contours demonstrating sustainable watershed engineering'
     },
     {
@@ -92,7 +92,7 @@ export default function HomeStories() {
       title: 'Cultivated Acreage & Boundary Trails',
       subtitle: 'Disciplined crop rows and thriving boundary agroforestry',
       tag: 'Estate Photography',
-      src: '/images/managed-farmland/intro-farmland.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Expansive managed agricultural estate with disciplined crop rows and fruit trees'
     },
     {
@@ -100,7 +100,7 @@ export default function HomeStories() {
       title: 'Topographic Contours & Living Soil',
       subtitle: 'Preserving organic soil vitality across natural slopes',
       tag: 'Soil Vitality',
-      src: '/images/farm-management/responsible-care.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg',
       alt: 'Rolling green agricultural acreage with orderly contour furrows'
     },
     {
@@ -108,7 +108,7 @@ export default function HomeStories() {
       title: 'Evening Gatherings Under the Stars',
       subtitle: 'Connecting landowners and families over farmland moments',
       tag: 'Community Life',
-      src: '/images/gallery/experiences-gathering.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201951/earth-heritage/gallery/experiences-gathering.jpg',
       alt: 'Warm twilight gathering under open timber farm pavilion with lantern light over fields'
     },
     {
@@ -124,7 +124,7 @@ export default function HomeStories() {
       title: 'Organic Crop Canopy & Micro-Climate',
       subtitle: 'Multi-tier shade canopy providing ideal orchard humidity',
       tag: 'Canopy Structure',
-      src: '/images/gallery/cultivation-detail.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg',
       alt: 'Close-up detail of thriving organic plantation foliage and healthy leaves'
     },
     {
@@ -132,7 +132,7 @@ export default function HomeStories() {
       title: 'Seasonal Harvest Handover Logistics',
       subtitle: 'Fresh produce gathered with systematic agricultural care',
       tag: 'Harvest Care',
-      src: '/images/landing/manage-06-harvest.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Bountiful fresh seasonal harvest produce gathered with systematic agricultural care'
     }
   ];
