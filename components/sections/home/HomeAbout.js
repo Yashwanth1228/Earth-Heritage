@@ -20,7 +20,7 @@ import { ArrowRight, ShieldCheck, Sprout, Trees } from 'lucide-react';
  *   - CTA: "Discover Our Story →" linking to /about.
  * - RIGHT (6 cols):
  *   - Single High-Impact Architectural Farmland Image:
- *     - Uses /images/managed-farmland/nature-responsibility.jpg
+ *     - Uses https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg
  *     - Proportional aspect ratio (aspect-[4/5] lg:aspect-[4/5] xl:aspect-[5/6]) matching
  *       the exact vertical footprint of the left column with zero wasted space.
  *     - Floating badge and subtle editorial caption overlay.
@@ -142,7 +142,7 @@ export default function HomeAbout() {
             <MotionReveal delay={0.2} className="w-full">
               <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] xl:aspect-[5/6] max-h-[620px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(17,22,19,0.10)] border border-[#DDD3BF] bg-[#EDE5D5] group">
                 <Image
-                  src="/images/managed-farmland/nature-responsibility.jpg"
+                  src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg"
                   alt="Expansive organic managed farmland with healthy crop rows, rolling contours, and sunset hills"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

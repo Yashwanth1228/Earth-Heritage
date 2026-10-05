@@ -19,7 +19,7 @@ export const howItWorksImages = {
   stage01: {
     id: 'stage-01-understand',
     step: '01',
-    src: '/images/how-it-works/stage-01-understand.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg',
     alt: 'Expansive natural agricultural landscape bathed in dawn light, establishing deep connection with the land',
     title: 'Understand the Land',
     width: 2400,
@@ -29,7 +29,7 @@ export const howItWorksImages = {
   stage02: {
     id: 'stage-02-plan',
     step: '02',
-    src: '/images/how-it-works/stage-02-plan.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
     alt: 'Systematic crop rows and orderly agricultural field preparation under natural daylight',
     title: 'Plan the Farm',
     width: 2400,
@@ -39,7 +39,7 @@ export const howItWorksImages = {
   stage03: {
     id: 'stage-03-work',
     step: '03',
-    src: '/images/how-it-works/stage-03-work.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
     alt: 'Agricultural field specialists tending young orchard trees and managing farm operations',
     title: 'Manage the Work',
     width: 2400,
@@ -49,7 +49,7 @@ export const howItWorksImages = {
   stage04: {
     id: 'stage-04-cultivate',
     step: '04',
-    src: '/images/how-it-works/stage-04-cultivate.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg',
     alt: 'Vibrant organic seedlings emerging from nutrient-rich dark crumbly soil with morning dew',
     title: 'Cultivate & Care',
     width: 2400,
@@ -59,7 +59,7 @@ export const howItWorksImages = {
   stage05: {
     id: 'stage-05-harvest',
     step: '05',
-    src: '/images/how-it-works/stage-05-harvest.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
     alt: 'Freshly harvested agricultural produce gathered with systematic care across cultivated acreage',
     title: 'Manage the Harvest',
     width: 2400,
@@ -69,7 +69,7 @@ export const howItWorksImages = {
   stage06: {
     id: 'stage-06-continue',
     step: '06',
-    src: '/images/how-it-works/stage-06-continue.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg',
     alt: 'Peaceful twilight farmland panorama reflecting enduring generational care and continuity',
     title: 'Continue the Care',
     width: 2400,
@@ -78,7 +78,7 @@ export const howItWorksImages = {
   },
   responsibleCare: {
     id: 'responsible-care-panorama',
-    src: '/images/how-it-works/responsible-care-panorama.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg',
     alt: 'Panoramic vista of rolling managed farmland, fertile orchard rows, and morning mist',
     title: 'Care for the land, rooted in responsibility',
     width: 2400,

@@ -1,0 +1,163 @@
+{
+  "version": "1.0.0",
+  "executedAt": "2026-10-05T11:45:11.603Z",
+  "summary": {
+    "totalCanonicalUploads": 6,
+    "totalLocalPathsMapped": 8,
+    "foldersCreated": [
+      "earth-heritage/projects/coconut-garden",
+      "earth-heritage/gallery",
+      "earth-heritage/projects",
+      "earth-heritage/about",
+      "earth-heritage/amenities",
+      "earth-heritage/landing"
+    ],
+    "totalOriginalBytes": 4110094
+  },
+  "migratedAssets": [
+    {
+      "localPath": "public/images/projects/coconut-garden/internal-road-layout.jpg",
+      "cloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "publicId": "earth-heritage/projects/coconut-garden/internal-road-layout",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg",
+      "originalFileSize": 316766,
+      "originalFileSizeFormatted": "309.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 576,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nature-canopy.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/nature-canopy",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200706/earth-heritage/gallery/nature-canopy.jpg",
+      "originalFileSize": 1334194,
+      "originalFileSizeFormatted": "1302.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/events.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/nairuthya-whispering-wood-hero.jpg",
+      "cloudinaryFolder": "earth-heritage/projects",
+      "publicId": "earth-heritage/projects/nairuthya-whispering-wood-hero",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg",
+      "originalFileSize": 211886,
+      "originalFileSizeFormatted": "206.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 444,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js",
+        "data/galleryImages.js",
+        "components/projects/nairuthya/NairuthyaHero.js"
+      ],
+      "isCanonical": true,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-01-entrance.jpg",
+      "cloudinaryFolder": "earth-heritage/projects",
+      "publicId": "earth-heritage/projects/nairuthya-whispering-wood-hero",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg",
+      "originalFileSize": 211886,
+      "originalFileSizeFormatted": "206.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 444,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": false,
+      "canonicalTarget": "public/images/projects/nairuthya-whispering-wood-hero.jpg",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/founder-khushi-jain.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/founder-khushi-jain",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/about/founder-khushi-jain.jpg",
+      "originalFileSize": 431911,
+      "originalFileSizeFormatted": "421.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1080,
+      "height": 1350,
+      "format": "jpg",
+      "usageLocations": [
+        "data/aboutData.js"
+      ],
+      "isCanonical": true,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/founder-khushi-jain-hq.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/founder-khushi-jain",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/about/founder-khushi-jain.jpg",
+      "originalFileSize": 431911,
+      "originalFileSizeFormatted": "421.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1080,
+      "height": 1350,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": false,
+      "canonicalTarget": "public/images/about/founder-khushi-jain.jpg",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/club-house.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/club-house",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200710/earth-heritage/amenities/club-house.jpg",
+      "originalFileSize": 1033941,
+      "originalFileSizeFormatted": "1009.7 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-01-people.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-01-people",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791200711/earth-heritage/landing/manage-01-people.jpg",
+      "originalFileSize": 137599,
+      "originalFileSizeFormatted": "134.4 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 687,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js",
+        "data/farmManagementImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "isCanonical": true,
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ]
+}

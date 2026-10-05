@@ -1,0 +1,317 @@
+{
+  "version": "1.0.0",
+  "batch": 2,
+  "executedAt": "2026-10-05T12:06:02.596Z",
+  "summary": {
+    "totalCanonicalUploads": 11,
+    "totalLocalPathsMapped": 15,
+    "foldersCovered": [
+      "earth-heritage/projects/coconut-garden",
+      "earth-heritage/projects",
+      "earth-heritage/gallery",
+      "earth-heritage/amenities",
+      "earth-heritage/plantations",
+      "earth-heritage/landing",
+      "earth-heritage/managed-farmland",
+      "earth-heritage/farm-management",
+      "earth-heritage/about",
+      "earth-heritage/campaign"
+    ],
+    "totalOriginalBytes": 13745809
+  },
+  "migratedAssets": [
+    {
+      "localPath": "public/images/projects/coconut-garden/entrance-gate.jpg",
+      "cloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "publicId": "earth-heritage/projects/coconut-garden/entrance-gate",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201948/earth-heritage/projects/coconut-garden/entrance-gate.jpg",
+      "originalFileSize": 372495,
+      "originalFileSizeFormatted": "363.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 576,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js",
+        "data/galleryImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden-hero.jpg",
+      "cloudinaryFolder": "earth-heritage/projects",
+      "publicId": "earth-heritage/projects/coconut-garden-hero",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201949/earth-heritage/projects/coconut-garden-hero.jpg",
+      "originalFileSize": 398938,
+      "originalFileSizeFormatted": "389.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js",
+        "data/galleryImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/experiences-gathering.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/experiences-gathering",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201951/earth-heritage/gallery/experiences-gathering.jpg",
+      "originalFileSize": 941369,
+      "originalFileSizeFormatted": "919.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/events.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/garden-area.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/garden-area",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201953/earth-heritage/amenities/garden-area.jpg",
+      "originalFileSize": 1298684,
+      "originalFileSizeFormatted": "1268.2 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/plantations/red-sandal.jpg",
+      "cloudinaryFolder": "earth-heritage/plantations",
+      "publicId": "earth-heritage/plantations/red-sandal",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201954/earth-heritage/plantations/red-sandal.jpg",
+      "originalFileSize": 1211524,
+      "originalFileSizeFormatted": "1183.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/plantations/mahogany.jpg",
+      "cloudinaryFolder": "earth-heritage/plantations",
+      "publicId": "earth-heritage/plantations/mahogany",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201956/earth-heritage/plantations/mahogany.jpg",
+      "originalFileSize": 1192403,
+      "originalFileSizeFormatted": "1164.5 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/cta-landscape.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/cta-landscape",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg",
+      "originalFileSize": 1436796,
+      "originalFileSizeFormatted": "1403.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 2400,
+      "height": 1601,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js",
+        "data/farmManagementImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-06-continue.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/cta-landscape",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg",
+      "originalFileSize": 1436796,
+      "originalFileSizeFormatted": "1403.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 2400,
+      "height": 1601,
+      "format": "jpg",
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js"
+      ],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/landing/cta-landscape.jpg",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/managed-farmland/intro-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/managed-farmland",
+      "publicId": "earth-heritage/managed-farmland/intro-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg",
+      "originalFileSize": 1155163,
+      "originalFileSizeFormatted": "1128.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/managedFarmlandImages.js",
+        "data/projects.js",
+        "data/blogs.js",
+        "data/events.js",
+        "components/projects/ProjectDetailGallery.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-02-plan.jpg",
+      "cloudinaryFolder": "earth-heritage/managed-farmland",
+      "publicId": "earth-heritage/managed-farmland/intro-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg",
+      "originalFileSize": 1155163,
+      "originalFileSizeFormatted": "1128.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js",
+        "components/sections/home/HomeHowItWorks.js"
+      ],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/managed-farmland/intro-farmland.jpg",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/farm-management/people-and-land.jpg",
+      "cloudinaryFolder": "earth-heritage/farm-management",
+      "publicId": "earth-heritage/farm-management/people-and-land",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg",
+      "originalFileSize": 1101700,
+      "originalFileSizeFormatted": "1075.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/blogs.js",
+        "data/events.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-03-work.jpg",
+      "cloudinaryFolder": "earth-heritage/farm-management",
+      "publicId": "earth-heritage/farm-management/people-and-land",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg",
+      "originalFileSize": 1101700,
+      "originalFileSizeFormatted": "1075.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js",
+        "components/sections/home/HomeHowItWorks.js"
+      ],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/farm-management/people-and-land.jpg",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/founder-sathish-agastya.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/founder-sathish-agastya",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201961/earth-heritage/about/founder-sathish-agastya.jpg",
+      "originalFileSize": 380680,
+      "originalFileSizeFormatted": "371.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1080,
+      "height": 1350,
+      "format": "jpg",
+      "usageLocations": [
+        "data/aboutData.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/founder-sathish-agastya-hq.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/founder-sathish-agastya",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201961/earth-heritage/about/founder-sathish-agastya.jpg",
+      "originalFileSize": 380680,
+      "originalFileSizeFormatted": "371.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1080,
+      "height": 1350,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/about/founder-sathish-agastya.jpg",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/campaign/gandhi-jayanti-2026.jpg",
+      "cloudinaryFolder": "earth-heritage/campaign",
+      "publicId": "earth-heritage/campaign/gandhi-jayanti-2026",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791201962/earth-heritage/campaign/gandhi-jayanti-2026.jpg",
+      "originalFileSize": 181718,
+      "originalFileSizeFormatted": "177.5 KB",
+      "cloudinaryAssetExists": true,
+      "width": 819,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "components/ui/FloatingEnquiryButton.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ]
+}

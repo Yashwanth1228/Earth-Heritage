@@ -16,7 +16,7 @@ export const galleryProjects = [
     category: 'Managed Farmland',
     number: '01',
     coverImage: {
-      src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
       alt: 'Nairuthya Whispering Wood — Farmland Landscape & Entrance Portal'
     },
     images: [
@@ -24,7 +24,7 @@ export const galleryProjects = [
         id: 'nww-gal-01',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/gallery/nairuthya-01-entrance.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
         alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola',
         title: 'Grand Stone Steps & Temple Pergola',
         description:
@@ -108,7 +108,7 @@ export const galleryProjects = [
     category: 'Premium Farm Plots',
     number: '02',
     coverImage: {
-      src: '/images/projects/coconut-garden-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201949/earth-heritage/projects/coconut-garden-hero.jpg',
       alt: 'Coconut Garden — Premium Farm Plots in Bidadi'
     },
     images: [
@@ -116,7 +116,7 @@ export const galleryProjects = [
         id: 'cg-gal-01',
         projectId: 'coconut-garden',
         projectName: 'Coconut Garden',
-        src: '/images/projects/coconut-garden/entrance-gate.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201948/earth-heritage/projects/coconut-garden/entrance-gate.jpg',
         alt: 'Coconut Garden — Grand Entrance Gate & Perimeter Wall',
         title: 'Grand Entrance Gate & Boundary Access',
         description:
@@ -127,7 +127,7 @@ export const galleryProjects = [
         id: 'cg-gal-02',
         projectId: 'coconut-garden',
         projectName: 'Coconut Garden',
-        src: '/images/projects/coconut-garden/internal-road-layout.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg',
         alt: 'Coconut Garden — Wide Internal Road & Demarcated Plots',
         title: 'Internal Road & Layout Network',
         description:
@@ -138,7 +138,7 @@ export const galleryProjects = [
         id: 'cg-gal-03',
         projectId: 'coconut-garden',
         projectName: 'Coconut Garden',
-        src: '/images/projects/coconut-garden/plot-demarcation-10.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203228/earth-heritage/projects/coconut-garden/plot-demarcation-10.jpg',
         alt: 'Coconut Garden — Plot Demarcation & Established Trees',
         title: 'Individual Plot Demarcation',
         description:
@@ -149,7 +149,7 @@ export const galleryProjects = [
         id: 'cg-gal-04',
         projectId: 'coconut-garden',
         projectName: 'Coconut Garden',
-        src: '/images/projects/coconut-garden/farm-landscape-groves.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203230/earth-heritage/projects/coconut-garden/farm-landscape-groves.jpg',
         alt: 'Coconut Garden — Cultivated Farm Land & Groves',
         title: 'Cultivated Farm Land & Coconut Groves',
         description:
@@ -160,7 +160,7 @@ export const galleryProjects = [
         id: 'cg-gal-05',
         projectId: 'coconut-garden',
         projectName: 'Coconut Garden',
-        src: '/images/projects/coconut-garden/boundary-plantation-wall.png',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203224/earth-heritage/projects/coconut-garden/boundary-plantation-wall.png',
         alt: 'Coconut Garden — Perimeter Compound Wall & Plantation Line',
         title: 'Compound Wall & Plantation Green Cover',
         description:
@@ -171,7 +171,7 @@ export const galleryProjects = [
         id: 'cg-gal-06',
         projectId: 'coconut-garden',
         projectName: 'Coconut Garden',
-        src: '/images/projects/coconut-garden-hero.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201949/earth-heritage/projects/coconut-garden-hero.jpg',
         alt: 'Coconut Garden — Open Farmland Plot Vista in Bidadi',
         title: 'Open Farmland Plot Vista',
         description:

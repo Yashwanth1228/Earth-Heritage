@@ -30,7 +30,7 @@ export const howItWorksData = {
       title: 'Understand the Land',
       eyebrow: 'STAGE 01 · APPRAISAL & NEEDS',
       copy: 'Begin by understanding the farmland, its needs, and the activities required to care for it.',
-      image: '/images/how-it-works/stage-01-understand.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg',
       alt: 'Expansive natural agricultural landscape bathed in dawn light, establishing deep connection with the land',
       highlights: ['Appraising the land', 'Identifying specific farm needs', 'Establishing management priorities']
     },
@@ -40,7 +40,7 @@ export const howItWorksData = {
       title: 'Plan the Farm',
       eyebrow: 'STAGE 02 · STRATEGIC PLANNING',
       copy: 'Farm activities are planned around the needs of the land, including cultivation, maintenance, and the work required to keep operations moving.',
-      image: '/images/how-it-works/stage-02-plan.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Systematic crop rows and orderly agricultural field preparation under natural daylight',
       highlights: ['Cultivation planning', 'Operational scheduling', 'Maintenance roadmap']
     },
@@ -50,7 +50,7 @@ export const howItWorksData = {
       title: 'Manage the Work',
       eyebrow: 'STAGE 03 · FIELD COORDINATION',
       copy: 'Earth Heritage coordinates the people, manpower, and day-to-day activities required for ongoing farm care.',
-      image: '/images/how-it-works/stage-03-work.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
       alt: 'Agricultural field specialists tending young orchard trees and managing farm operations',
       highlights: ['Experienced manpower', 'Daily task coordination', 'On-ground operational supervision']
     },
@@ -60,7 +60,7 @@ export const howItWorksData = {
       title: 'Cultivate & Care',
       eyebrow: 'STAGE 04 · AGRONOMIC STEWARDSHIP',
       copy: 'Ongoing farm activities include cultivation, maintenance, and the day-to-day care required to keep the farmland actively managed.',
-      image: '/images/how-it-works/stage-04-cultivate.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg',
       alt: 'Vibrant organic seedlings emerging from nutrient-rich dark crumbly soil with morning dew',
       highlights: ['Active plant cultivation', 'Routine soil and canopy care', 'Ongoing farm maintenance']
     },
@@ -70,7 +70,7 @@ export const howItWorksData = {
       title: 'Manage the Harvest',
       eyebrow: 'STAGE 05 · HARVEST PROCESS',
       copy: 'Harvest activities are coordinated as part of the broader farm management process, alongside the ongoing care of the land.',
-      image: '/images/how-it-works/stage-05-harvest.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
       alt: 'Freshly harvested agricultural produce gathered with systematic care across cultivated acreage',
       highlights: ['Seasonal coordination', 'Harvest collection', 'Produce handover to landowners']
     },
@@ -80,7 +80,7 @@ export const howItWorksData = {
       title: 'Continue the Care',
       eyebrow: 'STAGE 06 · ENDURING STEWARDSHIP',
       copy: 'Farm management continues through ongoing coordination, maintenance, cultivation, and attention to the needs of the land.',
-      image: '/images/how-it-works/stage-06-continue.jpg',
+      image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201958/earth-heritage/landing/cta-landscape.jpg',
       alt: 'Peaceful twilight farmland panorama reflecting enduring generational care and continuity',
       highlights: ['Long-term continuity', 'Seasonal cycle repetition', 'Sustained land health']
     }

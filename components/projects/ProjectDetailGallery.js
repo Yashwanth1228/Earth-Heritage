@@ -23,19 +23,19 @@ export default function ProjectDetailGallery({ project }) {
   // Fallback curated temporary demonstration images from existing repository assets
   const fallbackGallery = [
     {
-      src: project.coverImage?.src || project.heroImage?.src || '/images/managed-farmland/intro-farmland.jpg',
+      src: project.coverImage?.src || project.heroImage?.src || 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: `${name} — Farmland landscape overview`,
       caption: 'Agricultural Landscape & Plantation Layout (Concept Demo Visual)',
       isLead: true
     },
     {
-      src: '/images/managed-farmland/core-proposition.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204923/earth-heritage/managed-farmland/core-proposition.jpg',
       alt: `${name} — Canopy & field boundaries`,
       caption: 'Agroforestry Canopy & Boundary Demarcation (Concept Demo Visual)',
       isLead: false
     },
     {
-      src: '/images/managed-farmland/nature-responsibility.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204922/earth-heritage/managed-farmland/nature-responsibility.jpg',
       alt: `${name} — Agronomic field operations`,
       caption: 'Natural Ecological Flora & Field Stewardship (Concept Demo Visual)',
       isLead: false

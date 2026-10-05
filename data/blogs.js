@@ -27,7 +27,7 @@ export const blogs = [
       role: 'Agricultural Operations & Land Care'
     },
     coverImage: {
-      src: '/images/managed-farmland/intro-farmland.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
       alt: 'Orderly rows of managed agricultural acreage in morning light',
       caption: 'Topographical agricultural layout across managed estate parcels'
     },
@@ -95,7 +95,7 @@ export const blogs = [
       role: 'Soil Science & Watershed Management'
     },
     coverImage: {
-      src: '/images/farm-management/people-and-land.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
       alt: 'Agronomy specialists and landowners inspecting healthy crops and soil structure',
       caption: 'Field examination of microbial soil vitality and moisture retention'
     },
@@ -163,7 +163,7 @@ export const blogs = [
       role: 'Land Verification & Governance'
     },
     coverImage: {
-      src: '/images/how-it-works/responsible-care-panorama.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg',
       alt: 'Panoramic vista of managed acreage during an afternoon farm review',
       caption: 'Carefully surveyed estate boundaries and internal access corridors'
     },

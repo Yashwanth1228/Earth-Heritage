@@ -1,0 +1,362 @@
+{
+  "version": "1.0.0",
+  "batch": 3,
+  "executedAt": "2026-10-05T12:28:02.597Z",
+  "summary": {
+    "totalCanonicalUploads": 14,
+    "totalLocalPathsMapped": 17,
+    "foldersCovered": [
+      "earth-heritage/projects/coconut-garden",
+      "earth-heritage/plantations",
+      "earth-heritage/gallery",
+      "earth-heritage/amenities",
+      "earth-heritage/how-it-works",
+      "earth-heritage/landing"
+    ],
+    "totalOriginalBytes": 14790645
+  },
+  "migratedAssets": [
+    {
+      "localPath": "public/images/projects/coconut-garden/boundary-plantation-wall.png",
+      "cloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "publicId": "earth-heritage/projects/coconut-garden/boundary-plantation-wall",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203224/earth-heritage/projects/coconut-garden/boundary-plantation-wall.png",
+      "originalFileSize": 1009068,
+      "originalFileSizeFormatted": "985.4 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 461,
+      "format": "png",
+      "usageLocations": [
+        "data/projects.js",
+        "data/galleryImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/plot-demarcation-10.jpg",
+      "cloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "publicId": "earth-heritage/projects/coconut-garden/plot-demarcation-10",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203228/earth-heritage/projects/coconut-garden/plot-demarcation-10.jpg",
+      "originalFileSize": 544728,
+      "originalFileSizeFormatted": "532.0 KB",
+      "cloudinaryAssetExists": true,
+      "width": 768,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js",
+        "data/galleryImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/coconut-garden/farm-landscape-groves.jpg",
+      "cloudinaryFolder": "earth-heritage/projects/coconut-garden",
+      "publicId": "earth-heritage/projects/coconut-garden/farm-landscape-groves",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203230/earth-heritage/projects/coconut-garden/farm-landscape-groves.jpg",
+      "originalFileSize": 398937,
+      "originalFileSizeFormatted": "389.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 576,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js",
+        "data/galleryImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/plantations/coconut.jpg",
+      "cloudinaryFolder": "earth-heritage/plantations",
+      "publicId": "earth-heritage/plantations/coconut",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203240/earth-heritage/plantations/coconut.jpg",
+      "originalFileSize": 1117725,
+      "originalFileSizeFormatted": "1091.5 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/plantations/areca-nut.jpg",
+      "cloudinaryFolder": "earth-heritage/plantations",
+      "publicId": "earth-heritage/plantations/areca-nut",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203253/earth-heritage/plantations/areca-nut.jpg",
+      "originalFileSize": 1113271,
+      "originalFileSizeFormatted": "1087.2 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/plantations/seasonal-fruits.jpg",
+      "cloudinaryFolder": "earth-heritage/plantations",
+      "publicId": "earth-heritage/plantations/seasonal-fruits",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203256/earth-heritage/plantations/seasonal-fruits.jpg",
+      "originalFileSize": 1092895,
+      "originalFileSizeFormatted": "1067.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/plantations/teak-wood.jpg",
+      "cloudinaryFolder": "earth-heritage/plantations",
+      "publicId": "earth-heritage/plantations/teak-wood",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203260/earth-heritage/plantations/teak-wood.jpg",
+      "originalFileSize": 1012547,
+      "originalFileSizeFormatted": "988.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 1024,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/hero-feature.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/hero-feature",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg",
+      "originalFileSize": 845843,
+      "originalFileSizeFormatted": "826.0 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "Group 8",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-01-understand.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/hero-feature",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg",
+      "originalFileSize": 845843,
+      "originalFileSizeFormatted": "826.0 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js",
+        "components/sections/home/HomeHowItWorks.js"
+      ],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/gallery/hero-feature.jpg",
+      "duplicateGroup": "Group 8",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/cultivation-detail.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/cultivation-detail",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg",
+      "originalFileSize": 830583,
+      "originalFileSizeFormatted": "811.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 896,
+      "height": 1200,
+      "format": "jpg",
+      "usageLocations": [
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "Group 7",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-04-cultivate.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/cultivation-detail",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg",
+      "originalFileSize": 830583,
+      "originalFileSizeFormatted": "811.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 896,
+      "height": 1200,
+      "format": "jpg",
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js",
+        "components/sections/home/HomeHowItWorks.js"
+      ],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/gallery/cultivation-detail.jpg",
+      "duplicateGroup": "Group 7",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/children-play-area.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/children-play-area",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203273/earth-heritage/amenities/children-play-area.jpg",
+      "originalFileSize": 1261161,
+      "originalFileSizeFormatted": "1231.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/cottages.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/cottages",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203277/earth-heritage/amenities/cottages.jpg",
+      "originalFileSize": 1259183,
+      "originalFileSizeFormatted": "1229.7 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/amenities/yoga-meditation.jpg",
+      "cloudinaryFolder": "earth-heritage/amenities",
+      "publicId": "earth-heritage/amenities/yoga-meditation",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203279/earth-heritage/amenities/yoga-meditation.jpg",
+      "originalFileSize": 1212687,
+      "originalFileSizeFormatted": "1184.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/responsible-care-panorama.jpg",
+      "cloudinaryFolder": "earth-heritage/how-it-works",
+      "publicId": "earth-heritage/how-it-works/responsible-care-panorama",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg",
+      "originalFileSize": 1057775,
+      "originalFileSizeFormatted": "1033.0 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/blogs.js",
+        "data/events.js",
+        "data/howItWorksImages.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-06-harvest.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-06-harvest",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg",
+      "originalFileSize": 178908,
+      "originalFileSizeFormatted": "174.7 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1000,
+      "height": 667,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "Group 11",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/how-it-works/stage-05-harvest.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-06-harvest",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg",
+      "originalFileSize": 178908,
+      "originalFileSizeFormatted": "174.7 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1000,
+      "height": 667,
+      "format": "jpg",
+      "usageLocations": [
+        "data/howItWorksData.js",
+        "data/howItWorksImages.js",
+        "components/sections/home/HomeHowItWorks.js"
+      ],
+      "isCanonical": false,
+      "reusedExistingAsset": true,
+      "canonicalTarget": "public/images/landing/manage-06-harvest.jpg",
+      "duplicateGroup": "Group 11",
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ]
+}

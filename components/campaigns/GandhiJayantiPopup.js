@@ -168,7 +168,7 @@ export default function GandhiJayantiPopup() {
                   }}
                 >
                   <Image
-                    src="/images/campaign/gandhi-jayanti-2026.jpg"
+                    src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791201962/earth-heritage/campaign/gandhi-jayanti-2026.jpg"
                     alt="Gandhi Jayanti — Earth Heritage — This Gandhi Jayanti, let's nurture the land for a better tomorrow. Thinking About Owning Farmland? Let's Talk? Free Farmland Consultation +91 9902096969"
                     width={819}
                     height={1024}

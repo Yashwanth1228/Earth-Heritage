@@ -11,7 +11,7 @@
 export const aboutImages = {
   intro: {
     id: 'about-intro-farmland',
-    src: '/images/about/intro-farmland.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204925/earth-heritage/about/intro-farmland.jpg',
     alt: 'Vibrant managed farmland with lush cultivated crop rows, young orchard trees, and fertile dark earth under morning light',
     usage: 'Introduction — Large high-quality hero farmland image below editorial title',
     temporary: true,
