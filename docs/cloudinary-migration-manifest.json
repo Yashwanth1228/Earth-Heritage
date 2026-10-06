@@ -10,11 +10,17 @@
     "totalReusedAssetsAcrossMultipleLocations": 36,
     "totalCandidateSizeBytes": 60099035,
     "totalKeepLocalSizeBytes": 1607645,
-    "pilotMigratedCount": 54,
-    "notYetMigratedCount": 21,
+    "pilotMigratedCount": 75,
+    "notYetMigratedCount": 0,
     "batch2MigratedCount": 15,
     "batch3MigratedCount": 17,
-    "batch4MigratedCount": 14
+    "batch4MigratedCount": 14,
+    "batch5MigratedCount": 13,
+    "batch6MigratedCount": 8,
+    "totalCanonicalUploads": 66,
+    "totalConsolidatedDuplicates": 9,
+    "migrationCompleted": true,
+    "migrationCompletedAt": "2026-10-06T05:23:38.326Z"
   },
   "keepLocal": [
     {
@@ -290,7 +296,10 @@
       "proposedPublicId": "philosophy-farmland",
       "targetCloudinaryPath": "earth-heritage/about/philosophy-farmland",
       "sha256": "75be44428ab9059c3c426c0d618828fa4386fdb758d9a8710c6167205b04dff7",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263921/earth-heritage/about/philosophy-farmland.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/about/story-farmland.jpg",
@@ -305,7 +314,10 @@
       "proposedPublicId": "story-farmland",
       "targetCloudinaryPath": "earth-heritage/about/story-farmland",
       "sha256": "ab1e9fcbb99d9523097927eaa175b9d1eea00cb0c49b403af5f0b38454a6bd58",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/about/story-farmland.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/amenities/camping-area.jpg",
@@ -733,7 +745,10 @@
       "proposedPublicId": "nairuthya-02-stone-terraces",
       "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-02-stone-terraces",
       "sha256": "96d9d3072d8ac9f48e7483dd66838818807939566736d26488cca8399c8b601d",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/gallery/nairuthya-02-stone-terraces.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/gallery/nairuthya-03-plots-irrigation.jpg",
@@ -751,7 +766,10 @@
       "proposedPublicId": "nairuthya-03-plots-irrigation",
       "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-03-plots-irrigation",
       "sha256": "ae91bf8c18865a91aeed03f3de11058502f2fca0961791f75213ad389330193d",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262714/earth-heritage/gallery/nairuthya-03-plots-irrigation.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/gallery/nairuthya-04-children-play.jpg",
@@ -769,7 +787,10 @@
       "proposedPublicId": "nairuthya-04-children-play",
       "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-04-children-play",
       "sha256": "6ea8026a5f04ce847708786f6f9ec7c4a96f40324ccc3cf0492990db661fa8a3",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/gallery/nairuthya-04-children-play.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/gallery/nairuthya-05-elevated-vista.jpg",
@@ -787,7 +808,10 @@
       "proposedPublicId": "nairuthya-05-elevated-vista",
       "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-05-elevated-vista",
       "sha256": "23366d1eb4b28c05a56d425f10cdbb68f6ba8dbfbe06bce1e4fb2ae2c6c1d0e7",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262720/earth-heritage/gallery/nairuthya-05-elevated-vista.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/gallery/nairuthya-06-outdoor-fitness.jpg",
@@ -805,7 +829,10 @@
       "proposedPublicId": "nairuthya-06-outdoor-fitness",
       "targetCloudinaryPath": "earth-heritage/gallery/nairuthya-06-outdoor-fitness",
       "sha256": "f259ce12a471a2d27c0c0aa14772ceccf8bc752380d0568474ac9582067abb2d",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262722/earth-heritage/gallery/nairuthya-06-outdoor-fitness.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/gallery/nature-canopy.jpg",
@@ -1025,7 +1052,10 @@
       "proposedPublicId": "hero-family-farmland",
       "targetCloudinaryPath": "earth-heritage/landing/hero-family-farmland",
       "sha256": "1a81af4bf751b2bd202f3b825ca6f9d75bc7c91dd2e3521c3093ccc94d3e4ad9",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/landing/hero-family-farmland.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/landing/hero-farmland-estate.jpg",
@@ -1042,7 +1072,10 @@
       "proposedPublicId": "hero-farmland-estate",
       "targetCloudinaryPath": "earth-heritage/landing/hero-farmland-estate",
       "sha256": "fb1a347bcf5db8ac4a92f03ae9575fbf9719e278e7d75df00138a22930c91f65",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262749/earth-heritage/landing/hero-farmland-estate.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/hero-landscape.jpg",
@@ -1059,7 +1092,10 @@
       "proposedPublicId": "hero-landscape",
       "targetCloudinaryPath": "earth-heritage/landing/hero-landscape",
       "sha256": "b0a8223a88e96af90a2e3d14c709a4a9b8d50ec249ceda074765f59ef3e6b442",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262751/earth-heritage/landing/hero-landscape.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/hero-managed-crops.jpg",
@@ -1095,7 +1131,10 @@
       "proposedPublicId": "hero-plantation-walk",
       "targetCloudinaryPath": "earth-heritage/landing/hero-plantation-walk",
       "sha256": "a8f57942ebd2d4dee9df5c716c632c68897677b0a2f0b12ebca0965898f367a3",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263924/earth-heritage/landing/hero-plantation-walk.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/landing/hero-villa-retreat.jpg",
@@ -1112,7 +1151,10 @@
       "proposedPublicId": "hero-villa-retreat",
       "targetCloudinaryPath": "earth-heritage/landing/hero-villa-retreat",
       "sha256": "16c8ff342cca4523b9e0bb867a2e2ac8805dbb6cddd51d70729b99418e6dbe06",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262746/earth-heritage/landing/hero-villa-retreat.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/manage-01-people.jpg",
@@ -1156,7 +1198,10 @@
       "proposedPublicId": "manage-02-crop",
       "targetCloudinaryPath": "earth-heritage/landing/manage-02-crop",
       "sha256": "adc5ec34abffbec129ad71b15df4746e036946e0a1bb5d6f6e26b13ed0cfd83b",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/manage-03-cultivation.jpg",
@@ -1176,7 +1221,10 @@
       "proposedPublicId": "manage-03-cultivation",
       "targetCloudinaryPath": "earth-heritage/landing/manage-03-cultivation",
       "sha256": "c3a0ed8ac3de79eba9e834380b01a97325d9a48e4ae04b2d1ed60945970a9599",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262725/earth-heritage/landing/manage-03-cultivation.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/manage-04-care.jpg",
@@ -1195,7 +1243,10 @@
       "proposedPublicId": "manage-04-care",
       "targetCloudinaryPath": "earth-heritage/landing/manage-04-care",
       "sha256": "204bbcc1bc0d10ed0af527a4dc5d014b1c26927d57b5fa29a27af793089d9836",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262732/earth-heritage/landing/manage-04-care.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/manage-05-operations.jpg",
@@ -1214,7 +1265,10 @@
       "proposedPublicId": "manage-05-operations",
       "targetCloudinaryPath": "earth-heritage/landing/manage-05-operations",
       "sha256": "a2dc8b374e5011a02497e8ae8ae3a5d1e58ffac12b41790335039386bc5cd3e6",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262733/earth-heritage/landing/manage-05-operations.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/manage-06-harvest.jpg",
@@ -1255,7 +1309,10 @@
       "proposedPublicId": "philosophy-panorama",
       "targetCloudinaryPath": "earth-heritage/landing/philosophy-panorama",
       "sha256": "2a6f8dcd190fe05cf463d695b204ee679223c2f59d68a5209ca48a7864e40f2e",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 5 (Step 11)"
     },
     {
       "localPath": "public/images/landing/principles-land.jpg",
@@ -1292,7 +1349,10 @@
       "proposedPublicId": "problem-land",
       "targetCloudinaryPath": "earth-heritage/landing/problem-land",
       "sha256": "0b97cf5e294ede07f147821ccece441a49621bc01ed77c9b2c05dbe76c0e7d19",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263925/earth-heritage/landing/problem-land.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/landing/solution-management.jpg",
@@ -1307,7 +1367,10 @@
       "proposedPublicId": "solution-management",
       "targetCloudinaryPath": "earth-heritage/landing/solution-management",
       "sha256": "44e1ebc0aa4e895ddc028cd0bd42a644e3a293472b59b77a81779cfc893645d1",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263926/earth-heritage/landing/solution-management.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/landing/statement-landscape.jpg",
@@ -1324,7 +1387,10 @@
       "proposedPublicId": "statement-landscape",
       "targetCloudinaryPath": "earth-heritage/landing/statement-landscape",
       "sha256": "47da0d6bd0b99cde2147060c8e7cfc15fab5cf71621cda923205ec937c4032f0",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263927/earth-heritage/landing/statement-landscape.jpg",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/managed-farmland/core-proposition.jpg",
@@ -1656,7 +1722,10 @@
       "proposedPublicId": "nairuthya-project-overview",
       "targetCloudinaryPath": "earth-heritage/projects/nairuthya-project-overview",
       "sha256": "8896eba8d03440ac1fba58a057a0e833928de4ff56ac33af08ab15da97c0299b",
-      "migrationStatus": "NOT_YET_MIGRATED"
+      "migrationStatus": "PILOT_MIGRATED",
+      "cloudinarySecureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263928/earth-heritage/projects/nairuthya-project-overview.png",
+      "isCanonical": true,
+      "migrationBatch": "Batch 6 (Step 12 - FINAL)"
     },
     {
       "localPath": "public/images/projects/nairuthya-whispering-wood-hero.jpg",

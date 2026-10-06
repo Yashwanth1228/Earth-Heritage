@@ -31,7 +31,7 @@ export default function GalleryPhilosophy() {
           className="relative w-full h-full"
         >
           <Image
-            src="/images/landing/philosophy-panorama.jpg"
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg"
             alt="Panoramic landscape of misty hills and fertile agricultural land"
             fill
             sizes="100vw"

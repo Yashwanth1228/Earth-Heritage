@@ -1,0 +1,554 @@
+{
+  "version": "1.0.0",
+  "batch": 6,
+  "isFinalBatch": true,
+  "executedAt": "2026-10-06T05:18:49.920Z",
+  "status": "COMPLETED",
+  "baseline": {
+    "canonicalCloudinaryUploadsBefore": 58,
+    "migratedLocalPathsBefore": 67,
+    "remainingCandidatesBefore": 8,
+    "keepLocalCount": 16,
+    "totalScopeAssets": 91
+  },
+  "finalCandidates": [
+    {
+      "localPath": "public/images/about/philosophy-farmland.jpg",
+      "category": "about",
+      "fileSize": 983717,
+      "fileSizeFormatted": "960.7 KB",
+      "publicId": "earth-heritage/about/philosophy-farmland",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/about/story-farmland.jpg",
+      "category": "about",
+      "fileSize": 1243881,
+      "fileSizeFormatted": "1214.7 KB",
+      "publicId": "earth-heritage/about/story-farmland",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/landing/hero-family-farmland.jpg",
+      "category": "landing",
+      "fileSize": 1132901,
+      "fileSizeFormatted": "1106.3 KB",
+      "publicId": "earth-heritage/landing/hero-family-farmland",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/landing/hero-plantation-walk.jpg",
+      "category": "landing",
+      "fileSize": 1301954,
+      "fileSizeFormatted": "1271.4 KB",
+      "publicId": "earth-heritage/landing/hero-plantation-walk",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/landing/problem-land.jpg",
+      "category": "landing",
+      "fileSize": 350786,
+      "fileSizeFormatted": "342.6 KB",
+      "publicId": "earth-heritage/landing/problem-land",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/landing/solution-management.jpg",
+      "category": "landing",
+      "fileSize": 865352,
+      "fileSizeFormatted": "845.1 KB",
+      "publicId": "earth-heritage/landing/solution-management",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/landing/statement-landscape.jpg",
+      "category": "landing",
+      "fileSize": 566389,
+      "fileSizeFormatted": "553.1 KB",
+      "publicId": "earth-heritage/landing/statement-landscape",
+      "isDuplicate": false
+    },
+    {
+      "localPath": "public/images/projects/nairuthya-project-overview.png",
+      "category": "projects",
+      "fileSize": 342407,
+      "fileSizeFormatted": "334.4 KB",
+      "publicId": "earth-heritage/projects/nairuthya-project-overview",
+      "isDuplicate": false
+    }
+  ],
+  "uploadedAssets": [
+    {
+      "localPath": "public/images/about/philosophy-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/philosophy-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263921/earth-heritage/about/philosophy-farmland.jpg",
+      "originalFileSize": 983717,
+      "originalFileSizeFormatted": "960.7 KB",
+      "hash": "75be44428ab9059c3c426c0d618828fa4386fdb758d9a8710c6167205b04dff7",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/story-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/story-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/about/story-farmland.jpg",
+      "originalFileSize": 1243881,
+      "originalFileSizeFormatted": "1214.7 KB",
+      "hash": "ab1e9fcbb99d9523097927eaa175b9d1eea00cb0c49b403af5f0b38454a6bd58",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-family-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-family-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/landing/hero-family-farmland.jpg",
+      "originalFileSize": 1132901,
+      "originalFileSizeFormatted": "1106.3 KB",
+      "hash": "1a81af4bf751b2bd202f3b825ca6f9d75bc7c91dd2e3521c3093ccc94d3e4ad9",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-plantation-walk.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-plantation-walk",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263924/earth-heritage/landing/hero-plantation-walk.jpg",
+      "originalFileSize": 1301954,
+      "originalFileSizeFormatted": "1271.4 KB",
+      "hash": "a8f57942ebd2d4dee9df5c716c632c68897677b0a2f0b12ebca0965898f367a3",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/problem-land.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/problem-land",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263925/earth-heritage/landing/problem-land.jpg",
+      "originalFileSize": 350786,
+      "originalFileSizeFormatted": "342.6 KB",
+      "hash": "0b97cf5e294ede07f147821ccece441a49621bc01ed77c9b2c05dbe76c0e7d19",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 1066,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/solution-management.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/solution-management",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263926/earth-heritage/landing/solution-management.jpg",
+      "originalFileSize": 865352,
+      "originalFileSizeFormatted": "845.1 KB",
+      "hash": "44e1ebc0aa4e895ddc028cd0bd42a644e3a293472b59b77a81779cfc893645d1",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 2400,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/statement-landscape.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/statement-landscape",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263927/earth-heritage/landing/statement-landscape.jpg",
+      "originalFileSize": 566389,
+      "originalFileSizeFormatted": "553.1 KB",
+      "hash": "47da0d6bd0b99cde2147060c8e7cfc15fab5cf71621cda923205ec937c4032f0",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 1104,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/nairuthya-project-overview.png",
+      "cloudinaryFolder": "earth-heritage/projects",
+      "publicId": "earth-heritage/projects/nairuthya-project-overview",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263928/earth-heritage/projects/nairuthya-project-overview.png",
+      "originalFileSize": 342407,
+      "originalFileSizeFormatted": "334.4 KB",
+      "hash": "8896eba8d03440ac1fba58a057a0e833928de4ff56ac33af08ab15da97c0299b",
+      "cloudinaryAssetExists": true,
+      "width": 337,
+      "height": 471,
+      "format": "png",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ],
+  "reusedDuplicateAssets": [],
+  "duplicateMappings": [],
+  "localPathsCovered": [
+    "public/images/about/philosophy-farmland.jpg",
+    "public/images/about/story-farmland.jpg",
+    "public/images/landing/hero-family-farmland.jpg",
+    "public/images/landing/hero-plantation-walk.jpg",
+    "public/images/landing/problem-land.jpg",
+    "public/images/landing/solution-management.jpg",
+    "public/images/landing/statement-landscape.jpg",
+    "public/images/projects/nairuthya-project-overview.png"
+  ],
+  "summary": {
+    "totalCanonicalUploads": 8,
+    "totalLocalPathsMapped": 8,
+    "foldersCovered": [
+      "earth-heritage/about",
+      "earth-heritage/landing",
+      "earth-heritage/projects"
+    ],
+    "totalOriginalBytes": 6787387
+  },
+  "applicationFilesChanged": [
+    {
+      "file": "data/landingImages.js",
+      "description": "Updated statement-landscape and problem-land image references to Cloudinary secure URLs; set temporary: false.",
+      "referencesUpdated": 2
+    },
+    {
+      "file": "data/galleryImages.js",
+      "description": "Updated nairuthya-whispering-wood-hero.jpg reference at line 93 to its canonical Cloudinary secure URL, discovered during full repository audit.",
+      "referencesUpdated": 1
+    }
+  ],
+  "repositoryWideAudit": {
+    "totalCodeReferencesToImages": 9,
+    "keepLocalReferences": 9,
+    "unmigratedCandidateReferences": 0,
+    "otherLocalReferences": 0,
+    "auditStatus": "PASSED_ZERO_UNMIGRATED_CANDIDATE_REFERENCES"
+  },
+  "localPreservation": {
+    "localOriginalsPreserved": true,
+    "filesDeleted": 0,
+    "filesMoved": 0,
+    "filesRenamed": 0,
+    "filesCompressedInPlace": 0,
+    "unrelatedCodeChanged": 0
+  },
+  "cloudinaryDeliveryVerification": {
+    "totalVerified": 8,
+    "passedHttp200": 8,
+    "failedHttp": 0
+  },
+  "routeVerification": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/about",
+      "status": 200
+    },
+    {
+      "route": "/projects",
+      "status": 200
+    },
+    {
+      "route": "/projects/coconut-garden",
+      "status": 200
+    },
+    {
+      "route": "/projects/nairuthya-whispering-wood",
+      "status": 200
+    },
+    {
+      "route": "/managed-farmland",
+      "status": 200
+    },
+    {
+      "route": "/farm-management",
+      "status": 200
+    },
+    {
+      "route": "/how-it-works",
+      "status": 200
+    },
+    {
+      "route": "/gallery",
+      "status": 200
+    },
+    {
+      "route": "/blogs",
+      "status": 200
+    },
+    {
+      "route": "/events",
+      "status": 200
+    },
+    {
+      "route": "/lp/managed-farmland",
+      "status": 200
+    },
+    {
+      "route": "/cloudinary-test",
+      "status": 200
+    }
+  ],
+  "imageOptimizationVerification": [
+    {
+      "name": "Statement Landscape (Landing - JPG 566 KB)",
+      "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263927/earth-heritage/landing/statement-landscape.jpg",
+      "status": 200,
+      "contentType": "image/avif",
+      "originalBytes": 566389,
+      "optimizedBytes": 99117,
+      "reductionPercent": "82.5%"
+    },
+    {
+      "name": "Problem Land (Landing - JPG 351 KB)",
+      "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263925/earth-heritage/landing/problem-land.jpg",
+      "status": 200,
+      "contentType": "image/avif",
+      "originalBytes": 350786,
+      "optimizedBytes": 56334,
+      "reductionPercent": "83.9%"
+    },
+    {
+      "name": "Philosophy Farmland (About - JPG 984 KB)",
+      "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263921/earth-heritage/about/philosophy-farmland.jpg",
+      "status": 200,
+      "contentType": "image/avif",
+      "originalBytes": 983717,
+      "optimizedBytes": 55881,
+      "reductionPercent": "94.3%"
+    },
+    {
+      "name": "Story Farmland (About - JPG 1.24 MB)",
+      "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/about/story-farmland.jpg",
+      "status": 200,
+      "contentType": "image/avif",
+      "originalBytes": 1243881,
+      "optimizedBytes": 123651,
+      "reductionPercent": "90.1%"
+    },
+    {
+      "name": "Nairuthya Project Overview (Projects - PNG 342 KB)",
+      "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263928/earth-heritage/projects/nairuthya-project-overview.png",
+      "status": 200,
+      "contentType": "image/avif",
+      "originalBytes": 342407,
+      "optimizedBytes": 13318,
+      "reductionPercent": "96.1%"
+    }
+  ],
+  "eslintVerification": {
+    "status": "PASSED",
+    "errors": 0,
+    "warnings": 0
+  },
+  "productionBuildVerification": {
+    "status": "PASSED",
+    "exitCode": 0,
+    "routesCompiled": 29
+  },
+  "finalMigrationState": {
+    "canonicalCloudinaryUploads": 66,
+    "consolidatedDuplicatePaths": 9,
+    "totalLocalPathsCovered": 75,
+    "remainingCandidates": 0,
+    "keepLocalAssets": 16,
+    "totalAssetsInScope": 91,
+    "migrationCompletionPercentage": "100%"
+  },
+  "migratedAssets": [
+    {
+      "localPath": "public/images/about/philosophy-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/philosophy-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263921/earth-heritage/about/philosophy-farmland.jpg",
+      "originalFileSize": 983717,
+      "originalFileSizeFormatted": "960.7 KB",
+      "hash": "75be44428ab9059c3c426c0d618828fa4386fdb758d9a8710c6167205b04dff7",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/about/story-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/about",
+      "publicId": "earth-heritage/about/story-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/about/story-farmland.jpg",
+      "originalFileSize": 1243881,
+      "originalFileSizeFormatted": "1214.7 KB",
+      "hash": "ab1e9fcbb99d9523097927eaa175b9d1eea00cb0c49b403af5f0b38454a6bd58",
+      "cloudinaryAssetExists": true,
+      "width": 1200,
+      "height": 896,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-family-farmland.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-family-farmland",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/landing/hero-family-farmland.jpg",
+      "originalFileSize": 1132901,
+      "originalFileSizeFormatted": "1106.3 KB",
+      "hash": "1a81af4bf751b2bd202f3b825ca6f9d75bc7c91dd2e3521c3093ccc94d3e4ad9",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-plantation-walk.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-plantation-walk",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263924/earth-heritage/landing/hero-plantation-walk.jpg",
+      "originalFileSize": 1301954,
+      "originalFileSizeFormatted": "1271.4 KB",
+      "hash": "a8f57942ebd2d4dee9df5c716c632c68897677b0a2f0b12ebca0965898f367a3",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/problem-land.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/problem-land",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263925/earth-heritage/landing/problem-land.jpg",
+      "originalFileSize": 350786,
+      "originalFileSizeFormatted": "342.6 KB",
+      "hash": "0b97cf5e294ede07f147821ccece441a49621bc01ed77c9b2c05dbe76c0e7d19",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 1066,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/solution-management.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/solution-management",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263926/earth-heritage/landing/solution-management.jpg",
+      "originalFileSize": 865352,
+      "originalFileSizeFormatted": "845.1 KB",
+      "hash": "44e1ebc0aa4e895ddc028cd0bd42a644e3a293472b59b77a81779cfc893645d1",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 2400,
+      "format": "jpg",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/statement-landscape.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/statement-landscape",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263927/earth-heritage/landing/statement-landscape.jpg",
+      "originalFileSize": 566389,
+      "originalFileSizeFormatted": "553.1 KB",
+      "hash": "47da0d6bd0b99cde2147060c8e7cfc15fab5cf71621cda923205ec937c4032f0",
+      "cloudinaryAssetExists": true,
+      "width": 1600,
+      "height": 1104,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/projects/nairuthya-project-overview.png",
+      "cloudinaryFolder": "earth-heritage/projects",
+      "publicId": "earth-heritage/projects/nairuthya-project-overview",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791263928/earth-heritage/projects/nairuthya-project-overview.png",
+      "originalFileSize": 342407,
+      "originalFileSizeFormatted": "334.4 KB",
+      "hash": "8896eba8d03440ac1fba58a057a0e833928de4ff56ac33af08ab15da97c0299b",
+      "cloudinaryAssetExists": true,
+      "width": 337,
+      "height": 471,
+      "format": "png",
+      "usageLocations": [],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ]
+}

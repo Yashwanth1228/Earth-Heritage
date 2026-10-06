@@ -94,7 +94,7 @@ export default function HomeEvents() {
       timing: 'Monsoon & Pre-Winter Cycles',
       location: 'Active Planting Furrows',
       details: 'Put your hands in living soil alongside our farm specialists. Plant fruit trees, learn organic nourishment cycles, and take pride in the growing roots of your estate acreage.',
-      src: '/images/landing/manage-02-crop.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg',
       alt: 'Orderly rows of newly planted crop seedlings in freshly prepared soil'
     }
   ];

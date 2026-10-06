@@ -3,8 +3,8 @@
 ## Summary
 - **Total Image Assets Scanned:** 91
 - **Total Candidates for Cloudinary Migration:** 75
-- **Migrated Assets (Pilot + Batches 2–4):** 54 (45 canonical Cloudinary uploads + 9 consolidated duplicate paths)
-- **Remaining Candidates (Not Yet Migrated):** 21
+- **Migrated Assets (Pilot + Batches 2–6 FINAL):** 75 (66 canonical Cloudinary uploads + 9 consolidated duplicate paths) — **100% COMPLETE**
+- **Remaining Candidates (Not Yet Migrated):** 0
 - **Total Core Assets to Keep Local:** 16
 - **Exact Content Duplicate Groups:** 12 (24 total file paths sharing identical binary content)
 - **Filename Collision Groups:** 1 (`intro-farmland.jpg`)
@@ -41,8 +41,8 @@ These core identity, favicon, PWA, and structural UI texture files must remain i
 
 ---
 
-## Migrated Assets Status (Pilot + Batches 2–4)
-The following 54 local image paths (45 canonical Cloudinary assets + 9 consolidated duplicate paths) have been migrated to Cloudinary across Step 7 (Pilot), Step 8 (Batch 2), Step 9 (Batch 3), and Step 10 (Batch 4). All assets have been verified with HTTP 200 via Next.js `/_next/image` optimization, ESLint, and production build.
+## Migrated Assets Status (Pilot + Batches 2–6 FINAL — 100% Complete)
+All 75 local image paths in scope for Cloudinary migration (66 canonical Cloudinary assets + 9 consolidated duplicate paths) have been successfully migrated across Step 7 (Pilot), Step 8 (Batch 2), Step 9 (Batch 3), Step 10 (Batch 4), Step 11 (Batch 5), and Step 12 (Batch 6 - FINAL). All assets have been verified with HTTP 200 via Next.js `/_next/image` optimization, ESLint, and production build.
 
 | Local Asset Path | Cloudinary Folder | Cloudinary Public ID | Cloudinary Secure URL | Status | Batch | Role |
 | :--- | :--- | :--- | :--- | :---: | :---: | :--- |
@@ -100,6 +100,27 @@ The following 54 local image paths (45 canonical Cloudinary assets + 9 consolida
 | `public/images/about/intro-farmland.jpg` | `earth-heritage/about` | `earth-heritage/about/intro-farmland` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791204925/earth-heritage/about/intro-farmland.jpg) | `PILOT_MIGRATED` | Batch 4 (Step 10) | Canonical Upload |
 | `public/images/landing/principles-land.jpg` | `earth-heritage/landing` | `earth-heritage/landing/principles-land` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791204926/earth-heritage/landing/principles-land.jpg) | `PILOT_MIGRATED` | Batch 4 (Step 10) | Canonical Upload |
 | `public/images/landing/hero-managed-crops.jpg` | `earth-heritage/landing` | `earth-heritage/landing/hero-managed-crops` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791204927/earth-heritage/landing/hero-managed-crops.jpg) | `PILOT_MIGRATED` | Batch 4 (Step 10) | Canonical Upload |
+| `public/images/gallery/nairuthya-02-stone-terraces.jpg` | `earth-heritage/gallery` | `earth-heritage/gallery/nairuthya-02-stone-terraces` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/gallery/nairuthya-02-stone-terraces.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/gallery/nairuthya-03-plots-irrigation.jpg` | `earth-heritage/gallery` | `earth-heritage/gallery/nairuthya-03-plots-irrigation` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262714/earth-heritage/gallery/nairuthya-03-plots-irrigation.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/gallery/nairuthya-04-children-play.jpg` | `earth-heritage/gallery` | `earth-heritage/gallery/nairuthya-04-children-play` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/gallery/nairuthya-04-children-play.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/gallery/nairuthya-05-elevated-vista.jpg` | `earth-heritage/gallery` | `earth-heritage/gallery/nairuthya-05-elevated-vista` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262720/earth-heritage/gallery/nairuthya-05-elevated-vista.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/gallery/nairuthya-06-outdoor-fitness.jpg` | `earth-heritage/gallery` | `earth-heritage/gallery/nairuthya-06-outdoor-fitness` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262722/earth-heritage/gallery/nairuthya-06-outdoor-fitness.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/manage-02-crop.jpg` | `earth-heritage/landing` | `earth-heritage/landing/manage-02-crop` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/manage-03-cultivation.jpg` | `earth-heritage/landing` | `earth-heritage/landing/manage-03-cultivation` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262725/earth-heritage/landing/manage-03-cultivation.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/manage-04-care.jpg` | `earth-heritage/landing` | `earth-heritage/landing/manage-04-care` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262732/earth-heritage/landing/manage-04-care.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/manage-05-operations.jpg` | `earth-heritage/landing` | `earth-heritage/landing/manage-05-operations` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262733/earth-heritage/landing/manage-05-operations.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/philosophy-panorama.jpg` | `earth-heritage/landing` | `earth-heritage/landing/philosophy-panorama` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/hero-villa-retreat.jpg` | `earth-heritage/landing` | `earth-heritage/landing/hero-villa-retreat` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262746/earth-heritage/landing/hero-villa-retreat.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/hero-farmland-estate.jpg` | `earth-heritage/landing` | `earth-heritage/landing/hero-farmland-estate` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262749/earth-heritage/landing/hero-farmland-estate.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/landing/hero-landscape.jpg` | `earth-heritage/landing` | `earth-heritage/landing/hero-landscape` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791262751/earth-heritage/landing/hero-landscape.jpg) | `PILOT_MIGRATED` | Batch 5 (Step 11) | Canonical Upload |
+| `public/images/about/philosophy-farmland.jpg` | `earth-heritage/about` | `earth-heritage/about/philosophy-farmland` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263921/earth-heritage/about/philosophy-farmland.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/about/story-farmland.jpg` | `earth-heritage/about` | `earth-heritage/about/story-farmland` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/about/story-farmland.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/landing/hero-family-farmland.jpg` | `earth-heritage/landing` | `earth-heritage/landing/hero-family-farmland` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263923/earth-heritage/landing/hero-family-farmland.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/landing/hero-plantation-walk.jpg` | `earth-heritage/landing` | `earth-heritage/landing/hero-plantation-walk` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263924/earth-heritage/landing/hero-plantation-walk.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/landing/problem-land.jpg` | `earth-heritage/landing` | `earth-heritage/landing/problem-land` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263925/earth-heritage/landing/problem-land.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/landing/solution-management.jpg` | `earth-heritage/landing` | `earth-heritage/landing/solution-management` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263926/earth-heritage/landing/solution-management.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/landing/statement-landscape.jpg` | `earth-heritage/landing` | `earth-heritage/landing/statement-landscape` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263927/earth-heritage/landing/statement-landscape.jpg) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
+| `public/images/projects/nairuthya-project-overview.png` | `earth-heritage/projects` | `earth-heritage/projects/nairuthya-project-overview` | [Link](https://res.cloudinary.com/yffbj6hj/image/upload/v1791263928/earth-heritage/projects/nairuthya-project-overview.png) | `PILOT_MIGRATED` | Batch 6 (Step 12 - FINAL) | Canonical Upload |
 
 ---
 

@@ -49,6 +49,7 @@ export default function CoconutNearby({ project }) {
     'Bengaluru / Kengeri (NH 275)',
     'Wonderla Amusement Park',
     'Eagleton Golf Resort',
+    'Harohalli Industrial Area',
     'Janapada Loka Folk Museum',
     'Ramadevara Betta Sanctuary'
   ];
@@ -185,6 +186,13 @@ export default function CoconutNearby({ project }) {
                       d="M 330 122 Q 380 95 420 74"
                       stroke="rgba(238,223,198,0.3)"
                       strokeWidth="1.2"
+                      strokeDasharray="3 3"
+                    />
+                    {/* Coconut Garden to Harohalli Industrial Area */}
+                    <path
+                      d="M 342 136 Q 354 136 366 136"
+                      stroke="rgba(238,223,198,0.4)"
+                      strokeWidth="1.4"
                       strokeDasharray="3 3"
                     />
                     {/* Coconut Garden to Ramanagara & Ramadevara Betta */}
@@ -350,6 +358,34 @@ export default function CoconutNearby({ project }) {
                         letterSpacing="0.02em"
                       >
                         Ramanagara &amp; Ramadevara Betta
+                      </text>
+                    </g>
+
+                    {/* Node: Harohalli Industrial Area (Center-Right) */}
+                    <g>
+                      <rect
+                        x="366"
+                        y="123"
+                        width="150"
+                        height="26"
+                        rx="4"
+                        fill="rgba(255,255,255,0.12)"
+                        stroke="rgba(255,255,255,0.25)"
+                        strokeWidth="1"
+                      />
+                      <circle cx="441" cy="149" r="3" fill="#EEDFC6" />
+                      <circle cx="441" cy="149" r="6" fill="none" stroke="rgba(238,223,198,0.4)" />
+                      <text
+                        x="441"
+                        y="139"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="8.5"
+                        fontWeight="500"
+                        fontFamily="sans-serif"
+                        letterSpacing="0.02em"
+                      >
+                        Harohalli Industrial Area
                       </text>
                     </g>
 

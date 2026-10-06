@@ -16,7 +16,7 @@ export default function NairuthyaHero({ project }) {
   const shouldReduceMotion = useReducedMotion();
 
   const heroImageSrc =
-    project?.heroImage?.src || 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg';
+    project?.heroImage?.src || 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg';
   const heroImageAlt =
     project?.heroImage?.alt || 'Nairuthya Whispering Wood farmland landscape in Honnasandra';
 
