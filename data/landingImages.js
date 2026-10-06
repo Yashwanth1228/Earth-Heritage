@@ -13,7 +13,7 @@
 export const landingImages = {
   hero: {
     id: 'hero-landscape',
-    src: '/images/landing/hero-farmland-estate.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262749/earth-heritage/landing/hero-farmland-estate.jpg',
     alt: 'Breathtaking panoramic view of an expansive managed farmland estate with rolling green meadows, coconut groves, eco-farmhouse villa, and misty mountain hills',
     usage: 'Hero full-screen landscape background',
     temporary: false,
@@ -22,19 +22,19 @@ export const landingImages = {
   },
   statement: {
     id: 'statement-landscape',
-    src: '/images/landing/statement-landscape.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791263927/earth-heritage/landing/statement-landscape.jpg',
     alt: 'Sunlight filtering through a rich, verdant tree canopy on agricultural land',
     usage: 'Section 2 — Living Legacy editorial visual pairing',
-    temporary: true,
+    temporary: false,
     width: 1600,
     height: 1067
   },
   problem: {
     id: 'problem-land',
-    src: '/images/landing/problem-land.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791263925/earth-heritage/landing/problem-land.jpg',
     alt: 'Rolling open green farmland landscape under soft morning mist',
     usage: 'Section 3 — Landowner responsibility & stewardship visual pairing',
-    temporary: true,
+    temporary: false,
     width: 1600,
     height: 1067
   },
@@ -53,7 +53,7 @@ export const landingImages = {
       number: '01',
       title: 'Plan the Farm',
       quote: '“Thoughtful farm management begins with understanding the land and planning the work required to care for it.”',
-      src: '/images/landing/manage-02-crop.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg',
       alt: 'Systematic crop rows and open agricultural fields for strategic farm planning',
       description: 'Thoughtful farm management begins with understanding the land and planning the work required to care for it.',
       width: 1000,
@@ -65,7 +65,7 @@ export const landingImages = {
       number: '02',
       title: 'Manage the Farm',
       quote: '“Day-to-day care requires coordination, people, maintenance, and consistent attention to the farm.”',
-      src: '/images/landing/manage-04-care.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262732/earth-heritage/landing/manage-04-care.jpg',
       alt: 'Active agricultural stewardship, tree canopy care, and disciplined field management',
       description: 'Day-to-day care requires coordination, people, maintenance, and consistent attention to the farm.',
       width: 1000,
@@ -101,7 +101,7 @@ export const landingImages = {
       id: 'manage-02-crop',
       stage: '02',
       title: 'Crop Planning',
-      src: '/images/landing/manage-02-crop.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg',
       alt: 'Young vibrant crop seedlings planted in disciplined rows',
       usage: 'Management sequence stage 02',
       temporary: true,
@@ -112,7 +112,7 @@ export const landingImages = {
       id: 'manage-03-cultivation',
       stage: '03',
       title: 'Cultivation',
-      src: '/images/landing/manage-03-cultivation.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262725/earth-heritage/landing/manage-03-cultivation.jpg',
       alt: 'Lush agricultural cultivation beds thriving under natural sunlight',
       usage: 'Management sequence stage 03',
       temporary: true,
@@ -123,7 +123,7 @@ export const landingImages = {
       id: 'manage-04-care',
       stage: '04',
       title: 'Farm Care',
-      src: '/images/landing/manage-04-care.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262732/earth-heritage/landing/manage-04-care.jpg',
       alt: 'Healthy tree canopy, soil enrichment, and orderly grove maintenance',
       usage: 'Management sequence stage 04',
       temporary: true,
@@ -134,7 +134,7 @@ export const landingImages = {
       id: 'manage-05-operations',
       stage: '05',
       title: 'Farm Operations',
-      src: '/images/landing/manage-05-operations.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262733/earth-heritage/landing/manage-05-operations.jpg',
       alt: 'Agricultural landscape pathway with orderly irrigation infrastructure',
       usage: 'Management sequence stage 05',
       temporary: true,
@@ -155,7 +155,7 @@ export const landingImages = {
   ],
   philosophy: {
     id: 'philosophy-panorama',
-    src: '/images/landing/philosophy-panorama.jpg',
+    src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg',
     alt: 'Breathtaking full-width panorama of lush misty forest and agricultural valley',
     usage: 'Section 7 — Full-width brand campaign ("BACK TO ROOTS. FORWARD WITH PURPOSE.")',
     temporary: true,
@@ -210,7 +210,7 @@ export const heroSlides = [
     number: '01',
     chapter: 'THE VISION',
     image: {
-      src: '/images/landing/hero-farmland-estate.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262749/earth-heritage/landing/hero-farmland-estate.jpg',
       alt: 'Breathtaking panoramic view of an expansive managed farmland estate with rolling green meadows, coconut groves, eco-farmhouse villa, and misty mountain hills',
       width: 2400,
       height: 1350
@@ -234,7 +234,7 @@ export const heroSlides = [
     number: '02',
     chapter: 'THE LAND',
     image: {
-      src: '/images/landing/hero-villa-retreat.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262746/earth-heritage/landing/hero-villa-retreat.jpg',
       alt: 'Luxury eco-farmhouse villa on a managed farmland estate surrounded by lush lawns, vegetable gardens, and coconut palms',
       width: 2400,
       height: 1350
@@ -282,7 +282,7 @@ export const heroSlides = [
     number: '04',
     chapter: 'THE PURPOSE',
     image: {
-      src: '/images/landing/philosophy-panorama.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg',
       alt: 'Breathtaking full-width panorama of lush misty forest and agricultural valley',
       width: 2400,
       height: 1200

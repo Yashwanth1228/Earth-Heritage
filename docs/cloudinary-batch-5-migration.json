@@ -1,0 +1,434 @@
+{
+  "version": "1.0.0",
+  "batch": 5,
+  "executedAt": "2026-10-06T04:59:13.401Z",
+  "baseline": {
+    "canonicalCloudinaryUploadsBefore": 45,
+    "migratedLocalPathsBefore": 54,
+    "remainingCandidatesBefore": 21,
+    "keepLocalCount": 16
+  },
+  "summary": {
+    "totalCanonicalUploads": 13,
+    "totalLocalPathsMapped": 13,
+    "foldersCovered": [
+      "earth-heritage/gallery",
+      "earth-heritage/landing"
+    ],
+    "totalOriginalBytes": 5596874
+  },
+  "migratedAssets": [
+    {
+      "localPath": "public/images/gallery/nairuthya-02-stone-terraces.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/nairuthya-02-stone-terraces",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/gallery/nairuthya-02-stone-terraces.jpg",
+      "originalFileSize": 216407,
+      "originalFileSizeFormatted": "211.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 461,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-03-plots-irrigation.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/nairuthya-03-plots-irrigation",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262714/earth-heritage/gallery/nairuthya-03-plots-irrigation.jpg",
+      "originalFileSize": 207372,
+      "originalFileSizeFormatted": "202.5 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 461,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-04-children-play.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/nairuthya-04-children-play",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/gallery/nairuthya-04-children-play.jpg",
+      "originalFileSize": 242185,
+      "originalFileSizeFormatted": "236.5 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 461,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-05-elevated-vista.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/nairuthya-05-elevated-vista",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262720/earth-heritage/gallery/nairuthya-05-elevated-vista.jpg",
+      "originalFileSize": 193665,
+      "originalFileSizeFormatted": "189.1 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 461,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/gallery/nairuthya-06-outdoor-fitness.jpg",
+      "cloudinaryFolder": "earth-heritage/gallery",
+      "publicId": "earth-heritage/gallery/nairuthya-06-outdoor-fitness",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262722/earth-heritage/gallery/nairuthya-06-outdoor-fitness.jpg",
+      "originalFileSize": 233110,
+      "originalFileSizeFormatted": "227.6 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1024,
+      "height": 461,
+      "format": "jpg",
+      "usageLocations": [
+        "data/galleryImages.js",
+        "data/projects.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-02-crop.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-02-crop",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg",
+      "originalFileSize": 125274,
+      "originalFileSizeFormatted": "122.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1000,
+      "height": 667,
+      "format": "jpg",
+      "usageLocations": [
+        "data/events.js",
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js",
+        "components/sections/home/HomeEvents.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-03-cultivation.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-03-cultivation",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262725/earth-heritage/landing/manage-03-cultivation.jpg",
+      "originalFileSize": 219400,
+      "originalFileSizeFormatted": "214.3 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1000,
+      "height": 667,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js",
+        "components/sections/home/HomeStories.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-04-care.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-04-care",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262732/earth-heritage/landing/manage-04-care.jpg",
+      "originalFileSize": 755215,
+      "originalFileSizeFormatted": "737.5 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1000,
+      "height": 1498,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/manage-05-operations.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/manage-05-operations",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262733/earth-heritage/landing/manage-05-operations.jpg",
+      "originalFileSize": 76516,
+      "originalFileSizeFormatted": "74.7 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1000,
+      "height": 667,
+      "format": "jpg",
+      "usageLocations": [
+        "data/farmManagementImages.js",
+        "data/landingImages.js",
+        "data/managedFarmlandImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/philosophy-panorama.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/philosophy-panorama",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg",
+      "originalFileSize": 667470,
+      "originalFileSizeFormatted": "651.8 KB",
+      "cloudinaryAssetExists": true,
+      "width": 2400,
+      "height": 1602,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js",
+        "components/sections/gallery/GalleryPhilosophy.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-villa-retreat.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-villa-retreat",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262746/earth-heritage/landing/hero-villa-retreat.jpg",
+      "originalFileSize": 1032062,
+      "originalFileSizeFormatted": "1007.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-farmland-estate.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-farmland-estate",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262749/earth-heritage/landing/hero-farmland-estate.jpg",
+      "originalFileSize": 1017013,
+      "originalFileSizeFormatted": "993.2 KB",
+      "cloudinaryAssetExists": true,
+      "width": 1376,
+      "height": 768,
+      "format": "jpg",
+      "usageLocations": [
+        "data/landingImages.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    },
+    {
+      "localPath": "public/images/landing/hero-landscape.jpg",
+      "cloudinaryFolder": "earth-heritage/landing",
+      "publicId": "earth-heritage/landing/hero-landscape",
+      "secureUrl": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262751/earth-heritage/landing/hero-landscape.jpg",
+      "originalFileSize": 611185,
+      "originalFileSizeFormatted": "596.9 KB",
+      "cloudinaryAssetExists": true,
+      "width": 2400,
+      "height": 1350,
+      "format": "jpg",
+      "usageLocations": [
+        "components/sections/landing/ManagedFarmlandHero.js"
+      ],
+      "isCanonical": true,
+      "reusedExistingAsset": false,
+      "duplicateGroup": "none",
+      "migrationStatus": "PILOT_MIGRATED"
+    }
+  ],
+  "routeVerification": {
+    "verifiedAt": "2026-10-06T05:03:18.247Z",
+    "allPassed": true,
+    "routes": [
+      {
+        "route": "/",
+        "status": 200
+      },
+      {
+        "route": "/projects",
+        "status": 200
+      },
+      {
+        "route": "/projects/coconut-garden",
+        "status": 200
+      },
+      {
+        "route": "/projects/nairuthya-whispering-wood",
+        "status": 200
+      },
+      {
+        "route": "/gallery",
+        "status": 200
+      },
+      {
+        "route": "/managed-farmland",
+        "status": 200
+      },
+      {
+        "route": "/farm-management",
+        "status": 200
+      },
+      {
+        "route": "/events",
+        "status": 200
+      },
+      {
+        "route": "/about",
+        "status": 200
+      },
+      {
+        "route": "/how-it-works",
+        "status": 200
+      },
+      {
+        "route": "/blogs",
+        "status": 200
+      },
+      {
+        "route": "/lp/managed-farmland",
+        "status": 200
+      },
+      {
+        "route": "/cloudinary-test",
+        "status": 200
+      }
+    ]
+  },
+  "imageOptimizationVerification": {
+    "allPassed": true,
+    "representativeImages": [
+      {
+        "name": "Nairuthya 02 Stone Terraces (Gallery - JPG 211 KB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/gallery/nairuthya-02-stone-terraces.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 216407,
+        "optimizedBytes": 50482,
+        "reductionPercent": "76.7%"
+      },
+      {
+        "name": "Nairuthya 04 Children Play (Gallery - JPG 237 KB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/gallery/nairuthya-04-children-play.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 242185,
+        "optimizedBytes": 56487,
+        "reductionPercent": "76.7%"
+      },
+      {
+        "name": "Manage 02 Crop (Landing - JPG 122 KB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 125274,
+        "optimizedBytes": 37647,
+        "reductionPercent": "69.9%"
+      },
+      {
+        "name": "Manage 04 Care (Landing - JPG 738 KB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262732/earth-heritage/landing/manage-04-care.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 755215,
+        "optimizedBytes": 280294,
+        "reductionPercent": "62.9%"
+      },
+      {
+        "name": "Philosophy Panorama (Landing - JPG 652 KB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262740/earth-heritage/landing/philosophy-panorama.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 667470,
+        "optimizedBytes": 44645,
+        "reductionPercent": "93.3%"
+      },
+      {
+        "name": "Hero Villa Retreat (Landing - JPG 1.01 MB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262746/earth-heritage/landing/hero-villa-retreat.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 1032062,
+        "optimizedBytes": 59076,
+        "reductionPercent": "94.3%"
+      },
+      {
+        "name": "Hero Landscape (Landing - JPG 597 KB)",
+        "url": "https://res.cloudinary.com/yffbj6hj/image/upload/v1791262751/earth-heritage/landing/hero-landscape.jpg",
+        "status": 200,
+        "format": "image/avif",
+        "originalBytes": 611185,
+        "optimizedBytes": 30511,
+        "reductionPercent": "95.0%"
+      }
+    ]
+  },
+  "applicationChanges": {
+    "totalReferencesReplaced": 35,
+    "modifiedFilesCount": 10,
+    "filesModified": [
+      "data/landingImages.js (11 replacements)",
+      "data/galleryImages.js (5 replacements)",
+      "data/projects.js (5 replacements)",
+      "data/farmManagementImages.js (4 replacements)",
+      "data/managedFarmlandImages.js (4 replacements)",
+      "components/sections/home/HomeStories.js (2 replacements)",
+      "data/events.js (1 replacement)",
+      "components/sections/home/HomeEvents.js (1 replacement)",
+      "components/sections/gallery/GalleryPhilosophy.js (1 replacement)",
+      "components/sections/landing/ManagedFarmlandHero.js (1 replacement)"
+    ]
+  },
+  "validation": {
+    "lintResult": "PASSED (0 warnings, 0 errors)",
+    "buildResult": "PASSED (Exit code 0, 29/29 routes compiled)",
+    "finalStatus": "COMPLETED"
+  }
+}

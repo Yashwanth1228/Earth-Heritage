@@ -48,7 +48,7 @@ export default function ManagedFarmlandHero() {
           className="absolute inset-0 w-full h-full transform-gpu will-change-transform origin-center"
         >
           <Image
-            src="/images/landing/hero-landscape.jpg"
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791262751/earth-heritage/landing/hero-landscape.jpg"
             alt="Expansive Earth Heritage managed farmland with verdant tree canopies under morning light"
             fill
             priority

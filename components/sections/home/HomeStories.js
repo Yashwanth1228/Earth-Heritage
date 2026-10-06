@@ -80,7 +80,7 @@ export default function HomeStories() {
       title: 'From Sapling to Thriving Orchard',
       subtitle: 'Long-term organic cultivation records across managed acreage',
       tag: 'Orchard Film',
-      src: '/images/landing/manage-03-cultivation.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262725/earth-heritage/landing/manage-03-cultivation.jpg',
       alt: 'Young fruit trees thriving along contoured agricultural ridges'
     }
   ];
@@ -116,7 +116,7 @@ export default function HomeStories() {
       title: 'Scheduled Seasonal Planting Cycles',
       subtitle: 'Structured agricultural cycles aligned with rainfall and climate',
       tag: 'Seasonal Planting',
-      src: '/images/landing/manage-02-crop.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg',
       alt: 'Young vibrant crop seedlings planted in disciplined straight field rows'
     },
     {

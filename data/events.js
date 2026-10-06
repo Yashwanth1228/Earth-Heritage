@@ -174,7 +174,7 @@ export const events = [
       'Creating lasting generational bonds between families and agricultural land'
     ],
     coverImage: {
-      src: '/images/landing/manage-02-crop.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg',
       alt: 'Orderly rows of newly planted crop seedlings in freshly prepared soil',
       caption: 'Field stewardship morning along freshly tilled agricultural furrows'
     }

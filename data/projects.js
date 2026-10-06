@@ -74,11 +74,11 @@ export const projects = [
     isDemo: false,
     featured: true,
     heroImage: {
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
       alt: 'Nairuthya Whispering Wood farmland landscape in Honnasandra'
     },
     coverImage: {
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
       alt: 'Nairuthya Whispering Wood 8-acre managed farmland layout plan in Honnasandra'
     },
     locationMapImage: {
@@ -335,12 +335,12 @@ export const projects = [
       }
     ],
     gallery: [
-      { id: 'nairuthya-gal-1', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg', alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola', caption: 'Grand Stone Steps & Temple Pergola' },
-      { id: 'nairuthya-gal-2', src: '/images/gallery/nairuthya-02-stone-terraces.jpg', alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping', caption: 'Stone Terraces & Boundary Landscaping' },
-      { id: 'nairuthya-gal-3', src: '/images/gallery/nairuthya-03-plots-irrigation.jpg', alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads', caption: 'Drip-Irrigated Farmland Plots & Roads' },
-      { id: 'nairuthya-gal-4', src: '/images/gallery/nairuthya-04-children-play.jpg', alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park", caption: "Children's Outdoor Play Area" },
-      { id: 'nairuthya-gal-5', src: '/images/gallery/nairuthya-05-elevated-vista.jpg', alt: 'Nairuthya Whispering Wood — Elevated Farmland Vista & 30-ft Road Network', caption: 'Elevated Farmland Vista & 30-ft Roads' },
-      { id: 'nairuthya-gal-6', src: '/images/gallery/nairuthya-06-outdoor-fitness.jpg', alt: 'Nairuthya Whispering Wood — Outdoor Recreation & Fitness Zone', caption: 'Outdoor Recreation & Fitness Zone' }
+      { id: 'nairuthya-gal-1', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg', alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola', caption: 'Grand Stone Steps & Temple Pergola' },
+      { id: 'nairuthya-gal-2', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/projects/nairuthya-whispering-wood/stone-terraces.jpg', alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping', caption: 'Stone Terraces & Boundary Landscaping' },
+      { id: 'nairuthya-gal-3', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262714/earth-heritage/projects/nairuthya-whispering-wood/plots-irrigation.jpg', alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads', caption: 'Drip-Irrigated Farmland Plots & Roads' },
+      { id: 'nairuthya-gal-4', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/projects/nairuthya-whispering-wood/children-play.jpg', alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park", caption: "Children's Outdoor Play Area" },
+      { id: 'nairuthya-gal-5', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262720/earth-heritage/projects/nairuthya-whispering-wood/elevated-vista.jpg', alt: 'Nairuthya Whispering Wood — Elevated Farmland Vista & 30-ft Road Network', caption: 'Elevated Farmland Vista & 30-ft Roads' },
+      { id: 'nairuthya-gal-6', src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262722/earth-heritage/projects/nairuthya-whispering-wood/outdoor-fitness.jpg', alt: 'Nairuthya Whispering Wood — Outdoor Recreation & Fitness Zone', caption: 'Outdoor Recreation & Fitness Zone' }
     ],
     faqs: [
       {
@@ -509,6 +509,7 @@ export const projects = [
       'Bengaluru / Kengeri (NH 275)',
       'Wonderla Amusement Park',
       'Eagleton Golf Resort',
+      'Harohalli Industrial Area',
       'Janapada Loka Folk Museum',
       'Ramadevara Betta Sanctuary'
     ],

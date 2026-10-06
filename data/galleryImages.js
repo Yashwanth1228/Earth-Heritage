@@ -16,7 +16,7 @@ export const galleryProjects = [
     category: 'Managed Farmland',
     number: '01',
     coverImage: {
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
       alt: 'Nairuthya Whispering Wood — Farmland Landscape & Entrance Portal'
     },
     images: [
@@ -24,7 +24,7 @@ export const galleryProjects = [
         id: 'nww-gal-01',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood-hero.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
         alt: 'Nairuthya Whispering Wood — Grand Stone Steps & Temple Pergola',
         title: 'Grand Stone Steps & Temple Pergola',
         description:
@@ -35,7 +35,7 @@ export const galleryProjects = [
         id: 'nww-gal-02',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/gallery/nairuthya-02-stone-terraces.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/projects/nairuthya-whispering-wood/stone-terraces.jpg',
         alt: 'Nairuthya Whispering Wood — Stone Terraces & Boundary Landscaping',
         title: 'Stone Terracing & Themed Landscaping',
         description:
@@ -46,7 +46,7 @@ export const galleryProjects = [
         id: 'nww-gal-03',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/gallery/nairuthya-03-plots-irrigation.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262714/earth-heritage/projects/nairuthya-whispering-wood/plots-irrigation.jpg',
         alt: 'Nairuthya Whispering Wood — Drip-Irrigated Farmland Plots & Internal Roads',
         title: 'Drip-Irrigated Farmland Plots',
         description:
@@ -57,7 +57,7 @@ export const galleryProjects = [
         id: 'nww-gal-04',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/gallery/nairuthya-04-children-play.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/projects/nairuthya-whispering-wood/children-play.jpg',
         alt: "Nairuthya Whispering Wood — Children's Outdoor Play Park & Adventure Amenities",
         title: "Children's Outdoor Play Park",
         description:
@@ -68,7 +68,7 @@ export const galleryProjects = [
         id: 'nww-gal-05',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/gallery/nairuthya-05-elevated-vista.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262720/earth-heritage/projects/nairuthya-whispering-wood/elevated-vista.jpg',
         alt: 'Nairuthya Whispering Wood — Elevated Farmland Vista & 30-ft Road Network',
         title: 'Elevated Farmland Vista & Roads',
         description:
@@ -79,7 +79,7 @@ export const galleryProjects = [
         id: 'nww-gal-06',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/gallery/nairuthya-06-outdoor-fitness.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262722/earth-heritage/projects/nairuthya-whispering-wood/outdoor-fitness.jpg',
         alt: 'Nairuthya Whispering Wood — Outdoor Recreation & Fitness Zone',
         title: 'Outdoor Recreation & Fitness Zone',
         description:
@@ -90,7 +90,7 @@ export const galleryProjects = [
         id: 'nww-gal-07',
         projectId: 'nairuthya-whispering-wood',
         projectName: 'Nairuthya Whispering Wood',
-        src: '/images/projects/nairuthya-whispering-wood-hero.jpg',
+        src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
         alt: 'Nairuthya Whispering Wood — Entrance Portal & Farm Landscape',
         title: 'Entrance Portal & Farm Corridor',
         description:
