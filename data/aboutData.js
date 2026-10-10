@@ -47,8 +47,8 @@ export const aboutData = {
         role: 'Co-Founder',
         positioning: 'Co-Founder | Entrepreneur | Visionary',
         initials: 'KJ',
-        image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/about/founder-khushi-jain.jpg',
-        imageAlt: 'Khushi Jain, Co-Founder of Earth Heritage',
+        image: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791635041/earth-heritage/about/founder-khushi-jain.jpg',
+        imageAlt: 'Khushi Jain of Earth Heritage',
         imagePosition: 'center',
         bio: 'With a background in Fashion Designing and a B.Com degree, Khushi brings diverse experience across education, social work, and real estate and investments. Having worked as an Investment & Partnership Manager, she brings key strengths in communication, leadership, understanding people, business, client relationships, and partnerships to Earth Heritage.',
         background: [
