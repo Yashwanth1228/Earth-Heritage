@@ -33,107 +33,143 @@ export default function HomeStories() {
 
   const [selectedStory, setSelectedStory] = useState(null);
 
-  // 6 Curated Video Chronicles (Documentaries & Field Filming)
+  // 6 Curated Video Chronicles from Company Projects
   const videoStories = [
     {
       id: 'vid-1',
-      title: 'Morning Light over the Valley',
-      subtitle: 'Capturing seasonal transitions, topography, and living soil',
-      tag: 'Documentary Film',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203262/earth-heritage/gallery/hero-feature.jpg',
-      alt: 'Misty agricultural valley and rolling green hills at golden sunrise'
+      projectSlug: 'nairuthya-whispering-wood',
+      projectName: 'Nairuthya Whispering Wood',
+      title: 'Grand Stone Steps & Temple Pergola',
+      subtitle: 'Natural cut stone staircase and landscaped pergola at Honnasandra',
+      location: 'Honnasandra, Nelamangala',
+      tag: 'Nairuthya Whispering Wood',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
+      alt: 'Nairuthya Whispering Wood — Grand stone steps and temple pergola landscape in Honnasandra'
     },
     {
       id: 'vid-2',
-      title: 'The Quiet Sanctuary of the Land',
-      subtitle: 'A cinematic perspective on managed acreage and open horizons',
-      tag: 'Field Chronicle',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204923/earth-heritage/managed-farmland/core-proposition.jpg',
-      alt: 'Peaceful gravel farm pathway meandering through open fields and shade trees'
+      projectSlug: 'coconut-garden',
+      projectName: 'Coconut Garden',
+      title: 'Entrance Gateway & Approach',
+      subtitle: 'Gated access gateway, solar street illumination, and 24/7 on-ground security',
+      location: 'Bidadi, Ramanagara',
+      tag: 'Coconut Garden',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201948/earth-heritage/projects/coconut-garden/entrance-gate.jpg',
+      alt: 'Coconut Garden — Grand entrance gate and perimeter compound wall in Bidadi'
     },
     {
       id: 'vid-3',
-      title: 'Hands-on Agronomic Stewardship',
-      subtitle: 'Dedicated field specialists supervising daily agricultural care',
-      tag: 'Farm Operations',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201960/earth-heritage/farm-management/people-and-land.jpg',
-      alt: 'Agricultural field specialists assessing healthy crops and soil structure'
+      projectSlug: 'nairuthya-whispering-wood',
+      projectName: 'Nairuthya Whispering Wood',
+      title: 'Drip-Irrigated Farmland Plots & Roads',
+      subtitle: 'Demarcated agricultural plots served by gravity-fed drip irrigation networks',
+      location: 'Honnasandra, Nelamangala',
+      tag: 'Nairuthya Whispering Wood',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262714/earth-heritage/projects/nairuthya-whispering-wood/plots-irrigation.jpg',
+      alt: 'Nairuthya Whispering Wood — Drip-irrigated farmland plots and wide internal roads'
     },
     {
       id: 'vid-4',
-      title: 'Rhythms of the Plantation',
-      subtitle: 'Documenting tree growth, canopy shade, and native biodiversity',
-      tag: 'Agroforestry Film',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200706/earth-heritage/gallery/nature-canopy.jpg',
-      alt: 'Lush green tree canopy with sunlight filtering through native trees'
+      projectSlug: 'coconut-garden',
+      projectName: 'Coconut Garden',
+      title: 'Internal Road Network & Layout',
+      subtitle: 'Wide engineered internal roads providing seamless vehicular access across 6 acres',
+      location: 'Bidadi, Ramanagara',
+      tag: 'Coconut Garden',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/coconut-garden/internal-road-layout.jpg',
+      alt: 'Coconut Garden — Wide internal road network and demarcated plot layout in Bidadi'
     },
     {
       id: 'vid-5',
-      title: 'Water Flow & Natural Contours',
-      subtitle: 'Topographic swales and watershed engineering in practice',
-      tag: 'Land Stewardship',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203281/earth-heritage/how-it-works/responsible-care-panorama.jpg',
-      alt: 'Panoramic agricultural contours demonstrating sustainable watershed engineering'
+      projectSlug: 'nairuthya-whispering-wood',
+      projectName: 'Nairuthya Whispering Wood',
+      title: 'Elevated Farmland Vista & 30-ft Network',
+      subtitle: 'Panoramic horizon views across the 8-acre managed agricultural valley',
+      location: 'Honnasandra, Nelamangala',
+      tag: 'Nairuthya Whispering Wood',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262720/earth-heritage/projects/nairuthya-whispering-wood/elevated-vista.jpg',
+      alt: 'Nairuthya Whispering Wood — Elevated farmland vista overlooking rolling green acreage'
     },
     {
       id: 'vid-6',
-      title: 'From Sapling to Thriving Orchard',
-      subtitle: 'Long-term organic cultivation records across managed acreage',
-      tag: 'Orchard Film',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262725/earth-heritage/landing/manage-03-cultivation.jpg',
-      alt: 'Young fruit trees thriving along contoured agricultural ridges'
+      projectSlug: 'coconut-garden',
+      projectName: 'Coconut Garden',
+      title: 'Cultivated Farmland & Perennial Groves',
+      subtitle: 'Dense mature palm canopies, fertile red soil, and active agricultural stewardship',
+      location: 'Bidadi, Ramanagara',
+      tag: 'Coconut Garden',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203230/earth-heritage/projects/coconut-garden/farm-landscape-groves.jpg',
+      alt: 'Coconut Garden — Cultivated farm plots with rows of coconut palm trees in Bidadi'
     }
   ];
 
-  // 6 Curated Field Photography Chronicles (Authentic Estate Visuals)
+  // 6 Curated Field Photography Chronicles from Company Projects
   const imageStories = [
     {
       id: 'img-1',
-      title: 'Cultivated Acreage & Boundary Trails',
-      subtitle: 'Disciplined crop rows and thriving boundary agroforestry',
-      tag: 'Estate Photography',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201959/earth-heritage/managed-farmland/intro-farmland.jpg',
-      alt: 'Expansive managed agricultural estate with disciplined crop rows and fruit trees'
+      projectSlug: 'coconut-garden',
+      projectName: 'Coconut Garden',
+      title: 'Demarcated Farmland Plots',
+      subtitle: 'Clearly demarcated 6,000 sq.ft farmland plots with mature yielding coconut trees',
+      location: 'Bidadi, Ramanagara',
+      tag: 'Coconut Garden',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203228/earth-heritage/projects/coconut-garden/plot-demarcation-10.jpg',
+      alt: 'Coconut Garden — Demarcated farm plot with mature coconut trees in Bidadi'
     },
     {
       id: 'img-2',
-      title: 'Topographic Contours & Living Soil',
-      subtitle: 'Preserving organic soil vitality across natural slopes',
-      tag: 'Soil Vitality',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791204920/earth-heritage/farm-management/responsible-care.jpg',
-      alt: 'Rolling green agricultural acreage with orderly contour furrows'
+      projectSlug: 'nairuthya-whispering-wood',
+      projectName: 'Nairuthya Whispering Wood',
+      title: 'Stone Terraces & Boundary Slopes',
+      subtitle: 'Artisanal stone boundary retaining walls and contoured plantation slopes',
+      location: 'Honnasandra, Nelamangala',
+      tag: 'Nairuthya Whispering Wood',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262711/earth-heritage/projects/nairuthya-whispering-wood/stone-terraces.jpg',
+      alt: 'Nairuthya Whispering Wood — Stone terraces and landscaped boundary retaining walls'
     },
     {
       id: 'img-3',
-      title: 'Evening Gatherings Under the Stars',
-      subtitle: 'Connecting landowners and families over farmland moments',
-      tag: 'Community Life',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201951/earth-heritage/gallery/experiences-gathering.jpg',
-      alt: 'Warm twilight gathering under open timber farm pavilion with lantern light over fields'
+      projectSlug: 'coconut-garden',
+      projectName: 'Coconut Garden',
+      title: 'Perimeter Boundary & Green Buffer',
+      subtitle: 'Robust precast concrete estate compound wall with dense green border plantation',
+      location: 'Bidadi, Ramanagara',
+      tag: 'Coconut Garden',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203224/earth-heritage/projects/coconut-garden/boundary-plantation-wall.png',
+      alt: 'Coconut Garden — Perimeter boundary wall with green plantation buffer in Bidadi'
     },
     {
       id: 'img-4',
-      title: 'Scheduled Seasonal Planting Cycles',
-      subtitle: 'Structured agricultural cycles aligned with rainfall and climate',
-      tag: 'Seasonal Planting',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262723/earth-heritage/landing/manage-02-crop.jpg',
-      alt: 'Young vibrant crop seedlings planted in disciplined straight field rows'
+      projectSlug: 'nairuthya-whispering-wood',
+      projectName: 'Nairuthya Whispering Wood',
+      title: "Children's Outdoor Play Park",
+      subtitle: 'Dedicated open-air family amenities surrounded by green timber groves',
+      location: 'Honnasandra, Nelamangala',
+      tag: 'Nairuthya Whispering Wood',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262717/earth-heritage/projects/nairuthya-whispering-wood/children-play.jpg',
+      alt: "Nairuthya Whispering Wood — Children's outdoor play park and recreation lawn"
     },
     {
       id: 'img-5',
-      title: 'Organic Crop Canopy & Micro-Climate',
-      subtitle: 'Multi-tier shade canopy providing ideal orchard humidity',
-      tag: 'Canopy Structure',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203266/earth-heritage/gallery/cultivation-detail.jpg',
-      alt: 'Close-up detail of thriving organic plantation foliage and healthy leaves'
+      projectSlug: 'coconut-garden',
+      projectName: 'Coconut Garden',
+      title: 'Estate Landscape & Palm Groves',
+      subtitle: '6-acre mature coconut palm estate with established fruit plantations in Bidadi',
+      location: 'Bidadi, Ramanagara',
+      tag: 'Coconut Garden',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201949/earth-heritage/projects/coconut-garden-hero.jpg',
+      alt: 'Coconut Garden — Overview landscape of lush palm groves and estate grounds in Bidadi'
     },
     {
       id: 'img-6',
-      title: 'Seasonal Harvest Handover Logistics',
-      subtitle: 'Fresh produce gathered with systematic agricultural care',
-      tag: 'Harvest Care',
-      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791203282/earth-heritage/landing/manage-06-harvest.jpg',
-      alt: 'Bountiful fresh seasonal harvest produce gathered with systematic agricultural care'
+      projectSlug: 'nairuthya-whispering-wood',
+      projectName: 'Nairuthya Whispering Wood',
+      title: 'Outdoor Recreation & Fitness Zone',
+      subtitle: 'Open-air workout and wellness stations overlooking lush green slopes',
+      location: 'Honnasandra, Nelamangala',
+      tag: 'Nairuthya Whispering Wood',
+      src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791262722/earth-heritage/projects/nairuthya-whispering-wood/outdoor-fitness.jpg',
+      alt: 'Nairuthya Whispering Wood — Outdoor recreation and fitness equipment zone'
     }
   ];
 
@@ -269,7 +305,7 @@ export default function HomeStories() {
 
             <MotionReveal delay={0.25}>
               <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-xl md:max-w-none mx-auto md:mx-0">
-                Authentic visual moments capturing seasonal rhythms, living soil, and daily farm care across Earth Heritage estates. Use the previous and next controls or swipe to navigate.
+                Authentic visual moments capturing on-ground progress, living landscape, and daily farm care across Earth Heritage company projects. Use the previous and next controls or swipe to navigate.
               </p>
             </MotionReveal>
           </div>
@@ -553,7 +589,7 @@ export default function HomeStories() {
       {/* Bottom Subtle Note */}
       <Container size="default" className="relative z-10 mt-10 sm:mt-12 text-center">
         <p className="font-mono text-xs text-[#8C7A5A] tracking-wider uppercase">
-          Continuous Live Chronicles &bull; All Visuals Captured on Location across Earth Heritage Estates
+          Continuous Live Chronicles &bull; All Visuals Captured on Location across Earth Heritage Company Projects
         </p>
       </Container>
 
@@ -619,15 +655,30 @@ export default function HomeStories() {
 
               <div className="p-4 rounded-xl bg-white border border-[#E8DFC8] space-y-2">
                 <p className="font-sans text-xs sm:text-sm text-[#38423A] leading-relaxed">
-                  Captured on location at Earth Heritage managed farmland acreage. Showcasing actual agrarian conditions, soil care, and seasonal stewardship.
+                  {selectedStory.description ||
+                    `Captured on location at ${selectedStory.projectName || selectedStory.tag}${selectedStory.location ? ' in ' + selectedStory.location : ''}. Showcasing actual on-ground farm development, infrastructure, and living landscape.`}
                 </p>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                {selectedStory.projectSlug && (
+                  <Link
+                    href={`/projects/${selectedStory.projectSlug}`}
+                    onClick={() => setSelectedStory(null)}
+                    className="flex-1 py-3 px-6 rounded-xl bg-[#15341C] hover:bg-[#1E460B] text-[#FAF7F2] text-xs sm:text-[13px] font-semibold uppercase tracking-[0.16em] text-center transition-colors shadow-sm"
+                  >
+                    View Project Details
+                  </Link>
+                )}
                 <Link
                   href="/gallery"
                   onClick={() => setSelectedStory(null)}
-                  className="flex-1 py-3 px-6 rounded-xl bg-[#15341C] hover:bg-[#1E460B] text-[#FAF7F2] text-xs sm:text-[13px] font-semibold uppercase tracking-[0.16em] text-center transition-colors shadow-sm"
+                  className={cn(
+                    "py-3 px-6 rounded-xl text-xs sm:text-[13px] font-semibold uppercase tracking-[0.16em] text-center transition-colors shadow-sm",
+                    selectedStory.projectSlug
+                      ? "border border-[#D5C6A6] bg-white hover:bg-[#F5EEDB] text-[#15341C]"
+                      : "flex-1 bg-[#15341C] hover:bg-[#1E460B] text-[#FAF7F2]"
+                  )}
                 >
                   Explore in Gallery
                 </Link>
