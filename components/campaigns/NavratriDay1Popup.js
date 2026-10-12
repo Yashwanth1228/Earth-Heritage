@@ -8,16 +8,17 @@ import { X } from 'lucide-react';
 import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 
 /**
- * Day 1 Navratri Campaign Promotional Popup
+ * Day 2 Navratri Campaign Promotional Popup
  * 
- * - Active Date: October 11, 2026 only (visitor's local calendar date)
- * - Session Management: Closed once per session via sessionStorage ('navratriDay1PopupClosed')
- * - Testing/Preview: Supports query param `?preview=navratri-day-1`
- * - Aspect Ratio: Exact 1024:1015 uncropped original campaign poster
+ * - Active Date: October 12, 2026 only (visitor's local calendar date)
+ * - Expiration: From October 13, 2026 onward, popup never appears
+ * - Session Management: Closed once per session via sessionStorage ('navratriDay2PopupClosed')
+ * - Testing/Preview: Supports query param `?preview=navratri-day-2`
+ * - Aspect Ratio: Exact 1:1 (1024x1024) uncropped original campaign poster
  * - Accessibility: Accessible dialog semantics, Escape key listener, backdrop click, focus management
  * - Scroll Lock: Pauses Lenis and locks native body scrolling while open
  */
-export default function NavratriDay1Popup() {
+export default function NavratriPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const closeButtonRef = useRef(null);
@@ -32,10 +33,14 @@ export default function NavratriDay1Popup() {
       typeof window !== 'undefined'
         ? new URLSearchParams(window.location.search)
         : null;
-    const isPreview = urlParams?.get('preview') === 'navratri-day-1';
+    const previewParam = urlParams?.get('preview');
+    const isPreview =
+      previewParam === 'navratri-day-2' ||
+      previewParam === 'navratri' ||
+      previewParam === 'navratri-day-1';
 
     try {
-      if (sessionStorage.getItem('navratriDay1PopupClosed') === 'true' && !isPreview) {
+      if (sessionStorage.getItem('navratriDay2PopupClosed') === 'true' && !isPreview) {
         return;
       }
     } catch {
@@ -43,10 +48,10 @@ export default function NavratriDay1Popup() {
     }
 
     const now = new Date();
-    // Active strictly during October 11, 2026 (from 12:00 AM to 11:59:59 PM local time)
+    // Active strictly during October 12, 2026 (from 12:00:00 AM to 11:59:59 PM local time)
     // Month is 0-indexed in JavaScript Date (0 = Jan, 9 = Oct)
     const isCampaignActive =
-      now.getFullYear() === 2026 && now.getMonth() === 9 && now.getDate() === 11;
+      now.getFullYear() === 2026 && now.getMonth() === 9 && now.getDate() === 12;
 
     if (isCampaignActive || isPreview) {
       // Store current active element to restore focus after closing
@@ -65,7 +70,7 @@ export default function NavratriDay1Popup() {
   const closePopup = useCallback(() => {
     setIsOpen(false);
     try {
-      sessionStorage.setItem('navratriDay1PopupClosed', 'true');
+      sessionStorage.setItem('navratriDay2PopupClosed', 'true');
     } catch {
       // Ignore storage access errors
     }
@@ -125,7 +130,7 @@ export default function NavratriDay1Popup() {
               className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-hidden overscroll-contain"
               role="dialog"
               aria-modal="true"
-              aria-label="Happy Navratri Day 1 — Earth Heritage"
+              aria-label="Happy Navratri Day 2 — Maa Brahmacharini — Earth Heritage"
               data-lenis-prevent="true"
             >
               {/* Subtle dark translucent backdrop — clicking outside closes the modal */}
@@ -166,18 +171,18 @@ export default function NavratriDay1Popup() {
                 <div
                   className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-[#15341C] flex items-center justify-center"
                   style={{
-                    aspectRatio: '1024 / 1015',
+                    aspectRatio: '1 / 1',
                     maxHeight: 'min(86vh, 760px)',
-                    maxWidth: 'min(88vw, calc(86vh * (1024 / 1015)), 760px)',
+                    maxWidth: 'min(88vw, 86vh, 760px)',
                     width: 'auto',
                     height: 'auto'
                   }}
                 >
                   <Image
-                    src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791637214/earth-heritage/campaign/navratri-day-1-2026.jpg"
-                    alt="Day 1 Happy Navratri — Earth Heritage — May the divine energy of Maa Durga bring prosperity to every field and every farmer's dream. Rooted in Nature, Blessed with Prosperity."
+                    src="/images/campaign/navratri-day-2-2026.jpg"
+                    alt="Day 2 Happy Navratri — Maa Brahmacharini — Earth Heritage — May Maa Brahmacharini bless us with strength, patience and dedication to nurture a greener tomorrow. Rooted in Nature, Blessed with Prosperity."
                     width={1024}
-                    height={1015}
+                    height={1024}
                     priority
                     sizes="(max-width: 640px) 88vw, (max-width: 1024px) 70vw, 760px"
                     className="w-full h-full object-contain"
@@ -188,7 +193,7 @@ export default function NavratriDay1Popup() {
                     ref={closeButtonRef}
                     type="button"
                     onClick={closePopup}
-                    aria-label="Close Happy Navratri Day 1 announcement"
+                    aria-label="Close Happy Navratri Day 2 announcement"
                     className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#102B17]/90 hover:bg-[#1E460B] active:scale-95 text-white/95 hover:text-white border border-white/40 shadow-lg flex items-center justify-center cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#55C40D]"
                   >
                     <X className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
