@@ -8,17 +8,16 @@ import { aboutData } from '@/data/aboutData';
 import { cn } from '@/lib/utils';
 
 /**
- * Single Founder Profile with Compact Two-Column Editorial Layout
+ * Single Founder Profile with Two-Column Editorial Layout
  * 
- * - Left column (34-38%): Moderately sized portrait photograph
- * - Right column (58-62%): All founder narrative content arranged vertically:
- *     1. Founder name
- *     2. Role & title positioning
- *     3. Biography narrative
- *     4. Leadership / agronomic / strategic experience bullet points
- *     5. Pull quote
+ * - Normal layout (Founder Sathish Agastya):
+ *     - Left column (34-38%): Portrait photograph
+ *     - Right column (58-62%): Narrative, experience bullets, and pull quote
+ * - Reversed layout (Co-Founder Khushi Jain):
+ *     - Left column (58-62%): Narrative, experience bullets, and pull quote
+ *     - Right column (34-38%): Portrait photograph
  */
-function FounderProfileCard({ profile, priority = false }) {
+function FounderProfileCard({ profile, priority = false, reverse = false }) {
   if (!profile) return null;
 
   const experienceHeading =
@@ -31,7 +30,12 @@ function FounderProfileCard({ profile, priority = false }) {
       aria-label={`Founder Story: ${profile.name}`}
       className="w-full max-w-5xl mx-auto"
     >
-      <div className="flex flex-col md:flex-row gap-8 lg:gap-12 xl:gap-14 items-start">
+      <div
+        className={cn(
+          'flex flex-col gap-8 lg:gap-12 xl:gap-14 items-start',
+          reverse ? 'md:flex-row-reverse' : 'md:flex-row'
+        )}
+      >
         
         {/* Left Column: Portrait Photograph (~34-38% width) */}
         <div className="w-full md:w-[38%] lg:w-[36%] shrink-0">
@@ -172,9 +176,9 @@ export default function FoundersSection() {
           </MotionReveal>
         </div>
 
-        {/* Consistent Two-Column Founder Profiles */}
+        {/* Alternating Two-Column Founder Profiles */}
         <div className="space-y-16 sm:space-y-20 lg:space-y-24">
-          {sathish && <FounderProfileCard profile={sathish} priority />}
+          {sathish && <FounderProfileCard profile={sathish} priority reverse={false} />}
 
           {sathish && khushi && (
             <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center">
@@ -183,7 +187,7 @@ export default function FoundersSection() {
             </div>
           )}
 
-          {khushi && <FounderProfileCard profile={khushi} priority={false} />}
+          {khushi && <FounderProfileCard profile={khushi} priority={false} reverse={true} />}
         </div>
       </Container>
     </section>
