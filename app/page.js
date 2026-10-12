@@ -34,7 +34,7 @@ export const metadata = {
  * 07. HomeFaq — 5 essential first-visit questions with smooth accessible accordion
  * 08. HomeContactLocation — Editorial split: Direct on-page enquiry form + official Google Maps embed
  * 09. GandhiJayantiPopup — Temporary campaign modal for October 2, 2026
- * 10. NavratriDay1Popup — Temporary campaign modal for October 11, 2026 (Day 1 Navratri)
+ * 10. NavratriDay1Popup — Temporary campaign modal for October 12, 2026 (Day 2 Navratri — Maa Brahmacharini)
  */
 export default function HomePage() {
   return (
