@@ -8,12 +8,12 @@ import { X } from 'lucide-react';
 import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 
 /**
- * Day 3 Navratri Campaign Promotional Popup
+ * Day 4 Navratri Campaign Promotional Popup
  * 
- * - Active Date: October 13, 2026 only (visitor's local calendar date)
- * - Expiration: From October 14, 2026 onward, popup never appears
- * - Session Management: Closed once per session via sessionStorage ('navratriDay3PopupClosed')
- * - Testing/Preview: Supports query param `?preview=navratri-day-3`
+ * - Active Date: October 14, 2026 only in India Standard Time (Asia/Kolkata)
+ * - Expiration: From October 15, 2026 onward, popup never appears
+ * - Session Management: Closed once per session via sessionStorage ('navratriDay4PopupClosed')
+ * - Testing/Preview: Supports query param `?preview=navratri-day-4`
  * - Aspect Ratio: Exact 1:1 (1024x1024) uncropped original campaign poster
  * - Accessibility: Accessible dialog semantics, Escape key listener, backdrop click, focus management
  * - Scroll Lock: Pauses Lenis and locks native body scrolling while open
@@ -35,24 +35,30 @@ export default function NavratriPopup() {
         : null;
     const previewParam = urlParams?.get('preview');
     const isPreview =
-      previewParam === 'navratri-day-3' ||
+      previewParam === 'navratri-day-4' ||
       previewParam === 'navratri' ||
+      previewParam === 'navratri-day-3' ||
       previewParam === 'navratri-day-2' ||
       previewParam === 'navratri-day-1';
 
     try {
-      if (sessionStorage.getItem('navratriDay3PopupClosed') === 'true' && !isPreview) {
+      if (sessionStorage.getItem('navratriDay4PopupClosed') === 'true' && !isPreview) {
         return;
       }
     } catch {
       // Ignore storage access errors in private/restricted environments
     }
 
-    const now = new Date();
-    // Active strictly during October 13, 2026 (from 12:00:00 AM to 11:59:59 PM local time)
-    // Month is 0-indexed in JavaScript Date (0 = Jan, 9 = Oct)
-    const isCampaignActive =
-      now.getFullYear() === 2026 && now.getMonth() === 9 && now.getDate() === 13;
+    // Evaluate today's calendar date strictly in India Standard Time (Asia/Kolkata)
+    // Ensures accuracy regardless of whether client/server is in UTC or another timezone
+    const istDateString = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(new Date());
+
+    const isCampaignActive = istDateString === '2026-10-14';
 
     if (isCampaignActive || isPreview) {
       // Store current active element to restore focus after closing
@@ -71,7 +77,7 @@ export default function NavratriPopup() {
   const closePopup = useCallback(() => {
     setIsOpen(false);
     try {
-      sessionStorage.setItem('navratriDay3PopupClosed', 'true');
+      sessionStorage.setItem('navratriDay4PopupClosed', 'true');
     } catch {
       // Ignore storage access errors
     }
@@ -131,7 +137,7 @@ export default function NavratriPopup() {
               className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-hidden overscroll-contain"
               role="dialog"
               aria-modal="true"
-              aria-label="Happy Navratri Day 3 — Maa Chandraghanta — Earth Heritage"
+              aria-label="Happy Navratri Day 4 — Maa Kushmanda — Earth Heritage"
               data-lenis-prevent="true"
             >
               {/* Subtle dark translucent backdrop — clicking outside closes the modal */}
@@ -180,8 +186,8 @@ export default function NavratriPopup() {
                   }}
                 >
                   <Image
-                    src="/images/campaign/navratri-day-3-2026.jpg"
-                    alt="Day 3 Happy Navratri — Maa Chandraghanta — Earth Heritage — May Maa Chandraghanta bless every seed with courage, protection, and prosperity, and fill every field with abundance. Rooted in Nature, Blessed with Prosperity."
+                    src="/images/campaign/navratri-day-4-2026.jpg"
+                    alt="Day 4 Happy Navratri — Maa Kushmanda — Earth Heritage — May Maa Kushmanda fill our lives with positive energy, illumination, and boundless prosperity. Rooted in Nature, Blessed with Prosperity."
                     width={1024}
                     height={1024}
                     priority
@@ -194,7 +200,7 @@ export default function NavratriPopup() {
                     ref={closeButtonRef}
                     type="button"
                     onClick={closePopup}
-                    aria-label="Close Happy Navratri Day 3 announcement"
+                    aria-label="Close Happy Navratri Day 4 announcement"
                     className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#102B17]/90 hover:bg-[#1E460B] active:scale-95 text-white/95 hover:text-white border border-white/40 shadow-lg flex items-center justify-center cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#55C40D]"
                   >
                     <X className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
