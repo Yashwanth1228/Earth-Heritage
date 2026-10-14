@@ -27,7 +27,10 @@ import { Instagram, Linkedin, Youtube, Facebook, MapPin, Phone, Mail } from 'luc
  */
 export default function Footer() {
   const pathname = usePathname();
-  const isIsolatedCampaign = pathname?.startsWith('/lp') && pathname !== '/lp/managed-farmland';
+  const isIsolatedCampaign =
+    pathname?.startsWith('/lp') &&
+    pathname !== '/lp/managed-farmland' &&
+    pathname !== '/lp/nairuthya-whispering-wood';
 
   if (isIsolatedCampaign) {
     return null;
