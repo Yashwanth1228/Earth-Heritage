@@ -8,12 +8,12 @@ import { X } from 'lucide-react';
 import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 
 /**
- * Day 5 Navratri Campaign Promotional Popup
+ * Day 6 Navratri Campaign Promotional Popup
  * 
- * - Active Date: October 15, 2026 only in India Standard Time (Asia/Kolkata)
- * - Expiration: From October 16, 2026 onward, popup never appears
- * - Session Management: Closed once per session via sessionStorage ('navratriDay5PopupClosed')
- * - Testing/Preview: Supports query param `?preview=navratri-day-5`
+ * - Active Date: October 16, 2026 only in India Standard Time (Asia/Kolkata)
+ * - Expiration: From October 17, 2026 onward, popup never appears
+ * - Session Management: Closed once per session via sessionStorage ('navratriDay6PopupClosed')
+ * - Testing/Preview: Supports query param `?preview=navratri-day-6`
  * - Aspect Ratio: Exact 1:1 (1024x1024) uncropped original campaign poster
  * - Accessibility: Accessible dialog semantics, Escape key listener, backdrop click, focus management
  * - Scroll Lock: Pauses Lenis and locks native body scrolling while open
@@ -35,6 +35,7 @@ export default function NavratriPopup() {
         : null;
     const previewParam = urlParams?.get('preview');
     const isPreview =
+      previewParam === 'navratri-day-6' ||
       previewParam === 'navratri-day-5' ||
       previewParam === 'navratri-day-4' ||
       previewParam === 'navratri' ||
@@ -43,7 +44,7 @@ export default function NavratriPopup() {
       previewParam === 'navratri-day-1';
 
     try {
-      if (sessionStorage.getItem('navratriDay5PopupClosed') === 'true' && !isPreview) {
+      if (sessionStorage.getItem('navratriDay6PopupClosed') === 'true' && !isPreview) {
         return;
       }
     } catch {
@@ -59,7 +60,7 @@ export default function NavratriPopup() {
       day: '2-digit'
     }).format(new Date());
 
-    const isCampaignActive = istDateString === '2026-10-15';
+    const isCampaignActive = istDateString === '2026-10-16';
 
     if (isCampaignActive || isPreview) {
       // Store current active element to restore focus after closing
@@ -78,7 +79,7 @@ export default function NavratriPopup() {
   const closePopup = useCallback(() => {
     setIsOpen(false);
     try {
-      sessionStorage.setItem('navratriDay5PopupClosed', 'true');
+      sessionStorage.setItem('navratriDay6PopupClosed', 'true');
     } catch {
       // Ignore storage access errors
     }
@@ -138,7 +139,7 @@ export default function NavratriPopup() {
               className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-hidden overscroll-contain"
               role="dialog"
               aria-modal="true"
-              aria-label="Happy Navratri Day 5 — Maa Skandamata — Earth Heritage"
+              aria-label="Happy Navratri Day 6 — Maa Katyayani — Earth Heritage"
               data-lenis-prevent="true"
             >
               {/* Subtle dark translucent backdrop — clicking outside closes the modal */}
@@ -187,8 +188,8 @@ export default function NavratriPopup() {
                   }}
                 >
                   <Image
-                    src="/images/campaign/navratri-day-5-2026.jpg"
-                    alt="Day 5 Happy Navratri — Maa Skandamata — Earth Heritage — May Maa Skandamata bless our lives with wisdom, peace, divine protection, and endless prosperity. Rooted in Nature, Blessed with Prosperity."
+                    src="/images/campaign/navratri-day-6-2026.jpg"
+                    alt="Day 6 Happy Navratri — Maa Katyayani — Earth Heritage — May Maa Katyayani fill our lives with courage, strength, righteousness, and abundant prosperity. Rooted in Nature, Blessed with Prosperity."
                     width={1024}
                     height={1024}
                     priority
@@ -201,7 +202,7 @@ export default function NavratriPopup() {
                     ref={closeButtonRef}
                     type="button"
                     onClick={closePopup}
-                    aria-label="Close Happy Navratri Day 5 announcement"
+                    aria-label="Close Happy Navratri Day 6 announcement"
                     className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#102B17]/90 hover:bg-[#1E460B] active:scale-95 text-white/95 hover:text-white border border-white/40 shadow-lg flex items-center justify-center cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#55C40D]"
                   >
                     <X className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />

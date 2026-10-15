@@ -255,8 +255,8 @@ export default function PrivacyPolicyPage() {
                     <Mail className="w-4 h-4 text-[#15341C] shrink-0 mt-0.5" aria-hidden="true" />
                     <div>
                       <span className="block font-mono text-[10px] uppercase tracking-wider text-[#8C7A5A]">Email</span>
-                      <a href="mailto:earthheritageit@gmail.com" className="text-[#15341C] hover:underline">
-                        earthheritageit@gmail.com
+                      <a href="mailto:support@earthheritage.in" className="text-[#15341C] hover:underline">
+                        support@earthheritage.in
                       </a>
                     </div>
                   </div>
