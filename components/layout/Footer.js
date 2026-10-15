@@ -197,8 +197,8 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-[#7BD43E] shrink-0" aria-hidden="true" />
-                  <a href="mailto:earthheritageit@gmail.com" className="hover:text-white transition-colors break-all">
-                    earthheritageit@gmail.com
+                  <a href="mailto:support@earthheritage.in" className="hover:text-white transition-colors break-all">
+                    support@earthheritage.in
                   </a>
                 </li>
               </ul>

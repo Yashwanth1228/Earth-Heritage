@@ -124,7 +124,7 @@ export const companyData = {
     operational: 'Earth Heritage provides professional farm management and operational stewardship. All arrangements are subject to formal agreements. Earth Heritage does not offer guaranteed investment returns, fixed percentage yields, or financial advisory services.'
   },
   contact: {
-    email: 'earthheritageit@gmail.com',
+    email: 'support@earthheritage.in',
     phone: '9902096969',
     phoneDisplay: '+91 99020 96969',
     address: '4,5,6, BBMP Khata, SAMRUDDI “ No3, No 565/769, GIDADAKONENAHALLI MAIN ROAD, Nagarbhavi, Bengaluru, Karnataka 560091',
