@@ -100,7 +100,7 @@ export default function NairuthyaCampaignForm({ className }) {
         className
       )}
       style={{
-        backgroundImage: "url('/images/campaign/paper_crush_bg.jpg')",
+        backgroundImage: "url('https://res.cloudinary.com/yffbj6hj/image/upload/v1792156450/earth-heritage/campaign/paper-crush-bg.jpg')",
         backgroundRepeat: 'repeat',
         backgroundSize: '800px 800px'
       }}
@@ -112,7 +112,7 @@ export default function NairuthyaCampaignForm({ className }) {
       {/* Decorative Botanical Leaf on Side */}
       <div className="absolute -top-10 -left-12 w-40 h-40 opacity-50 pointer-events-none mix-blend-multiply hidden sm:block">
         <Image
-          src="/images/campaign/botanical_leaves.jpg"
+          src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156453/earth-heritage/campaign/botanical-leaves-card.jpg"
           alt="Botanical Leaves Decoration"
           width={200}
           height={200}

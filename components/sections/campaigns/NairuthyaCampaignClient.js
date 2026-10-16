@@ -288,7 +288,7 @@ export default function NairuthyaCampaignClient({ project }) {
           >
             <defs>
               <pattern id="heroPaperCrushPattern" patternUnits="userSpaceOnUse" width="800" height="800">
-                <image href="/images/campaign/paper_crush_bg.jpg" width="800" height="800" />
+                <image href="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156450/earth-heritage/campaign/paper-crush-bg.jpg" width="800" height="800" />
               </pattern>
             </defs>
 
@@ -371,7 +371,7 @@ export default function NairuthyaCampaignClient({ project }) {
           <div
             className="absolute inset-0 bg-[#FAF8F3] md:hidden pointer-events-none"
             style={{
-              backgroundImage: "url('/images/campaign/paper_crush_bg.jpg')",
+              backgroundImage: "url('https://res.cloudinary.com/yffbj6hj/image/upload/v1792156450/earth-heritage/campaign/paper-crush-bg.jpg')",
               backgroundRepeat: 'repeat',
               backgroundSize: '800px 800px'
             }}
@@ -557,7 +557,7 @@ export default function NairuthyaCampaignClient({ project }) {
             {/* Hand-Drawn Botanical Ink Branch on Far Right Margin (Matching Image 4) */}
             <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-48 h-48 pointer-events-none opacity-85 hidden lg:block z-0">
               <Image
-                src="/images/campaign/botanical_ink_branch.png"
+                src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
                 alt="Botanical Ink Illustration"
                 width={240}
                 height={240}
@@ -594,7 +594,7 @@ export default function NairuthyaCampaignClient({ project }) {
         {/* Botanical Leaf Sprig in Left Margin (Matching Landing Page Design) */}
         <div className="absolute -left-12 top-14 w-48 h-48 pointer-events-none z-0 transform -rotate-[25deg] hidden lg:block">
           <Image
-            src="/images/campaign/botanical_leaves.png"
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
             alt="Botanical Leaf Foliage"
             width={240}
             height={240}
@@ -850,7 +850,7 @@ export default function NairuthyaCampaignClient({ project }) {
                       <div className="relative w-full h-full min-h-[380px] sm:min-h-[410px]">
                         {/* Authentic Map Canvas Background */}
                         <Image
-                          src="/images/campaign/google-map-background.jpg"
+                          src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156451/earth-heritage/campaign/google-map-background.jpg"
                           alt="Google Maps View of Nelamangala and Bengaluru Corridors"
                           fill
                           priority
