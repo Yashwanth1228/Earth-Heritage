@@ -47,11 +47,11 @@ const INFRASTRUCTURE_ICONS = {
  *   - Shows first 3 amenities with "See More" button expanding remaining items
  * 
  * Part B: "Built-In Farm Infrastructure"
- * - Shows first 6 infrastructure cards by default with "See More" button for remaining items
+ * - Shows first 3 infrastructure cards by default with "See More" button for remaining items
  * - Dedicated symbols/icons for each card instead of point/dot design
  * - Removed the footer line "All infrastructure managed & maintained..."
  */
-export default function NairuthyaAmenities({ project }) {
+export default function NairuthyaAmenities({ project, className, id = 'amenities' }) {
   const experienceAmenities = project?.amenities?.experience || [];
   const infrastructure = project?.amenities?.infrastructure || [];
 
@@ -68,14 +68,17 @@ export default function NairuthyaAmenities({ project }) {
 
   return (
     <section
-      id="amenities"
+      id={id}
       data-navbar-theme="light"
-      className="relative bg-[#FAF6F0] text-[#111613] py-10 sm:py-12 lg:py-14 border-b border-[#DCCDB7]/80 overflow-hidden"
+      className={cn(
+        'relative bg-[#FAF6F0] text-[#111613] py-10 sm:py-12 lg:py-14 border-b border-[#DCCDB7]/80 overflow-hidden',
+        className
+      )}
       aria-label="Amenities and Infrastructure"
     >
       <LandContourPattern variant="biscuit-topography" className="opacity-25 pointer-events-none" />
 
-      <Container size="default" className="relative z-10 max-w-6xl px-6 sm:px-10 lg:px-14 space-y-10 sm:space-y-12">
+      <Container size="default" className="relative z-10 max-w-6xl px-4 sm:px-10 lg:px-14 space-y-10 sm:space-y-12">
         
         {/* =========================================================================
             PART A: DESIGNED FOR LIFE IN NATURE (NO CARDS - DIRECT IMAGE + TEXT)
@@ -103,20 +106,27 @@ export default function NairuthyaAmenities({ project }) {
             </MotionReveal>
           </div>
 
-          {/* 3-Column Grid Styled After Reference Image (No Cards, Direct Image + Text) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* 3-Column Grid on Laptop/Desktop, 2-Column Side-by-Side on Mobile & Tablet */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8">
             {visibleAmenities.map((item, idx) => (
-              <MotionReveal key={item.id} delay={0.05 * ((idx % 3) + 1)} className="h-full">
+              <MotionReveal
+                key={item.id}
+                delay={0.05 * ((idx % 3) + 1)}
+                className={cn(
+                  "h-full",
+                  idx === 2 && !showAllAmenities && "hidden lg:block"
+                )}
+              >
                 <div className="group flex flex-col h-full">
                   
                   {/* Rounded Image on Page Background */}
-                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-2xs">
+                  <div className="relative w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-2xs">
                     {item.image?.src ? (
                       <Image
                         src={item.image.src}
                         alt={item.image?.alt || `${item.title} at Nairuthya Whispering Wood`}
                         fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                       />
                     ) : (
@@ -127,11 +137,11 @@ export default function NairuthyaAmenities({ project }) {
                   </div>
 
                   {/* Title & Short Sentence Directly Below Image (No Card Wrapper) */}
-                  <div className="pt-3.5 sm:pt-4 space-y-1">
-                    <h3 className="font-serif text-lg sm:text-xl font-normal text-[#111613] tracking-tight group-hover:text-[#1E460B] transition-colors">
+                  <div className="pt-2.5 sm:pt-4 space-y-0.5 sm:space-y-1">
+                    <h3 className="font-serif text-sm sm:text-lg lg:text-xl font-medium sm:font-normal text-[#111613] tracking-tight group-hover:text-[#1E460B] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="font-sans text-xs sm:text-[13px] text-[#5A685D] leading-relaxed">
+                    <p className="font-sans text-[11px] sm:text-[13px] text-[#5A685D] leading-snug sm:leading-relaxed line-clamp-3 sm:line-clamp-none">
                       {item.description}
                     </p>
                   </div>
@@ -142,7 +152,7 @@ export default function NairuthyaAmenities({ project }) {
           </div>
 
           {/* See More / Show Less Toggle Button for Amenities */}
-          {experienceAmenities.length > 3 && (
+          {experienceAmenities.length > 2 && (
             <div className="flex justify-center pt-2 sm:pt-4">
               <button
                 type="button"
@@ -150,9 +160,7 @@ export default function NairuthyaAmenities({ project }) {
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#DDD3BF] bg-white hover:bg-[#FAF7F2] text-[#15341C] hover:text-[#1E460B] font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-200 shadow-2xs hover:shadow-xs cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#55C40D]"
               >
                 <span>
-                  {showAllAmenities
-                    ? 'Show Fewer Amenities'
-                    : `See More Amenities (${experienceAmenities.length - 3} More)`}
+                  {showAllAmenities ? 'Show Fewer Amenities' : 'See More Amenities'}
                 </span>
                 <ChevronDown
                   className={cn(
@@ -166,7 +174,7 @@ export default function NairuthyaAmenities({ project }) {
         </div>
 
         {/* =========================================================================
-            PART B: BUILT-IN FARM INFRASTRUCTURE (FIRST 6 CARDS + ICONS + SEE MORE)
+            PART B: BUILT-IN FARM INFRASTRUCTURE (SHOW 3 CARDS DEFAULT + SEE MORE)
             ========================================================================= */}
         <div className="pt-8 sm:pt-10 border-t border-[#DCCDB7] space-y-6 sm:space-y-8">
           {/* Header */}
@@ -189,13 +197,20 @@ export default function NairuthyaAmenities({ project }) {
             </MotionReveal>
           </div>
 
-          {/* 3-Column Specification List with Dedicated Symbols/Icons */}
+          {/* 3-Column Specification List with Dedicated Symbols/Icons: 6 cards on laptop & tablet, 3 on mobile */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visibleInfrastructure.map((item, idx) => {
               const IconComponent = INFRASTRUCTURE_ICONS[item.name] || ShieldCheck;
 
               return (
-                <MotionReveal key={item.name} delay={0.03 * ((idx % 3) + 1)}>
+                <MotionReveal
+                  key={item.name}
+                  delay={0.03 * ((idx % 3) + 1)}
+                  className={cn(
+                    "h-full",
+                    idx >= 3 && !showAllInfrastructure && "hidden sm:block"
+                  )}
+                >
                   <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-xl bg-white border border-[#E2D7C5] hover:border-[#D0C2AB] transition-colors h-full shadow-2xs">
                     {/* Symbol / Logo badge instead of simple point */}
                     <div className="w-8 h-8 rounded-lg bg-[#FAF6F0] border border-[#D5C09D] flex items-center justify-center shrink-0 mt-0.5 text-[#1E460B]">
@@ -215,8 +230,8 @@ export default function NairuthyaAmenities({ project }) {
             })}
           </div>
 
-          {/* See More Toggle for Infrastructure (Shows First 6, Expands Remaining) */}
-          {infrastructure.length > 6 && (
+          {/* See More Toggle for Infrastructure (Shows 3 on mobile / 6 on tablet & laptop, expands all) */}
+          {infrastructure.length > 3 && (
             <div className="flex justify-center pt-2 sm:pt-3">
               <button
                 type="button"
@@ -224,9 +239,18 @@ export default function NairuthyaAmenities({ project }) {
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#DDD3BF] bg-white hover:bg-[#FAF7F2] text-[#15341C] hover:text-[#1E460B] font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-200 shadow-2xs hover:shadow-xs cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#55C40D]"
               >
                 <span>
-                  {showAllInfrastructure
-                    ? 'Show Fewer Specifications'
-                    : `See More Infrastructure (${infrastructure.length - 6} More)`}
+                  {showAllInfrastructure ? (
+                    'Show Fewer Specifications'
+                  ) : (
+                    <>
+                      <span className="sm:hidden">
+                        See More Infrastructure ({infrastructure.length - 3} More)
+                      </span>
+                      <span className="hidden sm:inline">
+                        See More Infrastructure ({infrastructure.length - 6} More)
+                      </span>
+                    </>
+                  )}
                 </span>
                 <ChevronDown
                   className={cn(

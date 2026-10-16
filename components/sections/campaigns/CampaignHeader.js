@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Logo from '@/components/ui/Logo';
 import { useEnquiry } from '@/context/EnquiryContext';
+import { Menu, X, Phone, Compass, MapPin, Image as ImageIcon, Trees, Sparkles, Home, Star } from 'lucide-react';
 
 /**
  * Isolated Campaign Header
@@ -15,17 +17,29 @@ export default function CampaignHeader({
   variant = 'organic-scrapbook'
 }) {
   const { openEnquiryModal } = useEnquiry();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
+    setIsMobileMenuOpen(false);
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
+  const navLinks = [
+    { label: 'Home', id: 'hero', icon: Home },
+    { label: 'Our Stewardship', id: 'stewardship', icon: Compass },
+    { label: 'Plantations', id: 'plantations', icon: Trees },
+    { label: 'Amenities', id: 'amenities', icon: Sparkles },
+    { label: 'Gallery', id: 'gallery', icon: ImageIcon },
+    { label: 'Location', id: 'location', icon: MapPin },
+    { label: 'Reviews', id: 'reviews', icon: Star },
+  ];
+
   if (variant === 'organic-scrapbook' || variant === 'light-architectural') {
     return (
-      <header className="w-full bg-[#F3EDE2]/95 backdrop-blur-md text-[#2C382E] border-b border-[#DFD7C7] py-3.5 px-4 sm:px-8 sticky top-0 z-40 shadow-[0_2px_15px_rgba(80,70,50,0.04)]">
+      <header className="w-full bg-[#F3EDE2]/95 backdrop-blur-md text-[#2C382E] border-b border-[#DFD7C7] py-3 sm:py-3.5 px-4 sm:px-8 sticky top-0 z-50 shadow-[0_2px_15px_rgba(80,70,50,0.04)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Logo with gentle botanical leaf touch */}
@@ -44,56 +58,79 @@ export default function CampaignHeader({
 
           {/* Centered Soft Paper Navigation Pills (Desktop) */}
           <nav className="hidden lg:flex items-center gap-1.5 bg-[#EAE2D3]/70 px-2 py-1 rounded-full border border-[#DCD3C2] text-xs font-sans text-[#4A554A]">
-            <button
-              type="button"
-              onClick={() => scrollToSection('hero')}
-              className="px-3.5 py-1.5 rounded-full bg-[#BDCABA]/70 text-[#243525] font-medium transition-colors cursor-pointer"
-            >
-              Home
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection('stewardship')}
-              className="px-3.5 py-1.5 rounded-full hover:bg-white/50 transition-colors cursor-pointer"
-            >
-              Our Stewardship
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection('holdings')}
-              className="px-3.5 py-1.5 rounded-full hover:bg-white/50 transition-colors cursor-pointer"
-            >
-              Farmland Plots
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection('perspectives')}
-              className="px-3.5 py-1.5 rounded-full hover:bg-white/50 transition-colors cursor-pointer"
-            >
-              Sanctuary
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection('location')}
-              className="px-3.5 py-1.5 rounded-full hover:bg-white/50 transition-colors cursor-pointer"
-            >
-              Location
-            </button>
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                type="button"
+                onClick={() => scrollToSection(link.id)}
+                className="px-3.5 py-1.5 rounded-full hover:bg-white/50 active:bg-white/70 text-[#243525] font-medium transition-colors cursor-pointer"
+              >
+                {link.label}
+              </button>
+            ))}
           </nav>
 
-          {/* Right Action: Dark Olive Scrapbook Pill Button */}
-          <div className="flex items-center gap-3">
+          {/* Right Action: Walkthrough CTA and Mobile/Tablet Hamburger Toggle */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               id="header-inquire-cta"
               type="button"
               onClick={() => scrollToSection('enquiry-form')}
-              className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-medium tracking-wide bg-[#263828] text-white hover:bg-[#1E2E20] active:scale-[0.98] transition-all duration-200 shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#263828]"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-5 py-2 rounded-full text-xs font-medium tracking-wide bg-[#263828] text-white hover:bg-[#1E2E20] active:scale-[0.98] transition-all duration-200 shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#263828]"
             >
-              <span>Book a Walkthrough &rarr;</span>
+              <span>Book Visit</span>
+              <span className="hidden sm:inline">&rarr;</span>
+            </button>
+
+            {/* Mobile & Tablet Hamburger Button */}
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-full bg-[#EAE2D3]/90 hover:bg-[#E2D8C6] border border-[#DCD3C2] text-[#263828] transition-colors cursor-pointer"
+              aria-label={isMobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-[#263828]" />
+              ) : (
+                <Menu className="w-5 h-5 text-[#263828]" />
+              )}
             </button>
           </div>
 
         </div>
+
+        {/* Mobile & Tablet Navigation Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden border-t border-[#DFD7C7] mt-3 pt-3 pb-3 px-2 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200 bg-[#F3EDE2]/98 backdrop-blur-md rounded-b-2xl shadow-lg">
+            <div className="grid grid-cols-2 gap-2">
+              {navLinks.map((link) => {
+                const IconComponent = link.icon;
+                return (
+                  <button
+                    key={link.id}
+                    type="button"
+                    onClick={() => scrollToSection(link.id)}
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white/60 hover:bg-white text-left text-xs font-medium text-[#263828] border border-[#E3DACB] transition-colors cursor-pointer"
+                  >
+                    <IconComponent className="w-3.5 h-3.5 text-[#558A55] shrink-0" />
+                    <span className="truncate">{link.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="pt-2 border-t border-[#DFD7C7]/70 flex flex-col gap-2">
+              <a
+                href="tel:+919902096969"
+                className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white border border-[#DDD3C2] text-xs font-medium text-[#1E2E20] hover:bg-[#FAF8F3] transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#263828]" />
+                <span>Call Now: +91 99020 96969</span>
+              </a>
+            </div>
+          </div>
+        )}
       </header>
     );
   }
