@@ -24,7 +24,7 @@ import { cn } from '@/lib/utils';
  * - Minimal manual controls (prev/next + clickable dots)
  * - Warm neutral background (#FAF7F2), compact height
  */
-export default function NairuthyaPlantations({ project }) {
+export default function NairuthyaPlantations({ project, className, id = 'plantations' }) {
   const plantations = project?.plantations || [];
   const total = plantations.length;
 
@@ -60,9 +60,12 @@ export default function NairuthyaPlantations({ project }) {
 
   return (
     <section
-      id="plantations"
+      id={id}
       data-navbar-theme="light"
-      className="relative bg-[#FAF7F2] text-[#111613] py-6 sm:py-8 lg:py-9 border-b border-[#DCCDB7]/80 overflow-hidden"
+      className={cn(
+        'relative bg-[#FAF7F2] text-[#111613] py-6 sm:py-8 lg:py-9 border-b border-[#DCCDB7]/80 overflow-hidden',
+        className
+      )}
       aria-label="Cultivated Farm and Plantations"
     >
       <LandContourPattern variant="biscuit-topography" className="opacity-25 pointer-events-none" />

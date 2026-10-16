@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import LandContourPattern from '@/components/ui/LandContourPattern';
-import { Camera, X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { Camera, X, ChevronLeft, ChevronRight, Maximize2, ChevronDown } from 'lucide-react';
 import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 import { cn } from '@/lib/utils';
 
@@ -21,14 +21,17 @@ import { cn } from '@/lib/utils';
  * - Escape-to-close, Left/Right navigation, and focus management
  * - Responsive layout, reduced-motion support
  */
-export default function NairuthyaGallery({ project }) {
+export default function NairuthyaGallery({ project, className, id = 'gallery' }) {
   const galleryItems = project?.gallery || [];
   const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
   const [mounted, setMounted] = useState(false);
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const displayedItems = showAllPhotos ? galleryItems : galleryItems.slice(0, 3);
 
   // Check if any items actually have valid images
   const hasRealImages = galleryItems.some(
@@ -79,9 +82,12 @@ export default function NairuthyaGallery({ project }) {
 
   return (
     <section
-      id="gallery"
+      id={id}
       data-navbar-theme="light"
-      className="relative bg-[#FAF6F0] text-[#111613] py-10 sm:py-12 lg:py-14 border-b border-[#DCCDB7]/80 overflow-hidden"
+      className={cn(
+        'relative bg-[#FAF6F0] text-[#111613] py-10 sm:py-12 lg:py-14 border-b border-[#DCCDB7]/80 overflow-hidden',
+        className
+      )}
       aria-label="Project Visual Gallery"
     >
       <LandContourPattern variant="biscuit-topography" className="opacity-25 pointer-events-none" />
@@ -111,70 +117,107 @@ export default function NairuthyaGallery({ project }) {
         </div>
 
         {/* Gallery Showcase Grid (Equal-Sized Cards Grid: 3 cols Desktop, 2 cols Tablet, 1 col Mobile) */}
+        {/* Gallery Showcase Grid (Equal-Sized Cards Grid: 3 cols Desktop, 2 cols Tablet, 1 col Mobile) */}
         {hasRealImages ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
-            {galleryItems.map((item, idx) => (
-              <MotionReveal key={item.id || idx} delay={0.06 * (idx + 1)}>
-                <figure
-                  onClick={() => openLightbox(idx)}
-                  className="group relative rounded-2xl overflow-hidden border border-[#D5C09D] bg-[#102B17] shadow-2xs cursor-pointer aspect-[16/10] flex flex-col justify-end w-full h-full"
-                >
-                  {item.src && (
-                    <Image
-                      src={item.src}
-                      alt={item.alt || 'Nairuthya Whispering Wood'}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
+            {displayedItems.map((item, idx) => {
+              const originalIndex = galleryItems.indexOf(item);
+              const targetIdx = originalIndex !== -1 ? originalIndex : idx;
+              return (
+                <MotionReveal
+                  key={item.id || targetIdx}
+                  delay={0.06 * (idx + 1)}
+                  className={cn(
+                    "h-full",
+                    idx === 2 && !showAllPhotos && "block sm:hidden lg:block"
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                  
-                  <div className="relative z-10 p-4 flex items-center justify-between text-white">
-                    <figcaption className="font-sans text-xs sm:text-sm font-medium line-clamp-1">
-                      {item.caption || item.alt}
-                    </figcaption>
-                    <Maximize2 className="w-4 h-4 text-[#F8C32C] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                  </div>
-                </figure>
-              </MotionReveal>
-            ))}
+                >
+                  <figure
+                    onClick={() => openLightbox(targetIdx)}
+                    className="group relative rounded-2xl overflow-hidden border border-[#D5C09D] bg-[#102B17] shadow-2xs cursor-pointer aspect-[16/10] flex flex-col justify-end w-full h-full"
+                  >
+                    {item.src && (
+                      <Image
+                        src={item.src}
+                        alt={item.alt || 'Nairuthya Whispering Wood'}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                    
+                    <div className="relative z-10 p-4 flex items-center justify-between text-white">
+                      <figcaption className="font-sans text-xs sm:text-sm font-medium line-clamp-1">
+                        {item.caption || item.alt}
+                      </figcaption>
+                      <Maximize2 className="w-4 h-4 text-[#F8C32C] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                    </div>
+                  </figure>
+                </MotionReveal>
+              );
+            })}
           </div>
         ) : (
           /* Editorial Content-Ready State when photography is pending (Equal-Sized Cards Grid) */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
-            {galleryItems.map((item, idx) => (
-              <MotionReveal key={item.id || idx} delay={0.06 * (idx + 1)}>
-                <div className="group relative rounded-2xl overflow-hidden border border-[#DDD3BF] bg-gradient-to-b from-[#FBF8F3] via-[#F3ECE0] to-[#E9DFC8] shadow-2xs aspect-[16/10] p-4 sm:p-5 flex flex-col justify-between text-[#111613] select-none w-full h-full">
-                  <div className="absolute inset-0 opacity-25 pointer-events-none">
-                    <LandContourPattern variant="biscuit-topography" />
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+            {displayedItems.map((item, idx) => {
+              const originalIndex = galleryItems.indexOf(item);
+              const targetIdx = originalIndex !== -1 ? originalIndex : idx;
+              return (
+                <MotionReveal
+                  key={item.id || targetIdx}
+                  delay={0.06 * (idx + 1)}
+                  className={cn(
+                    "h-full",
+                    idx === 2 && !showAllPhotos && "block sm:hidden lg:block"
+                  )}
+                >
+                  <div className="group relative rounded-2xl overflow-hidden border border-[#DDD3BF] bg-gradient-to-b from-[#FBF8F3] via-[#F3ECE0] to-[#E9DFC8] shadow-2xs aspect-[16/10] p-4 sm:p-5 flex flex-col justify-between text-[#111613] select-none w-full h-full">
+                    <div className="absolute inset-0 opacity-25 pointer-events-none">
+                      <LandContourPattern variant="biscuit-topography" />
+                    </div>
 
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 border border-[#D5C09D] text-[10px] font-mono text-[#1E460B] uppercase tracking-wider shadow-2xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
-                      <span>Slot {String(idx + 1).padStart(2, '0')}</span>
-                    </span>
-                    <span className="text-[10px] font-mono text-[#7A6A4E] uppercase">
-                      Honnasandra
-                    </span>
-                  </div>
+                    <div className="relative z-10 flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 border border-[#D5C09D] text-[10px] font-mono text-[#1E460B] uppercase tracking-wider shadow-2xs">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
+                        <span>Slot {String(targetIdx + 1).padStart(2, '0')}</span>
+                      </span>
+                      <span className="text-[10px] font-mono text-[#7A6A4E] uppercase">
+                        Honnasandra
+                      </span>
+                    </div>
 
-                  <div className="relative z-10 space-y-0.5">
-                    <h4 className="font-serif text-sm sm:text-base font-medium text-[#111613] line-clamp-2">
-                      {item.caption}
-                    </h4>
-                    <p className="font-mono text-[10px] text-[#5A685D] truncate">
-                      {item.alt}
-                    </p>
-                  </div>
+                    <div className="relative z-10 space-y-0.5">
+                      <h4 className="font-serif text-sm sm:text-base font-medium text-[#111613] line-clamp-2">
+                        {item.caption}
+                      </h4>
+                      <p className="font-mono text-[10px] text-[#5A685D] truncate">
+                        {item.alt}
+                      </p>
+                    </div>
 
-                  <div className="relative z-10 pt-2 border-t border-[#D5C09D]/60 text-[10px] font-mono text-[#1E460B] uppercase tracking-wider">
-                    Verified Field Visual
+                    <div className="relative z-10 pt-2 border-t border-[#D5C09D]/60 text-[10px] font-mono text-[#1E460B] uppercase tracking-wider">
+                      Verified Field Visual
+                    </div>
                   </div>
-                </div>
-              </MotionReveal>
-            ))}
+                </MotionReveal>
+              );
+            })}
+          </div>
+        )}
+
+        {/* View More / View Less Toggle Button to reduce scrolling */}
+        {galleryItems.length > 2 && (
+          <div className="mt-8 sm:mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllPhotos((prev) => !prev)}
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#263828] text-white hover:bg-[#1E2E20] active:scale-[0.98] transition-all font-sans text-xs sm:text-sm font-medium shadow-sm cursor-pointer"
+            >
+              <span>{showAllPhotos ? 'View Fewer Photos' : 'View More Photos'}</span>
+              <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", showAllPhotos && "rotate-180")} />
+            </button>
           </div>
         )}
 

@@ -28,7 +28,7 @@ export default function NairuthyaCampaignForm({ className }) {
     fullName: '',
     email: '',
     phoneNumber: '',
-    interestedIn: 'Nairuthya Whispering Wood',
+    interestedIn: 'General Enquiry',
     message: ''
   });
 
@@ -86,16 +86,17 @@ export default function NairuthyaCampaignForm({ className }) {
   const whatsAppUrl = getWhatsAppUrl();
 
   const interestOptions = [
-    'Nairuthya Whispering Wood',
-    ...ENQUIRY_INTEREST_OPTIONS.filter((opt) => opt !== 'General Enquiry'),
-    'General Enquiry'
+    'General Enquiry',
+    'Farm Walkthrough & Site Visit',
+    'Plot Pricing & Availability',
+    'Managed Farmland Ownership'
   ];
 
   return (
     <section
       id="enquiry-form"
       className={cn(
-        'relative w-full py-16 sm:py-24 lg:py-28 overflow-hidden bg-[#EFE8DC]',
+        'relative w-full py-8 sm:py-10 lg:py-12 overflow-hidden bg-[#EFE8DC]',
         className
       )}
       style={{
@@ -109,35 +110,35 @@ export default function NairuthyaCampaignForm({ className }) {
       <div className="absolute inset-0 bg-[#EFE8DC]/50 pointer-events-none" />
 
       {/* Decorative Botanical Leaf on Side */}
-      <div className="absolute -top-10 -left-12 w-48 h-48 opacity-60 pointer-events-none mix-blend-multiply hidden sm:block">
+      <div className="absolute -top-10 -left-12 w-40 h-40 opacity-50 pointer-events-none mix-blend-multiply hidden sm:block">
         <Image
           src="/images/campaign/botanical_leaves.jpg"
           alt="Botanical Leaves Decoration"
-          width={240}
-          height={240}
+          width={200}
+          height={200}
           className="object-contain"
         />
       </div>
 
-      <Container size="default" className="relative z-10">
+      <Container size="default" className="relative z-10 max-w-6xl">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+        {/* Section Header - Compact */}
+        <div className="text-center max-w-2xl mx-auto mb-3.5 sm:mb-4 space-y-1">
           <MotionReveal delay={0.05}>
-            <span className="inline-block font-serif italic text-base sm:text-lg text-[#4A5F4B]">
+            <span className="inline-block font-serif italic text-xs sm:text-sm text-[#4A5F4B]">
               Experience Nairuthya Whispering Wood 🌿
             </span>
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#243525] tracking-tight leading-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#243525] tracking-tight leading-tight">
               Book Your Private Farm Walkthrough
             </h2>
           </MotionReveal>
 
           <MotionReveal delay={0.15}>
-            <p className="font-sans text-xs sm:text-sm text-[#5E6B5D] leading-relaxed max-w-xl mx-auto">
-              Step onto the red-loam earth. Walk the stone terraces, inspect individual boundary beacons, review legal title papers, and discuss farm care with our agricultural directors.
+            <p className="font-sans text-xs sm:text-[13px] text-[#5E6B5D] leading-relaxed max-w-lg mx-auto">
+              Schedule a guided estate walkthrough to inspect individual plot boundaries and discuss turnkey farm stewardship.
             </p>
           </MotionReveal>
         </div>
@@ -146,30 +147,29 @@ export default function NairuthyaCampaignForm({ className }) {
             CARD CONTAINER: Centered with margins so the background texture shows
             ========================================================================= */}
         <MotionReveal delay={0.2}>
-          <div className="max-w-6xl mx-auto relative">
+          <div className="max-w-5xl mx-auto relative">
             
             {/* Decorative Washi Tape Accent on Top Center */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-36 h-7 bg-[#DCD4C0]/85 backdrop-blur-[1px] rotate-[-1deg] border-t border-b border-white/60 shadow-xs z-20 pointer-events-none" />
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#DCD4C0]/85 backdrop-blur-[1px] rotate-[-1deg] border-t border-b border-white/60 shadow-xs z-20 pointer-events-none" />
 
             {/* Main Card with 50/50 Equal Division (Matching Home Page) */}
-            <div className="rounded-3xl bg-[#FAF7F2] border border-[#DDD3C2] p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(40,32,20,0.08)] relative">
+            <div className="rounded-2xl sm:rounded-3xl bg-[#FAF7F2] border border-[#DDD3C2] p-5 sm:p-6 lg:py-6 lg:px-8 shadow-[0_16px_40px_rgba(40,32,20,0.07)] relative">
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-10 items-start">
                 
                 {/* -------------------------------------------------------------
                     LEFT COLUMN: CONTACT FORM (Equally divided 50%)
-                    Matching Home Page Form Fields Exactly
                     ------------------------------------------------------------- */}
                 <div>
                   {isSuccess ? (
-                    <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#DDD3BF] shadow-xs text-center space-y-4">
-                      <div className="w-14 h-14 rounded-full bg-[#E8F5E9] border border-[#81C784] text-[#2E7D32] flex items-center justify-center mx-auto">
-                        <CheckCircle2 className="w-7 h-7 text-[#2E7D32]" aria-hidden="true" />
+                    <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#DDD3BF] shadow-xs text-center space-y-3">
+                      <div className="w-12 h-12 rounded-full bg-[#E8F5E9] border border-[#81C784] text-[#2E7D32] flex items-center justify-center mx-auto">
+                        <CheckCircle2 className="w-6 h-6 text-[#2E7D32]" aria-hidden="true" />
                       </div>
-                      <h3 className="font-serif text-2xl font-normal text-[#111613]">
+                      <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#111613]">
                         Thank you for reaching out
                       </h3>
-                      <p className="font-sans text-sm text-[#4E5B51] max-w-sm mx-auto leading-relaxed">
+                      <p className="font-sans text-xs sm:text-sm text-[#4E5B51] max-w-sm mx-auto leading-relaxed">
                         Our team at Earth Heritage has received your message and will connect with you shortly.
                       </p>
                       <button
@@ -184,15 +184,15 @@ export default function NairuthyaCampaignForm({ className }) {
                             message: ''
                           });
                         }}
-                        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase font-semibold text-[#15341C] hover:underline pt-2 cursor-pointer"
+                        className="inline-flex items-center gap-1 text-xs font-mono uppercase font-semibold text-[#15341C] hover:underline pt-1 cursor-pointer"
                       >
                         <span>Send another inquiry</span>
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
+                    <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3" noValidate>
                       {submitError && (
-                        <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
+                        <div className="p-2.5 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
                           <AlertCircle className="w-4 h-4 shrink-0" />
                           <span>{submitError}</span>
                         </div>
@@ -200,7 +200,7 @@ export default function NairuthyaCampaignForm({ className }) {
 
                       {/* Your Name */}
                       <div>
-                        <label htmlFor="landing-name" className="block text-xs font-sans font-medium text-[#4E5C50] mb-1.5">
+                        <label htmlFor="landing-name" className="block text-[11px] sm:text-xs font-sans font-medium text-[#4E5C50] mb-0.5 sm:mb-1">
                           Your Name
                         </label>
                         <input
@@ -213,16 +213,16 @@ export default function NairuthyaCampaignForm({ className }) {
                           }}
                           placeholder="Full Name"
                           className={cn(
-                            'w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
+                            'w-full px-3.5 py-2 sm:py-2.5 rounded-lg bg-white border text-xs sm:text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
                             errors.fullName ? 'border-red-400' : 'border-[#DDD3BF]'
                           )}
                         />
-                        {errors.fullName && <p className="text-[11px] text-red-600 mt-1">{errors.fullName}</p>}
+                        {errors.fullName && <p className="text-[11px] text-red-600 mt-0.5">{errors.fullName}</p>}
                       </div>
 
                       {/* Your Email */}
                       <div>
-                        <label htmlFor="landing-email" className="block text-xs font-sans font-medium text-[#4E5C50] mb-1.5">
+                        <label htmlFor="landing-email" className="block text-[11px] sm:text-xs font-sans font-medium text-[#4E5C50] mb-0.5 sm:mb-1">
                           Your Email
                         </label>
                         <input
@@ -235,17 +235,17 @@ export default function NairuthyaCampaignForm({ className }) {
                           }}
                           placeholder="Email Address"
                           className={cn(
-                            'w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
+                            'w-full px-3.5 py-2 sm:py-2.5 rounded-lg bg-white border text-xs sm:text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
                             errors.email ? 'border-red-400' : 'border-[#DDD3BF]'
                           )}
                         />
-                        {errors.email && <p className="text-[11px] text-red-600 mt-1">{errors.email}</p>}
+                        {errors.email && <p className="text-[11px] text-red-600 mt-0.5">{errors.email}</p>}
                       </div>
 
                       {/* Phone Number & Area of Interest */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                         <div>
-                          <label htmlFor="landing-phone" className="block text-xs font-sans font-medium text-[#4E5C50] mb-1.5">
+                          <label htmlFor="landing-phone" className="block text-[11px] sm:text-xs font-sans font-medium text-[#4E5C50] mb-0.5 sm:mb-1">
                             Phone Number
                           </label>
                           <input
@@ -275,22 +275,22 @@ export default function NairuthyaCampaignForm({ className }) {
                             }}
                             placeholder="10-digit mobile number"
                             className={cn(
-                              'w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
+                              'w-full px-3.5 py-2 sm:py-2.5 rounded-lg bg-white border text-xs sm:text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]',
                               errors.phoneNumber ? 'border-red-400' : 'border-[#DDD3BF]'
                             )}
                           />
-                          {errors.phoneNumber && <p className="text-[11px] text-red-600 mt-1">{errors.phoneNumber}</p>}
+                          {errors.phoneNumber && <p className="text-[11px] text-red-600 mt-0.5">{errors.phoneNumber}</p>}
                         </div>
 
                         <div>
-                          <label htmlFor="landing-interest" className="block text-xs font-sans font-medium text-[#4E5C50] mb-1.5">
+                          <label htmlFor="landing-interest" className="block text-[11px] sm:text-xs font-sans font-medium text-[#4E5C50] mb-0.5 sm:mb-1">
                             Area of Interest
                           </label>
                           <select
                             id="landing-interest"
                             value={formData.interestedIn}
                             onChange={(e) => setFormData({ ...formData, interestedIn: e.target.value })}
-                            className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-[#DDD3BF] text-sm text-[#111613] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]"
+                            className="w-full px-3.5 py-2 sm:py-2.5 rounded-lg bg-white border border-[#DDD3BF] text-xs sm:text-sm text-[#111613] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C]"
                           >
                             {interestOptions.map((opt) => (
                               <option key={opt} value={opt}>
@@ -303,16 +303,16 @@ export default function NairuthyaCampaignForm({ className }) {
 
                       {/* Your Message */}
                       <div>
-                        <label htmlFor="landing-message" className="block text-xs font-sans font-medium text-[#4E5C50] mb-1.5">
+                        <label htmlFor="landing-message" className="block text-[11px] sm:text-xs font-sans font-medium text-[#4E5C50] mb-0.5 sm:mb-1">
                           Your Message
                         </label>
                         <textarea
                           id="landing-message"
-                          rows={4}
+                          rows={2}
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Message"
-                          className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-[#DDD3BF] text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C] resize-none"
+                          className="w-full px-3.5 py-2 rounded-lg bg-white border border-[#DDD3BF] text-xs sm:text-sm text-[#111613] placeholder-[#A0ACA2] shadow-xs focus:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15341C] resize-none"
                         />
                       </div>
 
@@ -320,11 +320,11 @@ export default function NairuthyaCampaignForm({ className }) {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="py-3.5 px-8 rounded-xl bg-[#C6923C] hover:bg-[#B3812E] text-white text-xs font-semibold uppercase tracking-[0.16em] shadow-sm hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                        className="py-2.5 px-7 rounded-lg bg-[#C6923C] hover:bg-[#B3812E] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] shadow-xs hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                       >
                         {isSubmitting ? (
                           <>
-                            <Loader2 className="w-4 h-4 animate-spin text-white" />
+                            <Loader2 className="w-3.5 h-3.5 animate-spin text-white" />
                             <span>SENDING MESSAGE...</span>
                           </>
                         ) : (
@@ -342,39 +342,39 @@ export default function NairuthyaCampaignForm({ className }) {
                     RIGHT COLUMN: "GET IN TOUCH" (Equally divided 50%)
                     Matching Home Page Layout Exactly
                     ------------------------------------------------------------- */}
-                <div className="space-y-8 lg:pl-4">
-                  <div className="space-y-3">
-                    <span className="font-serif italic text-base sm:text-lg text-[#C6923C]">
+                <div className="space-y-3.5 lg:pl-2">
+                  <div className="space-y-0.5">
+                    <span className="font-serif italic text-xs sm:text-sm text-[#C6923C]">
                       Contact Us
                     </span>
-                    <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-tight">
+                    <h2 className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-[#111613] leading-snug">
                       Get In Touch
                     </h2>
-                    <p className="font-sans text-sm sm:text-base text-[#4E5C50] leading-relaxed max-w-lg">
-                      Direct conversations on farmland ownership and professional farm management, or to schedule a private guided estate walkthrough across our managed acreage.
+                    <p className="font-sans text-xs text-[#4E5C50] leading-relaxed max-w-md">
+                      Direct conversations on farmland ownership and professional farm management, or to schedule a private guided estate walkthrough.
                     </p>
                   </div>
 
                   {/* 2x2 Contact Info Grid (Call Us, Email Us, Website, Registered Office) */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5">
                     
                     {/* Call Us */}
-                    <div className="flex items-start gap-3.5">
-                      <div className="w-10 h-10 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-xs">
-                        <Phone className="w-4 h-4" aria-hidden="true" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="w-8 h-8 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-2xs mt-0.5">
+                        <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="font-serif text-base font-medium text-[#111613]">
+                        <h4 className="font-serif text-xs sm:text-sm font-medium text-[#111613]">
                           Call Us
                         </h4>
-                        <p className="font-sans text-xs sm:text-[13px] text-[#5A695E]">
+                        <p className="font-sans text-[11px] text-[#5A695E]">
                           Direct &bull; WhatsApp Available
                         </p>
                         <a
                           href={whatsAppUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block font-sans text-xs font-semibold text-[#15341C] hover:text-[#1E460B] hover:underline transition-colors"
+                          className="inline-block font-sans text-[11px] font-semibold text-[#15341C] hover:text-[#1E460B] hover:underline transition-colors"
                         >
                           Connect on WhatsApp &rarr;
                         </a>
@@ -382,54 +382,54 @@ export default function NairuthyaCampaignForm({ className }) {
                     </div>
 
                     {/* Email Us */}
-                    <div className="flex items-start gap-3.5">
-                      <div className="w-10 h-10 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-xs">
-                        <Mail className="w-4 h-4" aria-hidden="true" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="w-8 h-8 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-2xs mt-0.5">
+                        <Mail className="w-3.5 h-3.5" aria-hidden="true" />
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="font-serif text-base font-medium text-[#111613]">
+                        <h4 className="font-serif text-xs sm:text-sm font-medium text-[#111613]">
                           Email Us
                         </h4>
                         <a
                           href="mailto:support@earthheritage.in"
-                          className="block font-sans text-xs sm:text-[13px] text-[#5A695E] hover:text-[#15341C] transition-colors"
+                          className="block font-sans text-[11px] text-[#5A695E] hover:text-[#15341C] transition-colors truncate"
                         >
                           support@earthheritage.in
                         </a>
-                        <span className="text-[11px] font-mono text-[#8C7A5A]">
+                        <span className="text-[10px] font-mono text-[#8C7A5A]">
                           Prompt Response
                         </span>
                       </div>
                     </div>
 
                     {/* Website */}
-                    <div className="flex items-start gap-3.5">
-                      <div className="w-10 h-10 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-xs">
-                        <Globe className="w-4 h-4" aria-hidden="true" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="w-8 h-8 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-2xs mt-0.5">
+                        <Globe className="w-3.5 h-3.5" aria-hidden="true" />
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="font-serif text-base font-medium text-[#111613]">
+                        <h4 className="font-serif text-xs sm:text-sm font-medium text-[#111613]">
                           Website
                         </h4>
-                        <p className="font-sans text-xs sm:text-[13px] text-[#5A695E]">
+                        <p className="font-sans text-[11px] text-[#5A695E]">
                           www.earthheritage.in
                         </p>
-                        <span className="text-[11px] font-mono text-[#8C7A5A]">
+                        <span className="text-[10px] font-mono text-[#8C7A5A]">
                           Corporate Portal
                         </span>
                       </div>
                     </div>
 
                     {/* Registered Office */}
-                    <div className="flex items-start gap-3.5">
-                      <div className="w-10 h-10 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-xs">
-                        <MapPin className="w-4 h-4" aria-hidden="true" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="w-8 h-8 rounded-full border border-[#D5C09D] bg-white flex items-center justify-center text-[#C6923C] shrink-0 shadow-2xs mt-0.5">
+                        <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="font-serif text-base font-medium text-[#111613]">
+                        <h4 className="font-serif text-xs sm:text-sm font-medium text-[#111613]">
                           Registered Office
                         </h4>
-                        <p className="font-sans text-xs sm:text-[13px] text-[#5A695E] leading-snug">
+                        <p className="font-sans text-[11px] text-[#5A695E] leading-snug">
                           Nagarabhavi, Bengaluru, Karnataka 560091
                         </p>
                       </div>
@@ -438,11 +438,11 @@ export default function NairuthyaCampaignForm({ className }) {
                   </div>
 
                   {/* Follow Us On (Matching Home Page) */}
-                  <div className="space-y-3 pt-4 border-t border-[#EAE0CD]">
-                    <h4 className="font-serif text-sm font-medium text-[#111613]">
+                  <div className="space-y-1.5 pt-2 border-t border-[#EAE0CD]">
+                    <h4 className="font-serif text-xs font-medium text-[#111613]">
                       Follow Us On
                     </h4>
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-2">
                       {[
                         { icon: Instagram, label: 'Instagram', href: companyData.social.instagram },
                         { icon: Linkedin, label: 'LinkedIn', href: companyData.social.linkedin },
@@ -456,9 +456,9 @@ export default function NairuthyaCampaignForm({ className }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={s.label}
-                          className="w-9 h-9 rounded-full bg-[#C6923C] hover:bg-[#B3812E] text-white flex items-center justify-center shadow-xs transition-transform hover:scale-105 active:scale-95"
+                          className="w-7 h-7 rounded-full bg-[#C6923C] hover:bg-[#B3812E] text-white flex items-center justify-center shadow-2xs transition-transform hover:scale-105 active:scale-95"
                         >
-                          <s.icon className="w-4 h-4" />
+                          <s.icon className="w-3.5 h-3.5" />
                         </a>
                       ))}
                     </div>

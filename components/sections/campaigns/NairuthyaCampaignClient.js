@@ -5,6 +5,10 @@ import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import NairuthyaCampaignForm from './NairuthyaCampaignForm';
+import NairuthyaPlantations from '@/components/projects/nairuthya/NairuthyaPlantations';
+import NairuthyaAmenities from '@/components/projects/nairuthya/NairuthyaAmenities';
+import NairuthyaGallery from '@/components/projects/nairuthya/NairuthyaGallery';
+import NairuthyaReviews from './NairuthyaReviews';
 import {
   ArrowRight,
   ChevronDown,
@@ -18,7 +22,8 @@ import {
   Search,
   ExternalLink,
   Plus,
-  Minus
+  Minus,
+  Phone
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -44,7 +49,6 @@ const FULL_SHEET_TORN_PAPER = "M0,0 L520.9,0 L520.9,0 L522.8,3.6 L524.5,7.2 L525
 
 export default function NairuthyaCampaignClient({ project }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
-  const [perspectiveIndex, setPerspectiveIndex] = useState(0);
   const [activeLandmarkId, setActiveLandmarkId] = useState('nelamangala-town');
   const [mapMode, setMapMode] = useState('routes');
   const [zoomLevel, setZoomLevel] = useState(1);
@@ -62,54 +66,6 @@ export default function NairuthyaCampaignClient({ project }) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-
-  const holdings = [
-    {
-      id: 'plot-6k',
-      title: '6,000 sq.ft Plot',
-      subtitle: 'Boutique Farmland Parcel',
-      description: 'An intimate farm parcel with individual Khata, perimeter coconut palms, and drip-irrigated timber corridors.',
-      badge: 'Individual Khata'
-    },
-    {
-      id: 'plot-10k',
-      title: '10,000 sq.ft Estate',
-      subtitle: 'Spacious Agrarian Parcel',
-      description: 'Generous acreage for an eco-cottage, private fruit orchard, vegetable cultivation, and mahogany borders.',
-      badge: 'Estate Demarcation'
-    },
-    {
-      id: 'plot-quarter-acre',
-      title: 'Quarter-Acre Holding',
-      subtitle: '10,890 sq.ft Contoured Parcel',
-      description: 'Scenic elevated contour with wide stone terrace vistas, dedicated water line, and solar-lit internal road access.',
-      badge: 'Scenic Elevation'
-    },
-    {
-      id: 'farm-stewardship',
-      title: 'Turnkey Stewardship',
-      subtitle: 'Full Operational Farm Care',
-      description: 'Complete hands-free farm stewardship including seasonal pruning, automated micro-drip irrigation, and 24/7 security.',
-      badge: 'Managed by Earth Heritage'
-    }
-  ];
-
-  const perspectives = [
-    {
-      quote:
-        'We approach Nairuthya Whispering Wood not as a short-term development venture, but as an enduring agricultural sanctuary where families own titled land and Earth Heritage oversees disciplined, long-term farm stewardship.',
-      author: 'Sathish Agastya',
-      role: 'Founder • Earth Heritage',
-      initials: 'SA'
-    },
-    {
-      quote:
-        'At Nairuthya Whispering Wood, our focus is bringing together clear individual legal ownership with professional turnkey farm care—creating a multi-generational living asset that matures gracefully over time.',
-      author: 'Khushi Jain',
-      role: 'Co-Founder • Earth Heritage',
-      initials: 'KJ'
-    }
-  ];
 
   const landmarks = [
     {
@@ -251,19 +207,55 @@ export default function NairuthyaCampaignClient({ project }) {
           ========================================================================= */}
       <section
         id="hero"
-        className="relative w-full h-auto min-h-0 lg:h-[calc(100vh-76px)] lg:min-h-[520px] lg:max-h-[800px] overflow-hidden bg-[#FAF8F3] border-b border-[#DDD3C2] z-10"
+        className="relative w-full h-auto min-h-0 md:h-[calc(100vh-76px)] md:min-h-[520px] md:max-h-[820px] overflow-hidden bg-[#FAF8F3] border-b border-[#DDD3C2] z-10 flex flex-col md:block"
         aria-label="Welcome to Nairuthya Whispering Wood"
       >
         {/* -----------------------------------------------------------------
-            1. RIGHT SIDE: 60% WIDTH - PROJECT BANNER IMAGE (DESKTOP)
-            Positioned absolute covering right 62%, extending under the torn seam
+            1. MOBILE-ONLY BANNER IMAGE (FIRST IN MOBILE ORDER)
+            Appears on top before details so mobile users immediately see the estate banner
             ----------------------------------------------------------------- */}
-        <div className="hidden lg:block lg:absolute lg:top-0 lg:bottom-0 lg:right-0 lg:w-[62%] lg:h-full z-0 overflow-hidden">
+        <div className="w-full h-[280px] xs:h-[320px] sm:h-[380px] relative overflow-hidden md:hidden z-10">
           <Image
             src="/images/projects/nairuthya-whispering-wood-hero.jpg"
             alt="Nairuthya Whispering Wood 8-acre managed farmland in Honnasandra, Nelamangala"
             fill
-            sizes="(max-width: 1024px) 100vw, 62vw"
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: '44% center' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none" />
+          <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 pointer-events-none">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white shadow-md">
+              <MapPin className="w-3.5 h-3.5 text-[#C9A86A]" />
+              <span className="font-serif text-[11px] sm:text-xs">Honnasandra, Nelamangala &bull; Actual Site</span>
+            </div>
+          </div>
+        </div>
+
+        {/* -----------------------------------------------------------------
+            2. MOBILE HORIZONTAL TORN PAPER DIVIDER (Between banner image and details)
+            Seamless torn paper transition between top image and details below
+            ----------------------------------------------------------------- */}
+        <div className="relative w-full h-5 sm:h-7 -mt-2 sm:-mt-3 z-20 pointer-events-none md:hidden overflow-hidden">
+          <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="w-full h-full drop-shadow-sm">
+            <path
+              d={SAGE_TOP_PAPER}
+              fill="#FAF8F3"
+            />
+          </svg>
+        </div>
+
+        {/* -----------------------------------------------------------------
+            3. RIGHT SIDE: 60% WIDTH - PROJECT BANNER IMAGE (DESKTOP & LAPTOP)
+            Positioned absolute covering right 56-62%, extending under the torn seam
+            ----------------------------------------------------------------- */}
+        <div className="hidden md:block md:absolute md:top-0 md:bottom-0 md:right-0 md:w-[56%] lg:w-[62%] md:h-full z-0 overflow-hidden">
+          <Image
+            src="/images/projects/nairuthya-whispering-wood-hero.jpg"
+            alt="Nairuthya Whispering Wood 8-acre managed farmland in Honnasandra, Nelamangala"
+            fill
+            sizes="(max-width: 768px) 100vw, 62vw"
             className="object-cover object-center"
             priority
           />
@@ -281,11 +273,11 @@ export default function NairuthyaCampaignClient({ project }) {
         </div>
 
         {/* -----------------------------------------------------------------
-            2. DESKTOP UNIFIED CRUSHED PAPER SHEET (ZERO STRAIGHT LINES)
-            Runs seamlessly from left edge (x=0) all the way into the torn cut (~40%).
+            4. DESKTOP & LAPTOP UNIFIED CRUSHED PAPER SHEET (ZERO STRAIGHT LINES)
+            Runs seamlessly from left edge (x=0) all the way into the torn cut (~40-48%).
             Uses the authentic paper_crush_bg.jpg texture pattern.
             ----------------------------------------------------------------- */}
-        <div className="absolute top-0 bottom-0 left-0 w-full lg:w-[calc(40%+95px)] xl:w-[calc(40%+115px)] h-full z-10 pointer-events-none hidden lg:block overflow-visible">
+        <div className="absolute top-0 bottom-0 left-0 w-full md:w-[calc(48%+70px)] lg:w-[calc(40%+95px)] xl:w-[calc(40%+115px)] h-full z-10 pointer-events-none hidden md:block overflow-visible">
           <svg
             viewBox="0 0 600 1000"
             preserveAspectRatio="none"
@@ -370,14 +362,14 @@ export default function NairuthyaCampaignClient({ project }) {
         </div>
 
         {/* -----------------------------------------------------------------
-            3. LEFT SIDE: 40% WIDTH - PROJECT DETAILS & WORDING
-            Transparent on desktop so the unified crushed paper sheet shows through.
-            Zero straight lines. Fits completely on screen without scroll.
+            5. LEFT SIDE: 40-48% WIDTH - PROJECT DETAILS & WORDING
+            Transparent on desktop & laptop so the unified crushed paper sheet shows through.
+            Zero straight lines. Fits on screen without scroll.
             ----------------------------------------------------------------- */}
-        <div className="w-full lg:w-[40%] flex-shrink-0 relative z-20 flex flex-col justify-center px-6 sm:px-10 lg:pl-10 lg:pr-6 xl:pl-14 xl:pr-8 py-8 lg:py-4 xl:py-6 lg:h-full bg-transparent">
+        <div className="w-full md:w-[48%] lg:w-[40%] flex-shrink-0 relative z-20 flex flex-col justify-center px-6 sm:px-10 md:pl-8 md:pr-4 lg:pl-10 lg:pr-6 xl:pl-14 xl:pr-8 py-6 sm:py-8 md:py-4 xl:py-6 md:h-full bg-transparent">
           {/* Mobile-only background container */}
           <div
-            className="absolute inset-0 bg-[#FAF8F3] lg:hidden pointer-events-none"
+            className="absolute inset-0 bg-[#FAF8F3] md:hidden pointer-events-none"
             style={{
               backgroundImage: "url('/images/campaign/paper_crush_bg.jpg')",
               backgroundRepeat: 'repeat',
@@ -387,10 +379,10 @@ export default function NairuthyaCampaignClient({ project }) {
             <div className="absolute inset-0 bg-[#FAF8F3]/50" />
           </div>
 
-          <div className="relative z-10 space-y-3.5 sm:space-y-4 xl:space-y-5 max-w-md xl:max-w-lg mx-auto lg:mr-4 lg:ml-auto w-full">
+          <div className="relative z-10 space-y-3.5 sm:space-y-4 xl:space-y-5 max-w-md xl:max-w-lg mx-auto md:mr-2 lg:mr-4 md:ml-auto w-full">
             
             {/* Project Brand Logo */}
-            <div className="w-40 sm:w-48 lg:w-44 xl:w-52 h-auto pt-0.5">
+            <div className="w-40 sm:w-48 md:w-40 lg:w-44 xl:w-52 h-auto pt-0.5">
               <Image
                 src="/images/campaign/nairuthya_logo.png"
                 alt="Nairuthya Whispering Wood"
@@ -403,7 +395,7 @@ export default function NairuthyaCampaignClient({ project }) {
 
             {/* Display Headline */}
             <div>
-              <h1 className="font-serif text-2xl sm:text-3xl lg:text-[2.1rem] xl:text-[2.6rem] font-normal text-[#1E2E20] tracking-tight leading-[1.12]">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-[1.85rem] lg:text-[2.1rem] xl:text-[2.6rem] font-normal text-[#1E2E20] tracking-tight leading-[1.12]">
                 Nairuthya<br />
                 Whispering Wood<br />
                 <span className="relative inline-block text-[#263828]">
@@ -441,47 +433,17 @@ export default function NairuthyaCampaignClient({ project }) {
                 <span>Schedule Estate Visit &rarr;</span>
               </button>
 
-              <button
-                type="button"
-                onClick={() => scrollToSection('stewardship')}
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#FAF8F3] hover:bg-white border border-[#DDD3C2] text-[#243525] font-sans font-medium text-xs sm:text-sm transition-all shadow-sm cursor-pointer"
+              <a
+                href="tel:+919902096969"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#FAF8F3] hover:bg-white border border-[#DDD3C2] text-[#243525] font-sans font-medium text-xs sm:text-sm transition-all shadow-sm cursor-pointer group"
               >
-                <span className="w-5 h-5 rounded-full bg-[#E5ECE2] flex items-center justify-center text-[#263828]">
-                  <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
+                <span className="w-6 h-6 rounded-full bg-[#E5ECE2] group-hover:bg-[#263828] group-hover:text-white flex items-center justify-center text-[#263828] transition-colors">
+                  <Phone className="w-3 h-3" />
                 </span>
-                <span>Development Model</span>
-              </button>
+                <span className="font-semibold text-[#1E2E20]">Call Now: +91 99020 96969</span>
+              </a>
             </div>
 
-          </div>
-        </div>
-
-        {/* Mobile / Tablet Horizontal Torn Paper Divider across the photo seam */}
-        <div className="relative w-full h-6 sm:h-8 -mt-4 z-20 pointer-events-none lg:hidden overflow-hidden">
-          <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="w-full h-full drop-shadow-sm">
-            <path
-              d={SAGE_TOP_PAPER}
-              fill="#FAF8F3"
-            />
-          </svg>
-        </div>
-
-        {/* Mobile-only Image container */}
-        <div className="w-full h-[340px] sm:h-[420px] relative overflow-hidden lg:hidden z-10">
-          <Image
-            src="/images/projects/nairuthya-whispering-wood-hero.jpg"
-            alt="Nairuthya Whispering Wood 8-acre managed farmland in Honnasandra, Nelamangala"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute bottom-4 right-4 z-20 pointer-events-none">
-            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/25 text-white shadow-md">
-              <MapPin className="w-3.5 h-3.5 text-[#C9A86A]" />
-              <span className="font-serif text-xs">Honnasandra, Nelamangala &bull; Actual Site</span>
-            </div>
           </div>
         </div>
 
@@ -625,15 +587,12 @@ export default function NairuthyaCampaignClient({ project }) {
       </section>
 
       {/* =========================================================================
-          SECTION 3: 4 DECKLE CARDS - MATCHING IMAGE 5 TOP
+          SECTION 3: CULTIVATED FARM & PLANTATIONS (From Project Page)
+          Styled with authentic landing page paper texture and botanical accents
           ========================================================================= */}
-      <section
-        id="holdings"
-        className="relative w-full py-20 sm:py-28 z-10"
-        aria-label="Farmland Holdings &amp; Plots"
-      >
-        {/* Botanical Leaf Sprig in Left Margin (Matching Image 5) */}
-        <div className="absolute -left-12 top-24 w-48 h-48 pointer-events-none z-0 transform -rotate-[25deg] hidden lg:block">
+      <div id="holdings" className="relative w-full z-10">
+        {/* Botanical Leaf Sprig in Left Margin (Matching Landing Page Design) */}
+        <div className="absolute -left-12 top-14 w-48 h-48 pointer-events-none z-0 transform -rotate-[25deg] hidden lg:block">
           <Image
             src="/images/campaign/botanical_leaves.png"
             alt="Botanical Leaf Foliage"
@@ -643,272 +602,24 @@ export default function NairuthyaCampaignClient({ project }) {
           />
         </div>
 
-        <Container size="default" className="relative z-10">
-          <div className="max-w-6xl mx-auto space-y-12 sm:space-y-14">
-            
-            {/* Header with Handwritten Doodle (Matching Image 5) */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div className="space-y-3">
-                <MotionReveal delay={0.05}>
-                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#786E5E] font-semibold block">
-                    FARMLAND HOLDINGS &amp; PLOTS
-                  </span>
-                </MotionReveal>
-
-                <MotionReveal delay={0.1}>
-                  <div className="relative inline-block">
-                    <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#243525] tracking-tight">
-                      Curated Farmland Plots for Every Vision 🌿
-                    </h2>
-                    {/* Subtle Hand-Drawn Stroke Underline */}
-                    <svg
-                      className="w-40 sm:w-56 h-3 text-[#C9A86A]/75 mt-1"
-                      viewBox="0 0 200 12"
-                      fill="none"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M2,8 Q50,3 100,7 Q150,11 198,5"
-                        stroke="currentColor"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                </MotionReveal>
-              </div>
-
-              {/* Right Side Handwritten Arrow Note (Matching Image 5) */}
-              <MotionReveal delay={0.15}>
-                <div className="flex items-center gap-2 self-start md:self-end">
-                  <div className="text-right">
-                    <span className="font-serif italic text-base sm:text-lg text-[#4A5F4B] block leading-tight">
-                      Titled Land<br />Turnkey Care
-                    </span>
-                  </div>
-                  {/* Curved Hand-Drawn Arrow */}
-                  <svg className="w-8 h-8 text-[#4A5F4B] transform rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M14 4c4 4 4 10 0 14m0 0l-3-3m3 3l-3 3" />
-                  </svg>
-                </div>
-              </MotionReveal>
-            </div>
-
-            {/* 4 Cards (Matching Image 5 Layout) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {holdings.map((h, i) => (
-                <MotionReveal key={h.id} delay={0.1 + i * 0.05}>
-                  <div className="rounded-3xl bg-[#FAF8F3] border border-[#DDD3C2] p-6 sm:p-7 shadow-[0_6px_20px_rgba(60,50,35,0.06)] flex flex-col justify-between h-full space-y-6 hover:-translate-y-1 transition-transform duration-200">
-                    
-                    <div className="space-y-4">
-                      {/* Circular Pebble Icon Badge */}
-                      <div className="w-14 h-14 rounded-full bg-[#EAE2D3] border border-[#D5CABB] flex items-center justify-center text-[#263828] shadow-sm">
-                        {i === 0 && (
-                          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                            <path d="M12 2C6.5 2 2 6.5 2 12c0 5.5 4.5 10 10 10 2-3 3-7 6-9 3-2 4-4 4-7 0-3-3.5-6-8-4z" />
-                          </svg>
-                        )}
-                        {i === 1 && (
-                          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                            <circle cx="10" cy="12" r="6" />
-                            <circle cx="14" cy="12" r="6" opacity="0.6" />
-                          </svg>
-                        )}
-                        {i === 2 && (
-                          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                            <ellipse cx="12" cy="7" rx="4" ry="2" />
-                            <ellipse cx="12" cy="12" rx="6" ry="2.5" />
-                            <ellipse cx="12" cy="17" rx="8" ry="3" />
-                          </svg>
-                        )}
-                        {i === 3 && (
-                          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            <path d="M9 12l2 2 4-4" />
-                          </svg>
-                        )}
-                      </div>
-
-                      {/* Title & Description */}
-                      <div className="space-y-1.5">
-                        <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#243525]">
-                          {h.title}
-                        </h3>
-                        <span className="text-[11px] font-sans text-[#786E5E] block font-medium">
-                          {h.subtitle}
-                        </span>
-                        <p className="font-sans text-xs sm:text-sm text-[#5E6B5D] leading-relaxed pt-1">
-                          {h.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Bottom Action: Round Arrow Button (Matching Image 5) */}
-                    <div className="pt-2 flex items-center justify-between border-t border-[#E8DFC8]">
-                      <span className="font-serif italic text-xs text-[#4A5F4B]">
-                        {h.badge}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={scrollToForm}
-                        aria-label={`Enquire about ${h.title}`}
-                        className="w-8 h-8 rounded-full bg-[#EFE8DC] border border-[#DDD3C2] flex items-center justify-center text-[#243525] hover:bg-[#263828] hover:text-white transition-colors cursor-pointer"
-                      >
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-
-                  </div>
-                </MotionReveal>
-              ))}
-            </div>
-
-          </div>
-        </Container>
-      </section>
+        <NairuthyaPlantations
+          project={project}
+          id="plantations"
+          className="bg-transparent border-b-0 py-12 sm:py-16"
+        />
+      </div>
 
       {/* =========================================================================
-          SECTION 4: TESTIMONIAL & TORN MOUNTAIN HORIZON - MATCHING IMAGE 5 BOTTOM
+          SECTION 4: AMENITIES & INFRASTRUCTURE (From Project Page)
+          Replaces the Founder Perspectives quote section
           ========================================================================= */}
-      <section
-        id="perspectives"
-        className="relative w-full pt-16 pb-0 overflow-hidden"
-        aria-label="Sanctuary Vista &amp; Founder Perspectives"
-      >
-        {/* Editorial Quote &amp; Angled Note on Clean Canvas (Matching Image 5) */}
-        <Container size="default" className="relative z-10 pb-12 sm:pb-16">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
-            
-            {/* Left 7 cols: Founder Perspective directly on Paper (Matching Image 5) */}
-            <div className="md:col-span-7 space-y-4">
-              <MotionReveal delay={0.05}>
-                {/* Big Quote Mark */}
-                <span className="font-serif text-6xl sm:text-7xl text-[#243525] block leading-none font-bold">
-                  &ldquo;
-                </span>
-                
-                {/* Quote Paragraph */}
-                <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#243525] leading-relaxed font-normal min-h-[140px] sm:min-h-[110px]">
-                  &ldquo;{perspectives[perspectiveIndex].quote}&rdquo;
-                </blockquote>
-
-                {/* Author Avatar, Name, Role &amp; Pagination Arrows (Matching Image 5) */}
-                <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#DFD7C7] max-w-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#DCD3C2] border border-[#C5BBAA] flex items-center justify-center font-serif text-[#243525] font-semibold text-sm">
-                      {perspectives[perspectiveIndex].initials}
-                    </div>
-                    <div>
-                      <span className="font-serif font-medium text-sm text-[#243525] block">
-                        {perspectives[perspectiveIndex].author}
-                      </span>
-                      <span className="text-[11px] font-sans text-[#786E5E] block">
-                        {perspectives[perspectiveIndex].role}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Pagination Circles (&larr;) (&rarr;) (Matching Image 5) */}
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setPerspectiveIndex((prev) => (prev === 0 ? perspectives.length - 1 : prev - 1))}
-                      aria-label="Previous perspective"
-                      className="w-8 h-8 rounded-full bg-[#FAF8F3] border border-[#D5CABB] flex items-center justify-center text-[#243525] hover:bg-[#263828] hover:text-white transition-colors cursor-pointer"
-                    >
-                      &larr;
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setPerspectiveIndex((prev) => (prev === perspectives.length - 1 ? 0 : prev + 1))}
-                      aria-label="Next perspective"
-                      className="w-8 h-8 rounded-full bg-[#FAF8F3] border border-[#D5CABB] flex items-center justify-center text-[#243525] hover:bg-[#263828] hover:text-white transition-colors cursor-pointer"
-                    >
-                      &rarr;
-                    </button>
-                  </div>
-                </div>
-              </MotionReveal>
-            </div>
-
-            {/* Right 5 cols: Ink Botanical Branch & Angled Note with Washi Tape (Matching Image 5) */}
-            <div className="md:col-span-5 flex items-center justify-center md:justify-end gap-6 relative">
-              
-              {/* Hand-Drawn Ink Botanical Branch Illustration */}
-              <div className="w-32 h-32 sm:w-40 sm:h-40 pointer-events-none opacity-85 transform -rotate-12">
-                <Image
-                  src="/images/campaign/botanical_ink_branch.png"
-                  alt="Botanical Ink Drawing"
-                  width={180}
-                  height={180}
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Angled Pinned Note (Matching Image 5) */}
-              <MotionReveal delay={0.15}>
-                <div className="transform rotate-[3deg] text-center max-w-[200px]">
-                  {/* Green Washi Tape */}
-                  <div className="w-20 h-5 bg-[#A7B9A0]/85 backdrop-blur-[1px] rotate-[-2deg] mx-auto -mb-2.5 border-t border-b border-white/60 shadow-sm" />
-                  
-                  <div className="p-4 rounded-xl bg-[#E6DEC8] border border-[#D2C5AC] shadow-md text-[#243525] space-y-1">
-                    <span className="font-serif italic text-base sm:text-lg text-[#243525] block leading-tight">
-                      A living legacy<br />for generations<br />to come. 🌿
-                    </span>
-                    <span className="font-sans text-[10px] text-[#5E6B5D] block pt-1">
-                      Honnasandra, Nelamangala
-                    </span>
-                  </div>
-                </div>
-              </MotionReveal>
-
-            </div>
-
-          </div>
-        </Container>
-
-        {/* =====================================================================
-            ORGANIC TORN PAPER RIP REVEALING MOUNTAIN PANORAMA (Matching Image 5)
-            ===================================================================== */}
-        <div className="relative w-full">
-          
-          {/* Top Multi-Layer Jagged Torn Paper Rip Across Photo */}
-          <div className="relative w-full overflow-hidden leading-none z-20 pointer-events-none">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-10 sm:h-16">
-              {/* White deckle paper fiber under-layer */}
-              <path
-                d={MOUNTAIN_RIP_DECKLE}
-                fill="#FAF6EE"
-                style={{ filter: 'drop-shadow(0 4px 5px rgba(35,30,20,0.22))' }}
-              />
-              {/* Kraft Paper Layer */}
-              <path
-                d={MOUNTAIN_RIP_TOP}
-                fill="#F5EFE6"
-              />
-            </svg>
-          </div>
-
-          {/* Panoramic Landscape Photo */}
-          <div className="relative w-full h-72 sm:h-96 -mt-4">
-            <Image
-              src="https://res.cloudinary.com/yffbj6hj/image/upload/v1791200705/earth-heritage/projects/nairuthya-whispering-wood/elevated-vista.jpg"
-              alt="Elevated sunset vista over the green trees and hills at Nairuthya Whispering Wood"
-              fill
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-            {/* Subtle atmospheric gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 pointer-events-none" />
-
-            {/* Bottom Photo Caption */}
-            <div className="absolute bottom-6 left-6 sm:left-12 text-white font-serif text-sm drop-shadow-md z-10 pointer-events-none">
-              <span>Honnasandra Valley Sanctuary &bull; 8-Acre Managed Timber &amp; Fruit Orchard</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <div id="perspectives" className="relative w-full z-10">
+        <NairuthyaAmenities
+          project={project}
+          id="amenities"
+          className="bg-transparent border-b-0 py-12 sm:py-16"
+        />
+      </div>
 
       {/* =========================================================================
           SECTION 6: REGIONAL WAYFINDING & LOCATION
@@ -941,11 +652,11 @@ export default function NairuthyaCampaignClient({ project }) {
               </MotionReveal>
             </div>
 
-            {/* Interactive Side-by-Side Dashboard Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+            {/* Interactive Side-by-Side Dashboard Layout (Single section on Tablet & Laptop) */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 lg:gap-8 items-stretch">
               
-              {/* Left Column (5 cols): Compact Interactive Destinations List */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-3">
+              {/* Left Column (5 cols on md+): Compact Interactive Destinations List */}
+              <div className="md:col-span-5 flex flex-col justify-between space-y-3">
                 <div className="space-y-2">
                   {/* Header bar above destination cards */}
                   <div className="flex items-center justify-between pb-1.5 border-b border-[#DFD7C7]">
@@ -971,13 +682,13 @@ export default function NairuthyaCampaignClient({ project }) {
                             setMapMode('routes');
                           }}
                           className={cn(
-                            'py-2 px-3 sm:py-2.5 sm:px-3.5 rounded-xl border transition-all duration-200 cursor-pointer flex items-center justify-between gap-2.5',
+                            'py-2 px-3 sm:py-2.5 sm:px-3.5 md:py-2 md:px-2.5 lg:py-2.5 lg:px-3.5 rounded-xl border transition-all duration-200 cursor-pointer flex items-center justify-between gap-2.5',
                             isActive
                               ? 'bg-[#B5C4B0] text-[#172719] border-[#8FA58A] shadow-xs translate-x-1 font-medium'
                               : 'bg-[#FAF8F3] hover:bg-[#C8D7C2]/70 border-[#DDD3C2] hover:border-[#A7B9A0] text-[#243525]'
                           )}
                         >
-                          <div className="flex items-center gap-2.5 min-w-0">
+                          <div className="flex items-center gap-2 md:gap-2.5 min-w-0">
                             <span
                               className={cn(
                                 'w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0',
@@ -991,7 +702,7 @@ export default function NairuthyaCampaignClient({ project }) {
                             <div className="min-w-0">
                               <h3
                                 className={cn(
-                                  'font-serif text-xs sm:text-[13.5px] leading-tight truncate',
+                                  'font-serif text-xs md:text-[12px] lg:text-[13.5px] leading-tight truncate',
                                   isActive ? 'text-[#172719] font-bold' : 'text-[#243525] font-medium'
                                 )}
                               >
@@ -999,7 +710,7 @@ export default function NairuthyaCampaignClient({ project }) {
                               </h3>
                               <span
                                 className={cn(
-                                  'text-[10px] font-sans block truncate',
+                                  'text-[10px] md:text-[9.5px] lg:text-[10px] font-sans block truncate',
                                   isActive ? 'text-[#2C3E2D]' : 'text-[#786E5E]'
                                 )}
                               >
@@ -1011,7 +722,7 @@ export default function NairuthyaCampaignClient({ project }) {
                           <div className="text-right shrink-0">
                             <span
                               className={cn(
-                                'text-[10.5px] font-bold px-2 py-0.5 rounded-full inline-block',
+                                'text-[10.5px] md:text-[9.5px] lg:text-[10.5px] font-bold px-1.5 md:px-2 py-0.5 rounded-full inline-block',
                                 isActive
                                   ? 'bg-[#1E2E20] text-[#FAF8F3]'
                                   : 'bg-[#E5ECE2] text-[#263828] border border-[#BDCABA]'
@@ -1027,16 +738,16 @@ export default function NairuthyaCampaignClient({ project }) {
                 </div>
 
                 {/* Origin Info Bar & Direct Map Trigger */}
-                <div className="p-2.5 sm:p-3 rounded-xl bg-[#FAF8F3] border border-[#DDD3C2] flex items-center justify-between gap-2 shadow-xs">
-                  <div className="flex items-center gap-2 min-w-0">
+                <div className="p-2.5 sm:p-3 md:p-2 lg:p-3 rounded-xl bg-[#FAF8F3] border border-[#DDD3C2] flex items-center justify-between gap-1.5 md:gap-2 shadow-xs">
+                  <div className="flex items-center gap-1.5 md:gap-2 min-w-0">
                     <div className="w-6 h-6 rounded-full bg-[#E5ECE2] border border-[#BDCABA] flex items-center justify-center text-[#263828] shrink-0">
                       <MapPin className="w-3.5 h-3.5 text-[#263828]" />
                     </div>
                     <div className="min-w-0">
-                      <span className="font-serif text-xs font-semibold text-[#243525] block leading-tight truncate">
+                      <span className="font-serif text-xs md:text-[11px] lg:text-xs font-semibold text-[#243525] block leading-tight truncate">
                         Nairuthya Whispering Wood
                       </span>
-                      <span className="text-[10px] font-sans text-[#786E5E] block truncate">
+                      <span className="text-[10px] md:text-[9px] lg:text-[10px] font-sans text-[#786E5E] block truncate">
                         Origin &bull; Honnasandra, Nelamangala
                       </span>
                     </div>
@@ -1046,17 +757,17 @@ export default function NairuthyaCampaignClient({ project }) {
                     href="https://www.google.com/maps/place/Whispering+Wood+by+Nairuthya+Properties/@13.0351622,77.332123,17z"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#263828] hover:bg-[#1A281B] active:scale-[0.98] text-white font-sans text-[11px] font-medium tracking-wide shadow-xs transition-all cursor-pointer shrink-0"
+                    className="inline-flex items-center gap-1 px-2.5 md:px-2 lg:px-3 py-1.5 rounded-full bg-[#263828] hover:bg-[#1A281B] active:scale-[0.98] text-white font-sans text-[10px] md:text-[9.5px] lg:text-[11px] font-medium tracking-wide shadow-xs transition-all cursor-pointer shrink-0"
                   >
-                    <span>Open in Google Maps</span>
+                    <span>Open in Maps</span>
                     <ExternalLink className="w-3 h-3 text-[#C9A86A]" />
                   </a>
                 </div>
               </div>
 
-              {/* Right Column (7 cols): Interactive Maps Dashboard */}
-              <div className="lg:col-span-7">
-                <div className="h-full min-h-[380px] sm:min-h-[410px] rounded-3xl overflow-hidden border border-[#DDD3C2] bg-[#FAF8F3] shadow-sm relative flex flex-col justify-between">
+              {/* Right Column (7 cols on md+): Interactive Maps Dashboard */}
+              <div className="md:col-span-7">
+                <div className="h-full min-h-[380px] md:min-h-full rounded-2xl md:rounded-3xl overflow-hidden border border-[#DDD3C2] bg-[#FAF8F3] shadow-sm relative flex flex-col justify-between">
                   
                   {/* Top Header Bar over Map */}
                   <div className="absolute top-3 left-3 right-3 z-30 flex flex-wrap items-center justify-between gap-2 pointer-events-auto">
@@ -1392,32 +1103,56 @@ export default function NairuthyaCampaignClient({ project }) {
       </section>
 
       {/* =========================================================================
-          SECTION 7: FAQ ACCORDION (FIELD NOTES STYLE)
+          SECTION 7: FAQ ACCORDION (SAGE GREEN TORN PAPER BANNER)
+          Matching "Acquired, Developed, & Managed by Earth Heritage" Background
           ========================================================================= */}
       <section
         id="faq"
-        className="relative w-full py-20 sm:py-28 z-10"
+        className="relative w-full text-[#1E2E20] py-20 sm:py-28 shadow-md scroll-mt-16 z-10"
+        style={{
+          backgroundImage: "url('/images/campaign/paper_subtle_sage.jpg')",
+          backgroundRepeat: 'repeat',
+          backgroundSize: '1024px 1024px',
+          backgroundColor: '#B5C4B0'
+        }}
         aria-label="Frequently Asked Questions"
       >
-        <Container size="default">
+        {/* ORGANIC NATURAL TORN PAPER TOP DIVIDER */}
+        <div className="absolute -top-7 sm:-top-9 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+          <svg viewBox="0 0 1440 50" preserveAspectRatio="none" className="w-full h-8 sm:h-12">
+            {/* White deckle paper fiber under-layer */}
+            <path
+              d={SAGE_TOP_DECKLE}
+              fill="#FAF6EE"
+              style={{ filter: 'drop-shadow(0 -3px 4px rgba(30,25,15,0.18))' }}
+            />
+            {/* Sage Green Paper Rip Layer */}
+            <path
+              d={SAGE_TOP_PAPER}
+              fill="#B5C4B0"
+            />
+          </svg>
+        </div>
+
+        <Container size="default" className="relative z-10">
           <div className="max-w-4xl mx-auto space-y-12">
             
             <div className="text-center space-y-3">
               <MotionReveal delay={0.05}>
-                <span className="font-serif italic text-base text-[#4A5F4B] block">
-                  Questions &amp; answers 🌿
+                <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#364937] font-semibold block">
+                  QUESTIONS &amp; ANSWERS 🌿
                 </span>
               </MotionReveal>
 
               <MotionReveal delay={0.1}>
-                <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#243525] tracking-tight">
+                <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#172719] tracking-tight">
                   Frequently Addressed Enquiries
                 </h2>
               </MotionReveal>
             </div>
 
             {/* Accordion */}
-            <div className="divide-y divide-[#D6CDBC] border-y border-[#D6CDBC]">
+            <div className="divide-y divide-[#9EB09A] border-y border-[#9EB09A]">
               {displayFaqs.map((faq, idx) => {
                 const isOpen = openFaqIndex === idx;
                 return (
@@ -1429,22 +1164,22 @@ export default function NairuthyaCampaignClient({ project }) {
                       aria-expanded={isOpen}
                     >
                       <div className="flex items-center gap-3.5">
-                        <span className="font-serif italic text-base text-[#C9A86A]">0{idx + 1}</span>
-                        <h3 className="font-serif text-lg sm:text-xl font-normal text-[#243525] group-hover:text-[#4A5F4B] transition-colors">
+                        <span className="font-serif italic text-base text-[#364937] font-semibold">0{idx + 1}</span>
+                        <h3 className="font-serif text-lg sm:text-xl font-normal text-[#172719] group-hover:text-[#2C3E2D] transition-colors">
                           {faq.q}
                         </h3>
                       </div>
                       <ChevronDown
                         className={cn(
-                          'w-5 h-5 text-[#786E5E] shrink-0 transition-transform duration-200',
-                          isOpen ? 'rotate-180 text-[#263828]' : ''
+                          'w-5 h-5 text-[#364937] shrink-0 transition-transform duration-200',
+                          isOpen ? 'rotate-180 text-[#172719]' : ''
                         )}
                       />
                     </button>
 
                     {isOpen && (
                       <div className="pt-3.5 pl-8 sm:pl-9 pr-4">
-                        <p className="font-sans text-sm sm:text-base text-[#5E6B5D] leading-relaxed">
+                        <p className="font-sans text-sm sm:text-base text-[#2C3E2D] leading-relaxed">
                           {faq.a}
                         </p>
                       </div>
@@ -1456,7 +1191,40 @@ export default function NairuthyaCampaignClient({ project }) {
 
           </div>
         </Container>
+
+        {/* ORGANIC NATURAL TORN PAPER BOTTOM DIVIDER */}
+        <div className="absolute -bottom-7 sm:-bottom-9 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+          <svg viewBox="0 0 1440 50" preserveAspectRatio="none" className="w-full h-8 sm:h-12">
+            {/* White deckle paper fiber under-layer */}
+            <path
+              d={SAGE_BOTTOM_DECKLE}
+              fill="#FAF6EE"
+              style={{ filter: 'drop-shadow(0 3px 4px rgba(30,25,15,0.18))' }}
+            />
+            {/* Sage Green Paper Rip Layer */}
+            <path
+              d={SAGE_BOTTOM_PAPER}
+              fill="#B5C4B0"
+            />
+          </svg>
+        </div>
       </section>
+
+      {/* =========================================================================
+          SECTION 7B: ESTATE VISUAL GALLERY (Added before Enquiry Form)
+          ========================================================================= */}
+      <div className="relative w-full z-10">
+        <NairuthyaGallery
+          project={project}
+          id="gallery"
+          className="bg-transparent border-b-0 py-12 sm:py-16"
+        />
+      </div>
+
+      {/* =========================================================================
+          SECTION 7C: GENUINE GOOGLE REVIEWS (Immediately before Walkthrough Form)
+          ========================================================================= */}
+      <NairuthyaReviews id="reviews" />
 
       {/* =========================================================================
           SECTION 8: PRIVATE WALKTHROUGH & GET IN TOUCH FORM CARD
