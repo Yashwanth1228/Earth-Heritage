@@ -354,9 +354,6 @@ export default function HomeContactLocation() {
                     >
                       contact@earthheritage.in
                     </a>
-                    <span className="text-[11px] font-mono text-[#8C7A5A]">
-                      Prompt Response
-                    </span>
                   </div>
                 </div>
 

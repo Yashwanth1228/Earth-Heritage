@@ -8,12 +8,12 @@ import ManagedFarmlandFaq from '@/components/sections/managed-farmland/ManagedFa
 
 export const metadata = {
   ...constructMetadata({
-    title: 'Managed Farmland',
+    title: 'Managed Farmland in Bangalore',
     description:
-      'Discover managed farmland with Earth Heritage, where landowners retain ownership while agreed farm activities are professionally coordinated and managed with care.',
+      'Discover managed farmland with Earth Heritage in Bangalore. Retain ownership of your land while agreed farm activities are professionally coordinated and managed with care.',
     canonicalUrl: '/managed-farmland'
   }),
-  title: 'Managed Farmland | Earth Heritage'
+  title: 'Managed Farmland in Bangalore | Earth Heritage'
 };
 
 /**

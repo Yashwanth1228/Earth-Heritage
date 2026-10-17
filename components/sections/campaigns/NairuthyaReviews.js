@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import { Star, ExternalLink, Quote } from 'lucide-react';
@@ -112,7 +113,7 @@ export default function NairuthyaReviews({ className, id = 'reviews' }) {
     <section
       id={id}
       className={cn(
-        'relative w-full py-20 sm:py-28 text-[#172719] shadow-md scroll-mt-16 z-10',
+        'relative w-full py-10 sm:py-14 text-[#172719] shadow-md scroll-mt-16 z-10',
         className
       )}
       style={{
@@ -140,10 +141,32 @@ export default function NairuthyaReviews({ className, id = 'reviews' }) {
         </svg>
       </div>
 
+      {/* Top-Left Botanical Leaf Accent */}
+      <div className="absolute top-6 -left-8 w-40 h-40 pointer-events-none opacity-65 hidden lg:block -rotate-45 z-0">
+        <Image
+          src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
+          alt="Botanical Leaf Foliage"
+          width={200}
+          height={200}
+          className="object-contain"
+        />
+      </div>
+
+      {/* Bottom-Right Botanical Ink Branch Accent */}
+      <div className="absolute bottom-6 -right-6 w-44 h-44 pointer-events-none opacity-70 hidden lg:block rotate-12 z-0">
+        <Image
+          src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
+          alt="Botanical Ink Illustration"
+          width={220}
+          height={220}
+          className="object-contain transform scale-x-[-1]"
+        />
+      </div>
+
       <Container size="default" className="relative z-10 max-w-6xl px-4 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
-          <MotionReveal delay={0.05}>
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2">
+          <MotionReveal delay={0.05} direction="down">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 border border-[#9EB09A] text-xs font-mono font-medium text-[#1E2E20] shadow-2xs">
               <GoogleGIcon className="w-3.5 h-3.5" />
               <span>CUSTOMER EXPERIENCES</span>
@@ -152,7 +175,7 @@ export default function NairuthyaReviews({ className, id = 'reviews' }) {
 
           <MotionReveal delay={0.1}>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#172719] tracking-tight leading-tight">
-              Customer Experiences &bull; Earth Heritage
+              Customer <span className="italic font-light text-[#243B27]">Experiences</span> &bull; Earth Heritage
             </h2>
           </MotionReveal>
 
@@ -163,14 +186,20 @@ export default function NairuthyaReviews({ className, id = 'reviews' }) {
           </MotionReveal>
         </div>
 
-        {/* 3 Review Cards Grid */}
+        {/* 3 Review Cards Grid: Animated Left, Center Up, and Right */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-6 lg:gap-8 items-stretch">
           {REVIEWS.map((review, idx) => {
             const initial = review.reviewer.trim().charAt(0).toUpperCase();
             const avatarBg = getAvatarBgColor(review.reviewer);
+            const cardDirection = idx === 0 ? 'left' : idx === 2 ? 'right' : 'up';
 
             return (
-              <MotionReveal key={review.id} delay={0.08 * (idx + 1)} className="h-full">
+              <MotionReveal
+                key={review.id}
+                delay={0.1 * (idx + 1)}
+                direction={cardDirection}
+                className="h-full"
+              >
                 <div className="h-full flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white/95 border border-[#9EB09A] hover:border-[#7D9379] hover:shadow-xs transition-all duration-300">
                   <div className="space-y-4">
                     {/* Top row: 5 Stars and subtle quote icon */}

@@ -95,7 +95,7 @@ export default function NairuthyaAmenities({ project, className, id = 'amenities
 
             <MotionReveal delay={0.1}>
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight">
-                Designed for Life in Nature
+                Designed for <span className="italic font-light text-[#1F3322]">Life in Nature</span>
               </h2>
             </MotionReveal>
 
@@ -108,15 +108,18 @@ export default function NairuthyaAmenities({ project, className, id = 'amenities
 
           {/* 3-Column Grid on Laptop/Desktop, 2-Column Side-by-Side on Mobile & Tablet */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8">
-            {visibleAmenities.map((item, idx) => (
-              <MotionReveal
-                key={item.id}
-                delay={0.05 * ((idx % 3) + 1)}
-                className={cn(
-                  "h-full",
-                  idx === 2 && !showAllAmenities && "hidden lg:block"
-                )}
-              >
+            {visibleAmenities.map((item, idx) => {
+              const cardDir = idx % 3 === 0 ? 'left' : idx % 3 === 2 ? 'right' : 'up';
+              return (
+                <MotionReveal
+                  key={item.id}
+                  delay={0.06 * ((idx % 3) + 1)}
+                  direction={cardDir}
+                  className={cn(
+                    "h-full",
+                    idx === 2 && !showAllAmenities && "hidden lg:block"
+                  )}
+                >
                 <div className="group flex flex-col h-full">
                   
                   {/* Rounded Image on Page Background */}
@@ -148,7 +151,8 @@ export default function NairuthyaAmenities({ project, className, id = 'amenities
 
                 </div>
               </MotionReveal>
-            ))}
+            );
+          })}
           </div>
 
           {/* See More / Show Less Toggle Button for Amenities */}
@@ -187,7 +191,7 @@ export default function NairuthyaAmenities({ project, className, id = 'amenities
             </MotionReveal>
             <MotionReveal delay={0.1}>
               <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-normal text-[#111613] tracking-tight">
-                Built-In Farm Infrastructure
+                Built-In <span className="italic font-light text-[#1F3322]">Farm Infrastructure</span>
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.15}>
@@ -201,11 +205,13 @@ export default function NairuthyaAmenities({ project, className, id = 'amenities
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visibleInfrastructure.map((item, idx) => {
               const IconComponent = INFRASTRUCTURE_ICONS[item.name] || ShieldCheck;
+              const cardDir = idx % 2 === 0 ? 'left' : 'right';
 
               return (
                 <MotionReveal
                   key={item.name}
-                  delay={0.03 * ((idx % 3) + 1)}
+                  delay={0.04 * ((idx % 3) + 1)}
+                  direction={cardDir}
                   className={cn(
                     "h-full",
                     idx >= 3 && !showAllInfrastructure && "hidden sm:block"

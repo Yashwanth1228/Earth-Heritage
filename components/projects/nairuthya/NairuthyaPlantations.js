@@ -83,7 +83,7 @@ export default function NairuthyaPlantations({ project, className, id = 'plantat
 
           <MotionReveal delay={0.1}>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight">
-              Cultivated Farm &amp; Plantations
+              Cultivated <span className="italic font-light text-[#243B27]">Farm &amp; Plantations</span>
             </h2>
           </MotionReveal>
 
