@@ -71,7 +71,7 @@ export default function NairuthyaAvailablePlots({ project }) {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
-                    <span>Active plantation with Mahogany, Teak, Red Sandal, Coconut &amp; Fruit trees</span>
+                    <span>Active plantation with Mahogany, Teak, Red Sandal, Malabar Neem, Coconut &amp; Fruit trees</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
