@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 
 /**
  * MotionReveal component for clean, performant viewport entrance animations
+ * Supports directional reveals (up, down, left, right) and custom offsets
  * Gracefully degrades when prefers-reduced-motion is active
  */
 export default function MotionReveal({
@@ -13,6 +14,8 @@ export default function MotionReveal({
   delay = 0,
   duration = 0.6,
   yOffset = 24,
+  xOffset = 0,
+  direction = 'up',
   as = 'div'
 }) {
   const shouldReduceMotion = useReducedMotion();
@@ -22,10 +25,27 @@ export default function MotionReveal({
     return <div className={className}>{children}</div>;
   }
 
+  let initialX = xOffset;
+  let initialY = yOffset;
+
+  if (direction === 'left') {
+    initialX = xOffset || -40;
+    initialY = 0;
+  } else if (direction === 'right') {
+    initialX = xOffset || 40;
+    initialY = 0;
+  } else if (direction === 'down') {
+    initialY = -Math.abs(yOffset || 24);
+    initialX = 0;
+  } else if (direction === 'up' && xOffset === 0) {
+    initialY = yOffset;
+    initialX = 0;
+  }
+
   return (
     <Component
-      initial={{ opacity: 0, y: yOffset }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: initialX, y: initialY }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{
         duration,

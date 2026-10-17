@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'motion/react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import NairuthyaCampaignForm from './NairuthyaCampaignForm';
@@ -48,6 +49,7 @@ const FULL_SHEET_TORN_PAPER = "M0,0 L520.9,0 L520.9,0 L522.8,3.6 L524.5,7.2 L525
 
 
 export default function NairuthyaCampaignClient({ project }) {
+  const shouldReduceMotion = useReducedMotion();
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [activeLandmarkId, setActiveLandmarkId] = useState('nelamangala-town');
   const [mapMode, setMapMode] = useState('routes');
@@ -379,10 +381,11 @@ export default function NairuthyaCampaignClient({ project }) {
             <div className="absolute inset-0 bg-[#FAF8F3]/50" />
           </div>
 
-          <div className="relative z-10 space-y-3.5 sm:space-y-4 xl:space-y-5 max-w-md xl:max-w-lg mx-auto md:mr-2 lg:mr-4 md:ml-auto w-full">
-            
+          <div
+            className="relative z-10 space-y-3.5 sm:space-y-4 xl:space-y-5 max-w-md xl:max-w-lg mx-auto md:mr-2 lg:mr-4 md:ml-auto w-full"
+          >
             {/* Project Brand Logo */}
-            <div className="w-40 sm:w-48 md:w-40 lg:w-44 xl:w-52 h-auto pt-0.5">
+            <MotionReveal delay={0.06} direction="up" className="w-40 sm:w-48 md:w-40 lg:w-44 xl:w-52 h-auto pt-0.5">
               <Image
                 src="/images/campaign/nairuthya_logo.png"
                 alt="Nairuthya Whispering Wood"
@@ -391,26 +394,53 @@ export default function NairuthyaCampaignClient({ project }) {
                 priority
                 className="object-contain w-full h-auto drop-shadow-xs"
               />
-            </div>
+            </MotionReveal>
 
             {/* Display Headline */}
             <div>
               <h1 className="font-serif text-2xl sm:text-3xl md:text-[1.85rem] lg:text-[2.1rem] xl:text-[2.6rem] font-normal text-[#1E2E20] tracking-tight leading-[1.12]">
-                Nairuthya<br />
-                Whispering Wood<br />
-                <span className="relative inline-block text-[#263828]">
-                  Managed Farmland
+                <span
+                  className="block animate-title-wipe"
+                  style={{
+                    animation: shouldReduceMotion ? 'none' : 'progressiveTextWipe 0.75s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards',
+                    backgroundPosition: shouldReduceMotion ? '0% 0' : undefined
+                  }}
+                >
+                  Nairuthya
+                </span>
+                <span
+                  className="block animate-title-wipe"
+                  style={{
+                    animation: shouldReduceMotion ? 'none' : 'progressiveTextWipe 0.75s cubic-bezier(0.25, 1, 0.5, 1) 0.65s forwards',
+                    backgroundPosition: shouldReduceMotion ? '0% 0' : undefined
+                  }}
+                >
+                  Whispering Wood
+                </span>
+                <span className="relative inline-block">
+                  <span
+                    className="animate-title-wipe"
+                    style={{
+                      animation: shouldReduceMotion ? 'none' : 'progressiveTextWipe 0.75s cubic-bezier(0.25, 1, 0.5, 1) 1.15s forwards',
+                      backgroundPosition: shouldReduceMotion ? '0% 0' : undefined
+                    }}
+                  >
+                    Managed Farmland
+                  </span>
                   <svg
                     className="absolute -bottom-1 sm:-bottom-1.5 left-0 w-full h-3 text-[#C9A86A]/85 pointer-events-none"
                     viewBox="0 0 200 12"
                     fill="none"
                     preserveAspectRatio="none"
                   >
-                    <path
+                    <motion.path
                       d="M2,8 Q50,2 100,7 Q150,11 198,4"
                       stroke="currentColor"
                       strokeWidth="3.5"
                       strokeLinecap="round"
+                      initial={shouldReduceMotion ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+                      animate={{ pathLength: 1, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 1.45, ease: [0.16, 1, 0.3, 1] }}
                     />
                   </svg>
                 </span>
@@ -418,12 +448,14 @@ export default function NairuthyaCampaignClient({ project }) {
             </div>
 
             {/* Authentic Farmland Subtitle */}
-            <p className="font-sans text-xs sm:text-sm text-[#556455] leading-relaxed max-w-md font-normal line-clamp-3">
-              An 8-acre managed farmland enclave in Honnasandra, Nelamangala (~35 km from Bengaluru) with 25 titled plots, mature timber plantations, and comprehensive turnkey farm management by Earth Heritage.
-            </p>
+            <MotionReveal delay={0.28} direction="up">
+              <p className="font-sans text-xs sm:text-sm text-[#556455] leading-relaxed max-w-md font-normal line-clamp-3">
+                An 8-acre managed farmland enclave in Honnasandra, Nelamangala (~35 km from Bengaluru) with 25 titled plots, mature timber plantations, and comprehensive turnkey farm management by Earth Heritage.
+              </p>
+            </MotionReveal>
 
             {/* Dual CTA Buttons (Visible immediately above the fold with zero scroll) */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <MotionReveal delay={0.38} direction="up" className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 id="hero-inquire-cta"
                 type="button"
@@ -442,8 +474,7 @@ export default function NairuthyaCampaignClient({ project }) {
                 </span>
                 <span className="font-semibold text-[#1E2E20]">Call Now: +91 99020 96969</span>
               </a>
-            </div>
-
+            </MotionReveal>
           </div>
         </div>
 
@@ -480,79 +511,76 @@ export default function NairuthyaCampaignClient({ project }) {
           </svg>
         </div>
 
+        {/* Top-Left Botanical Leaf Accent */}
+        <div className="absolute -left-10 top-8 w-44 h-44 pointer-events-none opacity-65 hidden lg:block -rotate-[25deg] z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
+            alt="Botanical Leaf Foliage"
+            width={220}
+            height={220}
+            className="object-contain"
+          />
+        </div>
+
         <Container size="default" className="relative z-10">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative">
             
-            {/* Left Content (Matching Image 4 Layout with Authentic Earth Heritage Details) */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-              <MotionReveal delay={0.05}>
-                <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#364937] font-semibold block">
-                  DEVELOPMENT &amp; STEWARDSHIP MODEL
-                </span>
-              </MotionReveal>
+            {/* Left Content: Enters from Left */}
+            <MotionReveal direction="left" delay={0.1} className="lg:col-span-7 space-y-4 sm:space-y-5">
+              <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#364937] font-semibold block">
+                DEVELOPMENT &amp; STEWARDSHIP MODEL
+              </span>
 
-              <MotionReveal delay={0.1}>
-                <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#172719] tracking-tight leading-tight">
-                  Acquired, Developed, &amp; Managed by Earth Heritage
-                </h2>
-              </MotionReveal>
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#172719] tracking-tight leading-tight">
+                Acquired, Developed, &amp; <span className="italic font-light text-[#243B27]">Managed</span> by Earth Heritage
+              </h2>
 
-              <MotionReveal delay={0.15}>
-                <p className="font-sans text-sm sm:text-base text-[#2C3E2D] leading-relaxed max-w-xl font-normal">
-                  At Nairuthya Whispering Wood, we bridge direct legal land ownership with disciplined agricultural development and long-term farm stewardship. The estate is acquired by Earth Heritage, master-planned into 25 premium plots, and maintained through active on-ground agrarian oversight.
-                </p>
-              </MotionReveal>
+              <p className="font-sans text-sm sm:text-base text-[#2C3E2D] leading-relaxed max-w-xl font-normal">
+                At Nairuthya Whispering Wood, we bridge direct legal land ownership with disciplined agricultural development and long-term farm stewardship. The estate is acquired by Earth Heritage, master-planned into 25 premium plots, and maintained through active on-ground agrarian oversight.
+              </p>
 
-              <MotionReveal delay={0.2}>
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={scrollToForm}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#263828] hover:bg-[#1A281B] active:scale-[0.98] text-white font-sans font-medium text-xs sm:text-sm tracking-wide transition-all shadow-md cursor-pointer"
-                  >
-                    <span>Explore Farm Stewardship &rarr;</span>
-                  </button>
-                </div>
-              </MotionReveal>
-            </div>
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={scrollToForm}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#263828] hover:bg-[#1A281B] active:scale-[0.98] text-white font-sans font-medium text-xs sm:text-sm tracking-wide transition-all shadow-md cursor-pointer"
+                >
+                  <span>Explore Farm Stewardship &rarr;</span>
+                </button>
+              </div>
+            </MotionReveal>
 
-            {/* Right Icons: 3 Circular Badges in a Row (Matching Image 4 Layout with Real Project Pillars) */}
-            <div className="lg:col-span-5 grid grid-cols-3 gap-3 sm:gap-4 text-center relative">
+            {/* Right Icons: 3 Circular Badges in a Row: Enters from Right */}
+            <MotionReveal direction="right" delay={0.15} className="lg:col-span-5 grid grid-cols-3 gap-3 sm:gap-4 text-center relative">
               
-              <MotionReveal delay={0.15}>
-                <div className="flex flex-col items-center space-y-2.5">
-                  <div className="w-16 h-16 rounded-full bg-[#C8D7C2] border border-[#A7B9A0] flex items-center justify-center text-[#1E2E20] shadow-sm">
-                    <ShieldCheck className="w-7 h-7 text-[#1E2E20]" />
-                  </div>
-                  <span className="font-serif text-xs sm:text-sm text-[#172719] font-medium leading-snug">
-                    Direct Land<br />Acquisition
-                  </span>
+              <div className="flex flex-col items-center space-y-2.5">
+                <div className="w-16 h-16 rounded-full bg-[#C8D7C2] border border-[#A7B9A0] flex items-center justify-center text-[#1E2E20] shadow-sm hover:scale-105 transition-transform duration-300">
+                  <ShieldCheck className="w-7 h-7 text-[#1E2E20]" />
                 </div>
-              </MotionReveal>
+                <span className="font-serif text-xs sm:text-sm text-[#172719] font-medium leading-snug">
+                  Direct Land<br />Acquisition
+                </span>
+              </div>
 
-              <MotionReveal delay={0.2}>
-                <div className="flex flex-col items-center space-y-2.5">
-                  <div className="w-16 h-16 rounded-full bg-[#C8D7C2] border border-[#A7B9A0] flex items-center justify-center text-[#1E2E20] shadow-sm">
-                    <Sprout className="w-7 h-7 text-[#1E2E20]" />
-                  </div>
-                  <span className="font-serif text-xs sm:text-sm text-[#172719] font-medium leading-snug">
-                    Planned Farm<br />Development
-                  </span>
+              <div className="flex flex-col items-center space-y-2.5">
+                <div className="w-16 h-16 rounded-full bg-[#C8D7C2] border border-[#A7B9A0] flex items-center justify-center text-[#1E2E20] shadow-sm hover:scale-105 transition-transform duration-300">
+                  <Sprout className="w-7 h-7 text-[#1E2E20]" />
                 </div>
-              </MotionReveal>
+                <span className="font-serif text-xs sm:text-sm text-[#172719] font-medium leading-snug">
+                  Planned Farm<br />Development
+                </span>
+              </div>
 
-              <MotionReveal delay={0.25}>
-                <div className="flex flex-col items-center space-y-2.5">
-                  <div className="w-16 h-16 rounded-full bg-[#C8D7C2] border border-[#A7B9A0] flex items-center justify-center text-[#1E2E20] shadow-sm">
-                    <Users className="w-7 h-7 text-[#1E2E20]" />
-                  </div>
-                  <span className="font-serif text-xs sm:text-sm text-[#172719] font-medium leading-snug">
-                    Turnkey Farm<br />Stewardship
-                  </span>
+              <div className="flex flex-col items-center space-y-2.5">
+                <div className="w-16 h-16 rounded-full bg-[#C8D7C2] border border-[#A7B9A0] flex items-center justify-center text-[#1E2E20] shadow-sm hover:scale-105 transition-transform duration-300">
+                  <Users className="w-7 h-7 text-[#1E2E20]" />
                 </div>
-              </MotionReveal>
+                <span className="font-serif text-xs sm:text-sm text-[#172719] font-medium leading-snug">
+                  Turnkey Farm<br />Stewardship
+                </span>
+              </div>
 
-            </div>
+            </MotionReveal>
 
             {/* Hand-Drawn Botanical Ink Branch on Far Right Margin (Matching Image 4) */}
             <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-48 h-48 pointer-events-none opacity-85 hidden lg:block z-0">
@@ -590,7 +618,7 @@ export default function NairuthyaCampaignClient({ project }) {
           SECTION 3: CULTIVATED FARM & PLANTATIONS (From Project Page)
           Styled with authentic landing page paper texture and botanical accents
           ========================================================================= */}
-      <div id="holdings" className="relative w-full z-10">
+      <div id="holdings" className="relative w-full z-10 overflow-hidden">
         {/* Botanical Leaf Sprig in Left Margin (Matching Landing Page Design) */}
         <div className="absolute -left-12 top-14 w-48 h-48 pointer-events-none z-0 transform -rotate-[25deg] hidden lg:block">
           <Image
@@ -599,6 +627,17 @@ export default function NairuthyaCampaignClient({ project }) {
             width={240}
             height={240}
             className="object-contain opacity-90"
+          />
+        </div>
+
+        {/* Hand-Drawn Botanical Ink Branch on Bottom Right Margin */}
+        <div className="absolute -right-8 bottom-6 w-44 h-44 pointer-events-none opacity-70 hidden lg:block rotate-12 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
+            alt="Botanical Ink Branch"
+            width={220}
+            height={220}
+            className="object-contain transform scale-x-[-1]"
           />
         </div>
 
@@ -613,7 +652,29 @@ export default function NairuthyaCampaignClient({ project }) {
           SECTION 4: AMENITIES & INFRASTRUCTURE (From Project Page)
           Replaces the Founder Perspectives quote section
           ========================================================================= */}
-      <div id="perspectives" className="relative w-full z-10">
+      <div id="perspectives" className="relative w-full z-10 overflow-hidden">
+        {/* Top-Left Botanical Leaf Sprig */}
+        <div className="absolute -left-10 top-6 w-44 h-44 pointer-events-none opacity-65 hidden lg:block -rotate-45 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
+            alt="Botanical Leaf Foliage"
+            width={220}
+            height={220}
+            className="object-contain"
+          />
+        </div>
+
+        {/* Bottom-Right Botanical Ink Branch */}
+        <div className="absolute -right-8 bottom-6 w-44 h-44 pointer-events-none opacity-70 hidden lg:block rotate-12 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
+            alt="Botanical Ink Branch"
+            width={220}
+            height={220}
+            className="object-contain transform scale-x-[-1]"
+          />
+        </div>
+
         <NairuthyaAmenities
           project={project}
           id="amenities"
@@ -626,10 +687,32 @@ export default function NairuthyaCampaignClient({ project }) {
           ========================================================================= */}
       <section
         id="location"
-        className="relative w-full py-10 sm:py-14 z-10"
+        className="relative w-full py-10 sm:py-14 z-10 overflow-hidden"
         aria-label="Location & Wayfinding"
       >
-        <Container size="default">
+        {/* Top-Right Botanical Ink Branch Accent */}
+        <div className="absolute -top-6 -right-10 w-48 h-48 pointer-events-none opacity-75 hidden lg:block -rotate-12 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
+            alt="Botanical Ink Illustration"
+            width={240}
+            height={240}
+            className="object-contain transform scale-x-[-1]"
+          />
+        </div>
+
+        {/* Bottom-Left Botanical Leaf Sprig */}
+        <div className="absolute -bottom-8 -left-10 w-44 h-44 pointer-events-none opacity-70 hidden lg:block rotate-[25deg] z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
+            alt="Botanical Leaf Foliage"
+            width={220}
+            height={220}
+            className="object-contain"
+          />
+        </div>
+
+        <Container size="default" className="relative z-10">
           <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
             
             <div className="max-w-2xl space-y-2">
@@ -641,7 +724,7 @@ export default function NairuthyaCampaignClient({ project }) {
 
               <MotionReveal delay={0.1}>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#243525] tracking-tight">
-                  Easy Access from Bengaluru
+                  Easy Access from <span className="italic font-light text-[#172719]">Bengaluru</span>
                 </h2>
               </MotionReveal>
 
@@ -655,8 +738,8 @@ export default function NairuthyaCampaignClient({ project }) {
             {/* Interactive Side-by-Side Dashboard Layout (Single section on Tablet & Laptop) */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 lg:gap-8 items-stretch">
               
-              {/* Left Column (5 cols on md+): Compact Interactive Destinations List */}
-              <div className="md:col-span-5 flex flex-col justify-between space-y-3">
+              {/* Left Column (5 cols on md+): Compact Interactive Destinations List - Enters from Left */}
+              <MotionReveal direction="left" delay={0.15} className="md:col-span-5 flex flex-col justify-between space-y-3">
                 <div className="space-y-2">
                   {/* Header bar above destination cards */}
                   <div className="flex items-center justify-between pb-1.5 border-b border-[#DFD7C7]">
@@ -763,10 +846,10 @@ export default function NairuthyaCampaignClient({ project }) {
                     <ExternalLink className="w-3 h-3 text-[#C9A86A]" />
                   </a>
                 </div>
-              </div>
+              </MotionReveal>
 
-              {/* Right Column (7 cols on md+): Interactive Maps Dashboard */}
-              <div className="md:col-span-7">
+              {/* Right Column (7 cols on md+): Interactive Maps Dashboard - Enters from Right */}
+              <MotionReveal direction="right" delay={0.2} className="md:col-span-7">
                 <div className="h-full min-h-[380px] md:min-h-full rounded-2xl md:rounded-3xl overflow-hidden border border-[#DDD3C2] bg-[#FAF8F3] shadow-sm relative flex flex-col justify-between">
                   
                   {/* Top Header Bar over Map */}
@@ -1094,7 +1177,7 @@ export default function NairuthyaCampaignClient({ project }) {
                   </div>
 
                 </div>
-              </div>
+              </MotionReveal>
 
             </div>
 
@@ -1134,6 +1217,28 @@ export default function NairuthyaCampaignClient({ project }) {
           </svg>
         </div>
 
+        {/* Top-Left Botanical Leaf Accent */}
+        <div className="absolute top-8 -left-8 w-44 h-44 pointer-events-none opacity-60 hidden lg:block -rotate-[30deg] z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
+            alt="Botanical Leaf Accent"
+            width={220}
+            height={220}
+            className="object-contain"
+          />
+        </div>
+
+        {/* Bottom-Right Botanical Ink Branch Accent */}
+        <div className="absolute bottom-8 -right-8 w-44 h-44 pointer-events-none opacity-70 hidden lg:block rotate-45 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
+            alt="Botanical Ink Illustration"
+            width={220}
+            height={220}
+            className="object-contain transform scale-x-[-1]"
+          />
+        </div>
+
         <Container size="default" className="relative z-10">
           <div className="max-w-4xl mx-auto space-y-12">
             
@@ -1146,7 +1251,7 @@ export default function NairuthyaCampaignClient({ project }) {
 
               <MotionReveal delay={0.1}>
                 <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#172719] tracking-tight">
-                  Frequently Addressed Enquiries
+                  Frequently Addressed <span className="italic font-light text-[#243B27]">Enquiries</span>
                 </h2>
               </MotionReveal>
             </div>
@@ -1155,8 +1260,14 @@ export default function NairuthyaCampaignClient({ project }) {
             <div className="divide-y divide-[#9EB09A] border-y border-[#9EB09A]">
               {displayFaqs.map((faq, idx) => {
                 const isOpen = openFaqIndex === idx;
+                const itemDir = idx % 2 === 0 ? 'left' : 'right';
                 return (
-                  <div key={idx} className="py-6 sm:py-7">
+                  <MotionReveal
+                    key={idx}
+                    direction={itemDir}
+                    delay={0.03 * idx}
+                    className="py-6 sm:py-7"
+                  >
                     <button
                       type="button"
                       onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
@@ -1184,7 +1295,7 @@ export default function NairuthyaCampaignClient({ project }) {
                         </p>
                       </div>
                     )}
-                  </div>
+                  </MotionReveal>
                 );
               })}
             </div>
@@ -1213,7 +1324,29 @@ export default function NairuthyaCampaignClient({ project }) {
       {/* =========================================================================
           SECTION 7B: ESTATE VISUAL GALLERY (Added before Enquiry Form)
           ========================================================================= */}
-      <div className="relative w-full z-10">
+      <div className="relative w-full z-10 overflow-hidden">
+        {/* Top-Right Botanical Leaf Sprig */}
+        <div className="absolute top-6 -right-8 w-44 h-44 pointer-events-none opacity-65 hidden lg:block rotate-12 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156448/earth-heritage/campaign/botanical-leaves.png"
+            alt="Botanical Leaf Foliage"
+            width={220}
+            height={220}
+            className="object-contain"
+          />
+        </div>
+
+        {/* Bottom-Left Botanical Ink Branch */}
+        <div className="absolute bottom-6 -left-8 w-40 h-40 pointer-events-none opacity-65 hidden lg:block -rotate-12 z-0">
+          <Image
+            src="https://res.cloudinary.com/yffbj6hj/image/upload/v1792156454/earth-heritage/campaign/botanical-ink-branch.png"
+            alt="Botanical Ink Illustration"
+            width={200}
+            height={200}
+            className="object-contain"
+          />
+        </div>
+
         <NairuthyaGallery
           project={project}
           id="gallery"

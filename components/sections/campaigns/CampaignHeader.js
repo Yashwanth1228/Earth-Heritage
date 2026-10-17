@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Logo from '@/components/ui/Logo';
 import { useEnquiry } from '@/context/EnquiryContext';
 import { Menu, X, Phone, Compass, MapPin, Image as ImageIcon, Trees, Sparkles, Home, Star } from 'lucide-react';
@@ -42,17 +43,19 @@ export default function CampaignHeader({
       <header className="w-full bg-[#F3EDE2]/95 backdrop-blur-md text-[#2C382E] border-b border-[#DFD7C7] py-3 sm:py-3.5 px-4 sm:px-8 sticky top-0 z-50 shadow-[0_2px_15px_rgba(80,70,50,0.04)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
-          {/* Logo with gentle botanical leaf touch */}
-          <div className="flex items-center gap-3">
-            <Logo variant="dark" size="sm" asLink={false} />
-            <span className="hidden sm:inline-block h-4 w-px bg-[#D6CDBC]" aria-hidden="true" />
-            <div className="hidden sm:flex flex-col">
-              <span className="text-[12px] font-serif font-medium tracking-wide text-[#263828]">
-                Nairuthya Whispering Wood
-              </span>
-              <span className="text-[10px] font-sans text-[#786E5E]">
-                8-Acre Managed Farmland &bull; Honnasandra
-              </span>
+          {/* Logo & Project Brand */}
+          <div className="flex items-center gap-3 sm:gap-3.5">
+            <Logo variant="dark" size="md" asLink={false} />
+            <span className="hidden sm:inline-block h-6 sm:h-7 w-px bg-[#D6CDBC]" aria-hidden="true" />
+            <div className="hidden sm:flex items-center">
+              <Image
+                src="/images/campaign/nairuthya_logo.png"
+                alt="Nairuthya Whispering Wood"
+                width={150}
+                height={42}
+                className="h-7 sm:h-8 w-auto object-contain drop-shadow-xs"
+                priority
+              />
             </div>
           </div>
 

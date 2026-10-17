@@ -105,7 +105,7 @@ export default function NairuthyaGallery({ project, className, id = 'gallery' })
 
           <MotionReveal delay={0.1}>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight">
-              Estate Visual Gallery
+              Estate <span className="italic font-light text-[#243B27]">Visual Gallery</span>
             </h2>
           </MotionReveal>
 
@@ -117,16 +117,17 @@ export default function NairuthyaGallery({ project, className, id = 'gallery' })
         </div>
 
         {/* Gallery Showcase Grid (Equal-Sized Cards Grid: 3 cols Desktop, 2 cols Tablet, 1 col Mobile) */}
-        {/* Gallery Showcase Grid (Equal-Sized Cards Grid: 3 cols Desktop, 2 cols Tablet, 1 col Mobile) */}
         {hasRealImages ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
             {displayedItems.map((item, idx) => {
               const originalIndex = galleryItems.indexOf(item);
               const targetIdx = originalIndex !== -1 ? originalIndex : idx;
+              const cardDir = idx % 3 === 0 ? 'left' : idx % 3 === 2 ? 'right' : 'up';
               return (
                 <MotionReveal
                   key={item.id || targetIdx}
                   delay={0.06 * (idx + 1)}
+                  direction={cardDir}
                   className={cn(
                     "h-full",
                     idx === 2 && !showAllPhotos && "block sm:hidden lg:block"

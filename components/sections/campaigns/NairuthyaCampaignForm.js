@@ -396,9 +396,6 @@ export default function NairuthyaCampaignForm({ className }) {
                         >
                           support@earthheritage.in
                         </a>
-                        <span className="text-[10px] font-mono text-[#8C7A5A]">
-                          Prompt Response
-                        </span>
                       </div>
                     </div>
 
