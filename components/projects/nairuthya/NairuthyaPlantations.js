@@ -18,7 +18,7 @@ import { cn } from '@/lib/utils';
  *   - Plantation Name (e.g. Mahogany, Teak Wood, Coconut, etc.)
  *   - Botanical & Category metadata
  *   - Short factual description
- *   - 6 subtle progress indicator dots
+ *   - 7 subtle progress indicator dots
  * - Smooth slow transition (5s interval, 0.8s crossfade)
  * - Pauses on hover/focus; respects prefers-reduced-motion
  * - Minimal manual controls (prev/next + clickable dots)

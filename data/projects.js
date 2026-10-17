@@ -53,7 +53,7 @@ export const projects = [
     shortDescription:
       'Explore Nairuthya Whispering Wood, an 8-acre managed farmland project in Honnasandra, Nelamangala, with 25 premium plots, plantations and farm-focused amenities.',
     overview:
-      'Nairuthya Whispering Wood is an 8-acre managed farmland project situated in Honnasandra, Nelamangala. The project brings together direct titled land ownership with disciplined agricultural development and long-term professional farm management by Earth Heritage.\n\nComprising a boutique enclave of 25 premium plots starting from 6,000 sq.ft at ₹1,699/sq.ft, the estate is planted with valuable timber species including Mahogany, Teak Wood, and Red Sandal, alongside perennial Coconut, Areca Nut, and seasonal fruit varieties.',
+      'Nairuthya Whispering Wood is an 8-acre managed farmland project situated in Honnasandra, Nelamangala. The project brings together direct titled land ownership with disciplined agricultural development and long-term professional farm management by Earth Heritage.\n\nComprising a boutique enclave of 25 premium plots starting from 6,000 sq.ft at ₹1,699/sq.ft, the estate is planted with valuable timber species including Mahogany, Teak Wood, Red Sandal, and Malabar Neem, alongside perennial Coconut, Areca Nut, and seasonal fruit varieties.',
     stewardshipApproach:
       'Earth Heritage acquired the estate land, undertakes complete on-ground farm development, sells titled plots to individual buyers, and continues managing all daily farm operations, irrigation networks, and plantation care.',
     location: 'Honnasandra · Nelamangala · Bengaluru',
@@ -183,6 +183,19 @@ export const projects = [
           src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791201954/earth-heritage/plantations/red-sandal.jpg',
           alt: 'Red sandal cultivation at Nairuthya Whispering Wood',
           caption: 'Red Sandal Hardwood'
+        }
+      },
+      {
+        id: 'malabar-neem',
+        name: 'Malabar Neem',
+        botanical: 'Melia dubia',
+        category: 'Agroforestry Hardwood',
+        description:
+          'A rapid-growing, high-value agroforestry timber species renowned for its straight cylindrical trunk, rapid canopy formation, and premium commercial quality.',
+        image: {
+          src: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1792240163/earth-heritage/plantations/malabar-neem.jpg',
+          alt: 'Malabar neem plantation at Nairuthya Whispering Wood',
+          caption: 'Malabar Neem Agroforestry Hardwood'
         }
       },
       {
@@ -365,7 +378,7 @@ export const projects = [
       },
       {
         question: 'What plantations are planned and grown on the land?',
-        answer: 'Confirmed plantations cultivated across the estate include Mahogany, Teak Wood, Coconut, Areca Nut, Red Sandal, and 2 to 3 varieties of seasonal fruits suited to the local soil and climate.'
+        answer: 'Confirmed plantations cultivated across the estate include Mahogany, Teak Wood, Coconut, Areca Nut, Red Sandal, Malabar Neem, and 2 to 3 varieties of seasonal fruits suited to the local soil and climate.'
       },
       {
         question: 'What amenities and infrastructure are provided?',
