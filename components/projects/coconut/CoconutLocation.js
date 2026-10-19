@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { MapPin, ExternalLink } from 'lucide-react';
 
@@ -66,11 +67,15 @@ export default function CoconutLocation({ project }) {
             </span>
           </MotionReveal>
 
-          <MotionReveal delay={0.1}>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight">
-              Location &amp; Connectivity
-            </h2>
-          </MotionReveal>
+          <AnimatedTitle
+            as="h2"
+            className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight"
+            withUnderline
+            underlineColor="#55C40D"
+            underlineDelay={0.3}
+          >
+            Location &amp; Connectivity
+          </AnimatedTitle>
 
           <MotionReveal delay={0.12}>
             <p className="font-serif text-base sm:text-lg text-[#1E460B] font-normal pt-0.5">
@@ -88,31 +93,29 @@ export default function CoconutLocation({ project }) {
         {/* 2-Column Main Composition: Information (Left) + Google Map (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           
-          {/* Left Side — Project Location Details (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col space-y-4">
-            <MotionReveal delay={0.15}>
-              <div className="divide-y divide-[#E2D7C5] border-y border-[#E2D7C5]">
-                {connectivityRows.map((item, idx) => (
-                  <div key={idx} className="py-2.5 sm:py-3 space-y-0.5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D] shrink-0" aria-hidden="true" />
-                      <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7A6A4E] font-medium">
-                        {item.label}
-                      </span>
-                    </div>
-                    <div className="font-serif text-base sm:text-lg font-normal text-[#111613] tracking-tight pl-3.5">
-                      {item.value}
-                    </div>
-                    <div className="font-sans text-xs text-[#5A685D] pl-3.5 leading-snug">
-                      {item.detail}
-                    </div>
+          {/* Left Side — Project Location Details (Enters from Left) */}
+          <MotionReveal direction="left" delay={0.15} duration={0.7} className="lg:col-span-5 flex flex-col space-y-4">
+            <div className="divide-y divide-[#E2D7C5] border-y border-[#E2D7C5]">
+              {connectivityRows.map((item, idx) => (
+                <div key={idx} className="py-2.5 sm:py-3 space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D] shrink-0" aria-hidden="true" />
+                    <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7A6A4E] font-medium">
+                      {item.label}
+                    </span>
                   </div>
-                ))}
-              </div>
-            </MotionReveal>
+                  <div className="font-serif text-base sm:text-lg font-normal text-[#111613] tracking-tight pl-3.5">
+                    {item.value}
+                  </div>
+                  <div className="font-sans text-xs text-[#5A685D] pl-3.5 leading-snug">
+                    {item.detail}
+                  </div>
+                </div>
+              ))}
+            </div>
 
             {/* Google Maps External Navigation Link Button */}
-            <MotionReveal delay={0.2} className="pt-0.5">
+            <div className="pt-0.5">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
                 <a
                   href={googleMapsUrl}
@@ -128,48 +131,46 @@ export default function CoconutLocation({ project }) {
                   Bidadi &bull; Verified Pin
                 </span>
               </div>
-            </MotionReveal>
-          </div>
+            </div>
+          </MotionReveal>
 
-          {/* Right Side — Official Google Map Embed Area (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <MotionReveal delay={0.2} className="w-full">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-[#DDD3BF] bg-white p-2 shadow-xs flex flex-col">
-                
-                {/* Embedded Google Map Iframe with matching dimensions */}
-                <div className="relative w-full h-[220px] sm:h-[250px] lg:h-[260px] rounded-xl overflow-hidden">
-                  <iframe
-                    src={locationDetails.mapEmbedUrl}
-                    width="100%"
-                    height="100%"
-                    className="w-full h-full border-0"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    title="Destiny Coconut Garden by Destiny Promoters Google Map"
-                  />
-                </div>
-
-                {/* Footer Bar with Verified Place Link */}
-                <div className="pt-2 px-1 flex items-center justify-between text-[11px] font-mono text-[#7A6A4E] shrink-0">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
-                    Verified Project Location &bull; Bidadi
-                  </span>
-                  <a
-                    href={googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#1E460B] hover:text-[#55C40D] font-medium flex items-center gap-1 transition-colors"
-                  >
-                    Open Map Pin &rarr;
-                  </a>
-                </div>
-
+          {/* Right Side — Official Google Map Embed Area (Enters from Right) */}
+          <MotionReveal direction="right" delay={0.2} duration={0.7} className="lg:col-span-7 flex flex-col justify-center">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-[#DDD3BF] bg-white p-2 shadow-xs flex flex-col">
+              
+              {/* Embedded Google Map Iframe with matching dimensions */}
+              <div className="relative w-full h-[220px] sm:h-[250px] lg:h-[260px] rounded-xl overflow-hidden">
+                <iframe
+                  src={locationDetails.mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  className="w-full h-full border-0"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Destiny Coconut Garden by Destiny Promoters Google Map"
+                />
               </div>
-            </MotionReveal>
-          </div>
+
+              {/* Footer Bar with Verified Place Link */}
+              <div className="pt-2 px-1 flex items-center justify-between text-[11px] font-mono text-[#7A6A4E] shrink-0">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
+                  Verified Project Location &bull; Bidadi
+                </span>
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1E460B] hover:text-[#55C40D] font-medium flex items-center gap-1 transition-colors"
+                >
+                  Open Map Pin &rarr;
+                </a>
+              </div>
+
+            </div>
+          </MotionReveal>
 
         </div>
 

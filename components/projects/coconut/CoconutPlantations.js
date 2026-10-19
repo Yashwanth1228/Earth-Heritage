@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { Sprout } from 'lucide-react';
 
@@ -46,11 +47,17 @@ export default function CoconutPlantations({ project }) {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.1}>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight">
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight text-center"
+              withUnderline
+              underlineColor="#55C40D"
+              underlineDelay={0.3}
+            >
               Cultivated Farm &amp; Plantations
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           <MotionReveal delay={0.15}>
             <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">

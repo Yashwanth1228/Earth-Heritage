@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { aboutData } from '@/data/aboutData';
 
@@ -33,15 +34,21 @@ export default function OwnershipManagement() {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#111613] leading-[1.14]">
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#111613] leading-[1.14] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               {heading.split('\n').map((line, idx) => (
                 <span key={idx} className="block">
                   {line}
                 </span>
               ))}
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           <MotionReveal delay={0.25}>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
@@ -50,10 +57,15 @@ export default function OwnershipManagement() {
           </MotionReveal>
         </div>
 
-        {/* 6 Core Management Areas Grid */}
+        {/* 6 Core Management Areas Grid with Alternating Left/Right Reveals */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {areas.map((area, idx) => (
-            <MotionReveal key={area.number} delay={0.1 + idx * 0.07}>
+            <MotionReveal
+              key={area.number}
+              direction={idx % 2 === 0 ? 'left' : 'right'}
+              delay={0.1 + idx * 0.07}
+              duration={0.65}
+            >
               <div className="h-full p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-white/80 hover:bg-white border border-[#D5C09D] hover:border-[#1E460B]/60 transition-all duration-300 shadow-[0_4px_16px_rgba(17,22,19,0.03)] hover:shadow-[0_8px_24px_rgba(17,22,19,0.06)] flex flex-col justify-between backdrop-blur-xs">
                 <div>
                   <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#E6D8C3]">

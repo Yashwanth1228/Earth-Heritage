@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { managedFarmlandData } from '@/data/managedFarmlandData';
 
@@ -40,11 +41,17 @@ export default function HowModelWorks() {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight text-[#111613] leading-[1.14]">
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight text-[#111613] leading-[1.14] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               {heading}
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           <MotionReveal delay={0.25}>
             <p className="mt-5 font-sans text-base sm:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
@@ -53,7 +60,7 @@ export default function HowModelWorks() {
           </MotionReveal>
         </div>
 
-        {/* Editorial Connected Sequence Grid (2 columns on tablet/desktop with sequential line flow) */}
+        {/* Editorial Connected Sequence Grid with Alternating Left/Right Reveals */}
         <div className="max-w-5xl mx-auto relative">
           
           {/* Vertical Connecting Guide for Large Screens */}
@@ -61,7 +68,12 @@ export default function HowModelWorks() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
             {steps.map((step, idx) => (
-              <MotionReveal key={step.step} delay={0.08 + idx * 0.05}>
+              <MotionReveal
+                key={step.step}
+                direction={idx % 2 === 0 ? 'left' : 'right'}
+                delay={0.08 + idx * 0.05}
+                duration={0.65}
+              >
                 <div className="h-full p-6 sm:p-8 rounded-2xl bg-[#FAF6F0]/90 border border-[#D5C09D] hover:border-[#1E460B]/60 transition-all duration-300 shadow-[0_4px_20px_rgba(17,22,19,0.03)] hover:shadow-[0_8px_28px_rgba(17,22,19,0.06)] flex flex-col justify-between backdrop-blur-xs relative group">
                   
                   <div>

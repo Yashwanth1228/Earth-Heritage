@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Plus } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { howItWorksData } from '@/data/howItWorksData';
 
@@ -45,11 +46,17 @@ export default function HowItWorksFaq() {
               </div>
             </MotionReveal>
 
-            <MotionReveal delay={0.15}>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight text-[#111613] leading-[1.14]">
+            <div className="flex justify-center">
+              <AnimatedTitle
+                as="h2"
+                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight text-[#111613] leading-[1.14] text-center"
+                withUnderline
+                underlineColor="#1E460B"
+                underlineDelay={0.4}
+              >
                 {heading}
-              </h2>
-            </MotionReveal>
+              </AnimatedTitle>
+            </div>
 
             <MotionReveal delay={0.25}>
               <p className="mt-5 font-sans text-base sm:text-lg text-[#38423A] font-normal leading-relaxed max-w-xl mx-auto">
@@ -58,7 +65,7 @@ export default function HowItWorksFaq() {
             </MotionReveal>
           </div>
 
-          {/* Accordion List */}
+          {/* Accordion List with Alternating Left/Right Reveals */}
           <div className="space-y-4">
             {items.map((item, idx) => {
               const isOpen = openId === item.id;
@@ -66,7 +73,12 @@ export default function HowItWorksFaq() {
               const buttonId = `${item.id}-button`;
 
               return (
-                <MotionReveal key={item.id} delay={0.08 + idx * 0.04}>
+                <MotionReveal
+                  key={item.id}
+                  direction={idx % 2 === 0 ? 'left' : 'right'}
+                  delay={0.08 + idx * 0.04}
+                  duration={0.6}
+                >
                   <div className="rounded-2xl bg-[#FAF6F0] border border-[#D5C09D] shadow-xs overflow-hidden transition-colors duration-200">
                     <button
                       id={buttonId}

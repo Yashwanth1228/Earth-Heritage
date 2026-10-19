@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { useEnquiry } from '@/context/EnquiryContext';
@@ -37,12 +38,18 @@ export default function EventsClosingCta({ title = 'Stay connected with Earth He
             </span>
           </MotionReveal>
 
-          {/* Heading */}
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#111613] tracking-tight leading-[1.14]">
+          {/* Heading with progressive wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#111613] tracking-tight leading-[1.14] text-center"
+              withUnderline
+              underlineColor="#15341C"
+              underlineDelay={0.3}
+            >
               {title}
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           {/* Supporting Copy */}
           <MotionReveal delay={0.25}>

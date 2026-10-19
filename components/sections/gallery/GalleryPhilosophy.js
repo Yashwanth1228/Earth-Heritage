@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import Container from '@/components/ui/Container';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import { galleryData } from '@/data/galleryData';
 
 /**
@@ -63,17 +64,19 @@ export default function GalleryPhilosophy() {
             </div>
           </motion.div>
 
-          {/* Core Display Statement */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#FAF6F0] font-normal tracking-tight leading-[1.15]">
+          {/* Core Display Statement with light theme title wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              theme="light"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#FAF6F0] font-normal tracking-tight leading-[1.15] text-center"
+              withUnderline
+              underlineColor="#55C40D"
+              underlineDelay={0.4}
+            >
               {statement}
-            </h2>
-          </motion.div>
+            </AnimatedTitle>
+          </div>
 
           {/* Supporting Subtext */}
           <motion.div

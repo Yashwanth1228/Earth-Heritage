@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import LandContourPattern from '@/components/ui/LandContourPattern';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import { ArrowRight, ChevronLeft, ChevronRight, CheckCircle2, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -225,9 +226,15 @@ export default function HomeHowItWorks() {
               <span className="text-[10px] sm:text-[11px] font-mono font-semibold tracking-[0.2em] text-[#8C7A5A] uppercase block">
                 The Ownership Journey
               </span>
-              <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-[#111613] leading-tight mt-0.5">
+              <AnimatedTitle
+                as="h2"
+                className="font-serif text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-[#111613] leading-tight mt-0.5"
+                withUnderline
+                underlineColor="#B88E3E"
+                underlineDelay={0.3}
+              >
                 How It Works
-              </h2>
+              </AnimatedTitle>
             </div>
 
             <div className="flex items-center gap-3">

@@ -30,7 +30,12 @@ export default function EventsList({ events = [] }) {
       <Container size="default">
         <div className="space-y-8 sm:space-y-12">
           {events.map((event, idx) => (
-            <MotionReveal key={event.id || event.slug} delay={0.08 * idx}>
+            <MotionReveal
+              key={event.id || event.slug}
+              direction={idx % 2 === 0 ? 'left' : 'right'}
+              delay={0.08 * idx}
+              duration={0.7}
+            >
               <article
                 id={event.slug}
                 className="relative overflow-hidden w-full bg-white rounded-3xl sm:rounded-[36px] border border-[#E2D8C3] hover:border-[#D0C2A5] p-6 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgba(26,22,17,0.05)] transition-all duration-300 hover:shadow-[0_14px_40px_rgba(21,52,28,0.07)]"

@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { useEnquiry } from '@/context/EnquiryContext';
 import { ArrowRight, CheckCircle2, CalendarCheck } from 'lucide-react';
@@ -41,50 +42,47 @@ export default function NairuthyaAvailablePlots({ project }) {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left: Narrative & Key Attributes (7 cols) */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-              <MotionReveal delay={0.05}>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6F0] border border-[#DDD3BF] text-[11px] font-mono font-semibold tracking-widest text-[#1E460B] uppercase shadow-2xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
-                  <span>LIMITED AVAILABILITY &bull; 9 PLOTS</span>
-                </div>
-              </MotionReveal>
+            {/* Left: Narrative & Key Attributes (Enters from Left) */}
+            <MotionReveal direction="left" delay={0.1} duration={0.7} className="lg:col-span-7 space-y-4 sm:space-y-5">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6F0] border border-[#DDD3BF] text-[11px] font-mono font-semibold tracking-widest text-[#1E460B] uppercase shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#55C40D]" />
+                <span>LIMITED AVAILABILITY &bull; 9 PLOTS</span>
+              </div>
 
-              <MotionReveal delay={0.1}>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight leading-tight">
-                  Reserve Your Farmland Plot at Nairuthya Whispering Wood
-                </h2>
-              </MotionReveal>
+              <AnimatedTitle
+                as="h2"
+                className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111613] tracking-tight leading-tight"
+                withUnderline
+                underlineColor="#55C40D"
+                underlineDelay={0.3}
+              >
+                Reserve Your Farmland Plot at Nairuthya Whispering Wood
+              </AnimatedTitle>
 
-              <MotionReveal delay={0.15}>
-                <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
-                  Only 9 farmland plots remain available within this boutique 8-acre enclave in Honnasandra, Nelamangala. Every plot comes with registered legal title deeds and ongoing agronomic management by Earth Heritage.
-                </p>
-              </MotionReveal>
+              <p className="font-sans text-xs sm:text-sm text-[#4E5C50] leading-relaxed">
+                Only 9 farmland plots remain available within this boutique 8-acre enclave in Honnasandra, Nelamangala. Every plot comes with registered legal title deeds and ongoing agronomic management by Earth Heritage.
+              </p>
 
               {/* Core Assurances */}
-              <MotionReveal delay={0.2}>
-                <div className="pt-2 space-y-2 font-sans text-xs sm:text-[13px] text-[#3A473C]">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
-                    <span>Clear, registered legal title deed for every individual plot</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
-                    <span>Active plantation with Mahogany, Teak, Red Sandal, Malabar Neem, Coconut &amp; Fruit trees</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
-                    <span>On-ground agricultural manpower and farm maintenance managed by Earth Heritage</span>
-                  </div>
+              <div className="pt-2 space-y-2 font-sans text-xs sm:text-[13px] text-[#3A473C]">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
+                  <span>Clear, registered legal title deed for every individual plot</span>
                 </div>
-              </MotionReveal>
-            </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
+                  <span>Active plantation with Mahogany, Teak, Red Sandal, Malabar Neem, Coconut &amp; Fruit trees</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#55C40D] shrink-0" />
+                  <span>On-ground agricultural manpower and farm maintenance managed by Earth Heritage</span>
+                </div>
+              </div>
+            </MotionReveal>
 
-            {/* Right: Pricing & Plot Metrics Card (5 cols) */}
-            <div className="lg:col-span-5">
-              <MotionReveal delay={0.25}>
-                <div className="p-5 sm:p-6 rounded-2xl bg-[#FAF6F0] border border-[#DDD3BF] shadow-2xs space-y-5">
+            {/* Right: Pricing & Plot Metrics Card (Enters from Right) */}
+            <MotionReveal direction="right" delay={0.2} duration={0.7} className="lg:col-span-5">
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#FAF6F0] border border-[#DDD3BF] shadow-2xs space-y-5">
                   
                   {/* Pricing Box */}
                   <div className="space-y-0.5 pb-4 border-b border-[#E2D7C5]">
@@ -144,9 +142,8 @@ export default function NairuthyaAvailablePlots({ project }) {
 
                 </div>
               </MotionReveal>
-            </div>
 
-          </div>
+            </div>
 
         </div>
 

@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { galleryData } from '@/data/galleryData';
 
@@ -62,15 +63,21 @@ export default function GalleryIntro() {
             </div>
           </MotionReveal>
 
-          {/* 2. Editorial Two-Tone Display Title (Aligned with other pages) */}
-          <MotionReveal delay={0.1}>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight leading-[1.14] text-center">
+          {/* 2. Editorial Two-Tone Display Title with progressive wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h1"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-normal tracking-tight leading-[1.14] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               <span className="text-[#111613]">{headingPart1} </span>
               <span className="text-[#1E460B] italic font-normal block sm:inline">
                 {headingPart2}
               </span>
-            </h1>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
         </div>
       </Container>

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { managedFarmlandData } from '@/data/managedFarmlandData';
 import { managedFarmlandImages } from '@/data/managedFarmlandImages';
@@ -42,11 +43,17 @@ export default function NatureResponsibility() {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111613] leading-[1.12]">
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111613] leading-[1.12] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               {statement}
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           <MotionReveal delay={0.25}>
             <p className="mt-6 font-sans text-base sm:text-lg md:text-xl text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
@@ -83,10 +90,15 @@ export default function NatureResponsibility() {
           </div>
         </MotionReveal>
 
-        {/* 3 Value Pillars */}
+        {/* 3 Value Pillars with Alternating Reveals */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {values.map((val, idx) => (
-            <MotionReveal key={val.title} delay={0.1 + idx * 0.08}>
+            <MotionReveal
+              key={val.title}
+              direction={idx % 2 === 0 ? 'left' : 'right'}
+              delay={0.1 + idx * 0.08}
+              duration={0.65}
+            >
               <div className="h-full p-6 sm:p-8 rounded-2xl bg-[#FAF6F0]/90 border border-[#D5C09D] shadow-[0_4px_16px_rgba(17,22,19,0.03)] flex flex-col justify-between backdrop-blur-xs">
                 <div>
                   <div className="w-8 h-8 rounded-full bg-[#1E460B]/10 text-[#1E460B] flex items-center justify-center font-mono text-xs font-bold mb-4 border border-[#1E460B]/20">

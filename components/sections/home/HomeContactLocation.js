@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { 
   Phone, 
@@ -114,10 +115,10 @@ export default function HomeContactLocation() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-18 items-start mb-14 sm:mb-18">
           
           {/* -------------------------------------------------------------
-              LEFT COLUMN: CONTACT FORM (6 cols on lg)
+              LEFT COLUMN: CONTACT FORM (6 cols on lg - Enters from Left)
               ------------------------------------------------------------- */}
-          <div className="lg:col-span-6">
-            <MotionReveal delay={0.1}>
+          <MotionReveal direction="left" delay={0.1} duration={0.7} className="lg:col-span-6">
+            <div>
               {isSuccess ? (
                 <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#DDD3BF] shadow-sm text-center space-y-4">
                   <div className="w-14 h-14 rounded-full bg-[#E8F5E9] border border-[#81C784] text-[#2E7D32] flex items-center justify-center mx-auto">
@@ -291,26 +292,30 @@ export default function HomeContactLocation() {
                   </button>
                 </form>
               )}
-            </MotionReveal>
-          </div>
+            </div>
+          </MotionReveal>
 
           {/* -------------------------------------------------------------
-              RIGHT COLUMN: "GET IN TOUCH" CONTACT DETAILS (6 cols on lg)
+              RIGHT COLUMN: "GET IN TOUCH" CONTACT DETAILS (6 cols on lg - Enters from Right)
               ------------------------------------------------------------- */}
-          <div className="lg:col-span-6 space-y-8 lg:pl-4">
-            <MotionReveal delay={0.15}>
-              <div className="space-y-3">
-                <span className="font-serif italic text-base sm:text-lg text-[#C6923C]">
-                  Contact Us
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-tight">
-                  Get In Touch
-                </h2>
-                <p className="font-sans text-sm sm:text-base text-[#4E5C50] leading-relaxed max-w-lg">
-                  Direct conversations on farmland ownership and professional farm management, or to schedule a private guided estate walkthrough across our managed acreage.
-                </p>
-              </div>
-            </MotionReveal>
+          <MotionReveal direction="right" delay={0.2} duration={0.7} className="lg:col-span-6 space-y-8 lg:pl-4">
+            <div className="space-y-3">
+              <span className="font-serif italic text-base sm:text-lg text-[#C6923C]">
+                Contact Us
+              </span>
+              <AnimatedTitle
+                as="h2"
+                className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-tight"
+                withUnderline
+                underlineColor="#C6923C"
+                underlineDelay={0.4}
+              >
+                Get In Touch
+              </AnimatedTitle>
+              <p className="font-sans text-sm sm:text-base text-[#4E5C50] leading-relaxed max-w-lg">
+                Direct conversations on farmland ownership and professional farm management, or to schedule a private guided estate walkthrough across our managed acreage.
+              </p>
+            </div>
 
             {/* 2x2 Contact Info Grid */}
             <MotionReveal delay={0.25}>
@@ -422,7 +427,7 @@ export default function HomeContactLocation() {
               </div>
             </MotionReveal>
 
-          </div>
+          </MotionReveal>
 
         </div>
 

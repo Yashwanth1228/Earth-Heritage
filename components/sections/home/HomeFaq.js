@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -95,11 +96,15 @@ export default function HomeFaq() {
             </span>
           </MotionReveal>
 
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-[1.14]">
-              Questions, answered.
-            </h2>
-          </MotionReveal>
+          <AnimatedTitle
+            as="h2"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-[1.14]"
+            withUnderline
+            underlineColor="#B88E3E"
+            underlineDelay={0.4}
+          >
+            Questions, answered.
+          </AnimatedTitle>
 
           <MotionReveal delay={0.25}>
             <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-2xl mx-auto">
@@ -113,7 +118,11 @@ export default function HomeFaq() {
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <MotionReveal key={faq.id} delay={0.15 + idx * 0.05}>
+              <MotionReveal
+                key={faq.id}
+                direction={idx % 2 === 0 ? 'left' : 'right'}
+                delay={0.1 + idx * 0.04}
+              >
                 <div className="py-2 sm:py-2.5">
                   <button
                     type="button"

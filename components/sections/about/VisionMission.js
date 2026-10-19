@@ -34,10 +34,10 @@ export default function VisionMission() {
           </MotionReveal>
         </div>
 
-        {/* Dual Balanced Editorial Panels */}
+        {/* Dual Balanced Editorial Panels with Left and Right Reveals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Vision Panel */}
-          <MotionReveal delay={0.15}>
+          {/* Vision Panel (Enters from Left) */}
+          <MotionReveal direction="left" delay={0.15} duration={0.7}>
             <div className="h-full p-8 sm:p-12 lg:p-14 rounded-2xl sm:rounded-3xl bg-white/90 border border-[#D5C09D] shadow-[0_8px_30px_rgba(17,22,19,0.04)] flex flex-col justify-between space-y-8 backdrop-blur-xs">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[#1E460B] uppercase mb-6">
@@ -54,8 +54,8 @@ export default function VisionMission() {
             </div>
           </MotionReveal>
 
-          {/* Mission Panel */}
-          <MotionReveal delay={0.25}>
+          {/* Mission Panel (Enters from Right) */}
+          <MotionReveal direction="right" delay={0.25} duration={0.7}>
             <div className="h-full p-8 sm:p-12 lg:p-14 rounded-2xl sm:rounded-3xl bg-white/90 border border-[#D5C09D] shadow-[0_8px_30px_rgba(17,22,19,0.04)] flex flex-col justify-between space-y-8 backdrop-blur-xs">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[#B88E3E] uppercase mb-6">

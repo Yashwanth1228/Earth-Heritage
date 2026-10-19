@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 
 /**
@@ -59,15 +60,21 @@ export default function EventsHeader() {
             </div>
           </MotionReveal>
 
-          {/* Two-Tone Headline Wordings */}
-          <MotionReveal delay={0.1}>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-normal tracking-tight leading-[1.12] text-center">
+          {/* Two-Tone Headline Wordings with progressive wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h1"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-normal tracking-tight leading-[1.12] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               <span className="text-[#111613]">Where people, land and </span>
               <span className="text-[#1E460B] italic font-normal block sm:inline">
                 community come together.
               </span>
-            </h1>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
         </div>
       </Container>
     </section>

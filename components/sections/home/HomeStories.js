@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { Play, ArrowRight, Film, Camera, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -290,27 +291,27 @@ export default function HomeStories() {
       <Container size="default" className="relative z-10 mb-10 sm:mb-14">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center md:items-end md:text-left md:flex-row justify-between gap-6">
-          <div className="max-w-2xl space-y-3 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
-            <MotionReveal delay={0.05}>
-              <span className="inline-block text-[11px] sm:text-xs font-mono font-semibold tracking-[0.24em] text-[#8C7A5A] uppercase">
-                Field Chronicles &amp; Visual Records
-              </span>
-            </MotionReveal>
+          <MotionReveal direction="left" delay={0.1} duration={0.7} className="max-w-2xl space-y-3 sm:space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
+            <span className="inline-block text-[11px] sm:text-xs font-mono font-semibold tracking-[0.24em] text-[#8C7A5A] uppercase">
+              Field Chronicles &amp; Visual Records
+            </span>
 
-            <MotionReveal delay={0.15}>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-[1.14]">
-                Stories from the Ground
-              </h2>
-            </MotionReveal>
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#111613] leading-[1.14]"
+              withUnderline
+              underlineColor="#B88E3E"
+              underlineDelay={0.4}
+            >
+              Stories from the Ground
+            </AnimatedTitle>
 
-            <MotionReveal delay={0.25}>
-              <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-xl md:max-w-none mx-auto md:mx-0">
-                Authentic visual moments capturing on-ground progress, living landscape, and daily farm care across Earth Heritage company projects. Use the previous and next controls or swipe to navigate.
-              </p>
-            </MotionReveal>
-          </div>
+            <p className="font-sans text-sm sm:text-base text-[#3C4A3E] leading-relaxed max-w-xl md:max-w-none mx-auto md:mx-0">
+              Authentic visual moments capturing on-ground progress, living landscape, and daily farm care across Earth Heritage company projects. Use the previous and next controls or swipe to navigate.
+            </p>
+          </MotionReveal>
 
-          <div className="flex items-center justify-center md:justify-start gap-4 shrink-0 mx-auto md:mx-0">
+          <MotionReveal direction="right" delay={0.2} duration={0.7} className="flex items-center justify-center md:justify-start gap-4 shrink-0 mx-auto md:mx-0">
             <Link
               href="/gallery"
               className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#15341C] hover:text-[#1E460B] group transition-colors"
@@ -320,7 +321,7 @@ export default function HomeStories() {
               </span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
-          </div>
+          </MotionReveal>
         </div>
       </Container>
 

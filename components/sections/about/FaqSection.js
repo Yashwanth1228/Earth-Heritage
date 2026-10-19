@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Plus } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { useEnquiry } from '@/context/EnquiryContext';
 import { aboutData } from '@/data/aboutData';
@@ -47,15 +48,21 @@ export default function FaqSection() {
               </div>
             </MotionReveal>
 
-            <MotionReveal delay={0.15}>
-              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111613] leading-[1.14]">
+            <div className="flex justify-center">
+              <AnimatedTitle
+                as="h2"
+                className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111613] leading-[1.14] text-center"
+                withUnderline
+                underlineColor="#1E460B"
+                underlineDelay={0.4}
+              >
                 {heading.split('\n').map((line, idx) => (
                   <span key={idx} className="block">
                     {line}
                   </span>
                 ))}
-              </h2>
-            </MotionReveal>
+              </AnimatedTitle>
+            </div>
 
             <MotionReveal delay={0.25}>
               <p className="mt-5 font-sans text-base sm:text-lg text-[#38423A] font-normal leading-relaxed max-w-xl mx-auto">
@@ -64,7 +71,7 @@ export default function FaqSection() {
             </MotionReveal>
           </div>
 
-          {/* Premium Editorial Accordion */}
+          {/* Premium Editorial Accordion with Alternating Reveals */}
           <div className="border-t border-[#D5C09D]">
             {items.map((item, idx) => {
               const isOpen = openId === item.id;
@@ -72,7 +79,12 @@ export default function FaqSection() {
               const contentId = `faq-content-${item.id}`;
 
               return (
-                <MotionReveal key={item.id} delay={0.08 + idx * 0.05}>
+                <MotionReveal
+                  key={item.id}
+                  direction={idx % 2 === 0 ? 'left' : 'right'}
+                  delay={0.08 + idx * 0.05}
+                  duration={0.6}
+                >
                   <div className="border-b border-[#D5C09D] transition-colors duration-200">
                     <button
                       id={buttonId}

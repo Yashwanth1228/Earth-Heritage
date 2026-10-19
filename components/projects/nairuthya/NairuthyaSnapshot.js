@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import EditorialImageSlot from './EditorialImageSlot';
 import { useEnquiry } from '@/context/EnquiryContext';
@@ -41,52 +42,52 @@ export default function NairuthyaSnapshot({ project }) {
         {/* Equal 50/50 Two-Column Editorial Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Heading + Intro + Inline Specifications + Button (50% width) */}
-          <div className="flex flex-col justify-between space-y-5 sm:space-y-6">
+          {/* Left Column: Heading + Intro + Inline Specifications + Button (Enters from Left) */}
+          <MotionReveal direction="left" delay={0.1} duration={0.7} className="flex flex-col justify-between space-y-5 sm:space-y-6">
             
             {/* Header Content */}
             <div className="space-y-2">
-              <MotionReveal delay={0.05}>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-normal text-[#111613] tracking-tight">
-                  Project Overview
-                </h2>
-              </MotionReveal>
-              <MotionReveal delay={0.1}>
-                <p className="font-sans text-xs sm:text-[13px] text-[#4E5C50] leading-relaxed pt-0.5 max-w-lg">
-                  The project will be handed over with infrastructure in place: Bio fencing, drip irrigation, solar street lighting, CCTV surveillance, security, and themed landscaping.{' '}
-                  <Link
-                    href="/how-it-works"
-                    className="text-[#1E460B] font-medium underline underline-offset-2 hover:text-[#55C40D] transition-colors"
-                  >
-                    Learn how managed farmland works
-                  </Link>
-                </p>
-              </MotionReveal>
+              <AnimatedTitle
+                as="h2"
+                className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-normal text-[#111613] tracking-tight"
+                withUnderline
+                underlineColor="#55C40D"
+                underlineDelay={0.3}
+              >
+                Project Overview
+              </AnimatedTitle>
+              <p className="font-sans text-xs sm:text-[13px] text-[#4E5C50] leading-relaxed pt-0.5 max-w-lg">
+                The project will be handed over with infrastructure in place: Bio fencing, drip irrigation, solar street lighting, CCTV surveillance, security, and themed landscaping.{' '}
+                <Link
+                  href="/how-it-works"
+                  className="text-[#1E460B] font-medium underline underline-offset-2 hover:text-[#55C40D] transition-colors"
+                >
+                  Learn how managed farmland works
+                </Link>
+              </p>
             </div>
 
-            {/* Specifications List (Inline, compact font size matching reference) */}
-            <MotionReveal delay={0.15}>
-              <div className="space-y-2.5 sm:space-y-3">
-                {specifications.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2.5 text-xs sm:text-[13.5px]"
-                  >
-                    <Sprout className="w-3.5 h-3.5 text-[#55C40D] shrink-0" aria-hidden="true" />
-                    <span className="font-sans font-extrabold text-[#5A685D]">
-                      {item.label}
-                    </span>
-                    <span className="text-[#5A685D] font-extrabold mx-0.5">—</span>
-                    <span className="font-sans font-extrabold text-[#5A685D]">
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </MotionReveal>
+            {/* Specifications List */}
+            <div className="space-y-2.5 sm:space-y-3">
+              {specifications.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2.5 text-xs sm:text-[13.5px]"
+                >
+                  <Sprout className="w-3.5 h-3.5 text-[#55C40D] shrink-0" aria-hidden="true" />
+                  <span className="font-sans font-extrabold text-[#5A685D]">
+                    {item.label}
+                  </span>
+                  <span className="text-[#5A685D] font-extrabold mx-0.5">—</span>
+                  <span className="font-sans font-extrabold text-[#5A685D]">
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
 
             {/* Action Button: Book a Site Visit */}
-            <MotionReveal delay={0.2} className="pt-1">
+            <div className="pt-1">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
                 <button
                   type="button"
@@ -101,29 +102,27 @@ export default function NairuthyaSnapshot({ project }) {
                   Private visits arranged by appointment
                 </span>
               </div>
-            </MotionReveal>
-          </div>
+            </div>
+          </MotionReveal>
 
-          {/* Right Column: Large Project / Site Visual (50% width) */}
-          <div className="flex flex-col justify-center">
-            <MotionReveal delay={0.15} className="w-full">
-              <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#DDD3BF] bg-white p-2.5 sm:p-3 shadow-xs flex flex-col justify-between">
-                <EditorialImageSlot
-                  src={project?.coverImage?.src}
-                  alt="Nairuthya Whispering Wood 8-acre managed farmland layout plan in Honnasandra"
-                  slotLabel="Master Plan Layout Slot"
-                  caption="8 Acres Master-Planned Farmland Layout · Honnasandra, Nelamangala"
-                  aspectRatio="aspect-[4/3]"
-                  variant="neutral"
-                  className="rounded-xl sm:rounded-2xl w-full"
-                />
-                <div className="pt-2 px-1 flex items-center justify-between text-[11px] font-mono text-[#7A6A4E] shrink-0">
-                  <span>Layout Plan &bull; 25 Premium Plots</span>
-                  <span className="text-[#1E460B] font-semibold">Titled Ownership</span>
-                </div>
+          {/* Right Column: Large Project / Site Visual (Enters from Right) */}
+          <MotionReveal direction="right" delay={0.2} duration={0.7} className="flex flex-col justify-center">
+            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#DDD3BF] bg-white p-2.5 sm:p-3 shadow-xs flex flex-col justify-between">
+              <EditorialImageSlot
+                src={project?.coverImage?.src}
+                alt="Nairuthya Whispering Wood 8-acre managed farmland layout plan in Honnasandra"
+                slotLabel="Master Plan Layout Slot"
+                caption="8 Acres Master-Planned Farmland Layout · Honnasandra, Nelamangala"
+                aspectRatio="aspect-[4/3]"
+                variant="neutral"
+                className="rounded-xl sm:rounded-2xl w-full"
+              />
+              <div className="pt-2 px-1 flex items-center justify-between text-[11px] font-mono text-[#7A6A4E] shrink-0">
+                <span>Layout Plan &bull; 25 Premium Plots</span>
+                <span className="text-[#1E460B] font-semibold">Titled Ownership</span>
               </div>
-            </MotionReveal>
-          </div>
+            </div>
+          </MotionReveal>
 
         </div>
 
