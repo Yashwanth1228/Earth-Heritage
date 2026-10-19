@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { howItWorksData } from '@/data/howItWorksData';
 
@@ -62,15 +63,21 @@ export default function HowItWorksIntro() {
             </div>
           </MotionReveal>
 
-          {/* 2. Editorial Two-Tone Display Title */}
-          <MotionReveal delay={0.15}>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[70px] font-normal tracking-tight leading-[1.12] text-center">
+          {/* 2. Editorial Two-Tone Display Title with progressive wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h1"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[70px] font-normal tracking-tight leading-[1.12] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               <span className="text-[#111613]">{headingPart1}</span>
               <span className="text-[#1E460B] italic font-normal block sm:inline">
                 {headingPart2}
               </span>
-            </h1>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           {/* 3. Centered Supporting Description */}
           <MotionReveal delay={0.25}>

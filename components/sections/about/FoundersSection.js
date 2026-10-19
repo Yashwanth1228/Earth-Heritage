@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { aboutData } from '@/data/aboutData';
 import { cn } from '@/lib/utils';
@@ -37,9 +38,9 @@ function FounderProfileCard({ profile, priority = false, reverse = false }) {
         )}
       >
         
-        {/* Left Column: Portrait Photograph (~34-38% width) */}
+        {/* Portrait Photograph Column (~34-38% width) */}
         <div className="w-full md:w-[38%] lg:w-[36%] shrink-0">
-          <MotionReveal delay={0.15}>
+          <MotionReveal direction={reverse ? 'right' : 'left'} delay={0.15} duration={0.7}>
             <div className="relative w-full max-w-[320px] sm:max-w-[340px] md:max-w-none mx-auto aspect-[4/5] rounded-xl overflow-hidden bg-[#E8DFC8] border border-[#D5C09D] shadow-[0_12px_32px_rgba(17,22,19,0.06)] group">
               <Image
                 src={profile.image}
@@ -57,15 +58,21 @@ function FounderProfileCard({ profile, priority = false, reverse = false }) {
           </MotionReveal>
         </div>
 
-        {/* Right Column: All Founder Information (~58-62% width) */}
+        {/* Narrative & Experience Column (~58-62% width) */}
         <div className="w-full md:flex-1 flex flex-col space-y-5 pt-0.5">
           
           {/* 1. Name & Role/Title */}
-          <MotionReveal delay={0.2}>
+          <MotionReveal direction={reverse ? 'left' : 'right'} delay={0.2} duration={0.7}>
             <div className="space-y-1.5">
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-normal tracking-tight text-[#111613] leading-[1.12]">
+              <AnimatedTitle
+                as="h3"
+                className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-normal tracking-tight text-[#111613] leading-[1.12]"
+                withUnderline
+                underlineColor="#1E460B"
+                underlineDelay={0.3}
+              >
                 {profile.name}
-              </h3>
+              </AnimatedTitle>
 
               {profile.positioning && (
                 <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-[#8C7A5A] uppercase">
@@ -163,11 +170,17 @@ export default function FoundersSection() {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#111613] leading-[1.14]">
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#111613] leading-[1.14] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               {heading}
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           <MotionReveal delay={0.25}>
             <p className="mt-5 font-sans text-base sm:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">

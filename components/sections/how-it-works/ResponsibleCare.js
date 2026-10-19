@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import Container from '@/components/ui/Container';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import { howItWorksData } from '@/data/howItWorksData';
 import { howItWorksImages } from '@/data/howItWorksImages';
 
@@ -64,17 +65,19 @@ export default function ResponsibleCare() {
             </div>
           </motion.div>
 
-          {/* Heading */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#FAF6F0] font-normal tracking-tight leading-[1.15]">
+          {/* Heading with light theme title wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              theme="light"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#FAF6F0] font-normal tracking-tight leading-[1.15] text-center"
+              withUnderline
+              underlineColor="#55C40D"
+              underlineDelay={0.4}
+            >
               {heading}
-            </h2>
-          </motion.div>
+            </AnimatedTitle>
+          </div>
 
           {/* Supporting Copy */}
           <motion.div

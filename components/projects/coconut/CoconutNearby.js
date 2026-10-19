@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 
 /**
  * Botanical two-leaf sprout icon in crisp white
@@ -89,36 +90,44 @@ export default function CoconutNearby({ project }) {
           <div className="relative z-10 p-6 sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
-              {/* LEFT COLUMN — Nearby Attractions */}
-              <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
-                <MotionReveal delay={0.05}>
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug">
-                    Nearby Attractions
-                  </h3>
-                </MotionReveal>
+              {/* LEFT COLUMN — Nearby Attractions (Enters from Left) */}
+              <MotionReveal direction="left" delay={0.1} duration={0.7} className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
+                <AnimatedTitle
+                  as="h3"
+                  theme="light"
+                  className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug"
+                  withUnderline
+                  underlineColor="#F8C32C"
+                  underlineDelay={0.3}
+                >
+                  Nearby Attractions
+                </AnimatedTitle>
 
                 {/* Compact Sprout Bullet List (Single Line items strictly preserved) */}
                 <div className="space-y-2.5 sm:space-y-3 pt-1">
                   {attractions.map((item, idx) => (
-                    <MotionReveal key={idx} delay={0.05 * (idx + 1)}>
-                      <div className="flex items-center gap-2.5 sm:gap-3 text-white/95">
-                        <SproutIcon className="w-4 h-4 text-white/90 shrink-0" />
-                        <span className="font-serif text-[14px] sm:text-[15.5px] lg:text-[16px] tracking-tight font-normal leading-tight whitespace-nowrap">
-                          {item}
-                        </span>
-                      </div>
-                    </MotionReveal>
+                    <div key={idx} className="flex items-center gap-2.5 sm:gap-3 text-white/95">
+                      <SproutIcon className="w-4 h-4 text-white/90 shrink-0" />
+                      <span className="font-serif text-[14px] sm:text-[15.5px] lg:text-[16px] tracking-tight font-normal leading-tight whitespace-nowrap">
+                        {item}
+                      </span>
+                    </div>
                   ))}
                 </div>
-              </div>
+              </MotionReveal>
 
-              {/* RIGHT COLUMN — Regional Attractions Illustrated Composition */}
-              <div className="lg:col-span-7 flex flex-col justify-center space-y-3">
-                <MotionReveal delay={0.1}>
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug">
-                    Regional Map
-                  </h3>
-                </MotionReveal>
+              {/* RIGHT COLUMN — Regional Attractions Illustrated Composition (Enters from Right) */}
+              <MotionReveal direction="right" delay={0.2} duration={0.7} className="lg:col-span-7 flex flex-col justify-center space-y-3">
+                <AnimatedTitle
+                  as="h3"
+                  theme="light"
+                  className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-white tracking-tight leading-snug"
+                  withUnderline
+                  underlineColor="#F8C32C"
+                  underlineDelay={0.3}
+                >
+                  Regional Map
+                </AnimatedTitle>
 
                 {/* Illustrated Regional Composition Canvas */}
                 <div className="relative w-full h-[240px] sm:h-[280px] lg:h-[300px] rounded-xl overflow-hidden">
@@ -457,7 +466,7 @@ export default function CoconutNearby({ project }) {
                     </text>
                   </svg>
                 </div>
-              </div>
+              </MotionReveal>
 
             </div>
           </div>

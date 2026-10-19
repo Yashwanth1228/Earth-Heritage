@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { aboutData } from '@/data/aboutData';
 
@@ -67,16 +68,22 @@ export default function AboutIntro() {
             </div>
           </MotionReveal>
 
-          {/* 2. Centered Two-Tone Display Title */}
-          <MotionReveal delay={0.15}>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-normal tracking-tight leading-[1.12] text-center">
+          {/* 2. Centered Two-Tone Display Title with progressive wipe */}
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h1"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-normal tracking-tight leading-[1.12] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               <span className="text-[#111613]">Land is more than an </span>
               <span className="text-[#1E460B] italic font-normal">asset.</span>
               <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-[44px] text-[#3D4B3F] font-normal mt-2 sm:mt-3 font-serif">
                 {headingLine2}
               </span>
-            </h1>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           {/* 3. Centered Supporting Description (Comfortable max width) */}
           <MotionReveal delay={0.25}>

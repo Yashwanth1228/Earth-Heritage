@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
+import AnimatedTitle from '@/components/animations/AnimatedTitle';
 import LandContourPattern from '@/components/ui/LandContourPattern';
 import { aboutData } from '@/data/aboutData';
 
@@ -33,11 +34,17 @@ export default function GoalsSection() {
             </div>
           </MotionReveal>
 
-          <MotionReveal delay={0.15}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#111613] leading-[1.14]">
+          <div className="flex justify-center">
+            <AnimatedTitle
+              as="h2"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#111613] leading-[1.14] text-center"
+              withUnderline
+              underlineColor="#1E460B"
+              underlineDelay={0.4}
+            >
               {heading}
-            </h2>
-          </MotionReveal>
+            </AnimatedTitle>
+          </div>
 
           <MotionReveal delay={0.25}>
             <p className="mt-5 font-sans text-base sm:text-lg text-[#38423A] font-normal leading-relaxed max-w-2xl mx-auto">
@@ -46,10 +53,15 @@ export default function GoalsSection() {
           </MotionReveal>
         </div>
 
-        {/* Editorial Numbered Manifesto List */}
+        {/* Editorial Numbered Manifesto List with Alternating Left/Right Reveals */}
         <div className="border-t border-[#D5C09D]">
           {items.map((item, idx) => (
-            <MotionReveal key={item.number} delay={0.1 + idx * 0.08}>
+            <MotionReveal
+              key={item.number}
+              direction={idx % 2 === 0 ? 'left' : 'right'}
+              delay={0.1 + idx * 0.08}
+              duration={0.65}
+            >
               <div className="group border-b border-[#D5C09D] py-8 sm:py-10 lg:py-12 px-2 sm:px-4 hover:bg-[#EAD5B5]/40 transition-colors duration-300">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline">
                   {/* Number */}
