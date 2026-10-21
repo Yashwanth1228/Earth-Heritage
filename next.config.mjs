@@ -18,7 +18,9 @@ const nextConfig = {
       { source: '/farm-management', destination: '/managed-farmland', permanent: false },
       { source: '/sustainability', destination: '/#principles', permanent: false },
       { source: '/insights', destination: '/#philosophy', permanent: false },
-      { source: '/contact', destination: '/#contact-cta', permanent: false }
+      { source: '/contact', destination: '/#contact-cta', permanent: false },
+      { source: '/projects/managed-farmland-concept-i', destination: '/projects', permanent: false },
+      { source: '/projects/managed-farmland-concept-ii', destination: '/projects', permanent: false }
     ];
   }
 };

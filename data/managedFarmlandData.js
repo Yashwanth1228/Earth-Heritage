@@ -14,11 +14,11 @@
 export const managedFarmlandData = {
   intro: {
     eyebrow: 'MANAGED FARMLAND',
-    heading: 'Land ownership, with professional care for the farm.',
-    headingPart1: 'Land ownership, with ',
-    headingPart2: 'professional care for the farm.',
+    heading: 'Managed Farmland in Bangalore, with Professional Care for Your Land.',
+    headingPart1: 'Managed Farmland in Bangalore, with ',
+    headingPart2: 'Professional Care for Your Land.',
     description:
-      'Managed farmland brings land ownership and ongoing farm management together — allowing the landowner to retain ownership while Earth Heritage coordinates the agreed activities required to care for and manage the farm.'
+      'Managed farmland brings land ownership and ongoing farm management together in the Bangalore region — allowing the landowner to retain ownership while Earth Heritage coordinates agreed farm activities required to care for and manage the land.'
   },
 
   coreProposition: {
