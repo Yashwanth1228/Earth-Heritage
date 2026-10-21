@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import MotionReveal from '@/components/animations/MotionReveal';
 import AnimatedTitle from '@/components/animations/AnimatedTitle';
@@ -113,6 +115,27 @@ export default function HowModelWorks() {
             ))}
           </div>
         </div>
+
+        {/* Contextual Link to /how-it-works */}
+        <MotionReveal delay={0.35} className="mt-12 sm:mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8 px-6 sm:px-8 py-5 rounded-2xl bg-[#FAF6F0]/90 border border-[#D5C09D] shadow-xs max-w-3xl mx-auto backdrop-blur-xs">
+            <div className="text-left sm:text-left">
+              <span className="font-mono text-xs font-bold text-[#1E460B] uppercase tracking-wider block">
+                Detailed Operational Model
+              </span>
+              <p className="mt-1 font-sans text-sm text-[#38423A]">
+                Understand the complete land acquisition, title registration, and ongoing care workflow in our comprehensive guide.
+              </p>
+            </div>
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1E460B] hover:bg-[#2A5C13] text-white text-xs font-mono font-semibold tracking-wider uppercase transition-colors shrink-0 shadow-2xs group"
+            >
+              <span>Explore How It Works</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+          </div>
+        </MotionReveal>
       </Container>
     </section>
   );

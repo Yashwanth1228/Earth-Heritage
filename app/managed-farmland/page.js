@@ -4,17 +4,15 @@ import CoreProposition from '@/components/sections/managed-farmland/CoreProposit
 import ManagementAreas from '@/components/sections/managed-farmland/ManagementAreas';
 import WhyManagedFarmland from '@/components/sections/managed-farmland/WhyManagedFarmland';
 import HowModelWorks from '@/components/sections/managed-farmland/HowModelWorks';
+import ManagedFarmlandProjects from '@/components/sections/managed-farmland/ManagedFarmlandProjects';
 import ManagedFarmlandFaq from '@/components/sections/managed-farmland/ManagedFarmlandFaq';
 
-export const metadata = {
-  ...constructMetadata({
-    title: 'Managed Farmland in Bangalore',
-    description:
-      'Discover managed farmland with Earth Heritage in Bangalore. Retain ownership of your land while agreed farm activities are professionally coordinated and managed with care.',
-    canonicalUrl: '/managed-farmland'
-  }),
-  title: 'Managed Farmland in Bangalore | Earth Heritage'
-};
+export const metadata = constructMetadata({
+  title: 'Managed Farmland in Bangalore',
+  description:
+    'Explore managed farmland with Earth Heritage in the Bangalore region. Retain land ownership while agreed farm activities are coordinated with care.',
+  canonicalUrl: '/managed-farmland'
+});
 
 /**
  * Dedicated Managed Farmland Page (/managed-farmland)
@@ -25,7 +23,8 @@ export const metadata = {
  * 3. ManagementAreas — Section 3: What Does Earth Heritage Manage? (6 Management Responsibilities visual sequence)
  * 4. WhyManagedFarmland — Section 4: Why Managed Farmland? (Visual split between Ownership and Management)
  * 5. HowModelWorks — Section 5: How The Model Works (6-step editorial timeline/connector process)
- * 6. ManagedFarmlandFaq — Section 6: Frequently Asked Questions (8 verified questions accordion)
+ * 6. ManagedFarmlandProjects — Section 6: Managed Farmland in Practice (Nairuthya Whispering Wood & Coconut Garden)
+ * 7. ManagedFarmlandFaq — Section 7: Frequently Asked Questions (8 verified questions accordion)
  */
 export default function ManagedFarmlandPage() {
   return (
@@ -35,6 +34,7 @@ export default function ManagedFarmlandPage() {
       <ManagementAreas />
       <WhyManagedFarmland />
       <HowModelWorks />
+      <ManagedFarmlandProjects />
       <ManagedFarmlandFaq />
     </div>
   );
