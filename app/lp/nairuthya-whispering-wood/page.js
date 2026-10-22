@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getProjectBySlug } from '@/data/projects';
 import NairuthyaCampaignClient from '@/components/sections/campaigns/NairuthyaCampaignClient';
+import NairuthyaMetaPixel from '@/components/sections/campaigns/NairuthyaMetaPixel';
 
 export const metadata = {
   title: 'Nairuthya Whispering Wood | Managed Farmland in Nelamangala | Earth Heritage',
@@ -14,17 +15,17 @@ export const metadata = {
     title: 'Nairuthya Whispering Wood | Managed Farmland | Earth Heritage',
     description:
       '8-acre managed farmland enclave in Honnasandra, Nelamangala (~35 km from Bengaluru). Titled plot ownership, timber plantations, and professional farm care.',
-    images: [
-      {
-        url: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Nairuthya Whispering Wood farmland landscape in Honnasandra'
-      }
-    ],
-    locale: 'en_IN',
-    type: 'website'
-  }
+  images: [
+    {
+      url: 'https://res.cloudinary.com/yffbj6hj/image/upload/v1791200708/earth-heritage/projects/nairuthya-whispering-wood/hero.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Nairuthya Whispering Wood farmland landscape in Honnasandra'
+    }
+  ],
+  locale: 'en_IN',
+  type: 'website'
+}
 };
 
 /**
@@ -59,5 +60,11 @@ export default function NairuthyaWhisperingWoodCampaignPage() {
     faqs: verifiedFaqs
   };
 
-  return <NairuthyaCampaignClient project={campaignProject} />;
+  return (
+    <>
+      <NairuthyaMetaPixel />
+      <NairuthyaCampaignClient project={campaignProject} />
+    </>
+  );
 }
+

@@ -73,6 +73,17 @@ export default function NairuthyaCampaignForm({ className }) {
       });
       if (res.success) {
         setIsSuccess(true);
+        // Track genuine confirmed Lead in Meta Pixel (no PII sent)
+        if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+          try {
+            window.fbq('track', 'Lead', {
+              content_name: 'Nairuthya Whispering Wood',
+              content_category: 'Farmland Enquiry'
+            });
+          } catch {
+            // Silently suppress tracking exceptions without affecting user experience
+          }
+        }
       } else {
         setSubmitError(res.message || 'Unable to submit message. Please try again.');
       }
