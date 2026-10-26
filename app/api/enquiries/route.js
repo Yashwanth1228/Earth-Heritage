@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin, isSupabaseAdminConfigured } from '@/lib/supabaseAdmin';
 import { sendEnquiryNotification } from '@/lib/email';
+import {
+  normalizeAndValidatePhone,
+  resolveCanonicalScope,
+  normalizeInterest
+} from '@/lib/enquiryNormalization';
 
 /**
  * Handle unsupported HTTP methods
@@ -31,10 +36,12 @@ export async function PATCH() {
  * POST /api/enquiries
  * 
  * Secure server-side ingestion endpoint for Earth Heritage enquiries.
- * 1. Validates submission payload.
- * 2. Inserts directly into public.enquiries using the server-only Supabase service-role client.
- * 3. Dispatches transactional email notification to support@earthheritage.in via Resend.
- * 4. Preserves database as single source of truth without rolling back on email failure.
+ * 1. Validates submission payload and normalizes phone numbers.
+ * 2. Derives canonical scope and normalized interest.
+ * 3. Ingests via hardened PostgreSQL stored procedure (public.submit_enquiry_safe).
+ * 4. Preserves duplicate detection, re-enquiry tracking, and existing sales statuses.
+ * 5. Dispatches transactional email notification to support@earthheritage.in via Resend.
+ * 6. Preserves database as single source of truth without rolling back on email failure.
  */
 export async function POST(request) {
   // 1. Parse JSON Request Body
@@ -85,13 +92,15 @@ export async function POST(request) {
     errors.fullName = 'Full name must be at least 2 characters.';
   }
 
-  // B. Phone Number: Required, valid telephone pattern
+  // B. Phone Number: Required, validated via canonical normalization rules
   const cleanPhone = typeof phoneNumber === 'string' ? phoneNumber.trim() : '';
-  const normalizedPhone = cleanPhone.replace(/[\s\-\(\)\.]/g, '');
+  const phoneValidation = normalizeAndValidatePhone(cleanPhone);
   if (!cleanPhone) {
     errors.phoneNumber = 'Phone number is required.';
-  } else if (!/^[\+]?[0-9]{7,16}$/.test(normalizedPhone)) {
-    errors.phoneNumber = 'Please provide a valid phone number (7 to 15 digits).';
+  } else if (!phoneValidation.valid) {
+    errors.phoneNumber =
+      phoneValidation.error ||
+      'Please provide a valid 10-digit mobile number or international number with country code (+).';
   }
 
   // C. Email: Optional; format check only if provided
@@ -131,7 +140,11 @@ export async function POST(request) {
     );
   }
 
-  // 5. Verify Server Supabase Service Role Configuration
+  // 5. Derive Canonical Scope and Normalized Interest
+  const canonicalScope = resolveCanonicalScope(cleanPageUrl, cleanSource, cleanInterestedIn);
+  const normalizedInterest = normalizeInterest(cleanInterestedIn, canonicalScope);
+
+  // 6. Verify Server Supabase Service Role Configuration
   if (!isSupabaseAdminConfigured || !supabaseAdmin) {
     console.error('[Enquiries API] Database service-role credentials are not configured on the server.');
     return NextResponse.json(
@@ -143,29 +156,49 @@ export async function POST(request) {
     );
   }
 
-  // 6. Map to Canonical Database Schema
-  // Note: id, status, and created_at are generated automatically by PostgreSQL defaults.
-  const record = {
-    full_name: cleanFullName,
-    phone_number: normalizedPhone,
-    email: cleanEmail || null,
-    interested_in: cleanInterestedIn,
-    message: cleanMessage || null,
-    source: cleanSource,
-    page_url: cleanPageUrl || null
-  };
+  // 7. Secure Ingestion via Hardened Stored Procedure (RPC)
+  const rpcPhone = cleanPhone.replace(/[\s\-().]/g, '');
 
-  // 7. Secure Insertion via Supabase Admin Client
   try {
-    const { data: insertedData, error: dbError } = await supabaseAdmin
-      .from('enquiries')
-      .insert([record])
-      .select('id, created_at')
-      .single();
+    const { data: rawRpcData, error: dbError } = await supabaseAdmin.rpc(
+      'submit_enquiry_safe',
+      {
+        p_full_name: cleanFullName,
+        p_phone_number: rpcPhone,
+        p_email: cleanEmail || null,
+        p_interested_in: cleanInterestedIn,
+        p_normalized_interest: normalizedInterest,
+        p_message: cleanMessage || null,
+        p_source: cleanSource,
+        p_page_url: cleanPageUrl || null,
+        p_canonical_scope: canonicalScope
+      }
+    );
 
     if (dbError) {
       // Log technical error code/message without exposing visitor PII to server logs
-      console.error('[Enquiries API] Database insert failed:', dbError.message || dbError.code);
+      console.error('[Enquiries API] Database RPC failed:', dbError.message || dbError.code);
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Unable to process enquiry at this time. Please try again later.'
+        },
+        { status: 500 }
+      );
+    }
+
+    // Safely parse returned data if returned as stringified JSON
+    let rpcResult = rawRpcData;
+    if (typeof rawRpcData === 'string') {
+      try {
+        rpcResult = JSON.parse(rawRpcData);
+      } catch {
+        rpcResult = null;
+      }
+    }
+
+    if (!rpcResult || typeof rpcResult !== 'object' || !rpcResult.id) {
+      console.error('[Enquiries API] Database RPC returned unexpected response format.');
       return NextResponse.json(
         {
           success: false,
@@ -176,13 +209,13 @@ export async function POST(request) {
     }
 
     // 8. Transactional Notification Email via Resend
-    // Strictly invoked AFTER the database insert succeeds.
+    // Strictly invoked AFTER the database RPC succeeds.
     // Database remains the source of truth; email failure will never rollback the saved record.
     let emailResult = { attempted: false, success: false };
     try {
       emailResult = await sendEnquiryNotification({
-        id: insertedData?.id,
-        createdAt: insertedData?.created_at || new Date().toISOString(),
+        id: rpcResult.id,
+        createdAt: rpcResult.last_enquired_at || rpcResult.created_at || new Date().toISOString(),
         fullName: cleanFullName,
         phoneNumber: cleanPhone,
         email: cleanEmail || null,
@@ -202,7 +235,9 @@ export async function POST(request) {
         success: true,
         message: 'Enquiry submitted successfully.',
         data: {
-          id: insertedData?.id,
+          id: rpcResult.id,
+          isReEnquiry: Boolean(rpcResult.is_re_enquiry),
+          repeatCount: rpcResult.repeat_count || 1,
           notificationSent: Boolean(emailResult?.success)
         }
       },
@@ -219,3 +254,4 @@ export async function POST(request) {
     );
   }
 }
+
