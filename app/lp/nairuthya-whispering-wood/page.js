@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getProjectBySlug } from '@/data/projects';
 import NairuthyaCampaignClient from '@/components/sections/campaigns/NairuthyaCampaignClient';
+import NairuthyaGoogleTagManager from '@/components/sections/campaigns/NairuthyaGoogleTagManager';
 import NairuthyaMetaPixel from '@/components/sections/campaigns/NairuthyaMetaPixel';
 
 export const metadata = {
@@ -62,6 +63,7 @@ export default function NairuthyaWhisperingWoodCampaignPage() {
 
   return (
     <>
+      <NairuthyaGoogleTagManager />
       <NairuthyaMetaPixel />
       <NairuthyaCampaignClient project={campaignProject} />
     </>
