@@ -32,11 +32,12 @@ export default function Header() {
     pathname === '/lp/managed-farmland' ||
     Boolean(pathname?.startsWith('/projects/'));
   const isIsolatedCampaign = pathname?.startsWith('/lp') && pathname !== '/lp/managed-farmland';
+  const isDedicatedFormPage = pathname === '/form/nairuthya-whispering-wood';
   const { openEnquiryModal } = useEnquiry();
 
   // Coordinate entrance and exit on hero-scroll pages (home, lp/managed-farmland, and project pages)
   useEffect(() => {
-    if (isIsolatedCampaign) return;
+    if (isIsolatedCampaign || isDedicatedFormPage) return;
 
     // For inner pages without full-screen cinematic hero, navbar is always visible as a floating pill
     if (!isHeroScrollPage) {
@@ -87,11 +88,11 @@ export default function Header() {
       window.removeEventListener('scroll', checkScroll);
       window.removeEventListener('resize', checkScroll);
     };
-  }, [isHeroScrollPage, isIsolatedCampaign, pathname]);
+  }, [isHeroScrollPage, isIsolatedCampaign, isDedicatedFormPage, pathname]);
 
   // Contextual background observer: dynamically detects when dark CTA or footer enters navbar region
   useEffect(() => {
-    if (isIsolatedCampaign) return;
+    if (isIsolatedCampaign || isDedicatedFormPage) return;
 
     const currentDarkElements = activeDarkElements.current;
     currentDarkElements.clear();
@@ -139,11 +140,11 @@ export default function Header() {
       observer.disconnect();
       currentDarkElements.clear();
     };
-  }, [isIsolatedCampaign, pathname]);
+  }, [isIsolatedCampaign, isDedicatedFormPage, pathname]);
 
   const reducedMotion = typeof window !== 'undefined' && isReducedMotion();
 
-  if (isIsolatedCampaign) {
+  if (isIsolatedCampaign || isDedicatedFormPage) {
     return null;
   }
 
