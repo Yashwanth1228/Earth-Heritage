@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { getWhatsAppUrl } from '@/data/company';
 import { useFloatingControls } from '@/hooks/useFloatingControls';
 import { isReducedMotion } from '@/lib/gsap';
@@ -27,6 +28,8 @@ import { cn } from '@/lib/utils';
  */
 export default function WhatsAppButton({ className }) {
   const buttonRef = useRef(null);
+  const pathname = usePathname();
+  const isDedicatedFormPage = pathname === '/form/nairuthya-whispering-wood';
   const { isPastHero } = useFloatingControls();
   const whatsappUrl = getWhatsAppUrl();
 
@@ -41,7 +44,7 @@ export default function WhatsAppButton({ className }) {
     return () => window.removeEventListener('mobile-menu-toggle', handleToggle);
   }, []);
 
-  const isVisible = isPastHero && !isMobileMenuOpen;
+  const isVisible = isPastHero && !isMobileMenuOpen && !isDedicatedFormPage;
   const reducedMotion = typeof window !== 'undefined' && isReducedMotion();
 
   // Attention breathing state: activates after entrance settles (~500ms delay)
@@ -85,7 +88,7 @@ export default function WhatsAppButton({ className }) {
     </svg>
   );
 
-  if (isMobileMenuOpen) return null;
+  if (isMobileMenuOpen || isDedicatedFormPage) return null;
 
   return (
     <div
