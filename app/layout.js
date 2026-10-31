@@ -11,7 +11,8 @@ import EnquiryModal from '@/components/ui/EnquiryModal';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import FloatingEnquiryButton from '@/components/ui/FloatingEnquiryButton';
 
-import { Fraunces, Inter, Montserrat } from 'next/font/google';
+import { Fraunces, Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -26,11 +27,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
+const montserrat = localFont({
+  src: '../public/fonts/Montserrat.woff2',
   variable: '--font-montserrat',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata = constructMetadata();
