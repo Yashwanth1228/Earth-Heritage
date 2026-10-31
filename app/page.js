@@ -8,6 +8,7 @@ import HomeFaq from '@/components/sections/home/HomeFaq';
 import HomeContactLocation from '@/components/sections/home/HomeContactLocation';
 import GandhiJayantiPopup from '@/components/campaigns/GandhiJayantiPopup';
 import NavratriDay1Popup from '@/components/campaigns/NavratriDay1Popup';
+import KarnatakaRajyotsavaPopup from '@/components/campaigns/KarnatakaRajyotsavaPopup';
 
 export const metadata = {
   title: 'Earth Heritage | Own a Piece of Earth. Build a Legacy.',
@@ -35,6 +36,7 @@ export const metadata = {
  * 08. HomeContactLocation — Editorial split: Direct on-page enquiry form + official Google Maps embed
  * 09. GandhiJayantiPopup — Temporary campaign modal for October 2, 2026
  * 10. NavratriDay1Popup — Automated festival campaign modal for October 17–19, 2026 (Navratri Days 7–9)
+ * 11. KarnatakaRajyotsavaPopup — Temporary campaign modal for November 1, 2026 (Karnataka Rajyotsava)
  */
 export default function HomePage() {
   return (
@@ -49,6 +51,7 @@ export default function HomePage() {
       <HomeContactLocation />
       <GandhiJayantiPopup />
       <NavratriDay1Popup />
+      <KarnatakaRajyotsavaPopup />
     </div>
   );
 }
