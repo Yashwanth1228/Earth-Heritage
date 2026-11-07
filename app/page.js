@@ -9,6 +9,7 @@ import HomeContactLocation from '@/components/sections/home/HomeContactLocation'
 import GandhiJayantiPopup from '@/components/campaigns/GandhiJayantiPopup';
 import NavratriDay1Popup from '@/components/campaigns/NavratriDay1Popup';
 import KarnatakaRajyotsavaPopup from '@/components/campaigns/KarnatakaRajyotsavaPopup';
+import DiwaliPopup from '@/components/campaigns/DiwaliPopup';
 
 export const metadata = {
   title: 'Earth Heritage | Own a Piece of Earth. Build a Legacy.',
@@ -37,6 +38,7 @@ export const metadata = {
  * 09. GandhiJayantiPopup — Temporary campaign modal for October 2, 2026
  * 10. NavratriDay1Popup — Automated festival campaign modal for October 17–19, 2026 (Navratri Days 7–9)
  * 11. KarnatakaRajyotsavaPopup — Temporary campaign modal for November 1, 2026 (Karnataka Rajyotsava)
+ * 12. DiwaliPopup — Temporary campaign modal for November 8–9, 2026 (Diwali Days 1 & 2)
  */
 export default function HomePage() {
   return (
@@ -52,6 +54,7 @@ export default function HomePage() {
       <GandhiJayantiPopup />
       <NavratriDay1Popup />
       <KarnatakaRajyotsavaPopup />
+      <DiwaliPopup />
     </div>
   );
 }
